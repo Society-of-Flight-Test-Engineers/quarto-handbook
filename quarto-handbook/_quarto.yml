@@ -1,0 +1,28 @@
+project:
+  type: book
+
+book:
+  title: "Flight Test Engineering Reference Handbook"
+  author: "Society of Flight Test Engineers"
+  date: 2013-01-01
+  date-format: YYYY
+  toc: true
+  toc-depth: 1
+  chapters:
+    - index.qmd
+    - 01-general.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.json
+link-citations: true
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    cover-image: "media/index/image1.jpg"
+    documentclass: scrreprt
+
+
+

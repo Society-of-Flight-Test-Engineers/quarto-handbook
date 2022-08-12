@@ -1,6 +1,6 @@
-**UPDATE 2020-11-11:** The initial port to Markdown with HTML output is COMPLETE
-
 # handbook-2013
+
+**UPDATE 2020-11-11:** The initial port to Markdown with HTML output is COMPLETE
 
 A port of the 2013 SFTE Reference Handbook to bookdown
 

@@ -39,3 +39,13 @@
 1. Created <https://github.com/Society-of-Flight-Test-Engineers/quarto-handbook>
 2. Followed mirror instructions at <https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository>
 
+## Starting port
+
+1. Start with blank book per <https://quarto.org/docs/books/#getting-started>, called `quarto-handbook`
+2. Transfer information from `index.rmd` to both `_quarto.yml` and `index.qmd`
+3. Transfer information from `01-general.rmd` to `01-general.qmd`
+    1. {block type author comment} --> `<!-- -->`
+    2. `\( insert LaTeX here \)` --> `$insert LateX here$`
+    3. `\[ insert LaTeX here \]` --> `$insert LateX here$`
+    4. Some tables require specific spacing, so need to make up for two fewer characters for LaTeX conversion
+    5. Copied media folder so image references would work

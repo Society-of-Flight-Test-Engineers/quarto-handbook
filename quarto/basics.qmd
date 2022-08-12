@@ -1,0 +1,16 @@
+---
+title: Quarto Basics
+format: html
+bibliography: references.bib
+jupyter: python3
+---
+
+## Overview
+
+Knuth says always be literate [@knuth1984].
+
+```{python}
+1 + 1
+```
+
+## References

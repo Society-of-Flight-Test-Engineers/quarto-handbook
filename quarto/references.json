@@ -1,0 +1,24 @@
+[
+	{
+		"id": "http://zotero.org/users/7103471/items/ZIQLWMCU",
+		"type": "article-journal",
+		"container-title": "The Computer Journal",
+		"issue": "2",
+		"page": "97-111",
+		"title": "Literate Programming",
+		"volume": "27",
+		"author": [
+			{
+				"family": "Knuth",
+				"given": "Donald"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1984"
+				]
+			]
+		}
+	}
+]
