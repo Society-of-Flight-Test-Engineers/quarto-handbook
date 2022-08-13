@@ -4,6 +4,9 @@ A port of the 2013 SFTE Reference Handbook from [bookdown](https://github.com/So
 
 ## Project progress
 
+- 2022-08-12
+  - `02-math.qmd` ported
+
 - 2022-08-11
   - `_quarto.yml`, `index.qmd`, `01-general.qmd` ported
 
