@@ -12,6 +12,9 @@ book:
     - index.qmd
     - 01-general.qmd
     - 02-math.qmd
+    - 03-earth-atmosphere.qmd
+    - 04-pitot-statics.qmd
+    - 05-aero.qmd
     - summary.qmd
     - references.qmd
 

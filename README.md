@@ -4,6 +4,10 @@ A port of the 2013 SFTE Reference Handbook from [bookdown](https://github.com/So
 
 ## Project progress
 
+- 2202-08-13
+  - `03-earth-atmosphere.qmd`, `04-pitot-statics.qmd`, `05-aero.qmd` ported
+  - [Breadcrumbs file updated with `$` and `{equation*} techniques](./quarto/Porting-Handbook-from-bookdown-to-q.md)
+
 - 2022-08-12
   - `02-math.qmd` ported
 

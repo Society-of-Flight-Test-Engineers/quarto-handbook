@@ -42,10 +42,18 @@
 ## Starting port
 
 1. Start with blank book per <https://quarto.org/docs/books/#getting-started>, called `quarto-handbook`
-2. Transfer information from `index.rmd` to both `_quarto.yml` and `index.qmd`
-3. Transfer information from `01-general.rmd` to `01-general.qmd`
-    1. {block type author comment} --> `<!-- -->`
-    2. `& insert LaTeX here &  ` --> `$insert LateX here$`
-    3. `$$ insert LaTeX here $$` --> `$insert LateX here$`
-    4. Some tables require specific spacing, so need to make up for two fewer characters for LaTeX conversion
-    5. Copied media folder so image references would work
+2. Copied media folder so image references would work
+3. Transfer information from `index.rmd` to both `_quarto.yml` and `index.qmd` then run `quarto preview quarto-handbook`
+4. Transfer information from `*.rmd` to `*.qmd`
+    1. Add `*.qmd` to `_quarto.yml` `chapters:` list
+    2. `{block` --> `<!-- -->`\
+    3. `\( insert LaTeX here \)` --> `$insert LateX here$`
+        1. In VS Code, `CTRL-H` allows find and replace using regex
+        2. Find `\\\(` and replace with `$`
+        3. Find `\\\)` and replace with `$\s\s` (Some tables require specific spacing, so need to make up for two fewer characters for LaTeX conversion)
+        4. Find `\s\$\s` and `\s\$\n` and manually fix. Quarto doesn't like whitespace between `$` and equation contents
+        5. Search rendered HTML preview for `$` and manually fix
+    4. `\[ insert LaTeX here \]` --> `\begin{equation*}insert LateX here\end{equation*}`
+        1. Find `\\\[` and replace with `\n\begin{equation*}\n`
+        2. Find `\\\]` and replace with `\n\end{equation*}\n`
+    5. Run `quarto preview quarto-handbook`

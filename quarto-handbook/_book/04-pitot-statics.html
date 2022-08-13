@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 4&nbsp; Pitot Statics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-aero.html" rel="next">
+<link href="./03-earth-atmosphere.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#common-nomenclature" id="toc-common-nomenclature" class="nav-link active" data-scroll-target="#common-nomenclature">Common Nomenclature</a></li>
+  <li><a href="#subsonic-airspeed-and-mach-equation" id="toc-subsonic-airspeed-and-mach-equation" class="nav-link" data-scroll-target="#subsonic-airspeed-and-mach-equation"> <span class="header-section-number">4.1</span> Subsonic Airspeed and Mach Equation</a></li>
+  <li><a href="#scale-altitude-compressibility-correction" id="toc-scale-altitude-compressibility-correction" class="nav-link" data-scroll-target="#scale-altitude-compressibility-correction"> <span class="header-section-number">4.2</span> Scale Altitude (Compressibility ) Correction</a></li>
+  <li><a href="#subsonic-relations-between-compressible-and-incompressible-dynamic-pressure" id="toc-subsonic-relations-between-compressible-and-incompressible-dynamic-pressure" class="nav-link" data-scroll-target="#subsonic-relations-between-compressible-and-incompressible-dynamic-pressure"> <span class="header-section-number">4.3</span> Subsonic Relations Between Compressible and Incompressible Dynamic Pressure</a></li>
+  <li><a href="#supersonic-airspeed-and-mach-equations" id="toc-supersonic-airspeed-and-mach-equations" class="nav-link" data-scroll-target="#supersonic-airspeed-and-mach-equations"> <span class="header-section-number">4.4</span> Supersonic Airspeed and Mach Equations</a></li>
+  <li><a href="#total-temperature-equation" id="toc-total-temperature-equation" class="nav-link" data-scroll-target="#total-temperature-equation"> <span class="header-section-number">4.5</span> Total Temperature Equation</a></li>
+  <li><a href="#altimeter-equation" id="toc-altimeter-equation" class="nav-link" data-scroll-target="#altimeter-equation"> <span class="header-section-number">4.6</span> Altimeter Equation</a></li>
+  <li><a href="#position-error-test-methods" id="toc-position-error-test-methods" class="nav-link" data-scroll-target="#position-error-test-methods"> <span class="header-section-number">4.7</span> Position Error Test Methods</a>
+  <ul class="collapse">
+  <li><a href="#fly-by" id="toc-fly-by" class="nav-link" data-scroll-target="#fly-by"> <span class="header-section-number">4.7.1</span> Fly-by</a></li>
+  <li><a href="#ground-course-method" id="toc-ground-course-method" class="nav-link" data-scroll-target="#ground-course-method"> <span class="header-section-number">4.7.2</span> Ground Course Method</a></li>
+  <li><a href="#trailing-conebomb-method" id="toc-trailing-conebomb-method" class="nav-link" data-scroll-target="#trailing-conebomb-method"> <span class="header-section-number">4.7.3</span> Trailing Cone/Bomb Method</a></li>
+  <li><a href="#gps-methods" id="toc-gps-methods" class="nav-link" data-scroll-target="#gps-methods"> <span class="header-section-number">4.7.4</span> GPS Methods</a></li>
+  </ul></li>
+  <li><a href="#position-error-far-2325.1323-and-.1325jar-certification" id="toc-position-error-far-2325.1323-and-.1325jar-certification" class="nav-link" data-scroll-target="#position-error-far-2325.1323-and-.1325jar-certification"> <span class="header-section-number">4.8</span> Position Error FAR 23/25.1323 and .1325/JAR Certification</a></li>
+  <li><a href="#pec-correction-process-flow-chart" id="toc-pec-correction-process-flow-chart" class="nav-link" data-scroll-target="#pec-correction-process-flow-chart"> <span class="header-section-number">4.9</span> PEC Correction Process Flow Chart</a></li>
+  <li><a href="#airspeedaltitudemach-graphic-relation" id="toc-airspeedaltitudemach-graphic-relation" class="nav-link" data-scroll-target="#airspeedaltitudemach-graphic-relation"> <span class="header-section-number">4.10</span> Airspeed/Altitude/Mach Graphic Relation</a></li>
+  <li><a href="#effect-of-errors-on-calibrated-airspeed-and-altitude" id="toc-effect-of-errors-on-calibrated-airspeed-and-altitude" class="nav-link" data-scroll-target="#effect-of-errors-on-calibrated-airspeed-and-altitude"> <span class="header-section-number">4.11</span> Effect of Errors on Calibrated Airspeed and Altitude</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p><em>Editor’s Note</em></p>
+<p><em>In an effort to reduce confusion and conflict regarding pitot and static pressure nomenclature, SFTE has elected to change two definitions and symbols since the first edition of this handbook was released. Henceforth, <span class="math inline">\(\Delta Ps\)</span> shall indicate static pressure ERROR (<span class="math inline">\(\Delta P_s = P_s - P_a)\)</span> and <span class="math inline">\(\Delta P_T\)</span> shall indicate total (i.e.&nbsp;pitot) pressure ERROR (<span class="math inline">\(\Delta P_T = P_p - P_T\)</span>). This nomenclature eliminates the <span class="math inline">\(\Delta P_p\)</span> symbol and confusion as to whether it indicates position error or pitot error.</em></p>
+<section id="common-nomenclature" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="common-nomenclature">Common Nomenclature</h2>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: left;">speed of sound</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(a_0\)</span></td>
+<td style="text-align: left;">speed of sound at sea level on a standard day</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(M\)</span></td>
+<td style="text-align: left;">Mach number</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(P_a\)</span></td>
+<td style="text-align: left;">ambient pressure</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P_0\)</span></td>
+<td style="text-align: left;">ambient pressure at sea level on a standard day (<span class="math inline">\(=2116.2 lb/ft^2 = 29.92 in Hg\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(P_p\)</span></td>
+<td style="text-align: left;">pitot pressure corrected for instrument error only</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P_s\)</span></td>
+<td style="text-align: left;">static pressure (indicated at static port)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(P_T\)</span></td>
+<td style="text-align: left;">total pressure</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(q\)</span></td>
+<td style="text-align: left;">incompressible dynamic pressure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(q_c\)</span></td>
+<td style="text-align: left;">compressible dynamic pressure (<span class="math inline">\(=P_T-P_a\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(q_{\mathrm{cic}}\)</span></td>
+<td style="text-align: left;">instrument corrected differential pressure (<span class="math inline">\(=P_p-P_s\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(T_a\)</span></td>
+<td style="text-align: left;">ambient temperature (absolute scale)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(T_0\)</span></td>
+<td style="text-align: left;">ambient temperature at sea level on a standard day (<span class="math inline">\(=288.15 K = 15° C = 518.7°R=59.0°F\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(T_T\)</span></td>
+<td style="text-align: left;">total temperature (absolute scale)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(V_c\)</span></td>
+<td style="text-align: left;">calibrated airspeed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(V_e\)</span></td>
+<td style="text-align: left;">equivalent airspeed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(V_g\)</span></td>
+<td style="text-align: left;">ground speed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(V_i\)</span></td>
+<td style="text-align: left;">indicated airspeed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(V_T\)</span></td>
+<td style="text-align: left;">true airspeed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Delta H_{\mathrm{ic}}\)</span></td>
+<td style="text-align: left;">altimeter instrument correction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Delta H_{\mathrm{pc}}\)</span></td>
+<td style="text-align: left;">altimeter position error correction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Delta P_D\)</span></td>
+<td style="text-align: left;">dynamic pressure error (<span class="math inline">\(=P_T-\Delta P_s\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Delta P_T\)</span></td>
+<td style="text-align: left;">total (pitot) pressure error (<span class="math inline">\(=P_P-P_T\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Delta P_s\)</span></td>
+<td style="text-align: left;">static pressure error (<span class="math inline">\(=P_s-P_a\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Delta V_{\mathrm{ic}}\)</span></td>
+<td style="text-align: left;">airspeed instrument correction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Delta V_{\mathrm{pc}}\)</span></td>
+<td style="text-align: left;">airspeed position error correction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\delta\)</span></td>
+<td style="text-align: left;">pressure ratio between ambient and sea level std (<span class="math inline">\(=P_a/P_0\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\theta\)</span></td>
+<td style="text-align: left;">temperature ratio between ambient and sea level std (<span class="math inline">\(=T_a/T_0\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\rho_0\)</span></td>
+<td style="text-align: left;">ambient density at sea level on a std day (<span class="math inline">\(=0.002 377 slg/ft^3\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sigma\)</span></td>
+<td style="text-align: left;">density ratio between ambient and sea level std (<span class="math inline">\(=P_a/P_0\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\gamma\)</span></td>
+<td style="text-align: left;">ratio of specific heats (<span class="math inline">\(=1.4\)</span> for air)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="subsonic-airspeed-and-mach-equation" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="subsonic-airspeed-and-mach-equation"><span class="header-section-number">4.1</span> Subsonic Airspeed and Mach Equation</h2>
+<p>True Airspeed</p>
+<p><span class="math display">\[\begin{equation*}
+V_{T} = \left\lbrack \frac{2\gamma}{\gamma-1} \frac{P_a}{\rho_a} \left( \left\lbrack \frac{P_T - P_a}{P_a} + 1 \right\rbrack^\frac{\gamma-1}{\gamma} - 1 \right) \right\rbrack ^{1/2}
+\end{equation*}\]</span></p>
+<p>Equivalent Airspeed</p>
+<p>(= <span class="math inline">\(V_T\)</span> equation with assumption of std day sea level density)</p>
+<p><span class="math display">\[\begin{equation*}
+V_{e} = \sqrt{7\frac{P_{a}}{\rho_0}\left( \left\lbrack \frac{P_{T} - P_{a}}{P_{a}} + 1 \right\rbrack^{\frac{2}{7}} - 1 \right)} = V_{T}\sqrt{\frac{\rho_{a}}{\rho_0}} = V_{T}\sqrt{\sigma}
+\end{equation*}\]</span></p>
+<p>Calibrated Airspeed</p>
+<p>(= <span class="math inline">\(V_e\)</span> equation with assumption of std day sea level pressure)</p>
+<p><span class="math display">\[\begin{equation*}
+V_{c} = \left\lbrack \frac{2\gamma}{\gamma - 1}\frac{P_0}{\rho_0}\left( \left\lbrack \frac{P_{T} - P_{a}}{P_0} + 1 \right\rbrack^{\frac{\gamma - 1}{\gamma}} - 1 \right) \right\rbrack^{\frac{1}{2}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\sqrt{7 \frac{P_0}{\rho_0}\left( \left\lbrack \frac{q_c}{P_0} + 1 \right\rbrack^{\frac{2}{7}} - 1 \right)}
+\end{equation*}\]</span></p>
+<p>Applying British units (<span class="math inline">\(lb/ft^2\)</span>) and converting from <em>ft/sec</em> to knots yields</p>
+<p><span class="math display">\[\begin{equation*}
+V_{c} = 1479\sqrt{\left\lbrack \frac{P_{T} - P_{a}}{2116} + 1 \right\rbrack^{\frac{2}{7}} - 1} ~(kts)
+\end{equation*}\]</span></p>
+<p>Mach Number</p>
+<p><span class="math display">\[\begin{equation*}
+M = \frac{V_{T}}{a} = \sqrt{\frac{2}{\gamma - 1}\left\lbrack \left( \frac{P_{T} - P_{a}}{P_{a}} + 1 \right)^{\frac{\gamma - 1}{\gamma}} - 1 \right\rbrack} = \sqrt{5\left( \left\lbrack \frac{q_{c}}{P_{a}} + 1 \right\rbrack^{\frac{2}{7}} - 1 \right)}
+\end{equation*}\]</span></p>
+</section>
+<section id="scale-altitude-compressibility-correction" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="scale-altitude-compressibility-correction"><span class="header-section-number">4.2</span> Scale Altitude (Compressibility ) Correction</h2>
+<p>The name comes from the fact that although the equivalent airspeed equation does correct for compressibility, the sea level pressure assumption used for calibrated airspeed makes the compressibility correction valid only for that (sea level) pressure. Above sea level, the calibrated airspeed must be re-scaled for pressure effects on compressibility. The mathematical method for determining <span class="math inline">\(V_e\)</span> from <span class="math inline">\(V_c\)</span> is to first solve the calibrated airspeed equation for <span class="math inline">\(q_c\)</span>.</p>
+<p><span class="math display">\[\begin{equation*}
+q_c = P_0  \left\lbrack \left( \frac{\rho_0}{P_0} \frac{V_c^2}{7} + 1 \right)^{3.5} - 1 \right\rbrack
+\end{equation*}\]</span></p>
+<p>Next, substitute this value and the ambient pressure (<span class="math inline">\(P_a\)</span>) into the equivalent airspeed equation. (<span class="math inline">\(q_c = P_T - P_a\)</span>)</p>
+<p><span class="math display">\[\begin{equation*}
+V_e = \sqrt{7 \frac{P_a}{\rho_0} \left( \left\lbrack \frac{q_c}{P_a}+1 \right\rbrack^{2/7} - 1 \right) }
+\end{equation*}\]</span></p>
+<p>The adjacent chart does this graphically for all subsonic airspeeds.</p>
+<p><span class="math display">\[\begin{equation*}
+V_e = V_c + \Delta V_c
+\end{equation*}\]</span></p>
+<p><img src="media/04/image3.png" style="width:6.20764in;height:8.91528in"></p>
+</section>
+<section id="subsonic-relations-between-compressible-and-incompressible-dynamic-pressure" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="subsonic-relations-between-compressible-and-incompressible-dynamic-pressure"><span class="header-section-number">4.3</span> Subsonic Relations Between Compressible and Incompressible Dynamic Pressure</h2>
+<p>For constant density (incompressible) flow Bernoulli’s equation reduces to</p>
+<p><span class="math display">\[\begin{equation*}
+V_T = \sqrt{\frac{2}{\rho_a}(P_T - P_a)} = \sqrt{\frac{2q}{\rho_a}}
+\end{equation*}\]</span></p>
+<p>Where incompressible dynamic pressure <span class="math inline">\(q\)</span> is defined as <span class="math inline">\(P_T-P_a\)</span>.</p>
+<p>As airflow speed increases, its density at the stagnation point increases thereby increasing the sensed pressure. The ratio between compressible &amp; incompressible dynamic pressure can be written as a function of Mach number</p>
+<p><span class="math display">\[\begin{equation*}
+q_c = q \left\lbrack 1 + \frac{M^2}{4} + \frac{M^4}{40} + \frac{M^6}{1600} + ... \right\rbrack
+\end{equation*}\]</span></p>
+<p>True dynamic pressure <span class="math inline">\(q\)</span> (as used in modeling) is defined in dimensional analysis as:</p>
+<p><span class="math display">\[\begin{equation*}
+q = \frac{1}{2} \rho_a V_T^2 = \frac{1}{2}\rho_0V_e^2
+\end{equation*}\]</span></p>
+<p>This value for <span class="math inline">\(q\)</span> should not be confused with compressible (a.k.a. impact or differential) pressure, <span class="math inline">\(q_c (= P_T - P_a)\)</span> <img src="media/04/image8.png" style="width:8.99861in;height:5.29097in"></p>
+</section>
+<section id="supersonic-airspeed-and-mach-equations" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="supersonic-airspeed-and-mach-equations"><span class="header-section-number">4.4</span> Supersonic Airspeed and Mach Equations</h2>
+<p><span class="math inline">\(P_T'\)</span> denotes pitot pressure behind shock wave</p>
+<p>True Airspeed</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{P_T' - P_a}{P_a} = \frac{q_c}{P_a} = \left[ \frac{\gamma + 1}{2} \left(  \frac{V}{a} \right)^2  \right]^\frac{\gamma}{\gamma-1} \left[ \frac{1}{ \frac{2\gamma}{\gamma+1} \left( \frac{V}{a} \right)^2 - \frac{\gamma-1}{\gamma+1} }  \right]^\frac{1}{\gamma-1} - 1
+\end{equation*}\]</span></p>
+<p>Equivalent Airspeed (valid if <span class="math inline">\(q_c/P_a &gt; 0.892 929 158\)</span>)</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{q_c}{P_a} = \frac{166.92 \left[ \frac{V_e}{a_0 \sqrt{\sigma}} \right]^7} {\left( 7 \left[ \frac{V_e}{a_0 \sqrt{\sigma}} \right]^2 - 1 \right)^{2.5}} - 1
+\end{equation*}\]</span></p>
+<p>Calibrated Airspeed (valid if <span class="math inline">\(V_c &gt; a_0\)</span>)</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{q_c}{P_0} = \frac{166.92 \left[ \frac{V_c}{a_0} \right]^7} {\left( 7 \left[ \frac{V_c}{a_0} \right]^2 - 1 \right)^{2.5}} - 1
+\end{equation*}\]</span></p>
+<p>Mach Number</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{q_c}{P_a} = \frac{166.92 M^7} {\left( 7 M^2 - 1 \right)^{2.5}} -1
+\end{equation*}\]</span></p>
+</section>
+<section id="total-temperature-equation" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="total-temperature-equation"><span class="header-section-number">4.5</span> Total Temperature Equation</h2>
+<p>Since stagnation exists at the probe, it absorbs the energy of the air</p>
+<p><img src="media/04/image13.png" style="width:5in;height:0.82in"></p>
+<p>Apply Bernoulli:</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{V^2}{2} + \frac{\gamma}{\gamma - 1}  \frac{P_s}{\rho_s} = \frac{\gamma}{\gamma - 1} \frac{P_p}{\rho_p}
+\end{equation*}\]</span></p>
+<p>Also <span class="math inline">\(\frac{P}{\rho} = RT\)</span> and <span class="math inline">\(a^2 = \gamma RT\)</span> therefore</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{T_T}{T_a} = 1 + \left[ \frac{\gamma - 1}{2} \right] M^2
+\end{equation*}\]</span></p>
+<p>Use <em>K</em> (probe recovery factor) to account for heat losses:</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{T_T}{T_a} = 1 + \left[ \frac{K(\gamma - 1)}{2} \right] M^2
+\end{equation*}\]</span></p>
+<p>During position error flight testing, measure <span class="math inline">\(T_i\)</span>. From <span class="math inline">\(V_c\)</span> and <span class="math inline">\(H_{\mathrm{pc}}\)</span> determine M</p>
+<p><span class="math display">\[\begin{equation*}
+T_i + \Delta T_{\mathrm{ic}} = T_T = T_a + T_aKM^2
+\end{equation*}\]</span></p>
+<p>Plot <span class="math inline">\(T_i\)</span> vs <span class="math inline">\(M^2\)</span></p>
+<p><img src="media/04/image14.png" style="width:4.3125in;height:3in"></p>
+</section>
+<section id="altimeter-equation" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="altimeter-equation"><span class="header-section-number">4.6</span> Altimeter Equation</h2>
+<p><span class="math inline">\(P_a = P_0 \left(1-6.875 35 \times 10^{-6} H\right)^{5.256}\)</span> below 36,089 ft</p>
+<p><span class="math inline">\(P_a = P_0 \left(0.223 35 \right) \textrm{e}^{-0.000 048 06[H-36089]}\)</span> above 36,089 ft</p>
+<!--- FIXME: This figure really tells you nothing --->
+<p><img src="media/04/image15.png" style="width:4.20347in;height:4.11319in"></p>
+<!--- FIXME: The following equations aren't really referenced anywhere in this section.  Some are defined at the section beginning --->
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(H_i\)</span></td>
+<td style="text-align: left;">indicated pressure altituide (29.92” Hg)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Delta H_{\mathrm{ic}}\)</span></td>
+<td style="text-align: left;">instrument error correction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(H_{\mathrm{ic}}\)</span></td>
+<td style="text-align: left;">altimeter corrected of instrument error</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Delta H_{\mathrm{pc}}\)</span></td>
+<td style="text-align: left;">position error correction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(H_c\)</span></td>
+<td style="text-align: left;">calibrated pressure altitude</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="position-error-test-methods" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="position-error-test-methods"><span class="header-section-number">4.7</span> Position Error Test Methods</h2>
+<section id="fly-by" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="fly-by"><span class="header-section-number">4.7.1</span> Fly-by</h3>
+<p>As depicted below, the flyby method originally used some sort of viewing platform with surveyed distances and a grid or other device for determining the aircraft’s relative angle above the platform’s altimeter. This information combined to give the aircraft’s actual pressure altitude. Modern methods replace the tower system with a radar altimeter or GPS unit to determine tapeline height above the flyby line (<span class="math inline">\(H_g\)</span>). This geometric height is converted to a pressure altitude change using a temperature correction. When added to the aircraft’s pressure altitude on the runway, this change provides the actual pressure altitude during the flyby (<span class="math inline">\(\textrm{Actual } H_c = \textrm{runway pressure altitude} + H_g (T_s/T_t)\)</span>). <!--- This nomenclature is inconsistent with the rest of the section ---></p>
+<p><img src="media/04/image17.png" style="width:5.28681in;height:1.76042in"></p>
+<p><span class="math display">\[\begin{equation*}
+\text{Actual } H_{c} = H_{c_{\mathrm{tower}}} + \left( D\tan\theta \cdot \frac{T_{s}}{T_{t}} \right)
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\Delta H_{\mathrm{pc}} = \text{Actual } H_c - \left( H_i + \Delta H_{\mathrm{ic}} \right)
+\end{equation*}\]</span></p>
+<!--- Changing capital subscript 's' to lower-case to make more consistent with rest of the handbook --->
+<p><span class="math display">\[\begin{equation*}
+\Delta P_s = \rho g \Delta H_{\mathrm{pc}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\Delta P_{S} = q_{c} - q_{\mathrm{cic}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\Delta P_{S} = \frac{1}{2}\rho_{0}{V_{c}^{2} - \frac{1}{2}\rho_{0}{V_{\mathrm{ic}}}^{2} \text{ (low Mach only)}}
+\end{equation*}\]</span></p>
+<p>Solve for <span class="math inline">\(V_c\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+\Delta V_{\mathrm{pc}} = V_c - V_{\mathrm{ic}}
+\end{equation*}\]</span></p>
+<!--- FIXME: What flow chart is this referring to??? --->
+<p>See flowchart for high mach or <span class="math inline">\(P_T \ne 0\)</span> cases.</p>
+<p><img src="media/04/image18.png" style="width:5.1875in;height:3.15in"></p>
+<p>Note: A check on basic instrument calibration is easily accomplished using a “ground block” where a parked test aircraft compares altimeters with tower. Any error can be treated as a bias.</p>
+<p>This altitude-based test method determines altimeter corrections and therefore static error directly. Accurately converting this static source error to an airspeed correction also requires knowledge of the test pitot tube’s total pressure error (<span class="math inline">\(\Delta P_T\)</span> ). This can be determined either through direct comparison with a calibrated noseboom pitot pressure or from one of the airspeed-based methods that directly yield airspeed corrections (pace, ground course, GPS). In lieu of these options, the pitot error may assumed to be zero, but this will reduce confidence in the calculated value for airspeed correction.</p>
+</section>
+<section id="ground-course-method" class="level3" data-number="4.7.2">
+<h3 data-number="4.7.2" class="anchored" data-anchor-id="ground-course-method"><span class="header-section-number">4.7.2</span> Ground Course Method</h3>
+<!--- This figure doesn't add much value --->
+<p><img src="media/04/image19.png" style="width:4.5625in;height:4.0625in"></p>
+<p>Fly known course at constant <span class="math inline">\(V_i\)</span></p>
+<p>Elapsed time = <span class="math inline">\(\Delta T\)</span>, therefore <span class="math inline">\(V_T = \frac{\Delta S}{\Delta T}\)</span></p>
+<p>Use <span class="math inline">\(H_i\)</span> and <span class="math inline">\(T_i\)</span> to compute <span class="math inline">\(V_e = V_T \left(\sqrt{\sigma} \right) = V_c\)</span> for low altitude</p>
+<p>Correct <span class="math inline">\(V_i\)</span> for instrument error corrections (<span class="math inline">\(\Delta V_{\mathrm{ic}}\)</span>) using</p>
+<p><span class="math display">\[\begin{equation*}
+V_{\mathrm{ic}} = V_i + \Delta V_{\mathrm{ic}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\Delta V_{\mathrm{pc}} = V_c - V_{\mathrm{ic}}
+\end{equation*}\]</span></p>
+<p>To determine altimeter error assume <span class="math inline">\(\Delta P_T = 0\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+\frac{1}{2} \rho_0 \left[ V_c^2 - V_{\mathrm{ic}}^2 \right] = +\Delta P_s
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\Delta P_s = +\rho g \Delta H
+\end{equation*}\]</span></p>
+<p>If <span class="math inline">\(\Delta P_T \ne 0\)</span>, then <span class="math inline">\(\Delta H_{\mathrm{pc}} = + \frac{\Delta P_s - \Delta P_T}{\rho g}\)</span></p>
+<!--- FIXME: This is a poor place to label a figure --->
+<p>Error resulting from a <span class="math inline">\(\frac{1}{2}\)</span> sec timing error</p>
+<!--- FIXME: This image should probably be split into two with consistent axes and font sizes --->
+<p><img src="media/04/image21.png" style="width:5.5125in;height:6.4625in"></p>
+<p>This airspeed-based test method determines airspeed corrections directly. Accurately converting this airspeed error to a static source error requires knowledge of the test pitot tube’s total pressure error (<span class="math inline">\(\Delta P_T\)</span>). This can be determined using one of the altitude-based methods that directly yield altitude corrections (tower fly-by, trailing cone or bomb). In lieu of these options, the pitot error may assumed to be zero, but this will reduce confidence in the calculated values for static pressure error and altimeter correction.</p>
+</section>
+<section id="trailing-conebomb-method" class="level3" data-number="4.7.3">
+<h3 data-number="4.7.3" class="anchored" data-anchor-id="trailing-conebomb-method"><span class="header-section-number">4.7.3</span> Trailing Cone/Bomb Method</h3>
+<p><img src="media/04/image23.png" style="width:5.9375in;height:3in"></p>
+<ol type="1">
+<li>Measure <span class="math inline">\(P_s\)</span> (ref) away from pressure field of aircraft</li>
+<li>Cone is used to stabilize static line</li>
+<li>No speed limitations</li>
+<li>Inexpensive—can be trailed on landing</li>
+<li>Consider lag effects during rapid altitude changes</li>
+</ol>
+<p><span class="math inline">\(\Delta P_s = \Delta P_{s_{\mathrm{A/C}}} - \Delta P_{s_{\mathrm{REF}}}\)</span></p>
+<p><span class="math inline">\(\Delta H_{\mathrm{pc}} = +\frac{\Delta P_s}{\rho g} = \textrm{altimeter correction}\)</span> <!--- Probably not needed to define this here again ---></p>
+<p><span class="math inline">\(\Delta P_T - \Delta P_s = \Delta P_D = q_{\mathrm{ic}} - q_c \text{ assuming } \Delta P_T = 0 \text{ , } M &lt; 0.2\)</span> <!--- Unclear ---></p>
+<p>If pitot errors do exist, then they must be included in calculations for <span class="math inline">\(\Delta V_{\mathrm{pc}}\)</span> (see flowchart). <!--- which one??? ---></p>
+<p>Using a trailing cone during stall testing may give airspeed errors due to lag errors during the deceleration.</p>
+<p>This altitude-based test method determines altimeter corrections and therefore static error directly. Accurately converting this static source error to an airspeed correction also requires knowledge of the test pitot tube’s total pressure error (<span class="math inline">\(\Delta P_T\)</span>). This can be determined either through direct comparison with a calibrated noseboom pitot pressure or from one of the airspeed-based methods that directly yield airspeed corrections (pace, ground course, GPS). In lieu of these options, the pitot error may assumed to be zero, but this will reduce confidence in the calculated value for airspeed correction.</p>
+</section>
+<section id="gps-methods" class="level3" data-number="4.7.4">
+<h3 data-number="4.7.4" class="anchored" data-anchor-id="gps-methods"><span class="header-section-number">4.7.4</span> GPS Methods</h3>
+<!--- FIXME: This whole subsection needs to be reworked to make more consistent with the rest of the Section and handbook.  Particularly formatting and use of unordered lists to introduce each chapter --->
+<!--- The following list should probably be turned into a paragraph rather than a bullet list --->
+<p>The attraction</p>
+<ul>
+<li>no aircraft modifcations required
+<ul>
+<li>no trailing cone or aircraft plumbing mod</li>
+<li>no flight test boom</li>
+</ul></li>
+<li>no limitation on speed or altitude
+<ul>
+<li>can be done down to near stall</li>
+<li>any altitude</li>
+</ul></li>
+<li>easy data reduction
+<ul>
+<li>no correlation with pace aircraft, ground radar, or other references required</li>
+</ul></li>
+</ul>
+<p>Various methods available, all assume <strong>steady</strong> winds and ambient temperature. You must determine wind speed and direction to calculate <span class="math inline">\(V_T\)</span> and <span class="math inline">\(T_0\)</span> and to ensure steady winds existed during test series.</p>
+<p>GPS accuracies are variable. Know tolerances before accepting GPS as a truth model.</p>
+<p>If exact (<span class="math inline">\(\pm 10°\)</span>) winds are calculated inflight, you can fly one pass directly into/away from the wind</p>
+<p><span class="math display">\[\begin{equation*}
+V_T = V_G + V_{Headwind}
+\end{equation*}\]</span></p>
+<p>This airspeed-based test method determines airspeed corrections directly. Accurately converting this airspeed error to a static source error requires knowledge of the test pitot tube’s total pressure error (<span class="math inline">\(\Delta P_T\)</span>). This can be determined using one of the altitude-based methods that directly yield altitude corrections (tower fly-by, trailing cone or bomb). In lieu of these options, the pitot error may assumed to be zero, but this will reduce confidence in the calculated values for static pressure error and altimeter correction.</p>
+<!--- FIXME: set up cross-reference to Section 4.11 and the "last chart on Page 04-29" below.  Also there is no Page 04-29 in the handbook--->
+<p><em>Graphs in Section 4.11 separately show the effect of measurement errors in <span class="math inline">\(\Delta P_T\)</span>, air temperature, or true airspeed on <span class="math inline">\(\Delta V_c\)</span> calculations . The last chart of this Section shows how each knot of accumulated <span class="math inline">\(\Delta V_c\)</span> uncertainty affects the <span class="math inline">\(\Delta H_c\)</span> uncertainty at various altitudes and temperatures.</em></p>
+<p>Flying four legs instead of three allows four separate calculations of wind speed &amp; direction to confirm stable winds at that test airspeed. If several real-time calculations of winds confirm constant direction and velocity, then testing may be shortened by flying only one pass directly into or away from the wind. If this is done, an end-of-test wind calibration must be performed to confirm steady winds throughout the test series. To minimize temperature and wind variations, testing should be accomplished within a relatively small area.</p>
+<section id="horseshoe-track-gps-method" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="horseshoe-track-gps-method">Horseshoe Track GPS Method</h4>
+<ul>
+<li>Horseshoe track method
+<ul>
+<li>fly three legs with each perpedicular ground tracks, noting GPS ground speed on each</li>
+<li>determine true airspeed by solving three equations in three unknowns</li>
+</ul></li>
+<li>Practical problem
+<ul>
+<li>need to fly close to the ground, tracking perpendicular ground references</li>
+</ul></li>
+</ul>
+<p><img src="media/04/image28.png" style="width:2.7in;height:2.49514in"></p>
+<p>True airspeed: <span class="math inline">\(V_T = \frac{1}{2} \sqrt{V_1^2 + V_2^2 + V_3^2 + V_1^2 \times \frac{V_3^2}{V_2^2}}\)</span></p>
+<p>Wind velocity: <span class="math inline">\(V_W = \sqrt{\left( \frac{V_1 - V_3}{2} \right)^2 + \left( \frac{V_2 - V_1 \times V_3 / V_2}{2} \right) ^2 }\)</span></p>
+<p>Wind direction: <span class="math inline">\(\psi_W = \tan^{-1} \frac{V_2 - V_1 \times V_3 / V_2}{V_1 - V_3}\)</span></p>
+</section>
+<section id="horseshoe-heading-gps-method" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="horseshoe-heading-gps-method">Horseshoe Heading GPS Method</h4>
+<ul>
+<li>Horseshoe Heading Method
+<ul>
+<li>Fly three legs with perpendicular headings, noting GPS ground speed on each</li>
+<li>Determine true airspeed by solving three equations in three unknowns</li>
+</ul></li>
+</ul>
+<p><img src="media/04/image31.png" style="width:5.0625in;height:2.6875in"></p>
+<!--- FIXME: the wind direction (psi) below doesn't use the "W" subscript as it did above.  Intentional? --->
+<p>Wind direction: <span class="math inline">\(\psi = \tan^{-1} \frac{-V_{G1}^2 + 2V_{G2}^2 - V_{G3}^2}{V_{G3}^2 - V_{G1}^2}\)</span></p>
+<p>Wind velocity: <span class="math inline">\(V_W = \frac{1}{2} \left[ V_{G3}^2 + V_{G1}^2 \pm \sqrt{ \left(V_{G3}^2 + V_{G1}^2 \right)^2 \pm \left( \frac{-V_{G1}^2 + 2V_{G2}^2 - V_{G3}^2}{\sin{\psi}} \right)^2 } \right]^{1/2}\)</span></p>
+<p>True airspeed: <span class="math inline">\(V_T = \sqrt{\frac{V_{G3}^2 + V_{G1}^2}{2} - V_W^2}\)</span></p>
+<p>The “Windbox” method consists of flying four legs instead of three. The extra leg provides a fourfold increase in wind calculations to improve result confidence. The “Orbis” method extends this advantage by collecting data at every heading throughout a level turn.</p>
+</section>
+<section id="cloverleaf-method" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="cloverleaf-method">Cloverleaf Method</h4>
+<p>(Microsoft Excel spreadsheet adapted from Doug Gray, NSW Australia)</p>
+<ul>
+<li>Fly three legs with approximately 90-120 degree difference between headings.
+<ul>
+<li>Can be accomplished in a broad turn as with the horseshoe method, or</li>
+<li>Directly over a single point (cloverleaf maneuver).</li>
+</ul></li>
+<li>Accurate results require
+<ul>
+<li>Identical values for indicated airspeed (and TAS) for all legs.</li>
+<li>Constant winds throughout data collection (single W/S vector in figure).</li>
+<li>Approx. 10 seconds stable ground speed, Vg, (G/S in figure) during each leg.</li>
+</ul></li>
+<li>Aircraft heading results for each leg entail an airborne compass swing.</li>
+</ul>
+
+<!--- FIXME: The following is mean to represent Excel spreadsheet formulas, but they either need to copy-and-pastable for Excel, or the basic formulas consistent with the rest of the Handbook should be presented --->
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Inputs for each 3-leg data set</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(V_{g_1}\)</span> <span class="math inline">\(V_{g_2}\)</span> <span class="math inline">\(V_{g_3}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(Trk_{1}\)</span> <span class="math inline">\(Trk_{2}\)</span> <span class="math inline">\(Trk_{3}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Intermediate calculations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(X_1 = V_{g_1} * \sin(\pi * (360 - Trk_1) / 180)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(Y_1 = V_{g_1} * \cos(\pi * (360 - Trk_1) / 180)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(X_2 = V_{g_2} * \sin(\pi * (360 - Trk_2) / 180)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(Y_2 = V_{g_2} * \cos(\pi * (360 - Trk_2) / 180)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(X_3 = V_{g_3} * \sin(\pi * (360 - Trk_3) / 180)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(Y_3 = V_{g_3} * \cos(\pi * (360 - Trk_3) / 180)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(M_1 = -(X_2 - X_1) / (Y_2 - Y_1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(M_2 = -(X_3 - X_1) / (Y_3 - Y_1)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(B_1 = (Y_1 + Y_2)/2 - M_1 * (X_1 + X_2) / 2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(B_2 = (Y_1 + Y_3)/2 - M_2 * (X_1 + X_3) / 2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(V_{W_x} = (B_1 - B_2) / (M_2 - M_1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(V_{w_y} = M_1 * V_{W_x} + B_1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="media/04/image32.png" style="width:5in;height:3.4in"></p>
+<table class="table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Aircraft true airspeed <span class="math inline">\(= V_T = \left[\left(X_1 - V_{W_x}\right)^2 + \left(Y_1 - V_{W_y}\right)^2 \right]^{0.5}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total wind speed <span class="math inline">\(= V_W = \left[\left(V_{W_x}^2 + V_{W_y}^2\right)\right]^{0.5}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wind direction <span class="math inline">\(= \psi_W = Psi_W = \mod(540 - (180/\pi * \textrm{ATAN2}(V_{W_y}, V_{W_x})), 360)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1<sup>st</sup> leg a/c heading <span class="math inline">\(= \psi_1 = Psi_1 = \mod(540 - (180/\pi * \textrm{ATAN2}(V_{W_y}-Y_1, V_{W_x}-X_1)), 360)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2<sup>nd</sup> leg a/c heading <span class="math inline">\(= \psi_2 = Psi_2 = \mod(540 - (180/\pi * \textrm{ATAN2}(V_{W_y}-Y_2, V_{W_x}-X_2)), 360)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3<sup>rd</sup> leg a/c heading <span class="math inline">\(= \psi_3 = Psi_3 = \mod(540 - (180/\pi * \textrm{ATAN2}(V_{W_y}-Y_3, V_{W_x}-X_3)), 360)\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="position-error-far-2325.1323-and-.1325jar-certification" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="position-error-far-2325.1323-and-.1325jar-certification"><span class="header-section-number">4.8</span> Position Error FAR 23/25.1323 and .1325/JAR Certification</h2>
+<p><img src="media/04/image47.png" class="img-fluid"></p>
+<!--- FIXME: This should be defined elsewhere --->
+<ul>
+<li>Requirements
+<ul>
+<li>Maximum error at sea level must be less than <span class="math inline">\(\pm 30 \text{ft}/100 \text{kts}\)</span> between <span class="math inline">\(1.3 V_{\mathrm{SO}}\)</span> and <span class="math inline">\(1.8 V_{S1}\)</span></li>
+<li><span class="math inline">\(V_{S0} =\)</span> Full flap, gear down, power off, stall speed</li>
+<li><span class="math inline">\(V_{S1} =\)</span> Stall speed in a specific configuration</li>
+</ul></li>
+</ul>
+<p><img src="media/04/image48.png" class="img-fluid"></p>
+<p>Errors must be equal to or less than <span class="math inline">\(\pm3\%\)</span> of <span class="math inline">\(V_c\)</span> or <span class="math inline">\(\pm5\text{kts}\)</span> whichever is greater</p>
+<section id="mil-spec-p-26292-c-usaf" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="mil-spec-p-26292-c-usaf">Mil Spec P-26292 C (USAF)</h4>
+<p>Landing configuration: <span class="math inline">\(\Delta H_{\mathrm{pc}} \pm 30\)</span> ft.</p>
+<p><img src="media/04/image50.png" style="width:5.75in;height:2.6875in"></p>
+</section>
+</section>
+<section id="pec-correction-process-flow-chart" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="pec-correction-process-flow-chart"><span class="header-section-number">4.9</span> PEC Correction Process Flow Chart</h2>
+<p><img src="media/04/image52.png" style="width:8.63072in;height:6.4465in"></p>
+</section>
+<section id="airspeedaltitudemach-graphic-relation" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="airspeedaltitudemach-graphic-relation"><span class="header-section-number">4.10</span> Airspeed/Altitude/Mach Graphic Relation</h2>
+<p><img src="media/04/image53.png" style="width:8.68611in;height:6.31181in"></p>
+<p><img src="media/04/image54.png" style="width:6.42153in;height:9.31667in"></p>
+</section>
+<section id="effect-of-errors-on-calibrated-airspeed-and-altitude" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="effect-of-errors-on-calibrated-airspeed-and-altitude"><span class="header-section-number">4.11</span> Effect of Errors on Calibrated Airspeed and Altitude</h2>
+<p><img src="media/04/image55.png" style="width:8.6875in;height:5.73819in"></p>
+<p><img src="media/04/image56.png" style="width:5.74444in;height:9in"></p>
+<p><img src="media/04/image57.png" style="width:5.33889in;height:9in"></p>
+<p><img src="media/04/image58.png" style="width:6.51111in;height:9in"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-earth-atmosphere.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-aero.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
