@@ -4,9 +4,9 @@
 
 (references 1.1, 1.2)
 
-```{block, type='author_comment', echo=FALSE}
+<--!
 For more on tables: <https://github.com/Society-of-Flight-Test-Engineers/handbook-2013/wiki/Bookdown-Tips-and-Tricks#tables>
-```
+-->
 
 Table: Prefix Multipliers
 

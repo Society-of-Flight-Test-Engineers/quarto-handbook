@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 2&nbsp; Mathematics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./01-general.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#algebra" id="toc-algebra" class="nav-link active" data-scroll-target="#algebra"> <span class="header-section-number">2.1</span> Algebra</a>
+  <ul class="collapse">
+  <li><a href="#laws" id="toc-laws" class="nav-link" data-scroll-target="#laws"> <span class="header-section-number">2.1.1</span> Laws</a></li>
+  <li><a href="#identities" id="toc-identities" class="nav-link" data-scroll-target="#identities"> <span class="header-section-number">2.1.2</span> Identities</a></li>
+  <li><a href="#equations" id="toc-equations" class="nav-link" data-scroll-target="#equations"> <span class="header-section-number">2.1.3</span> Equations</a></li>
+  <li><a href="#interest-and-annuities" id="toc-interest-and-annuities" class="nav-link" data-scroll-target="#interest-and-annuities"> <span class="header-section-number">2.1.4</span> Interest And Annuities</a></li>
+  </ul></li>
+  <li><a href="#geometry" id="toc-geometry" class="nav-link" data-scroll-target="#geometry"> <span class="header-section-number">2.2</span> Geometry</a>
+  <ul class="collapse">
+  <li><a href="#general-definitions" id="toc-general-definitions" class="nav-link" data-scroll-target="#general-definitions">General definitions</a></li>
+  </ul></li>
+  <li><a href="#trigonometery" id="toc-trigonometery" class="nav-link" data-scroll-target="#trigonometery"> <span class="header-section-number">2.3</span> Trigonometery</a>
+  <ul class="collapse">
+  <li><a href="#identities-1" id="toc-identities-1" class="nav-link" data-scroll-target="#identities-1">Identities</a></li>
+  </ul></li>
+  <li><a href="#matrix-algebra" id="toc-matrix-algebra" class="nav-link" data-scroll-target="#matrix-algebra"> <span class="header-section-number">2.4</span> Matrix Algebra</a>
+  <ul class="collapse">
+  <li><a href="#fundamentals" id="toc-fundamentals" class="nav-link" data-scroll-target="#fundamentals"> <span class="header-section-number">2.4.1</span> Fundamentals</a></li>
+  <li><a href="#cofactors-and-determinants" id="toc-cofactors-and-determinants" class="nav-link" data-scroll-target="#cofactors-and-determinants"> <span class="header-section-number">2.4.2</span> Cofactors and Determinants</a></li>
+  <li><a href="#computing-the-inverse-of-a-matrix" id="toc-computing-the-inverse-of-a-matrix" class="nav-link" data-scroll-target="#computing-the-inverse-of-a-matrix"> <span class="header-section-number">2.4.3</span> Computing the Inverse of a Matrix</a></li>
+  <li><a href="#cramers-rule" id="toc-cramers-rule" class="nav-link" data-scroll-target="#cramers-rule"> <span class="header-section-number">2.4.4</span> Cramer’s Rule</a></li>
+  </ul></li>
+  <li><a href="#vector-algebra" id="toc-vector-algebra" class="nav-link" data-scroll-target="#vector-algebra"> <span class="header-section-number">2.5</span> Vector Algebra</a>
+  <ul class="collapse">
+  <li><a href="#addition" id="toc-addition" class="nav-link" data-scroll-target="#addition"> <span class="header-section-number">2.5.1</span> Addition</a></li>
+  <li><a href="#subtraction" id="toc-subtraction" class="nav-link" data-scroll-target="#subtraction"> <span class="header-section-number">2.5.2</span> Subtraction</a></li>
+  <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication"> <span class="header-section-number">2.5.3</span> Scalar Multiplication</a></li>
+  <li><a href="#dot-product" id="toc-dot-product" class="nav-link" data-scroll-target="#dot-product"> <span class="header-section-number">2.5.4</span> Dot Product</a></li>
+  <li><a href="#norm" id="toc-norm" class="nav-link" data-scroll-target="#norm"> <span class="header-section-number">2.5.5</span> Norm</a></li>
+  <li><a href="#vector-cross-product" id="toc-vector-cross-product" class="nav-link" data-scroll-target="#vector-cross-product"> <span class="header-section-number">2.5.6</span> Vector Cross Product</a></li>
+  <li><a href="#vector-differentiation" id="toc-vector-differentiation" class="nav-link" data-scroll-target="#vector-differentiation"> <span class="header-section-number">2.5.7</span> Vector Differentiation</a></li>
+  <li><a href="#motion-of-a-point-using-two-reference-systems" id="toc-motion-of-a-point-using-two-reference-systems" class="nav-link" data-scroll-target="#motion-of-a-point-using-two-reference-systems"> <span class="header-section-number">2.5.8</span> Motion of a point using two reference systems</a></li>
+  <li><a href="#motion-of-a-point-using-one-reference-system" id="toc-motion-of-a-point-using-one-reference-system" class="nav-link" data-scroll-target="#motion-of-a-point-using-one-reference-system"> <span class="header-section-number">2.5.9</span> Motion of a point using one reference system</a></li>
+  </ul></li>
+  <li><a href="#probability-and-statistics" id="toc-probability-and-statistics" class="nav-link" data-scroll-target="#probability-and-statistics"> <span class="header-section-number">2.6</span> Probability and Statistics</a></li>
+  <li><a href="#standard-series" id="toc-standard-series" class="nav-link" data-scroll-target="#standard-series"> <span class="header-section-number">2.7</span> Standard Series</a></li>
+  <li><a href="#derivative-table" id="toc-derivative-table" class="nav-link" data-scroll-target="#derivative-table"> <span class="header-section-number">2.8</span> Derivative Table</a></li>
+  <li><a href="#integral-table" id="toc-integral-table" class="nav-link" data-scroll-target="#integral-table"> <span class="header-section-number">2.9</span> Integral Table</a></li>
+  <li><a href="#laplace-table" id="toc-laplace-table" class="nav-link" data-scroll-target="#laplace-table"> <span class="header-section-number">2.10</span> Laplace Table</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">2.11</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="algebra" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="algebra"><span class="header-section-number">2.1</span> Algebra</h2>
+<p>(reference 2.1)</p>
+<section id="laws" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="laws"><span class="header-section-number">2.1.1</span> Laws</h3>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Commutative</td>
+<td style="text-align: left;"><span class="math display">\[ a+b = b+a ,\, ab = ba \]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Associative</td>
+<td style="text-align: left;"><span class="math display">\[a+(b+c) = (a+b)+c\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Distributive</td>
+<td style="text-align: left;"><span class="math display">\[a(b+c) = ab+ac\]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="identities" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="identities"><span class="header-section-number">2.1.2</span> Identities</h3>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Exponents</th>
+<th style="text-align: center;">Logarithms<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[a^x a^y = a^{x+y}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\log_b{b} = 1\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[\left( ab \right) ^x = a^x b^x \]</span></td>
+<td style="text-align: center;"><span class="math display">\[\log_b{1} = 0\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[\left( a^x \right) y = a^xy \]</span></td>
+<td style="text-align: center;"><span class="math display">\[ \log_b \left( MN \right) = log_b{M} + log_b{N}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[a^{mn}  = \left( a^m \right) ^n \]</span></td>
+<td style="text-align: center;"><span class="math display">\[\log_b \left( \frac{M}{N} \right) = \log_b{M} - \log_b{N}\]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[a^0 = 1\]</span> If <span class="math inline">\(a \neq 0\)</span></td>
+<td style="text-align: center;"><span class="math display">\[\log_b \left( M^p \right)   = p \log_b{M}\]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[a^{-x} = \frac{1}{a^x} \]</span></td>
+<td style="text-align: center;"><span class="math display">\[\log_b \left( \frac{1}{M} \right) = -\log_b{M} \]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[ \frac{a^x}{a^y} = a^{x-y} \]</span></td>
+<td style="text-align: center;"><span class="math display">\[ \log_b{\sqrt[q]{M}} = \frac{1}{q} \log_b{M} \]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[ \sqrt[x]{ab} = \left( \sqrt[x]{a} \right) \left( \sqrt[x]{b} \right) \]</span></td>
+<td style="text-align: center;"><span class="math display">\[ \log_b{M} = \left(\log_c{M} \right) \left(\log_b{c} \right)= \frac{\log_c{M}}{\log_c{b}} \]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[ a^{\frac{x}{y}} = \sqrt[y]{a^x} = \left( \sqrt[y]{a} \right)^x \]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[ a^{\frac{1}{y}} = \sqrt[y]{a} \]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math display">\[ \left( \sqrt[x]{a} \right) \left( \sqrt[y]{a} \right) = a^{\left( \frac{1}{x} + \frac{1}{y} \right)} = \sqrt[xy]{a^{x+y}} \]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math display">\[ \sqrt{a} + \sqrt{b} = \sqrt{a + b + 2\sqrt{ab}}\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<span class="math display">\[\begin{array}{lllll}
+\log (6.54) =  0.8156 &amp;&amp;&amp;&amp;\\
+&amp; \log (6540)         &amp;= \log (6.54 \times 10^3 )   &amp;=  0.8156 + 3 &amp;= \fbox{3.8156}\\
+&amp; \log ( 0.6540)      &amp;= \log (6.54 \times 10^{-1}) &amp;=  0.8156 - 1 &amp;= \fbox{9.8156 - 10}\\
+&amp; \log ( 0.000\,6540) &amp;= \log (6.54 \times 10^{-4}) &amp;=  0.8156 - 4 &amp;= \fbox{6.8156 - 10}\\
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{lllll}
+\text{calculate } 68.31 \times  0.2754 &amp;&amp;&amp;&amp;\\
+&amp;\log (68.31) &amp;= 1.8354&amp;&amp;\\
+&amp;\log ( 0.2754) &amp;= - 0.56&amp;&amp;\\
+&amp;1.8354 +(- 0.56) &amp;= 1.2745&amp;&amp;\\
+&amp;\log^{-1} (1.2745) &amp;= \fbox{18.81}&amp;&amp;\\
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{lllll}
+\text{calculate } ( 0.6831)^{1.53} &amp;&amp;&amp;&amp;\\
+&amp; log ( 0.6831) &amp;= - 0.1655&amp;&amp;\\
+&amp; 1.53 \times - 0.1655 &amp;= - 0.253&amp;&amp;\\
+&amp; log^{-1} (- 0.253) &amp;= \fbox{ 0.5582}&amp;&amp;
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{lllll}
+\text{calculate } ( 0.6831)^{\frac{1}{5}} &amp;&amp;&amp;&amp;\\
+&amp; log ( 0.6831) &amp;= - 0.1655&amp;&amp;\\
+&amp; \frac{1}{5} \times - 0.1655 &amp;= - 0.0331&amp;&amp;\\
+&amp; log^{-1} (- 0.0331) &amp;= \fbox{ 0.9266}&amp;&amp;
+\end{array}\]</span>
+<span class="math display">\[\begin{array}{lllll}
+\text{solve for $x$ in $ 0.6931^x = 27.54$ }&amp;&amp;&amp;&amp;\\
+&amp; log ( 0.6931^x) &amp;= log (27.54)&amp;&amp;\\
+&amp; x log ( 0.6931) &amp;= log (27.54)&amp;&amp;\\
+&amp; x &amp;= \frac{log (27.54 )}{log ( 0.6931)}&amp;&amp;\\
+&amp; x &amp;= \frac{1.44}{- 0.1655} &amp;= \fbox{-8.701}
+\end{array}\]</span>
+</section>
+<section id="equations" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="equations"><span class="header-section-number">2.1.3</span> Equations</h3>
+<section id="quadratic-equation" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="quadratic-equation">Quadratic Equation</h4>
+<p><span class="math display">\[ax^2 + bx + c =0\]</span></p>
+<p>Two roots, both real or both complex</p>
+<p><span class="math display">\[x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span></p>
+</section>
+<section id="cubic-equation" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="cubic-equation">Cubic Equation</h4>
+<p><span class="math display">\[y^3 + py^2 + qy + r = 0\]</span></p>
+<p>Three roots, all real or one real &amp; two complex</p>
+<p>Let <span class="math inline">\(y = x - \frac{p}{3}\)</span> to rewrite equation in form of <span class="math inline">\(x^3 + ax + b = 0\)</span></p>
+<p>where <span class="math inline">\(a = \frac{3q - p^2}{3}\)</span> and <span class="math inline">\(b = \frac{2p^3 - 9pq - 27r}{27}\)</span></p>
+<p>let</p>
+<p><span class="math display">\[ A = \sqrt[3]{-\frac{b}{2} + \sqrt{\frac{b^2}{4} + \frac{a^3}{27}}}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[B =\sqrt[3]{-\frac{b}{2} - \sqrt{\frac{b^2}{4} + \frac{a^3}{27}}} \]</span></p>
+<p>then</p>
+<p><span class="math display">\[\begin{align}
+x_1 &amp;= A + B\\
+x_2 &amp;= \frac{-(A + B)}{2} + \frac{\sqrt{-3}}{2} (A - B)\\
+x_3 &amp;= \frac{-(A + B)}{2} - \frac{\sqrt{-3}}{2} (A - B)
+\end{align}\]</span></p>
+<p>Special cases:</p>
+<p>If <span class="math inline">\(\frac{b^2}{4} + \frac{a^3}{27} &lt; 0\)</span> , then the real roots are</p>
+<p><span class="math display">\[x_{1,2,3} = 2 \sqrt{\frac{-a}{3}} cos \left( \frac{\phi}{3} + 120° k \right)\]</span></p>
+<p>where <span class="math inline">\(k = 0,1,2\)</span></p>
+<p>and</p>
+<p><span class="math display">\[cos\phi = + \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b &lt; 0\]</span></p>
+<p>or</p>
+<p><span class="math display">\[cos\phi = - \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b &gt; 0\]</span></p>
+<p>If <span class="math inline">\(\frac{b^2}{4} + \frac{a^3}{27} &gt; 0\)</span> and <span class="math inline">\(a &gt; 0\)</span> , the single real root is</p>
+<p><span class="math display">\[x = 2 \sqrt{\frac{a}{3}} cot \left( 2\phi \right)\]</span></p>
+<p>where <span class="math inline">\(tan\phi = \sqrt[3]{tan\psi}\)</span></p>
+<p>and</p>
+<p><span class="math display">\[ cot \left( 2\psi \right) = + \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b &lt; 0\]</span></p>
+<p>or</p>
+<p><span class="math display">\[ cot \left( 2\psi \right) = - \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b &lt; 0\]</span></p>
+<p>If <span class="math inline">\(\frac{b^2}{4} + \frac{a^3}{27} = 0\)</span>, the three real roots are</p>
+<p><span class="math display">\[ x_{1} = -2 \sqrt{\frac{-a}{3}}, \; x_{2,3} = +\sqrt{\frac{-a}{3}} \;\;\; \text{if} \; b &gt; 0 \]</span></p>
+<p>or</p>
+<p><span class="math display">\[ x_{1} = +2 \sqrt{\frac{-a}{3}}, \; x_{2,3} = -\sqrt{\frac{-a}{3}} \;\;\; \text{if} \; b &lt; 0 \]</span></p>
+</section>
+<section id="quartic-biquadratic-equation" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="quartic-biquadratic-equation">Quartic (biquadratic) Equation</h4>
+<p>For</p>
+<p><span class="math display">\[y^4 + py^3 + qy^2 + ry + s = 0\]</span></p>
+<p>let <span class="math inline">\(y = x - \frac{p}{4}\)</span> to rewrite equation as</p>
+<p><span class="math display">\[x^4 + ax^2 + bx + c = 0\]</span></p>
+<p>let <span class="math inline">\(l\)</span>, <span class="math inline">\(m\)</span>, <span class="math inline">\(n\)</span> denote roots of the following resolvent cubic:</p>
+<p><span class="math display">\[ t^3 + \frac{1}{2} at^2 +  \frac{1}{16} \left( a^2 - 4c \right) t -  \frac{1}{64}b^2 = 0 \]</span></p>
+<p>The roots of the quartic are</p>
+<p><span class="math display">\[ x_{1} = + \sqrt{l} + \sqrt{m} + \sqrt{n} \]</span></p>
+<p><span class="math display">\[ x_{2} = + \sqrt{l} - \sqrt{m} - \sqrt{n} \]</span></p>
+<p><span class="math display">\[ x_{3} = - \sqrt{l} + \sqrt{m} - \sqrt{n} \]</span></p>
+<p><span class="math display">\[ x_{4} = - \sqrt{l} - \sqrt{m} + \sqrt{n} \]</span></p>
+</section>
+</section>
+<section id="interest-and-annuities" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="interest-and-annuities"><span class="header-section-number">2.1.4</span> Interest And Annuities</h3>
+<p>(reference 2.3)</p>
+<p>Amount:</p>
+<p><span class="math inline">\(P\)</span> principal at <span class="math inline">\(i\)</span> interest for <span class="math inline">\(n\)</span> time accumulates to amount <span class="math inline">\(A_{n}\)</span>.</p>
+<p>Simple interest:</p>
+<p><span class="math display">\[A_{n} = P(1 + ni)\]</span></p>
+<p>at interest compounded each <span class="math inline">\(n\)</span> interval:</p>
+<p><span class="math display">\[A_{n} = P(1 + i)^n \]</span></p>
+<p>at interest compounded <span class="math inline">\(q\)</span> times per <span class="math inline">\(n\)</span> interval:</p>
+<p><span class="math display">\[A_{n} = P(1 + \frac{r}{q})^{nq} \]</span></p>
+<p>where <span class="math inline">\(r\)</span> is the nominal (quoted) rate of interest</p>
+<p>Effective Interest:</p>
+<p>The rate per time period at which interest is earned during each period is called the effective rate <span class="math inline">\(i\)</span>.</p>
+<p><span class="math display">\[i = \left( 1 + \frac{r}{q} \right)^q -1\]</span></p>
+<p>Solve above equations for <span class="math inline">\(P\)</span> to determine investment required now to accumulate to amount <span class="math inline">\(A_{n}\)</span></p>
+<p>True discount,</p>
+<p><span class="math display">\[D = A_{n} - P\]</span></p>
+<p>Annuities:</p>
+<p>rent <span class="math inline">\(R\)</span> is consistent payment at each period <span class="math inline">\(n\)</span></p>
+<p>let</p>
+<p><span class="math display">\[s_n \equiv \frac{\left( 1 + i \right)^n - 1}{i}\]</span></p>
+<p>and let</p>
+<p><span class="math display">\[r_n \equiv \frac{1 - \left( 1 + i \right)^{-n}}{i} \]</span></p>
+<p>then <span class="math inline">\(A_n = R\,s_{n}\)</span></p>
+<p>or</p>
+<p><span class="math display">\[n = \frac{\log \left( A_n + R \right) - \log R }{\log \left(1 + i \right)} \]</span></p>
+<p>Present value of an annuity, <span class="math inline">\(A\)</span> is the sum of the present values of all the future payments. <span class="math inline">\(A = R\,r_{n}\)</span></p>
+<p>Monthly interest rate = $ = $</p>
+<p>Month Term = # months in loan</p>
+<p>Monthly payment = $ $</p>
+<p>Final value (<span class="math inline">\(FV\)</span>) of an investment is a function of the initial principal invested (P), interest rate (<span class="math inline">\(r\)</span> expressed as $ 0.05$ for <span class="math inline">\(5%\)</span>, $ 0.1$ for <span class="math inline">\(10%\)</span>, etc.), time invested (<span class="math inline">\(Y\)</span> typically years), and compounding periods per year (<span class="math inline">\(n\)</span> typically <span class="math inline">\(n = 1\)</span> for yearly or <span class="math inline">\(n = 12\)</span> for monthly).</p>
+<p><span class="math display">\[FV &nbsp; = &nbsp; P (1 &nbsp;+&nbsp; \frac{r}{n})^{Y_n}\]</span></p>
+</section>
+</section>
+<section id="geometry" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="geometry"><span class="header-section-number">2.2</span> Geometry</h2>
+<p>(references 2.1, 2.2)</p>
+<section id="general-definitions" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="general-definitions">General definitions</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(A\)</span></td>
+<td style="text-align: left;">area</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: left;">side length</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(b\)</span></td>
+<td style="text-align: left;">base length</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(C\)</span></td>
+<td style="text-align: left;">circumference</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(D\)</span></td>
+<td style="text-align: left;">diameter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
+<td style="text-align: left;">height</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(n\)</span></td>
+<td style="text-align: left;">number of sides</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(R\)</span></td>
+<td style="text-align: left;">radius</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(V\)</span></td>
+<td style="text-align: left;">volume</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x, y, z\)</span></td>
+<td style="text-align: left;">distances along orthogonal coordinate system</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\beta\)</span></td>
+<td style="text-align: left;">interior vertex angle</td>
+</tr>
+</tbody>
+</table>
+<section id="triangle" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="triangle">Triangle</h4>
+<p><span class="math display">\[\begin{align}
+A &amp;= \frac{bh}{2}\\
+\text{sum of interior angles} &amp;= 180°
+\end{align}\]</span></p>
+</section>
+<section id="rectangle" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="rectangle">Rectangle</h4>
+<p><span class="math display">\[\begin{align}
+A &amp;= bh\\
+\text{sum of interior angles} &amp;= 360°
+\end{align}\]</span></p>
+</section>
+<section id="parallelogram-opposite-sides-parallel" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="parallelogram-opposite-sides-parallel">Parallelogram (opposite sides parallel)</h4>
+<p><span class="math display">\[ A = ah = ab \sin \beta \]</span></p>
+</section>
+<section id="trapezoid-4-sides-2-parallel" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="trapezoid-4-sides-2-parallel">Trapezoid (4 sides, 2 parallel)</h4>
+<p><span class="math display">\[ A = \frac{h \left(a + b \right)}{2} \]</span></p>
+</section>
+<section id="pentagon-hexagon-and-other-n-sided-polygons" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="pentagon-hexagon-and-other-n-sided-polygons">Pentagon, Hexagon, and other <span class="math inline">\(n\)</span>-sided Polygons</h4>
+<p><span class="math display">\[\begin{align}
+A &amp;= \frac{1}{4} n a^2 \cot \left( \frac{180°}{n} \right) \\
+R &amp;= \text{radius of circumscribed circle} = \frac{1}{2} a^2 \csc \left( \frac{180°}{n} \right) \\
+r &amp;= \text{radius of inscribed circle} = \frac{1}{2} a \cot \left( \frac{180°}{n} \right) \\
+\beta &amp;= 180° - \frac{360°}{n} \\
+\text{sum of interior angles} &amp;= n 180° - 360° \\
+\end{align}\]</span></p>
+</section>
+<section id="circle" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="circle">Circle</h4>
+<p><span class="math display">\[\begin{align}
+A &amp;= \pi R^2 \\
+C &amp;= 2 \pi R = \pi D \\
+\text{perimeter of n-sided polygon inscribed within a circle} &amp;= 2 n R \sin \left(\frac{\pi}{n} \right) \\
+\text{area of circumscribed polygon} &amp;= n R^2 \tan \left( \frac{\pi}{n} \right) \\
+\text{area of inscribed polygon} &amp;= \frac{1}{2} n R^2 \sin \left( \frac{2\pi}{n} \right) \\
+\text{equation for a circle with center at (h,k):} \\
+R^2  &amp;= \left(x-h \right)^2  + \left(y-k \right)^2 \\
+\end{align}\]</span></p>
+</section>
+<section id="ellipse" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="ellipse">Ellipse</h4>
+<p><span class="math display">\[\begin{align}
+f &amp;= \text{semimajor axis} \\
+g &amp;= \text{semiminor axis} \\
+e &amp;= \text{eccentricity} = \frac{ \sqrt{f^2 -g^2} }{f} \\
+A &amp;= \pi e f \\
+\text{equation for ellipse with center at (h,k):} \\
+\frac{(x-h)^2 }{f^2}  + \frac{(y-k)^2}{g^2}  &amp;= 1 \text{ if major axis along x-axis} \\
+\text{or } \frac{(y-k)^2 }{f^2}  + \frac{(x-h)^2}{g^2}  &amp;= 1 \text{ if major axis along y-axis} \\
+\text{distance from center to either focus} &amp;= \sqrt{f^2 -g^2} \\
+\text{latus rectum} &amp;= \frac{2g^2}{a} \\
+\end{align}\]</span></p>
+</section>
+<section id="parabola" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="parabola">Parabola</h4>
+<p><span class="math display">\[\begin{align}
+p &amp;= \text{distance from vertex to focus} \\
+e &amp;= \text{eccentricity} = 1 \\
+\text{equation for parabola with vertex at (h,k), focus at (h+p,k):} \\
+(y-k)^2  = 4j(x-h) \text{ if } j &gt; 0 \\
+\text{equation for parabola with vertex at (h,k), focus at (h,k+p):} \\
+(x-h)^2  = 4j(y-k) \text{ if } j &lt; 0 \\
+\end{align}\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image22.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Parabola Diagram</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="hyperbola" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="hyperbola">Hyperbola</h4>
+<p><span class="math display">\[\begin{align}
+p &amp;= \text{distance between center and vertex} \\
+q &amp;= \text{distance between center and conjugate axis} \\
+e &amp;= \text{eccentricity} = \frac{ \sqrt{p^2 +q^2} }{p} \\
+\text{equation for hyperbola centered at (h, k):} \\
+\frac{(x-h)^2}{p^2} - \frac{(y-k)^2}{q^2} &amp;= 1 \text{ if asymptotes slopes} = \pm \frac{q}{p} \\
+\text{or } \frac{(y-k)^2}{p^2} - \frac{(x-h)^2}{q^2} &amp;= 1 \text{ if asymptotes slopes} = \pm \frac{p}{q} \\
+\end{align}\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image23.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Hyperbola Diagram</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sphere" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sphere">Sphere</h4>
+<p><span class="math display">\[\begin{align}
+A &amp;= 4 \pi R^2 \\
+V &amp;= \frac{4}{3} \pi R^3 \\
+\text{equation for sphere centered at origin:} \\
+x^2 + y^2 + z^2 &amp;= R^2 \\
+\end{align}\]</span></p>
+</section>
+<section id="torus" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="torus">Torus</h4>
+<p><span class="math display">\[\begin{align}
+\rho &amp;= \text{smaller radius} \\
+A &amp;= 4 \pi ^2 R \rho \\
+V &amp;= 2 \pi ^2 R \rho^2 \\
+\end{align}\]</span></p>
+</section>
+</section>
+</section>
+<section id="trigonometery" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="trigonometery"><span class="header-section-number">2.3</span> Trigonometery</h2>
+<p>(references 2.1, 2.2)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image24.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Right Triangle</figcaption><p></p>
+</figure>
+</div>
+<p>For any right triangle with hypotenuse <span class="math inline">\(h\)</span>, an acute angle <span class="math inline">\(\alpha\)</span>, side length <span class="math inline">\(o\)</span> opposite from <span class="math inline">\(\alpha\)</span>, and side length <span class="math inline">\(a\)</span> adjacent to <span class="math inline">\(\alpha\)</span>, the following terms are defined:</p>
+<p><span class="math display">\[\begin{align}
+\text{sine } \alpha &amp;=&nbsp;\sin{\alpha}&nbsp;=&nbsp;\frac{o}{h} \\
+\text{cosine } \alpha &amp;=&nbsp;\cos{\alpha}&nbsp;=&nbsp;\frac{a}{h} \\
+\text{tangent } \alpha &amp;=&nbsp;\tan{\alpha}&nbsp;=&nbsp;\frac{o}{a} = \frac{\sin{\alpha}}{cos{\alpha}} \\
+\text{cotangent } \alpha &amp;=&nbsp;\cot{\alpha}&nbsp;= \text{ctn } \alpha&nbsp;=&nbsp;\frac{a}{o} = \frac{1}{\tan{\alpha}} = \frac{\cos{\alpha}}{\sin{\alpha}} \\
+\text{secant } \alpha &amp;= \sec{\alpha} = \frac{h}{a} = \frac{1}{\cos{\alpha}} \\
+\text{cosecant } \alpha &amp;= \csc{\alpha} = \frac{h}{o} = \frac{1}{\sin{\alpha}} \\
+\text{exsecant } \alpha &amp;= \text{exsec } \alpha = \sec{\alpha} - 1 \\
+\text{versine } \alpha &amp;= \text{vers } \alpha = 1 - \cos{\alpha} \\
+\text{coversine } \alpha &amp;= \text{covers } \alpha = 1 - \sin{\alpha} \\
+\text{haversine } \alpha &amp;= \text{hav } \alpha = \frac{\text{vers } \alpha}{2} \\
+\end{align}\]</span></p>
+<p>also defined are the following…</p>
+<p><span class="math display">\[\begin{align}
+\text{hyperbolic sine of } x &amp;=&nbsp;\sinh{x}&nbsp;=&nbsp;\frac{\mathrm{e}^x - \mathrm{e}^{-x}}{2} \\
+\text{hyperbolic cosine of } x &amp;=&nbsp;\cosh{x}&nbsp;=&nbsp;\frac{\mathrm{e}^x + \mathrm{e}^{-x}}{2} \\
+\text{hyperbolic tangent of } x &amp;=&nbsp;\tanh{x}&nbsp;=&nbsp;\frac{\sinh{x}}{\cosh{x}} = \frac{\mathrm{e}^x - \mathrm{e}^{-x}}{\mathrm{e}^x + \mathrm{e}^{-x}} \\
+\text{csch } x&nbsp;&amp;=&nbsp;\frac{1}{\sinh{x}} \\
+\text{sech } x&nbsp;&amp;=&nbsp;\frac{1}{\cosh{x}} \\
+\text{coth } x&nbsp;&amp;=&nbsp;\frac{1}{\tanh{x}} \\
+\end{align}\]</span></p>
+<section id="identities-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="identities-1">Identities</h3>
+<section id="pythagorean-identities" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="pythagorean-identities">Pythagorean Identities:</h4>
+<p><span class="math display">\[\begin{align}
+\sin^2{\alpha} + \cos^2{\alpha} &amp;= 1 \\
+1 + \tan^2{\alpha} &amp;= \sec^2{\alpha} \\
+1 + \cot^2{\alpha} &amp;= \csc^2{\alpha} \\
+\end{align}\]</span></p>
+</section>
+<section id="half-angle-identities" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="half-angle-identities">Half Angle Identities:</h4>
+<p><span class="math display">\[\begin{align}
+\sin{\frac{\alpha}{2}} &amp;= \pm \sqrt{\frac{1 - \cos{\alpha}}{2}} \text{ (negative if } \frac{\alpha}{2} \text{ is in quadrant III or IV)}\\
+\cos{\frac{\alpha}{2}} &amp;= \pm \sqrt{\frac{1 + \cos{\alpha}}{2}} \text{ (negative if } \frac{\alpha}{2} \text{ is in quadrant II or III)}\\
+\tan{\frac{\alpha}{2}} &amp;= \pm \sqrt{\frac{1 - \cos{\alpha}}{1 + \cos{\alpha}}} \text{ (negative if } \frac{\alpha}{2} \text{ is in quadrant II or IV)}\\
+\end{align}\]</span></p>
+</section>
+<section id="double-angle-identities" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="double-angle-identities">Double-Angle Identities:</h4>
+<p><span class="math display">\[\begin{align}
+\sin{2\alpha} &amp;= 2\sin{\alpha}\cos{\alpha}\\
+\cos{2\alpha} &amp;= 2\cos^2{\alpha} - 1 = 1 - 2\sin^2{\alpha} = \cos^2{\alpha} - \sin^2{\alpha}\\
+\tan{2\alpha} &amp;= \frac{2\tan{\alpha}}{1 - \tan^2{\alpha}}\\
+\end{align}\]</span></p>
+</section>
+<section id="n-angle-identities" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="n-angle-identities">n-Angle Identities:</h4>
+<p><span class="math display">\[\begin{align}
+\sin{3\alpha} &amp;= 3\sin{\alpha} - 4\sin^3{\alpha}\\
+\cos{3\alpha} &amp;= 4\cos^3{\alpha} - 3\cos{\alpha}\\
+\sin{n\alpha} &amp;= 2\sin\big(\left(n-1\right)\alpha\big) \cos{\alpha} - \sin(n-2)\alpha\\
+\cos{n\alpha} &amp;= 2\cos\big(\left(n-1\right)\alpha\big) \cos{\alpha} - \cos\left(n-2\right)\alpha\\
+\end{align}\]</span></p>
+</section>
+<section id="two-angle-identities" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="two-angle-identities">Two-Angle Identities:</h4>
+<p><span class="math display">\[\begin{align}
+\sin\left(\alpha + \beta\right) &amp;= \sin{\alpha}\cos{\beta} + \cos{\alpha}\sin{\beta}\\
+\cos\left(\alpha + \beta\right) &amp;= \cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}\\
+\tan\left(\alpha + \beta\right) &amp;= \frac{\tan{\alpha} + \tan{\beta}}{1 - \tan{\alpha}\tan{\beta}}\\
+\sin\left(\alpha - \beta\right) &amp;= \sin{\alpha}\cos{\beta} - \cos{\alpha}\sin{\beta}\\
+\cos\left(\alpha - \beta\right) &amp;= \cos{\alpha}\cos{\beta} + \sin{\alpha}\sin{\beta}\\
+\tan\left(\alpha - \beta\right) &amp;= \frac{\tan{\alpha} - \tan{\beta}}{1 + \tan{\alpha}\tan{\beta}}\\
+\end{align}\]</span></p>
+</section>
+<section id="sum-and-difference-identities" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sum-and-difference-identities">Sum and Difference Identities:</h4>
+<p><span class="math display">\[\begin{align}
+\sin{\alpha} + \sin{\beta} &amp;=  2\sin{\frac{\alpha + \beta}{2}}\cos{\frac{\alpha - \beta}{2}}\\
+\sin{\alpha} - \sin{\beta} &amp;=  2\cos{\frac{\alpha + \beta}{2}}\sin{\frac{\alpha - \beta}{2}}\\
+\cos{\alpha} + \cos{\beta} &amp;=  2\cos{\frac{\alpha + \beta}{2}}\sin{\frac{\alpha - \beta}{2}}\\
+\cos{\alpha} - \cos{\beta} &amp;= -2\cos{\frac{\alpha + \beta}{2}}\sin{\frac{\alpha - \beta}{2}}\\
+\tan{\alpha} + \tan{\beta} &amp;=  \frac{\sin\left(\alpha + \beta\right)}{\cos{\alpha}\cos{\beta}}\\
+\cot{\alpha} + \cot{\beta} &amp;=  \frac{\sin\left(\alpha + \beta\right)}{\sin{\alpha}\sin{\beta}}\\
+\tan{\alpha} - \tan{\beta} &amp;=  \frac{\sin\left(\alpha - \beta\right)}{\cos{\alpha}\cos{\beta}}\\
+\cot{\alpha} - \cot{\beta} &amp;= -\frac{\sin\left(\alpha - \beta\right)}{\sin{\alpha}\sin{\beta}}\\
+\sin^2{\alpha} - \sin^2{\beta} &amp;=  \sin\left(\alpha + \beta\right) \sin\left(\alpha - \beta\right)\\
+\cos^2{\alpha} - \cos^2{\beta} &amp;= -\sin\left(\alpha + \beta\right) \sin\left(\alpha - \beta\right)\\
+\cos^2{\alpha} - \sin^2{\beta} &amp;=  \cos\left(\alpha + \beta\right) \cos\left(\alpha - \beta\right)\\
+\end{align}\]</span></p>
+</section>
+<section id="power-identities" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="power-identities">Power Identities:</h4>
+<p><span class="math display">\[\begin{align}
+\sin{\alpha}\sin{\beta} &amp;= \frac{\cos\left(\alpha - \beta\right) - \cos\left(\alpha + \beta\right)}{2}\\
+\cos{\alpha}\cos{\beta} &amp;= \frac{\cos\left(\alpha - \beta\right) + \cos\left(\alpha + \beta\right)}{2}\\
+\sin{\alpha}\cos{\beta} &amp;= \frac{\sin\left(\alpha + \beta\right) + \sin\left(\alpha - \beta\right)}{2}\\
+\cos{\alpha}\sin{\beta} &amp;= \frac{\sin\left(\alpha + \beta\right) - \sin\left(\alpha - \beta\right)}{2}\\
+\tan{\alpha}\cot{\alpha} &amp;= \sin{\alpha}\csc{\alpha} = \cos{\alpha}\sec{\alpha} = 1\\
+\sin^2{\alpha} &amp;= \frac{1 - \cos{2\alpha}}{2}\\
+\cos^2{\alpha} &amp;= \frac{1 + \cos{2\alpha}}{2}\\
+\sin^3{\alpha} &amp;= \frac{3\sin{\alpha} - \sin{3\alpha}}{4}\\
+\cos^3{\alpha} &amp;= \frac{3\cos{\alpha} + \cos{3\alpha}}{4}\\
+\sin^4{\alpha} &amp;= \frac{3 - 4\cos{2\alpha} + \cos{4\alpha}}{8}\\
+\cos^4{\alpha} &amp;= \frac{3 + 4\cos{2\alpha} + \cos{4\alpha}}{8}\\
+\sin^5{\alpha} &amp;= \frac{10\sin{\alpha} - 5\sin{3\alpha} + \sin{5\alpha}}{16}\\
+\cos^5{\alpha} &amp;= \frac{10\cos{\alpha} + 5\cos{3\alpha} + \cos{5\alpha}}{16}\\
+\end{align}\]</span></p>
+</section>
+<section id="oblique-triangles" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="oblique-triangles">OBLIQUE TRIANGLES</h4>
+<p>(no right angle, angles A,B,C are opposite of legs a,b,c)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image25.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Oblique Triangle</figcaption><p></p>
+</figure>
+</div>
+<section id="law-of-sines" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="law-of-sines">Law of Sines:</h5>
+<p><span class="math display">\[\frac{a}{\sin{A}} = \frac{b}{\sin{B}} = \frac{c}{\sin{C}}\]</span></p>
+</section>
+<section id="law-of-cosines" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="law-of-cosines">Law of Cosines:</h5>
+<p><span class="math display">\[\begin{align}
+a^2  &amp;= b^2  + c^2  - 2bc\cos{A}\\
+b^2  &amp;= a^2  + c^2  - 2ac\cos{B}\\
+c^2  &amp;= a^2  + b^2  - 2ab\cos{C}\\
+\cos{C} &amp;= \frac{a^2 +b^2 -c^2}{2ab}\\
+\end{align}\]</span></p>
+</section>
+<section id="law-of-tangents" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="law-of-tangents">Law of Tangents:</h5>
+<p><span class="math display">\[\frac{a-b}{a+b} = \frac{\tan\frac{a-b}{2}}{\tan\frac{a+b}{2}}\]</span></p>
+</section>
+<section id="projection-formulas" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="projection-formulas">Projection Formulas:</h5>
+<p><span class="math display">\[\begin{align}
+a &amp;= b\cos{C} + c\cos{B}\\
+b &amp;= c\cos{A} + a\cos{C}\\
+c &amp;= a\cos{B} + b\cos{A}\\
+\end{align}\]</span></p>
+</section>
+<section id="mollweides-check-formulas" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="mollweides-check-formulas">Mollweide’s Check Formulas:</h5>
+<p><span class="math display">\[\begin{align}
+\frac{a-b}{c} &amp;= \frac{\sin\frac{A-B}{2}}{\cos\frac{C}{2}}\\
+\frac{a+b}{c} &amp;= \frac{\cos\frac{A-B}{2}}{\sin\frac{C}{2}}\\
+\end{align}\]</span></p>
+</section>
+</section>
+</section>
+</section>
+<section id="matrix-algebra" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="matrix-algebra"><span class="header-section-number">2.4</span> Matrix Algebra</h2>
+<section id="fundamentals" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="fundamentals"><span class="header-section-number">2.4.1</span> Fundamentals</h3>
+<p>(reference 2.5)</p>
+<p>Given two matrices, <span class="math inline">\(A, B\)</span> where <span class="math inline">\(A\)</span> is an <span class="math inline">\(i \times m\)</span> matrix and <span class="math inline">\(B\)</span> is an <span class="math inline">\(m \times j\)</span> matrix, that is, the numbers of columns of the first matrix equals the number of rows of the second matrix, we define matrix multiplication as follows:</p>
+<p><span class="math display">\[A \times B = A B = C\]</span> where the entry in the <em>i</em>th row and <em>j</em>th column is given by <span class="math inline">\(c_{ij}\)</span> where:</p>
+<p><span class="math display">\[c_{ij} = \sum_{k=1}^m (a_{ik}b_{kj}).\]</span></p>
+<p>In other words, we take the dot product of the <em>i</em>th row and the <em>j</em>th column.</p>
+<p>For example, the product of a pair of, <span class="math inline">\(2 \times 2\)</span> matrices is:</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{bmatrix} a_{11} &amp; a_{12} \\
+a_{21} &amp; a_{22}
+\end{bmatrix}
+\begin{bmatrix} b_{11} &amp; b_{12} \\
+b_{21} &amp; b_{22} \end
+{bmatrix}
+=
+\begin{bmatrix} a_{11}b_{11}+a_{12}b_{21} &amp; a_{11}b_{12}+a_{12}b_{22} \\
+a_{21}b_{11}+a_{22}b_{21} &amp; a_{21}b_{12}+a_{22}b_{22}
+\end{bmatrix}
+\end{equation*}\]</span></p>
+<p>The <em>identity</em> matrix <span class="math inline">\(I\)</span> occupies the same position in matrix algebra that the value of unity does in ordinary algebra. It is a square matrix consisting of ones on the principle diagonal and zeros everywhere else:</p>
+<p><span class="math display">\[\begin{equation*}
+I =
+\begin{bmatrix}
+1 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; 1 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+0 &amp; 0 &amp; \dots &amp; 1
+\end{bmatrix}
+\end{equation*}\]</span></p>
+<p>For any matrix <span class="math inline">\(A\)</span>, <span class="math inline">\(A I = I A = A\)</span>.</p>
+<p>The <em>inverse</em> matrix <span class="math inline">\(A^{-1}\)</span>, if it exists, is the multiplicative inverse under matrix multiplication. That is,</p>
+<p><span class="math display">\[A A^{-1} = A^{-1}A = I.\]</span></p>
+</section>
+<section id="cofactors-and-determinants" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="cofactors-and-determinants"><span class="header-section-number">2.4.2</span> Cofactors and Determinants</h3>
+<p>We denote the <em>determinant</em> of a square matrix by <span class="math inline">\(|A|\)</span>. For a two-by-two matrix, the determinant is as follows:</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{vmatrix}
+a &amp; b \\
+c &amp; d
+\end{vmatrix} = ad - bc.
+\end{equation*}\]</span></p>
+<p>Formally, for any <span class="math inline">\(n \times n\)</span> matrix, the determinant is: <span class="math display">\[|A| = \sum_{i=1}^{k}a_{ij} C_{ij} \]</span> where</p>
+<p><span class="math display">\[C_{ij} = (-1)^{i+j}M_{ij}\]</span> where the minor matrix <span class="math inline">\(M_{ij}\)</span> is in the <span class="math inline">\((n-1) \times (n-1)\)</span> matrix resulting when the <em>i</em>th row and <em>j</em>th column are removed from <span class="math inline">\(A\)</span>. This holds when the sum above is taken over any row, <span class="math inline">\(i\)</span>, or column <span class="math inline">\(j\)</span>. The <em>cofactor</em> is <span class="math inline">\(C_{ij}\)</span> above.</p>
+<p>Arbitrarily expanding about the first row of a 3 x 3 matrix gives the determinant:</p>
+<p><span class="math display">\[\begin{equation*}
+|A| = (-1)^{1+1} a_{11}
+\begin{vmatrix}
+a_{22} &amp; a_{23} \\
+a_{32} &amp; a_{33}
+\end{vmatrix}
++ (-1)^{1+2}a_{12}
+\begin{vmatrix}
+a_{21} &amp; a_{23} \\
+a_{22} &amp; a_{33}
+\end{vmatrix}
++ (-1)^{1+3}a_{13}
+\begin{vmatrix}
+a_{21} &amp; a_{22} \\
+a_{22} &amp; a_{23}
+\end{vmatrix}.
+\end{equation*}\]</span></p>
+</section>
+<section id="computing-the-inverse-of-a-matrix" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="computing-the-inverse-of-a-matrix"><span class="header-section-number">2.4.3</span> Computing the Inverse of a Matrix</h3>
+<p>There is a straightforward (but computationally inefficient and intensive) four-step method for computing the <em>inverse</em> of a matrix <span class="math inline">\(A\)</span>.</p>
+<p><strong>Step 1</strong> Compute the determinant of <span class="math inline">\(A\)</span>. If the determinant is zero or does not exist, the matrix is said to be <em>singular</em> and an inverse does not exist.</p>
+<p><strong>Step 2</strong> Transpose matrix <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(A^T\)</span>.</p>
+<p><strong>Step 3</strong> Replace each element <span class="math inline">\(a_{ij}\)</span> of the transposed matrix by its <em>cofactor</em>, <span class="math inline">\(A_{ij}\)</span>. The resulting matrix is called the <em>adjoint</em> matrix, <span class="math inline">\(adj\left[A\right]\)</span>.</p>
+<p><strong>Step 4</strong> Divide the adjoint matrix by the determinant.</p>
+<p><em>Example.</em> Solve the following set of simultaneous equations.</p>
+<p><span class="math display">\[\begin{align}
+3x_1 + 2x_2 - 2x_3 &amp;= y_1 \\
+-x_1 +x_2 +4x_3 &amp;= y_2 \\
+2x_1 -3x_2 +4x_3 &amp;= y_3
+\end{align}\]</span></p>
+<p>We can express this as <span class="math inline">\(Ax = y\)</span>. If the matrix is invertible, then the solution of the system is given by <span class="math inline">\(x = A^{-1} y\)</span>.</p>
+<p><strong>Step 1.</strong> Compute the determinant: <span class="math inline">\(|A| = 70\)</span>.</p>
+<p><strong>Step 2.</strong> Transpose the matrix.</p>
+<p><span class="math display">\[\begin{equation*}
+A^T = \begin{bmatrix}
+3 &amp; -1 &amp; -2 \\
+2 &amp; 1 &amp; -3 \\
+-2 &amp; 4 &amp; 4
+\end{bmatrix}
+\end{equation*}\]</span></p>
+<p><strong>Step 3.</strong> Determine the adjoint matrix by replacing each element in <span class="math inline">\(A^T\)</span> by its Cofactor.</p>
+<p><span class="math display">\[\begin{equation*}
+  adj\left[A\right] =
+\begin{bmatrix}
+\begin{vmatrix} \hphantom{-}1 &amp; -3 \\ \hphantom{-}4 &amp; \hphantom{-}4 \end{vmatrix}
+&amp; - \begin{vmatrix} \hphantom{-}2 &amp; -3 \\ -2 &amp; \hphantom{-}4 \end{vmatrix}  
+&amp; \hphantom{-} \begin{vmatrix} \hphantom{-}2 &amp; \hphantom{-}1 \\ -2 &amp; \hphantom{-}4 \end{vmatrix} \\
+- \begin{vmatrix} -1 &amp; \hphantom{-}2 \\ \hphantom{-}4 &amp; \hphantom{-}4 \end{vmatrix}
+&amp; \hphantom{-} \begin{vmatrix} \hphantom{-}3 &amp; \hphantom{-}2 \\ -2 &amp; \hphantom{-}4 \end{vmatrix}  
+&amp; - \begin{vmatrix} \hphantom{-}3 &amp; -1 \\ -2 &amp; \hphantom{-}4\end{vmatrix} \\
+\hphantom{-} \begin{vmatrix} -1 &amp; \hphantom{-}2 \\ \hphantom{-}1 &amp; -3 \end{vmatrix}
+&amp; - \begin{vmatrix} \hphantom{-}3 &amp; \hphantom{-}2 \\ \hphantom{-}2 &amp; -3 \end{vmatrix}  
+&amp; \hphantom{-} \begin{vmatrix} \hphantom{-}3 &amp; -1 \\ \hphantom{-}2 &amp; \hphantom{-}1\end{vmatrix} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+16 &amp; -2 &amp; 10 \\
+12 &amp; 16 &amp; -10 \\
+1 &amp; 13 &amp; 5 \\
+\end{bmatrix}
+\end{equation*}\]</span></p>
+<p><strong>Step 4.</strong> Divide by the determinant.</p>
+<p><span class="math display">\[\begin{equation*}
+\left[ A \right]^{-1} = \frac{1}{70}
+\begin{bmatrix}
+16 &amp; -2 &amp; 10 \\
+12 &amp; 16 &amp; -10 \\
+1 &amp; 13 &amp; 5 \\
+\end{bmatrix}
+\end{equation*}\]</span></p>
+<p>Then, if <span class="math inline">\(y_1 = 1, y_2 = 13\)</span>, and <span class="math inline">\(y_3 = 8\)</span>:</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix} =
+\frac{1}{70}
+\begin{bmatrix}
+16 &amp; -2 &amp; 10 \\
+12 &amp; 16 &amp; -10 \\
+1 &amp; 13 &amp; 5
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+13 \\
+8
+\end{bmatrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+x_1 &amp;= \frac{1}{70} \left( 16 - 26 + 80 \right) = \frac{70}{70} &amp;= 1 \\
+x_2 &amp;= \frac{1}{70} \left( 12 0 208 - 80 \right) = \frac{140}{70} &amp;= 2 \\
+x_3 &amp;= \frac{1}{70} \left( 1 + 169 + 40 \right) = \frac{210}{70} &amp;= 3 \\
+\end{align}\]</span></p>
+</section>
+<section id="cramers-rule" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="cramers-rule"><span class="header-section-number">2.4.4</span> Cramer’s Rule</h3>
+<p>Given a matrix, <span class="math inline">\(A\)</span> and vectors, <span class="math inline">\(x, b\)</span>, we have a system of equations <span class="math inline">\(A x = b\)</span>. If the determinant of the matrix exists, then let <span class="math inline">\(A_r\)</span> be the matrix obtained from <span class="math inline">\(A\)</span> by replacing the <span class="math inline">\(r\)</span>th column with the vector <span class="math inline">\(b\)</span>. Then the system of equations has a unique solution:</p>
+<p><span class="math display">\[x_r = \det(A)/ \det(A_r).\]</span></p>
+<p>Example of Cramer’s Rule</p>
+<p><span class="math display">\[\begin{equation*}
+\begin{bmatrix}
+1 &amp; 0 &amp; 2\\
+-3 &amp; 4 &amp; 6 \\
+-1 &amp; -2 &amp; 3 \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+6 \\ 30 \\ 8
+\end{bmatrix}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+A &amp;= \begin{bmatrix} 1 &amp; 0 &amp; 2 \\ -3 &amp; 4 &amp; 6 \\ -1 &amp; -2 &amp; 3 \end{bmatrix} &amp; A_1 = \begin{bmatrix} 6 &amp; 0 &amp; 2 \\ 30 &amp; 4 &amp; 6 \\ 8 &amp; -2 &amp; 3 \end{bmatrix} \\
+A_2 &amp;= \begin{bmatrix} 1 &amp; 6 &amp; 2 \\ -3 &amp; 30 &amp; 6 \\ -1 &amp; 8 &amp; 3 \end{bmatrix} &amp; A_3 = \begin{bmatrix} 1 &amp; 0 &amp; 6 \\ -1 &amp; 4 &amp; 30 \\ -3 &amp; -2 &amp; 8 \end{bmatrix} \\
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+x_1 &amp;= \frac{\det\left( A_1 \right)}{\det\left( A \right)} = \frac{-40}{44} = \frac{-10}{11} \\
+x_2 &amp;= \frac{\det\left( A_2 \right)}{\det\left( A \right)} = \frac{72}{44} = \frac{18}{11} \\
+x_3 &amp;= \frac{\det\left( A_3 \right)}{\det\left( A \right)} = \frac{152}{44} = \frac{38}{11} \\
+\end{align}\]</span></p>
+</section>
+</section>
+<section id="vector-algebra" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="vector-algebra"><span class="header-section-number">2.5</span> Vector Algebra</h2>
+<p>(reference 2.5)</p>
+<section id="addition" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="addition"><span class="header-section-number">2.5.1</span> Addition</h3>
+<p>Given vectors <span class="math inline">\(\bar{A}\)</span> and <span class="math inline">\(\bar{B}\)</span>, where the <span class="math inline">\(i\)</span>th component of <span class="math inline">\(\bar{A}\)</span> is given by <span class="math inline">\(a_i\)</span>, we define addition <span class="math inline">\(\bar{A} + \bar{B}\)</span> component-wise, such that the <span class="math inline">\(i\)</span>th component of <span class="math inline">\(\bar{A} + \bar{B}\)</span> is given by <span class="math inline">\(a_i + b_i\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image39.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Vector Addition</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="subtraction" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="subtraction"><span class="header-section-number">2.5.2</span> Subtraction</h3>
+<p>We define vector subtraction just as we defined vector addition above.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image40.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Vector Subtraction</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="scalar-multiplication" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="scalar-multiplication"><span class="header-section-number">2.5.3</span> Scalar Multiplication</h3>
+<p>Given a real number, <span class="math inline">\(m\)</span>, and vectors <span class="math inline">\(\bar{A}\)</span> and <span class="math inline">\(\bar{B}\)</span>, where the <em>i</em>th component of <span class="math inline">\(\bar{A}\)</span> is given by <span class="math inline">\(a_i\)</span>, we define scalar multiplication <span class="math inline">\(m \bar{A}\)</span> component-wise, such that the <em>i</em>th component of <span class="math inline">\(m \bar{A}\)</span> is given by <span class="math inline">\(m a_i\)</span>.</p>
+<p>When <span class="math inline">\(m\)</span> and <span class="math inline">\(a+i\)</span> are real numbers, the usual properties apply:</p>
+<p><strong>Commutative</strong> <span class="math inline">\(m \bar{A} = \bar{A} m\)</span>.</p>
+<p><strong>Associative</strong> <span class="math inline">\(m (n \bar{A}) = (mn) \bar{A}\)</span>.</p>
+<p><strong>Distributive</strong> <span class="math inline">\((m + n) \bar{A} = m \bar{A} + n \bar{A}\)</span>.</p>
+<p>When <span class="math inline">\(a+i\)</span> are real numbers, we have the following properties that apply to <em>vectors</em>:</p>
+<p><strong>Commutative</strong> <span class="math inline">\(\bar{A} + \bar{B} = \bar{B} + \bar{A}\)</span>.</p>
+<p><strong>Associative</strong> <span class="math inline">\(\bar{A} + (\bar{B} + \bar{C}) = (\bar{A} + \bar{B}) + \bar{C}\)</span>.</p>
+<p><strong>Distributive</strong> <span class="math inline">\(m (\bar{A} + \bar{B}) = m \bar{A} + m \bar{B}\)</span>.</p>
+</section>
+<section id="dot-product" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="dot-product"><span class="header-section-number">2.5.4</span> Dot Product</h3>
+<p>Given vectors <span class="math inline">\(\bar{A}\)</span> and <span class="math inline">\(\bar{B}\)</span>, where the <span class="math inline">\(i\)</span>th component of <span class="math inline">\(\bar{A}\)</span> is given by <span class="math inline">\(a_i\)</span> and the vectors have the same dimension, <span class="math inline">\(n\)</span>, we define the dot product <span class="math inline">\(\bar{A} \cdot \bar{B}\)</span> as follows:</p>
+<p><span class="math display">\[\bar{A} \cdot \bar{B} = \sum_{i=1}^{n}a_i b_i .\]</span></p>
+<p>For example, given three-dimensional vectors, we have:</p>
+<p><span class="math display">\[\bar{A} \cdot \bar{B} = a_1 b_1 + a_2 b_2 + a_3 b_3 .\]</span></p>
+<p>The terms dot product, scalar product, and inner product usually mean the same thing.</p>
+</section>
+<section id="norm" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="norm"><span class="header-section-number">2.5.5</span> Norm</h3>
+<p>The norm or vector norm, denoted</p>
+<p><span class="math display">\[ \left| \bar{A} \right|,\]</span></p>
+<p>is the magnitude of the vector. We compute it thus: <span class="math display">\[ \left| \bar{A} \right| = \sqrt{\sum_{i=1}^{n} a_i^2} .\]</span>.</p>
+<p>For example, given a three-dimensional vector in the <span class="math inline">\(xyz\)</span> plane, we have:</p>
+<p><span class="math display">\[ \left| \bar{A} \right| = \sqrt{a_x^2 + a_y^2 + a_z^2} .\]</span></p>
+<p>The two types of notation, <span class="math inline">\(| \bar{A} |\)</span> and <span class="math inline">\(|| \bar{A} ||\)</span> are equivalent.</p>
+<p>With this additional notation, we can also define the <strong>dot product</strong> this way:</p>
+<p><span class="math display">\[\bar{A} \cdot \bar{B} = \left| \bar{A} \right| \left| \bar{B} \right| \cos{\theta} ,\]</span></p>
+<p>where <span class="math inline">\(\theta\)</span> is the angle between the vectors.</p>
+</section>
+<section id="vector-cross-product" class="level3" data-number="2.5.6">
+<h3 data-number="2.5.6" class="anchored" data-anchor-id="vector-cross-product"><span class="header-section-number">2.5.6</span> Vector Cross Product</h3>
+<p>The cross product is an operation on vectors in three dimensional space denoted <span class="math inline">\(\bar{A} \times \bar{B} .\)</span> We can define it in terms of matrix determinants in the following way.</p>
+<p><span class="math display">\[\begin{equation*}
+\bar{A} \times \bar{B} = \begin{vmatrix}
+\hat{i} &amp; \hat{j} &amp; \hat{k}\\
+a_x &amp; a_y &amp; a_z\\
+b_x &amp; b_y &amp; b_z
+\end{vmatrix}.
+\end{equation*}\]</span></p>
+<p>Expanding this expression gives us:</p>
+<p><span class="math display">\[\begin{equation*}
+\bar{A} \times \bar{B} = \begin{vmatrix}
+a_y &amp; a_z\\
+b_y &amp; b_z
+\end{vmatrix} \hat{i}
++ \begin{vmatrix}
+a_x &amp; a_z\\
+b_x &amp; b_z
+\end{vmatrix} \hat{j}
++ \begin{vmatrix}
+a_x &amp; a_y\\
+b_x &amp; b_y
+\end{vmatrix} \hat{k}.
+\end{equation*}\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image49.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Cross Product</figcaption><p></p>
+</figure>
+</div>
+<p><span class="math display">\[\hat{i} \times \hat{i} = \hat{j} \times \hat{j} = \hat{k} \times \hat{k} = 0 \]</span></p>
+<p><span class="math display">\[\hat{i} \times \hat{j} = \hat{k} \quad \hat{j} \times \hat{k} = \hat{i} \quad \hat{k} \times \hat{i} = \hat{j} \]</span></p>
+<p><span class="math display">\[\hat{j} \times \hat{i} = -\hat{k} \quad \hat{k} \times \hat{j} = -\hat{i} \quad \hat{i} \times \hat{k} = -\hat{j} \]</span></p>
+</section>
+<section id="vector-differentiation" class="level3" data-number="2.5.7">
+<h3 data-number="2.5.7" class="anchored" data-anchor-id="vector-differentiation"><span class="header-section-number">2.5.7</span> Vector Differentiation</h3>
+<p>Let <span class="math inline">\(\vec{r}(t)\)</span> be a vector-valued function, denoted in this way: <span class="math inline">\(\vec{r}(t) = (x(t),y(t))\)</span>, which is an example of a function that returns a position vector. A similar and equivalent notation is as follows: <span class="math inline">\(\vec{r}(t) = x(t)\hat{i} + y(t)\hat{j}\)</span>.</p>
+<p>The first derivative of <span class="math inline">\(\vec{r}(t)\)</span> with respect to time, <span class="math inline">\(t\)</span>, is a vector-valued function that denotes velocity. This function returns a vector tangential to the trajectory with a magnitude equal to the speed of the particle.</p>
+<p>The second derivative of <span class="math inline">\(\vec{r}(t)\)</span> with respect to time, <span class="math inline">\(t\)</span>, is a vector-valued function that denotes acceleration. This function returns a vector tangential to the velocity vector with a magnitude equal to the acceleration of the particle.</p>
+<p>With this notation, the normal differenation operations hold for vector-valued <em>functions</em> along with the following.</p>
+<p><strong>Derivative of a Sum</strong></p>
+<p><span class="math display">\[\frac{d}{dt}\left( \vec{r}(t) + \vec{s}(t) \right) = \frac{d}{dt}\vec{r}(t) + \frac{d}{dt}\vec{s}(t).\]</span></p>
+<p><strong>Derivative of a Dot Product</strong></p>
+<p><span class="math display">\[\frac{d}{dt}\left( \vec{r}(t) \cdot \vec{s}(t) \right) = \vec{r}(t) \cdot \frac{d}{dt}\vec{s}(t) + \frac{d}{dt}\vec{r}(t) \cdot \vec{s}(t).\]</span></p>
+<p><strong>Derivative of a Cross Product</strong></p>
+<p><span class="math display">\[\frac{d}{dt}\left( \vec{r}(t) \times \vec{s}(t) \right) = \vec{r}(t) \times \frac{d}{dt}\vec{s}(t) +  \frac{d}{dt}\vec{r}(t) \times \vec{s}(t).\]</span></p>
+<p><strong>Derivative of a Scalar Product</strong> If <span class="math inline">\(f(t)\)</span> is a scalar-valued function, then</p>
+<p><span class="math display">\[\frac{d}{dt}\left( f(t)\vec{r}(t) \right) = f(t)\frac{d}{dt}\vec{r}(t) + \left(\frac{d}{dt} f(t)\right) \vec{r}(t).\]</span></p>
+</section>
+<section id="motion-of-a-point-using-two-reference-systems" class="level3" data-number="2.5.8">
+<h3 data-number="2.5.8" class="anchored" data-anchor-id="motion-of-a-point-using-two-reference-systems"><span class="header-section-number">2.5.8</span> Motion of a point using two reference systems</h3>
+<p>Reference A can be considered the inertial frame while Rotation of the B reference relative to the A reference must be considered when observing motion with respect to the A reference system.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image52.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Trajectory with Two Reference Systems</figcaption><p></p>
+</figure>
+</div>
+<p>Note: Unit vectors are along the B system axes. Subscripts denote reference system. Reference B can be equivalent to a maneuvering aircraft.</p>
+<p><span class="math display">\[\bar{\rho} = x \hat{i} + y \hat{j} + z \hat{k}\]</span></p>
+<p><span class="math display">\[\left( \frac{d \bar{\rho}}{dt} \right)_B = \dot{x} \hat{i} + \dot{y} \hat{j} + \dot{z} \hat{k}\]</span></p>
+<p><span class="math display">\[\left( \frac{d \bar{\rho}}{dt} \right)_A = \left( \dot{x}\hat{i} + \dot{y}\hat{j} + \dot{z}\hat{k} \right) + \left( x \dot{\hat{i}} + y \dot{\hat{j}} + z \dot{\hat{k}} \right)\]</span></p>
+<p><span class="math display">\[\left( \frac{d \bar{\rho}}{dt} \right)_A = \left( \frac{d \bar{\rho}}{dt} \right)_B + \bar{\omega} \times \bar{\rho}\]</span></p>
+<p>The velocities of the particle <span class="math inline">\(P\)</span> relative to the <span class="math inline">\(A\)</span> and to the <span class="math inline">\(B\)</span> references, respectively, are as follows:</p>
+<p><span class="math display">\[\bar{V}_A = \left( \frac{d\bar{r}}{dt} \right)_A\]</span></p>
+<p><span class="math display">\[\bar{V}_B = \left( \frac{d\bar{\rho}}{dt} \right)_B\]</span></p>
+<p>These velocities can be related by noting that <span class="math inline">\(\bar{r} = \bar{R} + \bar{\rho}\)</span>.</p>
+<p>Taking the derivative with respect to time for the <span class="math inline">\(A\)</span> reference:</p>
+<p><span class="math display">\[\bar{V}_A = \left(\frac{d \bar{r}}{dt}  \right)_A = \left( \frac{d \bar{R}}{dt} \right)_A + \left( \frac{d \bar{\rho}}{dt} \right)_A\]</span></p>
+<p>The term $( )_A $ is the velocity of the origin of <span class="math inline">\(B\)</span> reference relative to the <span class="math inline">\(A\)</span> reference. We denote</p>
+<p><span class="math display">\[\left(\frac{d \bar{r}}{dt}  \right)_A = \dot{\overline{R}}.\]</span></p>
+<p>Substituting for <span class="math inline">\(\left( \frac{d \bar{\rho}}{dt} \right)_A\)</span> gives the following:</p>
+<p><span class="math display">\[\bar{V}_A  = \dot{\overline{R}} + \bar{V}_B + \bar{\omega} \times \bar{\rho}.\]</span></p>
+<p>The term is the “transport velocity” and is the only velocity if point P is rigidly attached to reference B.</p>
+<p>A similar derivation for acceleration gives the following:</p>
+<p><span class="math display">\[\bar{a}_A = \bar{a}_B + 2(\bar{\omega} \times \bar{V}_B) + \ddot{\overline{R}} + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).\]</span></p>
+<p>Here <span class="math inline">\(\bar{\omega} \times (\bar{\omega} \times \bar{\rho})\)</span> is the centripetal acceleration, $2({} {V}_B) $ is the Coriolis acceleration, and the transport acceleration, which is the only acceleration if point P is rigidly attached to reference B, is given by the following:</p>
+<p><span class="math display">\[\ddot{\overline{R}} + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).\]</span></p>
+</section>
+<section id="motion-of-a-point-using-one-reference-system" class="level3" data-number="2.5.9">
+<h3 data-number="2.5.9" class="anchored" data-anchor-id="motion-of-a-point-using-one-reference-system"><span class="header-section-number">2.5.9</span> Motion of a point using one reference system</h3>
+<p>Reference A can be considered the inertial frame while the body can be equivalent to a maneuvering aircraft.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/02/image65.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Motion with One Reference System</figcaption><p></p>
+</figure>
+</div>
+<p>A derivation similar to the previous gives us the following for velocity:</p>
+<p><span class="math display">\[\dot{\bar{\rho}} = \bar{\omega} \times \bar{\rho},\]</span></p>
+<p>and acceleration:</p>
+<p><span class="math display">\[\bar{a}_b = \bar{a}_a + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).\]</span></p>
+</section>
+</section>
+<section id="probability-and-statistics" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="probability-and-statistics"><span class="header-section-number">2.6</span> Probability and Statistics</h2>
+<p>(reference 2.6)</p>
+<p><strong><em>Definitions:</em></strong></p>
+<p>Population: The set of all possible observations</p>
+<p>Sample: Any subset of a population</p>
+<p>Homogeneous Sample: The sample comes from 1 population only</p>
+<p>Random Sample: Equal probability of selecting any member of the population</p>
+<p>Independence (of events A and B): P(A and B) = P(A)*P(B)</p>
+<p>Sample and Population Mean (Average value):</p>
+<p><span class="math display">\[\mu = \bar{x} = \frac{1}{N} \sum_{i=1}^N{x_i} \]</span></p>
+<p>Mode (Most commonly occurring value in a sample)</p>
+<p>Median (middle value, 50th percentile. Half of the sample values are greater and half are smaller)</p>
+<p>Deviation:</p>
+<p><span class="math display">\[d_i = x_i - \bar{x} \]</span></p>
+<p>Population Variance:</p>
+<p><span class="math display">\[\sigma^2 =  \frac{1}{N} \sum_{i=1}^N{(x_i - \bar{x}})^2 = \frac{1}{N} \sum_{i=1}^N{d_i^2}\]</span></p>
+<p>Population Standard Deviation (square root of variance):</p>
+<p><span class="math display">\[\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N{(x_i - \bar{x}})^2} \]</span></p>
+<p>Sample Standard Deviation:</p>
+<p><span class="math display">\[s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N{(x_i - \bar{x}})^2} \]</span></p>
+<p><strong><em>Discrete Probability Distributions:</em></strong></p>
+<p><strong><em>Uniform</em></strong> The probability of any outcome in a given set is the same. If there are <span class="math inline">\(N\)</span> possible outcomes in a set, then the probability of a given outcome is <span class="math inline">\(p=1/N\)</span>. For example, when rolling a fair dice with <span class="math inline">\(N=6\)</span> sides, the probability that the toss will result in any given side is <span class="math inline">\(p = 1/6\)</span>.</p>
+<p><strong><em>Binomial</em></strong> The probability that the random variable <span class="math inline">\(X = x\)</span> in <span class="math inline">\(N\)</span> independent events, each having probability <span class="math inline">\(p\)</span> of success, and <span class="math inline">\(1-p\)</span> of failure.</p>
+<p><span class="math display">\[P(X = k) = \binom{N}{k}p^x (1-p)^{N-x}\]</span> where</p>
+<p><span class="math display">\[\binom{N}{k} = \frac{N!}{k!(N-k)!}.\]</span></p>
+<p>For example, tossing a fair coin N times where <span class="math inline">\(p = 1/2\)</span> is the probability of getting a head on any toss. If <span class="math inline">\(X\)</span> indicates the number of heads in <span class="math inline">\(N\)</span> tosses, then we have <span class="math inline">\(P(X = x) = (1/2)^x (1/2)^{N-x}\)</span>. For <span class="math inline">\(N = 4\)</span> we have the following table:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">x</th>
+<th style="text-align: center;">P(X=x)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1/16\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1/4\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3/8\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1/4\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1/16\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Continuous Distributions</strong> Continuous distributions are defined for all <span class="math inline">\(x \in [a,b]\)</span>, where <span class="math inline">\(a, b \in \mathbb{R}\)</span> or for all <span class="math inline">\(x \in (-\infty, \infty)\)</span>, that is, the whole real number line. The probability for any single point is zero; that is, <span class="math inline">\(P(X=x) = 0\)</span>. Instead, one must work with probability on an interval, e.g., <span class="math inline">\(P(0 &lt; x)\)</span> or <span class="math inline">\(P(a &lt; x &lt; b)\)</span>.</p>
+<p><strong>The Normal Distribution</strong> The probability density function of the Normal Distribution is given by:</p>
+<p><span class="math display">\[f(x) = \frac{1}{\sqrt{2 \pi \sigma}}\mathrm{e}^{\frac{-(x-\mu)^2}{2\sigma^2}}\]</span></p>
+<p><strong>The Standard Normal Distribution</strong> The Standard Normal Distribution is simply the Normal Distribution with <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma=1\)</span>.</p>
+<p><strong>Error Probable</strong> An interval centered at the mean that contains one-half of the distribution.</p>
+<p><strong>Circular Error Probable</strong> A circle centered at the mean, in a bivariate normal distribution, that contains one-half of the distribution.</p>
+<p><strong>Confidence Intervals</strong> An interval estimate of a statistic.</p>
+<p><strong>Central Limit Theorem</strong> The sample mean of data sampled from a normally distributed population is itself normally distributed with mean, <span class="math inline">\(\mu\)</span>, and variance, <span class="math inline">\(\sigma^2/\sqrt{n}\)</span>, where the population distribution is <span class="math inline">\(N(\mu,\sigma^2)\)</span> and <span class="math inline">\(n\)</span> is the sample size and usually <span class="math inline">\(n \geq 30\)</span>.</p>
+<p><strong>Hypothesis Testing</strong> Begins with an assumption (hypothesis), usually about the underlying population distribution of some measured quantity or computed error. Select values for the hypothesis and alternate hypothesis(es) that partition the sample space. Collect N samples of the population test statistic or parameter. There are two types of errors: Type 1 errors reject the hypothesis when it is true; Type II accept the hypothesis when it is false.</p>
+</section>
+<section id="standard-series" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="standard-series"><span class="header-section-number">2.7</span> Standard Series</h2>
+<p>(reference 2.4)</p>
+<p>A <em>Taylor Series</em> is the expansion of a function about a point, <span class="math inline">\(a\)</span>, given only the value of the function and all of its derivatives at that point. It is used to estimate functions when other analytical techniques will not work.</p>
+<p><span class="math display">\[f(x) = \sum_{i=0}^{\infty} \frac{{f(a)(x-a)^i}}{i!} = f(a) + f'(x-a) + \frac{f''(a)(x-a)^2}{2} + \dots + \frac{f^{(n)}(a)(x-a)^n}{n!} + \dots\]</span></p>
+<p>The <em>Maclaurin Series</em> is a Taylor Series with <span class="math inline">\(a = 0\)</span>.</p>
+<p>The <em>Binomial Series</em> is a Taylor Series with <span class="math inline">\(f(x)=(a + x)^n\)</span>. When n is a natural number, the result is a polynomial as follows:</p>
+<p><span class="math display">\[(a+x)^n = a^n + na^{n-1}x + \frac{n(n-1)a^{n-2}x^2}{2} + \frac{n(n-1)(n-2)a^{n-3}x^3}{3!} + \dots + x^n\]</span></p>
+<p>The Taylor Series expansion of an <em>Exponential</em> function gives the following:</p>
+<p><span class="math display">\[a^x = 1 + x \ln a + \frac{(x \ln a)^2}{2} + \frac{(x \ln a)^3}{3!} + \dots\]</span></p>
+<p>In the special case when <span class="math inline">\(a = e\)</span>:</p>
+<p><span class="math display">\[\mathrm{e}^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{3!}+ \dots\]</span></p>
+<p>Hyperbolic <span class="math inline">\(\sin\)</span> and <span class="math inline">\(\cos\)</span> functions are another special case:</p>
+<p><span class="math display">\[\cosh x = \frac{(\mathrm{e}^x + \mathrm{e}^{-x})}{2} = 1 + \frac{x^2}{2} + \frac{x^4}{4!}+ \dots\]</span></p>
+<p><span class="math display">\[\sinh x = \frac{(\mathrm{e}^x - \mathrm{e}^{-x})}{2} = x + \frac{x^3}{3!} + \frac{x^5}{5!}+ \dots\]</span></p>
+<p>The Taylor Series expansion of an <em>Logarithmic</em> function gives the following. When <span class="math inline">\(0 &lt; x &lt; 2\)</span>:</p>
+<p><span class="math display">\[\ln x = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3} + \dots\]</span></p>
+<p>When <span class="math inline">\(x &gt; 1/2\)</span>:</p>
+<p><span class="math display">\[\ln x = \frac{(x-1)}{x} - \frac{(x-1)^2}{2x^2} + \frac{(x-1)^3}{3x^3} + \dots\]</span></p>
+<p>When <span class="math inline">\(0 &lt; x\)</span>:</p>
+<p><span class="math display">\[\ln x = 2 \left[ \frac{(x-1)}{x+1} - \frac{(x-1)^3}{3(x+1)^3} + \frac{(x-1)^5}{5(x-1)^5} + \dots \right]\]</span></p>
+<p>The following are Taylor Series expansion of <em>Trigonometric</em> functions:</p>
+<p><span class="math display">\[\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} -\frac{x^7}{7!}+ \dots\]</span></p>
+<p><span class="math display">\[\cos x = x - \frac{x^2}{2!} + \frac{x^4}{4!} -\frac{x^6}{6!}+ \dots\]</span></p>
+<p><span class="math display">\[\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315}+ \dots \text{ whenever } (x^2 &lt; \pi^2/4)\]</span></p>
+<p><span class="math display">\[\sin^{-1} x = x + \frac{1}{2}\frac{x^3}{3} + \frac{1}{2}\frac{3}{4}\frac{x^5}{5} + \frac{1}{2}\frac{3}{4}\frac{5}{6}\frac{x^7}{7!} + \dots \text{for } |x|&lt;1\]</span></p>
+<p><span class="math display">\[\cos^{-1} x = \frac{\pi}{2} - \sin^{-1}x \text{ for } |x|&lt;1\]</span></p>
+<p><span class="math display">\[\tan^{-1} x = x - \frac{x^3}{3!} + \frac{x^5}{5!} -\frac{x^7}{7!} + \dots\text{ for } |x|&lt;1\]</span></p>
+<p><span class="math display">\[\ln(\sin x) = \ln x - \frac{x^2}{6} - \frac{x^4}{180} - \frac{x^6}{2835}- \dots \text{for } x^2 &lt; \pi^2\]</span></p>
+<p><span class="math display">\[\ln(\cos x) = - \frac{x^2}{s} - \frac{x^4}{12} - \frac{x^6}{45} - \frac{x^8}{2520} \dots \text{for } x^2 &lt; \frac{\pi^2}{4}\]</span></p>
+<p><span class="math display">\[\ln(\tan x) = \ln x + \frac{x^2}{3} - \frac{7x^4}{90} - \frac{62x^6}{2835}+ \dots \text{for } x^2 &lt; \frac{\pi^2}{4}\]</span></p>
+<p><span class="math display">\[\mathrm{e}^{\sin x} = 1 + x + \frac{x^2}{2!} - \frac{3x^4}{4!} -\frac{8x^5}{5!} + \frac{3x^2}{6!} + \dots\]</span></p>
+<p><span class="math display">\[\mathrm{e}^{\cos x} = e \left(1 - \frac{x^2}{2!} +\frac{4x^2}{4!} - \frac{31x^6}{6!} + \dots \right)\]</span></p>
+<p><span class="math display">\[\mathrm{e}^{\tan x} = 1 + x + \frac{x^2}{2!} + \frac{3x^3}{3!} + \frac{9x^4}{4!} + \frac{37x^5}{5!} + \dots \text{for } x^2 &lt; \frac{\pi^2}{4}\]</span></p>
+</section>
+<section id="derivative-table" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="derivative-table"><span class="header-section-number">2.8</span> Derivative Table</h2>
+<p>(references 2.2, 2.3)</p>
+<ul>
+<li><span class="math inline">\(x\)</span> is the independent variable</li>
+<li><span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are dependent on <span class="math inline">\(x\)</span></li>
+<li><span class="math inline">\(w\)</span> is dependent on <span class="math inline">\(u\)</span></li>
+<li><span class="math inline">\(a\)</span> and <span class="math inline">\(n\)</span> are constants</li>
+<li><span class="math inline">\(\log{x}\)</span> is the common logarithm to base 10, <span class="math inline">\(\log_{10}{x}\)</span></li>
+<li><span class="math inline">\(\ln{x}\)</span> is logarithm to the base <span class="math inline">\(e\)</span>, <span class="math inline">\(\log_e{x}\)</span></li>
+</ul>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><em>Fundamental Derivatives</em></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{da}{dx} = 0\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d\left(ax\right)}{dx} = a\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{dx^n}{dx} = nx^{n-1}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d\left(u + v \right)}{dx} = \frac{du}{dx} + \frac{dv}{dx}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{d\left(uv \right)}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d\left(\frac{u}{v} \right)}{dx} = \frac{1}{v^2} \left( v\frac{du}{dx} - u\frac{dv}{dx} \right)\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{dw}{dx} = \frac{dw}{du}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{du^n}{dx} = nu^{n-1}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="even">
+<td><em>Expressions Containing Exponential and Logarithmic Functions</em></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d \ln{x}}{dx} = \frac{1}{x}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{d \ln{u}}{dx} = \frac{1}{u}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d \log{u}}{dx} = \frac{\log{e}}{u}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{d\mathrm{e}^x}{dx} = \mathrm{e}^x\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{da^x}{dx} = a^x \ln{a}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{da^u}{dx} = a^u \ln{a}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{du^v}{dx} = vu^{v-1}\frac{du}{dx} + u^v \ln{u}\frac{dv}{dx}\]</span></td>
+</tr>
+<tr class="even">
+<td><em>Expressions Containing Trigonometric Functions</em></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d \sin{x}}{dx} = \cos{x} \text{ or } \frac{d \sin{u}}{dx} = \cos{u}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{d \cos{x}}{dx} = -\sin{x} \text{ or } \frac{d \cos{u}}{dx} = -\sin{u}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d \tan{x}}{dx} = \sec^2{x} \text{ or } \frac{d \tan{u}}{dx} = \sec^2{u}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{d \sec{x}}{dx} = \sec{x}\tan{x} \text{ or } \frac{d \sec{u}}{dx} = \sec{u}\tan{u}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d \cot{x}}{dx} = -\csc^2{x} \text{ or } \frac{d \cot{u}}{dx} = -\csc^2{u}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{d \sin^{-1}{x}}{dx} = \frac{1}{\sqrt{1-x^2}} \text{ or } \frac{d \sin^{-1}{u}}{dx} = \frac{1}{\sqrt{1-u^2}}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d \cos^{-1}{x}}{dx} = -\frac{1}{\sqrt{1-x^2}} \text{ or } \frac{d \cos^{-1}{u}}{dx} = -\frac{1}{\sqrt{1-u^2}}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{d \tan^{-1}{x}}{dx} = \frac{1}{1+x^2} \text{ or } \frac{d \tan^{-1}{u}}{dx} = \frac{1}{1+u^2}\frac{du}{dx}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{d \cot^{-1}{x}}{dx} = -\frac{1}{1+x^2} \text{ or } \frac{d \cot^{-1}{u}}{dx} = -\frac{1}{1+u^2}\frac{du}{dx}\]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="integral-table" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="integral-table"><span class="header-section-number">2.9</span> Integral Table</h2>
+<p>(references 2.2, 2.3)</p>
+
+<!--
+The section of variable definitions should match the Derivative Table section 
+above. There's no reason for them to be different, and every reason for them
+to be the same.
+-->
+<ul>
+<li><span class="math inline">\(x\)</span> is any variable</li>
+<li><span class="math inline">\(u\)</span> is any function of <span class="math inline">\(x\)</span></li>
+<li><span class="math inline">\(w\)</span> is dependent on <span class="math inline">\(u\)</span></li>
+<li><span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are arbitrary constants</li>
+<li><span class="math inline">\(C\)</span>, the constant of integration, has been omitted from this table, but should be added to the result of every integration</li>
+</ul>
+<table class="table">
+<colgroup>
+<col style="width: 30%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><em>Fundamental Integrals</em></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} a \, dx = ax \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} a \, f\left(x\right) dx = a \int_{}{} f\left(x\right) dx \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \left(u+v\right) dx = \int_{}{} u\,dx + \int_{}{}v\,dx \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} u\,dv = uv - \int_{}{}v\,du \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \frac{u\,dv}{dx} dx = uv - \int_{}{} v \frac{du}{dx} dx\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} x^n dx = \frac{x^{n+1}}{n+1} \text{, } n \neq -1\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} x^{-1} dx = \ln{x}  \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} w \left( u \right) dx = \int_{}{} w\left( u \right) \frac{dx}{du} u \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \frac{dx}{a^2 + x^2} = \frac{1}{a} \tan^{-1} \frac{x}{a} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1} \frac{x}{a} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \frac{dx}{\sqrt{a^2 \pm x^2}} = \ln \left( x - \sqrt{a^2 \pm x^2} \right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \sqrt{a^2 - u^2} = \frac{1}{2} \left( u \sqrt{a^2 - x^2} + a^2 \sin^{-1} \frac{u}{a} \right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \frac{du}{a^2 + u^2} = \frac{1}{a} \tan^{-1} \frac{u}{a} \text{, } a  &gt;  0 \]</span></td>
+</tr>
+<tr class="odd">
+<td><em>Expressions Containing Exponential and Logarithmic Functions</em></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \frac{dx}{x} = \ln{x} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \mathrm{e}^{x} dx = \mathrm{e}^{x} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \mathrm{e}^{ax} dx = \frac{\mathrm{e}^{ax}}{a} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} b^{ax} dx = \frac{b^ax}{a \ln{b}} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \ln{x} dx = x \ln{x} - x \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} b^{u} du = \frac{b^u}{\ln{u}} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} x \mathrm{e}^{ax} dx = \frac{\mathrm{e}^ax}{a^2} \left( ax - 1 \right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} x b^{ax} dx = \frac{x b^{ax}}{a \ln{b} } - \frac{b^{ax}}{a^2 \left( \ln{b} \right) } \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} x^2 \mathrm{e}^{ax} dx = \frac{\mathrm{e}^{ax}}{a^3} \left(a^2 x^2 - 2ax + 2 \right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \ln{ax} dx = x \ln{ax} - x \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} x \ln{ax} dx = \frac{x^2}{2} \ln{ax} - \frac{x^2}{4} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} x^2 \ln{ax} dx = \frac{x^3}{3} \ln{ax} - \frac{x^3}{9} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \left( \ln{ax} \right)^2 dx = x \left( \ln{ax} \right)^2 - 2x \ln{ax} + 2x \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \frac{dx}{x \ln{ax}} = \ln{\left( \ln{ax} \right)} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \frac{x^n}{\ln{ax}} dx = \frac{1}{a^{n+1}} \int_{}{} \frac{\mathrm{e}^{y} dy}{y} \text{, where } y = \left(n + 1\right) \ln{ax} \]</span></td>
+</tr>
+<tr class="odd">
+<td><em>Expressions Containing Trigonometric Functions</em></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \sin{x} dx = -\cos{x} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \cos{x} dx = \sin{x} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \tan{x} dx = -\ln{ \left( \cos{x} \right)} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \cot{x} dx = \ln{\left( \sin{x} \right)} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \sec{x} dx = \ln{ \left( \sec{x} + \tan{x} \right)} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \csc{x} dx = \ln{ \left( \csc{x} - \cot{x} \right)} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \sin^2{u} du = \frac{1}{2} u - \frac{1}{2} \sin{u} \cos{u} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \cos^2{u} du = \frac{1}{2} u + \frac{1}{2} \sin{u} \cos{u} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \csc^2{u} du = -\cot{u} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \tan^2{u} du = \tan{u} - u \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \cot^2{u} du = -\cot{u} - u \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \sin{ax} dx = -\frac{1}{a} \cos{ax} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \sin^2{ax} dx = \frac{x}{2}-\frac{\sin{2ax}}{4a}  \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \frac{dx}{\sin{ax}} = \frac{1}{a} \ln{ \tan{\frac{ax}{2}}} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \frac{dx}{\sin^2{ax}} = -\frac{1}{a} \cot{ax} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ \int_{}{} \frac{dx}{1 \pm \sin{ax}} = \mp \frac{1}{a} \tan{\left( \frac{\pi}{4} \mp \frac{ax}{2} \right) } \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ \int_{}{} \sin{x} \cos{x} dx = \frac{1}{2} \sin^2{x} \]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="laplace-table" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="laplace-table"><span class="header-section-number">2.10</span> Laplace Table</h2>
+<p>(references 2.2, 2.3)</p>
+<table class="table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time Domain <span class="math inline">\(f(t) = \mathcal{L}^{-1} \left\{ F \left( s \right) \right\}\)</span></th>
+<th>Frequency Domain <span class="math inline">\(F\left( s \right) = \mathcal{L} \left\{ f \left( t \right) \right\}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[1 \text{ (step function)}\]</span></td>
+<td><span class="math display">\[\frac{1}{s} \text{, where } \left(s &gt;  0\right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[t\]</span></td>
+<td><span class="math display">\[\frac{1}{s^2} \text{, where } \left(s &gt;  0\right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[t^{n-1}\]</span></td>
+<td><span class="math display">\[\frac{\left( n-1 \right)!}{s^n} \text{, where } \left(s &gt;  0\right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\sqrt{t}\]</span></td>
+<td><span class="math display">\[\frac{{\sqrt \pi  }}{{2{s^{\frac{3}{2}}}}} \text{, where } \left(s &gt;  0\right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{1}{\sqrt{t}}\]</span></td>
+<td><span class="math display">\[\frac{{\sqrt \pi  }}{{{s^{\frac{1}{2}}}}} \text{, where } \left(s &gt;  0\right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[{t^{n - \frac{1}{2}}},\,\,\,\,\,n = 1,2,3, \ldots\]</span></td>
+<td><span class="math display">\[\frac{{1 \cdot 3 \cdot 5 \cdots \left( {2n - 1} \right)\sqrt \pi  }}{{{2^n}{s^{n + \frac{1}{2}}}}} {, where } \left(s &gt;  0\right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\mathrm{e}^{at}\]</span></td>
+<td><span class="math display">\[ \frac{1}{s-a} \text{, where } \left(s &gt;  a \right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[t\mathrm{e}^{at}\]</span></td>
+<td><span class="math display">\[\frac{1}{{\left( {s - a} \right)}^{2}} \text{, where } \left(s &gt;  a \right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[{t^n}{{e}^{at}},\,\,\,\,\,n = 1,2,3, \ldots\]</span></td>
+<td><span class="math display">\[\frac{{n!}}{{{{\left( {s - a} \right)}^{n + 1}}}} \text{, where } \left(s &gt;  a \right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\sin{at} \]</span></td>
+<td><span class="math display">\[\frac{a}{s^2 + a^2} \text{, where } \left(s &gt;  0 \right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\cos{at}\]</span></td>
+<td><span class="math display">\[\frac{s}{s^2 + a^2} \text{, where } \left(s &gt;  0 \right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\mathrm{e}^{bt} \sin{at}\]</span></td>
+<td><span class="math display">\[\frac{a}{\left(s - b \right)^2 + a^2} \text{, where } \left(s &gt;  b \right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\mathrm{e}^{bt} \cos{at}\]</span></td>
+<td><span class="math display">\[\frac{s-b}{\left(s - b \right)^2 + a^2} \text{, where } \left(s &gt;  b \right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[t \sin{at}\]</span></td>
+<td><span class="math display">\[\frac{2as}{\left(s^2  - a^2\right)^2} \text{, where } \left(s &gt;  a \right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[t \cos{at}\]</span></td>
+<td><span class="math display">\[\frac{s^2  - a^2}{\left(s^2  + a^2\right)^2} \text{, where } \left(s &gt;  0 \right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\sinh{at}\]</span></td>
+<td><span class="math display">\[\frac{a}{\left(s^2  - a^2\right)^2} \text{, where } \left(s &gt;  \lvert a \rvert \right) \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\cosh{at}\]</span></td>
+<td><span class="math display">\[\frac{s}{\left(s^2  - a^2\right)^2} \text{, where } \left(s &gt;  \lvert a \rvert \right) \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\sin \left(at + b\right)\]</span></td>
+<td><span class="math display">\[\frac{s\sin{b} + a \cos{b}}{\left(s^2  + a^2\right)^2} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\cos \left(at + b\right)\]</span></td>
+<td><span class="math display">\[\frac{s\cos{b} - a \sin{b}}{\left(s^2  + a^2\right)^2} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{\mathrm{e}^{at} - \mathrm{e}^{bt}}{a - b}\]</span></td>
+<td><span class="math display">\[\frac{1}{\left(s-a\right)\left(s-b\right)} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{a\mathrm{e}^{at} - b\mathrm{e}^{bt}}{a - b}\]</span></td>
+<td><span class="math display">\[\frac{s}{\left(s-a\right)\left(s-b\right)} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\delta \text{ (impulse function)}\]</span></td>
+<td><span class="math display">\[1\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\text{square wave, period }=2c\]</span></td>
+<td><span class="math display">\[\frac{1}{s \left( 1 + \mathrm{e}^{-cs} \right)} \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\text{triangular wave, period }=2c\]</span></td>
+<td><span class="math display">\[\frac{1 - \mathrm{e}^{-cs}}{s^2 \left( 1 + \mathrm{e}^{-cs} \right)} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\begin{align} at \text{ for } 0 \leq t  &lt;  c \\ \text{sawtooth wave, period } = c \end{align}\]</span></td>
+<td><span class="math display">\[ \frac{a \left( 1 + cs - \mathrm{e}^{-cs} \right) }{s^2 \left( 1 - \mathrm{e}^{-cs} \right) }\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\sin{at} \sin{bt} \]</span></td>
+<td><span class="math display">\[ \frac{2abs}{\left( s^2 + \left(a+b\right)^2\right) \left( s^2 + \left(a-b\right)^2\right)} \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{1 - \cos{at}}{a^2}&nbsp; \]</span></td>
+<td><span class="math display">\[ \frac{1}{s \left( s^2 + a^2 \right) } \]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{at - \sin{at}}{a^3}&nbsp; \]</span></td>
+<td><span class="math display">\[ \frac{1}{s^2 \left( s^2 + a^2 \right) } \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\frac{\sin{at} - at\cos{at}}{2a^3}&nbsp; \]</span></td>
+<td><span class="math display">\[ \frac{1}{\left( s^2 + a^2 \right)^2 } \]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="references" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="references"><span class="header-section-number">2.11</span> References</h2>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>2.1</td>
+<td>Burington, Richard S., “Handbook of Mathematical Tables and Formulas”, McGraw-Hill Inc., 1973.</td>
+</tr>
+<tr class="even">
+<td>2.2</td>
+<td>Ayers, F., Moyer, R., “Trigonometry”, Schaum’s Outline series, McGraw-Hill Inc., 1990.</td>
+</tr>
+<tr class="odd">
+<td>2.3</td>
+<td>Esbach, Ovid W., “Handbook of Engineering Fundamentals”, John Wiley and Sons Inc., 1963.</td>
+</tr>
+<tr class="even">
+<td>2.4</td>
+<td>Hudson, Ralph G., “The Engineers’ Manual”, John Wiley and Sons Inc., 1944.</td>
+</tr>
+<tr class="odd">
+<td>2.5</td>
+<td>Jones, G., <em>Chapter 14, Vectors and Matrices</em>, from “Flying Qualities Testing, Vol II” , National Test Pilot School, P.O. Box 658, Mojave CA, 93501.</td>
+</tr>
+<tr class="even">
+<td>2.6</td>
+<td>“Flying Qualities Testing, Vol II”, 1997, National Test Pilot School, P.O. Box 658, Mojave CA, 93501.</td>
+</tr>
+<tr class="odd">
+<td>2.7</td>
+<td>Lewis, G., <em>Chapter 2, Data Analysis</em>, from “Crew station Evaluation and Data Analysis, Vol IV”, 1997, National Test Pilot School, P.O. Box 658, Mojave CA, 93501.</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>If M, N,b are positive<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-general.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

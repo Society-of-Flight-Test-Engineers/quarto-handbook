@@ -23,7 +23,7 @@
 3. Paste in [sample code](https://quarto.org/docs/get-started/hello/vscode.html#render-and-preview)
 4. Update VS Code settings to include Quarto path
     - `Quarto: Path`
-    - C:\Users\[self]\AppData\Local\Programs\Quarto\bin
+    - C:\Users$$self]\AppData\Local\Programs\Quarto\bin
 5. No bueno. Added GitHub issue comment <https://github.com/quarto-dev/quarto-web/issues/304>
 
 ## Text Editor
@@ -45,7 +45,7 @@
 2. Transfer information from `index.rmd` to both `_quarto.yml` and `index.qmd`
 3. Transfer information from `01-general.rmd` to `01-general.qmd`
     1. {block type author comment} --> `<!-- -->`
-    2. `\( insert LaTeX here \)` --> `$insert LateX here$`
-    3. `\[ insert LaTeX here \]` --> `$insert LateX here$`
+    2. `& insert LaTeX here &  ` --> `$insert LateX here$`
+    3. `$$ insert LaTeX here $$` --> `$insert LateX here$`
     4. Some tables require specific spacing, so need to make up for two fewer characters for LaTeX conversion
     5. Copied media folder so image references would work

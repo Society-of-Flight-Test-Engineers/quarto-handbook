@@ -11,6 +11,7 @@ book:
   chapters:
     - index.qmd
     - 01-general.qmd
+    - 02-math.qmd
     - summary.qmd
     - references.qmd
 
