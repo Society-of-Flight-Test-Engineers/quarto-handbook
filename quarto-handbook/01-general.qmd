@@ -1603,7 +1603,7 @@ For constant mass distribution in curvilinear motion: $G = \dot{\omega} I$
 | $r = \frac{V^{2}}{g\sqrt{N_{\mathrm{zw}}^{2} - 1}}$                                              |
 | $\omega = \frac{g\sqrt{N_{\mathrm{zw}}^{2} - 1}}{V}$             |
 | $N_{z_w} = \sqrt{\frac{\omega V}{g} + 1}$   |
-| $V = \mathrm{inertial velocity} $                                 | 
+| $V$ = inertial velocity                                 | 
 
 ### Level Turn Kinematics Character
 
@@ -1628,7 +1628,7 @@ For bodies spinning about an axisymmetric axis
 
 For steady precession (constant $\dot{\theta}$, $\dot{\phi}$ , $\dot{\psi}$ )
 
-$ \sum M_{x} = - I_{t}\dot{\phi^{2}}\sin\theta\cos\theta + I_{z}\dot{\theta}\sin\theta\left( \dot{\phi}\cos\theta + \dot{\psi} \right) $  
+$\sum M_{x} = - I_{t}\dot{\phi^{2}}\sin\theta\cos\theta + I_{z}\dot{\theta}\sin\theta\left( \dot{\phi}\cos\theta + \dot{\psi} \right)$  
 
 For torque free motion (gravity is only external force)
 

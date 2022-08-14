@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 7&nbsp; Mass Properties</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08-motion-analysis.html" rel="next">
+<link href="./06-axis-systems.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-axis-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-mass-properties.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-motion-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-material-strength.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-reciprocating-engines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-propellers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Propellers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-standardization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-acoustics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-emc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-handling-qualities.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-rotary-wings.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Rotary Wing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-gas-turbine-propulsion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-radio-communications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-communications-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-display-guidelines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#abbreviations-and-terminology-abbreviations" id="toc-abbreviations-and-terminology-abbreviations" class="nav-link active" data-scroll-target="#abbreviations-and-terminology-abbreviations"> <span class="header-section-number">7.1</span> Abbreviations and Terminology Abbreviations</a>
+  <ul class="collapse">
+  <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology">Terminology</a></li>
+  </ul></li>
+  <li><a href="#longitudinal-lateral-center-of-gravity-measurement" id="toc-longitudinal-lateral-center-of-gravity-measurement" class="nav-link" data-scroll-target="#longitudinal-lateral-center-of-gravity-measurement"> <span class="header-section-number">7.2</span> Longitudinal &amp; Lateral Center of Gravity Measurement</a>
+  <ul class="collapse">
+  <li><a href="#test-set-up-procedures-for-empty-weight-mathrmcg-determination" id="toc-test-set-up-procedures-for-empty-weight-mathrmcg-determination" class="nav-link" data-scroll-target="#test-set-up-procedures-for-empty-weight-mathrmcg-determination">Test set-up procedures for empty weight <span class="math inline">\(\mathrm{cg}\)</span> determination</a></li>
+  <li><a href="#calculating-longitudinal-center-of-gravity" id="toc-calculating-longitudinal-center-of-gravity" class="nav-link" data-scroll-target="#calculating-longitudinal-center-of-gravity">Calculating longitudinal center of gravity</a></li>
+  <li><a href="#correcting-empty-weight-mathrmcg-for-changes-in-fuel-passengers-equipment-or-stores." id="toc-correcting-empty-weight-mathrmcg-for-changes-in-fuel-passengers-equipment-or-stores." class="nav-link" data-scroll-target="#correcting-empty-weight-mathrmcg-for-changes-in-fuel-passengers-equipment-or-stores.">Correcting empty weight <span class="math inline">\(\mathrm{cg}\)</span> for changes in fuel, passengers, equipment or stores.</a></li>
+  </ul></li>
+  <li><a href="#vertical-center-of-gravity-measurement" id="toc-vertical-center-of-gravity-measurement" class="nav-link" data-scroll-target="#vertical-center-of-gravity-measurement"> <span class="header-section-number">7.3</span> Vertical Center of Gravity Measurement</a></li>
+  <li><a href="#moment-product-of-inertia-measurement" id="toc-moment-product-of-inertia-measurement" class="nav-link" data-scroll-target="#moment-product-of-inertia-measurement"> <span class="header-section-number">7.4</span> Moment &amp; Product of Inertia Measurement&nbsp;</a>
+  <ul class="collapse">
+  <li><a href="#radius-of-gyration" id="toc-radius-of-gyration" class="nav-link" data-scroll-target="#radius-of-gyration"> <span class="header-section-number">7.4.1</span> Radius of Gyration</a></li>
+  <li><a href="#parallel-axis-theorem-applications" id="toc-parallel-axis-theorem-applications" class="nav-link" data-scroll-target="#parallel-axis-theorem-applications"> <span class="header-section-number">7.4.2</span> Parallel Axis Theorem Applications</a></li>
+  <li><a href="#measuring-roll-inertia-i_x_b-spring-oscillation-method" id="toc-measuring-roll-inertia-i_x_b-spring-oscillation-method" class="nav-link" data-scroll-target="#measuring-roll-inertia-i_x_b-spring-oscillation-method"> <span class="header-section-number">7.4.3</span> Measuring Roll Inertia, <span class="math inline">\(I_{x_b}\)</span> (spring oscillation method)</a></li>
+  <li><a href="#measuring-pitch-inertia-i_y_b-spring-oscillation-method" id="toc-measuring-pitch-inertia-i_y_b-spring-oscillation-method" class="nav-link" data-scroll-target="#measuring-pitch-inertia-i_y_b-spring-oscillation-method"> <span class="header-section-number">7.4.4</span> Measuring Pitch Inertia, <span class="math inline">\(I_{y_b}\)</span> (spring oscillation method)</a></li>
+  <li><a href="#measuring-yaw-inertia-i_z_b-spring-oscillation-method" id="toc-measuring-yaw-inertia-i_z_b-spring-oscillation-method" class="nav-link" data-scroll-target="#measuring-yaw-inertia-i_z_b-spring-oscillation-method"> <span class="header-section-number">7.4.5</span> Measuring Yaw Inertia, <span class="math inline">\(I_{z_b}\)</span> (spring oscillation method)</a></li>
+  <li><a href="#measuring-axis-of-inclination-and-i_xz" id="toc-measuring-axis-of-inclination-and-i_xz" class="nav-link" data-scroll-target="#measuring-axis-of-inclination-and-i_xz"> <span class="header-section-number">7.4.6</span> Measuring Axis of Inclination and <span class="math inline">\(I_{xz}\)</span></a></li>
+  <li><a href="#guidelines-for-spring-oscillation-method" id="toc-guidelines-for-spring-oscillation-method" class="nav-link" data-scroll-target="#guidelines-for-spring-oscillation-method"> <span class="header-section-number">7.4.7</span> Guidelines for Spring Oscillation Method</a></li>
+  <li><a href="#swing-method" id="toc-swing-method" class="nav-link" data-scroll-target="#swing-method"> <span class="header-section-number">7.4.8</span> Swing Method</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">7.5</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="abbreviations-and-terminology-abbreviations" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="abbreviations-and-terminology-abbreviations"><span class="header-section-number">7.1</span> Abbreviations and Terminology Abbreviations</h2>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 74%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Definition</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\Delta I_{\mathrm{am}}\)</span></td>
+<td>equivalent moment of inertia contribution of the air</td>
+<td>[slug-ft<sup>2</sup>]</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Delta I_{\mathrm{te}}\)</span></td>
+<td>correction for test equipment mass</td>
+<td>[slug-ft<sup>2</sup>]</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta\)</span></td>
+<td>tilt of spring assembly (measured positive if tilted nose-down relative to local horizontal).</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\varepsilon\)</span></td>
+<td>inclination of principle axis (positive if tilted down).</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\omega_d\)</span></td>
+<td>damped frequency of oscillation</td>
+<td>[rad/sec]</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\omega_n\)</span></td>
+<td>natural frequency of oscillation</td>
+<td>[rad/sec]</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\phi\)</span></td>
+<td>angle between aircraft y-axis and line connecting aircraft <span class="math inline">\(\mathrm{cg}\)</span> with spring attach points.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a\)</span></td>
+<td>perpendicular distance from the spring line of action to the oscillation axis</td>
+<td>[ft]</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathrm{cg}\)</span></td>
+<td>center of gravity</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(f\)</span></td>
+<td>measured frequency of oscillation</td>
+<td>[cycles/sec]</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(g\)</span></td>
+<td>Earth’s acceleration due to gravity</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(h\)</span></td>
+<td>vertical component of the perpendicular distance from the <span class="math inline">\(\mathrm{cg}\)</span> to the oscillation axis.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(I_{\mathrm{cg}}\)</span></td>
+<td>moment of inertia any axis passing through the <span class="math inline">\(\mathrm{cg}\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(I_{x_b}\)</span></td>
+<td>moment of inertia about aircraft body x-axis</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(I_{xz}\)</span></td>
+<td>product of inertia in aircraft body x-z plane</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(I_{y_b}\)</span></td>
+<td>moment of inertia about aircraft body y-axis</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(I_{z_b}\)</span></td>
+<td>moment of inertia about aircraft body z-axis</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(I_o\)</span></td>
+<td>moment of inertia about oscillation axis</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(K_{\mathrm{tot}}\)</span></td>
+<td>total radius of gyration (includes effect of offset pivot)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(K_o\)</span></td>
+<td>component of spring stiffness perpendicular to vehicle motion</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(k\)</span></td>
+<td>spring constant</td>
+<td>[lb/ft]</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(L\)</span></td>
+<td>rolling moment</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(l_{\mathrm{eff}}\)</span></td>
+<td>effective pendulum length</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(m\)</span></td>
+<td>mass</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathrm{MAC}\)</span></td>
+<td>mean aerodynamic chord</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathrm{METO}\)</span></td>
+<td>maximum power (except for takeoff)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(N\)</span></td>
+<td>yawing moment</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p\)</span></td>
+<td>roll rate</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(r\)</span></td>
+<td>yaw rate</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(T\)</span></td>
+<td>period of oscillation</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="terminology" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="terminology">Terminology</h3>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>allowable <span class="math inline">\(\mathrm{cg}\)</span> range</td>
+<td>Documented on Type Certificate Data Sheet. May be different for takeoff vs landing. Forward limit usually determined by control power limitations, aft limit usually determined by stability requirements.</td>
+</tr>
+<tr class="even">
+<td>datum</td>
+<td>The manufacturer defined reference plane used for distance calculations.</td>
+</tr>
+<tr class="odd">
+<td>empty weight</td>
+<td>Basic aircraft weight with only equipment on board. (without crew, passengers, or fuel). This weight may or may not include oil weight, depending on civil certification date.</td>
+</tr>
+<tr class="even">
+<td>empty weight <span class="math inline">\(\mathrm{cg}\)</span> range</td>
+<td>The allowable <span class="math inline">\(\mathrm{cg}\)</span> locations for an empty aircraft. This is defined by the manufacturer to help assure that a normally loaded aircraft will have an acceptable total <span class="math inline">\(\mathrm{cg}\)</span> location.</td>
+</tr>
+<tr class="odd">
+<td>lateral</td>
+<td>Along the aircraft y-axis.</td>
+</tr>
+<tr class="even">
+<td>longitudinal</td>
+<td>Along the aircraft x-axis</td>
+</tr>
+<tr class="odd">
+<td>maximum weight</td>
+<td>Maximum allowable weight. Usually implies takeoff weight, but may apply to landing or in-flight weight. conditions after aerial refueling.</td>
+</tr>
+<tr class="even">
+<td>minimum fuel</td>
+<td>A calculated value that represents the minimum amount of fuel any airplane should have while retaining appropriate flight reserves. Calculated as: min fuel [lbs] = <span class="math inline">\(0.5 \, \mathrm{METO}\)</span> [hp]</td>
+</tr>
+<tr class="odd">
+<td>moment arm</td>
+<td>Distance between datum plane and <span class="math inline">\(\mathrm{cg}\)</span> of object</td>
+</tr>
+<tr class="even">
+<td>moment</td>
+<td>Product of moment arm and force (weight)</td>
+</tr>
+<tr class="odd">
+<td>tare</td>
+<td>The bias in weight scales due to test equipment weight or due to scale calibration errors</td>
+</tr>
+<tr class="even">
+<td>useful load</td>
+<td>Maximum takeoff weight minus empty weight</td>
+</tr>
+<tr class="odd">
+<td>weighing point</td>
+<td>Location where aircraft is supported during the <span class="math inline">\(\mathrm{cg}\)</span> measurement.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="longitudinal-lateral-center-of-gravity-measurement" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="longitudinal-lateral-center-of-gravity-measurement"><span class="header-section-number">7.2</span> Longitudinal &amp; Lateral Center of Gravity Measurement</h2>
+<section id="test-set-up-procedures-for-empty-weight-mathrmcg-determination" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="test-set-up-procedures-for-empty-weight-mathrmcg-determination">Test set-up procedures for empty weight <span class="math inline">\(\mathrm{cg}\)</span> determination</h3>
+<ol type="1">
+<li>Clean aircraft including any mud or water seepage.</li>
+<li>Ensure all aircraft equipment in place.</li>
+<li>Drain to only residual oil (for older aircraft that include only residual oil as part of empty weight calculations) or fill to full oil (newer aircraft include full oil for calculations).</li>
+<li>Drain to residual fuel only.</li>
+<li>Rig all equipment in a closed building to eliminate wind effects.</li>
+<li>Calibrate scales.</li>
+<li>Record tare (bias in scale readings, may be due to wheel chocks, jack stands, or other test equipment)</li>
+<li>Place aircraft on scales and level according to manufacturer’s specifications.</li>
+<li>Measure longitudinal and lateral distances between scale centers and datum. NOTE: distances behind datum are positive, distances ahead of datum are negative.</li>
+<li>Record each scale weight</li>
+</ol>
+</section>
+<section id="calculating-longitudinal-center-of-gravity" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="calculating-longitudinal-center-of-gravity">Calculating longitudinal center of gravity</h3>
+<ol start="11" type="1">
+<li>Subtract the tare from each scale reading to get the correct weight.</li>
+<li>Multiply each scale’s corrected weight by its distance to the datum. This product is the moment for each scale.</li>
+<li>Sum the moments in step 12.</li>
+<li>Sum the corrected weights.</li>
+<li>Divide the total moment by the total weight,step 13/step 14, to obtain the distance from the datum to the <span class="math inline">\(\mathrm{cg}\)</span> . Some aircraft use this distance for all <span class="math inline">\(\mathrm{cg}\)</span> references (typically presented in inches).</li>
+<li>Other aircraft refer <span class="math inline">\(\mathrm{cg}\)</span> location to a percent of the mean aerodynamic chord, <span class="math inline">\(\mathrm{MAC}\)</span> . In this case, subtract the distance between the datum and the leading edge of the <span class="math inline">\(\mathrm{MAC}\)</span> from the distance in step 15.</li>
+<li>Divide the distance in step 16 by the length of the <span class="math inline">\(\mathrm{MAC}\)</span> . This number is the fraction of the <span class="math inline">\(\mathrm{cg}\)</span> location along the <span class="math inline">\(\mathrm{MAC}\)</span> .</li>
+<li>To present the above fraction in terms of % <span class="math inline">\(\mathrm{MAC}\)</span> , multiply by 100.</li>
+</ol>
+<section id="example-mathrmcg-calculations" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="example-mathrmcg-calculations">Example <span class="math inline">\(\mathrm{cg}\)</span> calculations</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/07/image1.png" style="width:3.38889in;height:1.77083in" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">Example <span class="math inline">\(\mathrm{cg}\)</span> calculations</figcaption><p></p>
+</figure>
+</div>
+<p>Scales read:</p>
+<ul>
+<li><span class="math inline">\(320\)</span> lbs @ Nose wheel</li>
+<li><span class="math inline">\(816\)</span> lbs @ Right main</li>
+<li><span class="math inline">\(810\)</span> lbs @ Left main</li>
+</ul>
+<section id="example-using-datum-at-main-landing-gear" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="example-using-datum-at-main-landing-gear">Example Using Datum at Main Landing Gear</h5>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 26%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th style="text-align: right;">Weight</th>
+<th style="text-align: right;"><span class="math inline">\(\times\)</span></th>
+<th style="text-align: right;">Arm</th>
+<th style="text-align: right;"><span class="math inline">\(=\)</span></th>
+<th style="text-align: right;">Moment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Right Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(816\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td>Left Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(810\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span> in-lb</td>
+</tr>
+<tr class="odd">
+<td>Nose Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(320\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-75\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-24\,000\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong><span class="math inline">\(1946\)</span> lbs</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong><span class="math inline">\(-24\,000\)</span> in-lb</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+\frac{-24\,000 \text{ in-lb}}{1946 \text{ lbs}} = 12.33 \text{ in (Forward of Main Wheel Centerline)}
+\end{equation*}\]</span></p>
+</section>
+<section id="example-using-datum-at-prop-spinner" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="example-using-datum-at-prop-spinner">Example Using Datum at Prop Spinner</h5>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 26%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th style="text-align: right;">Weight</th>
+<th style="text-align: right;"><span class="math inline">\(\times\)</span></th>
+<th style="text-align: right;">Arm</th>
+<th style="text-align: right;"><span class="math inline">\(=\)</span></th>
+<th style="text-align: right;">Moment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Right Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(816\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(115\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(93\,840\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td>Left Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(810\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(115\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(93\,150\)</span> in-lb</td>
+</tr>
+<tr class="odd">
+<td>Nose Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(320\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(40\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(12\,800\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong><span class="math inline">\(1946\)</span> lbs</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong><span class="math inline">\(199\,790\)</span> in-lb</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+\frac{199\,790 \text{ in-lb}}{1946 \text{ lbs}} = 102.67 \text{ in (Aft of Prop Spinner)}
+\end{equation*}\]</span></p>
+</section>
+<section id="example-lateral-mathrmcg-calculation" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="example-lateral-mathrmcg-calculation">Example Lateral <span class="math inline">\(\mathrm{cg}\)</span> Calculation</h5>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 26%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th style="text-align: right;">Weight</th>
+<th style="text-align: right;"><span class="math inline">\(\times\)</span></th>
+<th style="text-align: right;">Arm</th>
+<th style="text-align: right;"><span class="math inline">\(=\)</span></th>
+<th style="text-align: right;">Moment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Right Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(816\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(+70\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(57\,120\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td>Left Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(810\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-70\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-56\,700\)</span> in-lb</td>
+</tr>
+<tr class="odd">
+<td>Nose Wheel</td>
+<td style="text-align: right;"><span class="math inline">\(320\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong><span class="math inline">\(1946\)</span> lbs</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong><span class="math inline">\(420\)</span> in-lb</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+\frac{420 \text{ in-lb}}{1946 \text{ lbs}} = 0.216 \text{ in (Right of Centerline)}
+\end{equation*}\]</span></p>
+</section>
+</section>
+</section>
+<section id="correcting-empty-weight-mathrmcg-for-changes-in-fuel-passengers-equipment-or-stores." class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="correcting-empty-weight-mathrmcg-for-changes-in-fuel-passengers-equipment-or-stores.">Correcting empty weight <span class="math inline">\(\mathrm{cg}\)</span> for changes in fuel, passengers, equipment or stores.</h3>
+<ol type="1">
+<li>Note aircraft empty weight &amp; empty weight <span class="math inline">\(\mathrm{cg}\)</span> . Multiply these values to obtain the empty weight moment.</li>
+<li>Note the weight and moment arm for each item added to or subtracted from the aircraft (items subtracted are listed as negative weights).</li>
+<li>Multiply each item’s weight and arm to determine its moment.</li>
+<li>Sum each item’s moment in step 3 with the aircraft empty weight moment.</li>
+<li>Sum each item’s weight with the aircraft empty weight.</li>
+<li>Calculate the new <span class="math inline">\(\mathrm{cg}\)</span> , step 4/step 5.</li>
+</ol>
+<section id="example-mathrmcg-corrections" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="example-mathrmcg-corrections">Example <span class="math inline">\(\mathrm{cg}\)</span> corrections</h4>
+<p>Given aircraft with empty weight = <span class="math inline">\(1075\)</span> lbs and <span class="math inline">\(\mathrm{cg}\)</span> @ <span class="math inline">\(84\)</span> inches. Add pilot (<span class="math inline">\(170\)</span> lbs @ <span class="math inline">\(85.5\)</span> “), fuel ( <span class="math inline">\(75\)</span> lbs @ <span class="math inline">\(94\)</span>”), and oil (<span class="math inline">\(15\)</span> lbs @ <span class="math inline">\(31.7\)</span> “).</p>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th style="text-align: right;">Weight</th>
+<th style="text-align: right;"><span class="math inline">\(\times\)</span></th>
+<th style="text-align: right;">Arm</th>
+<th style="text-align: right;"><span class="math inline">\(=\)</span></th>
+<th style="text-align: right;">Moment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Airplane<sub>(empty)</sub></td>
+<td style="text-align: right;"><span class="math inline">\(1075\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(84.0\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(90\,300.0\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td>Pilot</td>
+<td style="text-align: right;"><span class="math inline">\(170\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(85.5\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(14\,535.0\)</span> in-lb</td>
+</tr>
+<tr class="odd">
+<td>Fuel</td>
+<td style="text-align: right;"><span class="math inline">\(75\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(94.0\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7050.0\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td>Oil</td>
+<td style="text-align: right;"><span class="math inline">\(15\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(31.7\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(475.5\)</span> in-lb</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong><span class="math inline">\(1335\)</span> lbs</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong><span class="math inline">\(112\,360.5\)</span> in-lb</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+\frac{112\,360.5 \text{ in-lb}}{1335 \text{ lbs}} = 84.16 \text{ in}
+\end{equation*}\]</span></p>
+<p>Given aircraft with empty weight = <span class="math inline">\(1220\)</span> lbs and <span class="math inline">\(\mathrm{cg}\)</span> @ 25 inches. Add radio (<span class="math inline">\(15\)</span> lbs @ <span class="math inline">\(65\)</span> “), and replace <span class="math inline">\(11\)</span> lb generator with <span class="math inline">\(14\)</span> lb generator at same <span class="math inline">\(21.5\)</span>” location (in front of datum-located on firewall).</p>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 12%">
+<col style="width: 14%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th style="text-align: right;">Weight</th>
+<th style="text-align: right;"><span class="math inline">\(\times\)</span></th>
+<th style="text-align: right;">Arm</th>
+<th style="text-align: right;"><span class="math inline">\(=\)</span></th>
+<th style="text-align: right;">Moment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Airplane<sub>(empty)</sub></td>
+<td style="text-align: right;"><span class="math inline">\(1220\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(25.0\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(30\,500.0\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td>Pilot</td>
+<td style="text-align: right;"><span class="math inline">\(15\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(65.0\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(975.0\)</span> in-lb</td>
+</tr>
+<tr class="odd">
+<td>Generator<sub>(removed)</sub></td>
+<td style="text-align: right;"><span class="math inline">\(-11\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-21.5\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(236.5\)</span> in-lb</td>
+</tr>
+<tr class="even">
+<td>Generator<sub>(installed)</sub></td>
+<td style="text-align: right;"><span class="math inline">\(+14\)</span> lbs</td>
+<td style="text-align: right;"><span class="math inline">\(\times\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-21.5\)</span> in</td>
+<td style="text-align: right;"><span class="math inline">\(=\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-294.0\)</span> in-lb</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong><span class="math inline">\(1238\)</span> lbs</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong><span class="math inline">\(31\,417.5\)</span> in-lb</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+\frac{31\,417.5 \text{ in-lb}}{1238 \text{ lbs}} = 25.38 \text{ in}
+\end{equation*}\]</span></p>
+</section>
+</section>
+</section>
+<section id="vertical-center-of-gravity-measurement" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="vertical-center-of-gravity-measurement"><span class="header-section-number">7.3</span> Vertical Center of Gravity Measurement</h2>
+<ol type="1">
+<li>Drain or block landing gear struts to keep distances <span class="math inline">\(G\)</span> , <span class="math inline">\(J\)</span> , and <span class="math inline">\(V\)</span> constant.</li>
+<li>Level the fuselage and measure the weight on the nose wheel (<span class="math inline">\(F_o\)</span> ).</li>
+<li>Tilt the aircraft at various (<span class="math inline">\(\theta\)</span> ) measure nose wheel weight (<span class="math inline">\(F\)</span> ).</li>
+</ol>
+<p>&nbsp;<img src="media/07/image7.png" style="width:6.5in;height:2.58542in"></p>
+<p>The change in nose wheel force can be written as</p>
+<p><span class="math display">\[\begin{equation*}
+F_0 - F = \left[ V + \frac{B G}{C} \right] \left( \frac{W}{C \cot \theta + G}  \right)
+\end{equation*}\]</span></p>
+<ol start="4" type="1">
+<li>Plot (<span class="math inline">\(F_o-F\)</span> ) vs the term in parenthesis.</li>
+<li>Slope of line equals term in brackets.</li>
+<li>Solve for <span class="math inline">\(V\)</span> after measuring <span class="math inline">\(B\)</span> , <span class="math inline">\(C\)</span> , <span class="math inline">\(G\)</span> , and the slope.
+<ul>
+<li>This method applies to “gear down” <span class="math inline">\(\mathrm{cg}\)</span> .</li>
+<li>For “gear up” add the manufacturer’s prediction of the <span class="math inline">\(\mathrm{cg}\)</span> shift to this result. &nbsp; <img src="media/07/image9.png" style="width:3.17083in;height:2.69792in"></li>
+</ul></li>
+</ol>
+</section>
+<section id="moment-product-of-inertia-measurement" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="moment-product-of-inertia-measurement"><span class="header-section-number">7.4</span> Moment &amp; Product of Inertia Measurement&nbsp;</h2>
+<p>The moment of inertia about any axis of a body is the summation of the product of every element’s mass and distance squared. Moments of inertia represent the resistance to rotational momentum changes.</p>
+<p><img src="media/07/image13.png" style="width:2.16458in;height:1.28264in"></p>
+<p><span class="math display">\[\begin{align}
+I_{x_b} &amp;\equiv \int \left( y^2 + z^2 \right) dm \\
+I_{y_b} &amp;\equiv \int \left( x^2 + z^2 \right) dm \\
+I_{z_b} &amp;\equiv \int \left( x^2 + y^2 \right) dm \\
+\end{align}\]</span></p>
+<p>Products of inertia are also calculated about any body axes. They represent the symmetry of mass distribution (comparing opposing quadrants).</p>
+<p><img src="media/07/image16.png" style="width:1.79236in;height:1.07083in"></p>
+<p><span class="math display">\[\begin{align}
+I_{xy} &amp;= I_{yx} \equiv \int xy dm \\
+I_{yz} &amp;= I_{zy} \equiv \int yz dm \\
+I_{zx} &amp;= I_{xz} \equiv \int zx dm \\
+\end{align}\]</span></p>
+<ul>
+<li>Aircraft moments and products of inertia are calculated using body axes as the reference system.</li>
+<li>Careful documentation can yield inertial predictions within about 1-5% of actual.</li>
+</ul>
+<p><img src="media/07/image17.png" style="width:3.37222in;height:2.33681in"></p>
+<section id="radius-of-gyration" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="radius-of-gyration"><span class="header-section-number">7.4.1</span> Radius of Gyration</h3>
+<ul>
+<li>Dimensions of all <span class="math inline">\(I\)</span> terms are [slugs-ft<sup>2</sup>]</li>
+<li>Aircraft moments &amp; products of inertia are generally assumed to be constant.</li>
+<li>For moments of inertia, mathematically replace <span class="math inline">\(I\)</span> with the product of total mass times some constant with the dimensions of square feet.</li>
+<li>This constant is called the “radius of gyration” (<span class="math inline">\(k\)</span> ).</li>
+<li>If all the mass were concentrated at this radius, it would have the same moment of inertia as the actual body.</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+I_x \equiv \int \left( y^2 + z^2 \right) dm = mk^2_{yz}
+\end{equation*}\]</span></p>
+<p><strong>Aircraft moment of inertia summary</strong></p>
+<p><span class="math inline">\(I_{z_b}\)</span> is always the largest value.</p>
+<p><span class="math inline">\(I_{y_b} &gt; I_{x_b}\)</span> for fuselage-loaded aircraft.</p>
+<p><span class="math inline">\(I_{x_b} &gt; I_{y_b}\)</span> for wing-loaded aircraft.</p>
+<p><img src="media/07/image19.png" style="width:4.5in;height:2.375in"></p>
+<ul>
+<li>Vehicle mass distribution can be represented with concentrated “dumbbell” masses.</li>
+<li>The lines connecting the opposing dumbbells are the <strong>principle axes</strong>.</li>
+<li>When the principle axis lies along some line different from the body axis, the products of inertia are non-zero.</li>
+<li>If the orientation of the principle axes and the moments of inertia about theses axes are known, then the moments of inertia about any other axis system can be calculated.</li>
+</ul>
+</section>
+<section id="parallel-axis-theorem-applications" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="parallel-axis-theorem-applications"><span class="header-section-number">7.4.2</span> Parallel Axis Theorem Applications</h3>
+<p>Shows how to <strong>determine modified moment of inertia</strong> after some component alterations.</p>
+<p>Example: Correct original aircraft roll inertia, <span class="math inline">\(I_{x_b}\)</span> , to a modified value that accounts for the addition of wingtip fuel tanks.</p>
+<p><span class="math display">\[\begin{equation*}
+I_{x_{b_{\text{mod}}}} = I_{x_{b_{\text{orig}}}} + \Delta I_{x_{\text{comp}}}
+\end{equation*}\]</span></p>
+<p>*&nbsp;<span class="math inline">\(\Delta I_{x_{\text{comp}}}\)</span> is composed of two components</p>
+<p><span class="math display">\[\begin{equation*}
+\Delta I_{x_{\text{comp}}} = I_{x_{\text{comp}}} + m_{\text{comp}} r^2
+\end{equation*}\]</span></p>
+<ul>
+<li><span class="math inline">\(I_{x_{\text{comp}}}\)</span> is the moment of inertia of just the new component about an axis which is parallel to the aircraft axis in question (this axis should run through the component’s <span class="math inline">\(\mathrm{cg}\)</span> ).</li>
+<li><span class="math inline">\(I_{x_{\text{comp}}}\)</span> can be determined analytically by summing the inertias of every mass element throughout the component (documented for simple shapes in various engineering handbooks).</li>
+<li><span class="math inline">\(I_{x_{\text{comp}}}\)</span> can be determined experimentally by “swinging.” (<a href="#swing-method">Swing Method</a>)</li>
+<li><span class="math inline">\(I_{x_{\text{comp}}}\)</span> is usually much smaller than <span class="math inline">\(m_{\text{comp}} r^2\)</span> and can often be omitted.</li>
+<li><span class="math inline">\(m_{\text{comp}}\)</span> is the component’s mass</li>
+<li><span class="math inline">\(r\)</span> is the distance from the axis in question to the component’s <span class="math inline">\(\mathrm{cg}\)</span> .</li>
+</ul>
+<p>Similarly, the parallel axis theorem shows how to <strong>determine modified products of inertia</strong> after some component alterations.</p>
+<p><span class="math display">\[\begin{equation*}
+I_{xz_{\text{mod}}} = I_{xz_{\text{orig}}} + \left[ I_{xz_{\text{comp}}} + m_{\text{comp}} xz \right]
+\end{equation*}\]</span></p>
+<p><span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span> are the distances from the component <span class="math inline">\(\mathrm{cg}\)</span> to the reference axes.</p>
+<p>Moments of inertia are calculated about a set of reference axes which all intersect at the reference <span class="math inline">\(\mathrm{cg}\)</span> . In general, however, the actual <span class="math inline">\(\mathrm{cg}\)</span> does not lie exactly at this reference <span class="math inline">\(cg\)</span> . The parallel axis theorem shows how to <strong>correct the moment of inertia to the actual <span class="math inline">\(\mathrm{cg}\)</span> axis</strong>. As an example, the rolling moment of inertia about the actual <span class="math inline">\(\mathrm{cg}\)</span> ( <span class="math inline">\(I_{x_{\mathrm{cg}}}\)</span> ) is calculated from the reference <span class="math inline">\(I_{x_b}\)</span> as follows.</p>
+<p><span class="math display">\[\begin{equation*}
+I_{x_{\mathrm{cg}}} = I_{x_b} - m \left[ y^2 + z^2 \right]
+\end{equation*}\]</span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(m\)</span> = total mass</li>
+<li><span class="math inline">\(y\)</span> = lateral distance between <span class="math inline">\(\mathrm{cg}\)</span> and aircraft x-axis.</li>
+<li><span class="math inline">\(z\)</span> = vertical distance between <span class="math inline">\(\mathrm{cg}\)</span> and aircraft x-axis.</li>
+</ul>
+</section>
+<section id="measuring-roll-inertia-i_x_b-spring-oscillation-method" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="measuring-roll-inertia-i_x_b-spring-oscillation-method"><span class="header-section-number">7.4.3</span> Measuring Roll Inertia, <span class="math inline">\(I_{x_b}\)</span> (spring oscillation method)</h3>
+<ol type="1">
+<li>Balance aircraft on prism-like “knife edges” that support wooden cradles that conform to aircraft shape.</li>
+<li>Attach springs (tension springs illustrated here) so they are parallel to line <span class="math inline">\(a\)</span> as shown.</li>
+</ol>
+<p><img src="media/07/image24.png" style="width:4.47917in;height:1.52847in">&nbsp;</p>
+<p><img src="media/07/image25.png" style="width:4.45278in;height:1.69375in">&nbsp;</p>
+<ol start="3" type="1">
+<li>Allow aircraft to oscillate freely in roll after a small disturbance.</li>
+<li>Use <strong>automatic recording</strong> to determine period of oscillations (<span class="math inline">\(T\)</span> ).</li>
+<li>Calculate damped frequency as</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+\omega_d = \frac{2\pi}{T}
+\end{equation*}\]</span></p>
+<ol start="6" type="1">
+<li>Record peak magnitude of each oscillation.</li>
+<li>Calculate <span class="math inline">\(\zeta\)</span> using transient peak ratio method (see [Motion and Vibration Analysis]).</li>
+<li>Calculate natural frequency as</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+\omega_n = \frac{\omega_d}{\sqrt{1 - \zeta^2}}
+\end{equation*}\]</span></p>
+<ol start="9" type="1">
+<li>Measure the spring’s stiffness (<span class="math inline">\(K_0\)</span> )</li>
+<li>Calculate inertia about oscillation axis (<span class="math inline">\(I_0\)</span> ) as</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+I_o = \frac{K_o}{\omega_n^2}
+\end{equation*}\]</span></p>
+<ol start="11" type="1">
+<li>Use parallel axis theorem to correct <span class="math inline">\(I_o\)</span> to a parallel axis passing through the <span class="math inline">\(cg\)</span> .</li>
+<li>Springs, cradles and attachments hardware will change the moment of inertia. Sum their total into a combined “test equipment inertia” (<span class="math inline">\(I_{\mathrm{te}}\)</span> ) and subtract this from the above result.</li>
+</ol>
+<p>Combining steps 10-12 gives the complete <strong>moment of inertia equation</strong></p>
+<p><span class="math display">\[\begin{equation*}
+I_{\mathrm{cg}} = \frac{K_o a^2 - mgh}{\omega_n^2} - md^2 - \Delta I_{\mathrm{te}}
+\end{equation*}\]</span></p>
+<p>where <span class="math inline">\(h\)</span> is the vertical distance between the <span class="math inline">\(\mathrm{cg}\)</span> and axis of oscillation and <span class="math inline">\(d\)</span> is the total distance between the <span class="math inline">\(\mathrm{cg}\)</span> and the axis of oscillation (<span class="math inline">\(d\)</span> = <span class="math inline">\(h\)</span> in the illustrated roll inertia test setup).</p>
+<p><strong>If automatic recording is not available...</strong></p>
+<p>Accomplish steps 1-3 as described for automatic recording case.</p>
+<ol start="4" type="1">
+<li>Use a stopwatch to time several oscillations and calculate <span class="math inline">\(\omega_d\)</span> as before</li>
+<li>Measure the spring’s rotational stiffness (<span class="math inline">\(K_o\)</span> )</li>
+<li>Approximate inertia using the damped frequency using</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+I_o \approx \frac{K_o}{\omega_d^2}  
+\end{equation*}\]</span></p>
+<ol start="7" type="1">
+<li>Use parallel axis theorem to correct <span class="math inline">\(I_o\)</span> to a parallel axis passing through the <span class="math inline">\(cg\)</span> .</li>
+<li>Correct for effects of test hardware moment of inertia (<span class="math inline">\(\Delta I_{\mathrm{te}}\)</span> ).</li>
+<li>To correct for errors in the <span class="math inline">\(I_o\)</span> approximation, apply an "additional mass correction" (<span class="math inline">\(\Delta I_{\mathrm{am}}\)</span> ) which equates the flate plate area damping effect to additional inertia. This correction is detailed in ref. 7.5.3.</li>
+</ol>
+<p>Combining steps 6-9 gives</p>
+<p><span class="math display">\[\begin{equation*}
+I_{\mathrm{cg}} = \frac{K_o a^2 - mgh}{\omega_d^2} - md^2 - \left(\Delta I_{\mathrm{te}} + \Delta I_{\mathrm{am}} \right)
+\end{equation*}\]</span></p>
+<p>Above methods can also be used to determine <span class="math inline">\(I_{y_b}\)</span> and <span class="math inline">\(I_{z_b}\)</span></p>
+</section>
+<section id="measuring-pitch-inertia-i_y_b-spring-oscillation-method" class="level3" data-number="7.4.4">
+<h3 data-number="7.4.4" class="anchored" data-anchor-id="measuring-pitch-inertia-i_y_b-spring-oscillation-method"><span class="header-section-number">7.4.4</span> Measuring Pitch Inertia, <span class="math inline">\(I_{y_b}\)</span> (spring oscillation method)</h3>
+<ol type="1">
+<li>Balance aircraft on knife edges as shown.</li>
+<li>Attach spring perpendicular to line <span class="math inline">\(a\)</span> . Only one spring is required since the aircraft <span class="math inline">\(\mathrm{cg}\)</span> is off-center. Spring must be stiff enough to hold the aircraft in equilibrium as well as provide a restoring moment during oscillations.</li>
+</ol>
+<p><img src="media/07/image32.png" style="width:4.5in;height:1.66667in"></p>
+<p><img src="media/07/image33.png" style="width:4.5in;height:1.58333in"></p>
+<p>Repeat steps 3-12 and apply the moment of inertia equation to determine <span class="math inline">\(I_{y_b}\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+I_{\mathrm{cg}} = \frac{K_o a^2 - mgh}{\omega_n^2} - md^2 - \Delta I_{\mathrm{te}}
+\end{equation*}\]</span></p>
+<p>or, for an uninstrumented aircraft,</p>
+<p><span class="math display">\[\begin{equation*}
+I_{\mathrm{cg}} = \frac{K_o a^2 - mgh}{\omega_d^2} - md^2 - \left(\Delta I_{\mathrm{te}} + \Delta I_{\mathrm{am}} \right)
+\end{equation*}\]</span></p>
+</section>
+<section id="measuring-yaw-inertia-i_z_b-spring-oscillation-method" class="level3" data-number="7.4.5">
+<h3 data-number="7.4.5" class="anchored" data-anchor-id="measuring-yaw-inertia-i_z_b-spring-oscillation-method"><span class="header-section-number">7.4.5</span> Measuring Yaw Inertia, <span class="math inline">\(I_{z_b}\)</span> (spring oscillation method)</h3>
+<ol type="1">
+<li>Suspend aircraft as shown: fuselage reference line parallel with floor, <span class="math inline">\(z\)</span> -body axis coincides with the oscillation axis (<span class="math inline">\(h = d = 0\)</span> ). For <span class="math inline">\(I_{z_b}\)</span> test, set spring assembly tilt angle parallel to floor (<span class="math inline">\(\delta&nbsp;= 0\)</span> ).</li>
+</ol>
+<p><img src="media/07/image36.png" style="width:4.5in;height:2.57292in">&nbsp;</p>
+<ol start="2" type="1">
+<li>Ideal case is where the wing attach points are in line with the aircraft <span class="math inline">\(\mathrm{cg}\)</span> as shown. Springs are perpendicular to the AB line and are parallel.</li>
+</ol>
+<p><img src="media/07/image37.png" style="width:3.83194in;height:3.08333in"></p>
+<p>If not possible to rig wing attach points in line with the <span class="math inline">\(\mathrm{cg}\)</span> , then keep the springs parallel to each other and measure the angle <span class="math inline">\(\phi\)</span> .&nbsp;&nbsp;</p>
+<p>•&nbsp;Calculate <span class="math inline">\(K_o = k \cos{\phi}\)</span> , where <span class="math inline">\(k\)</span> is the actual spring constant</p>
+<p><img src="media/07/image38.png" style="width:3.15625in;height:3.08333in"></p>
+<p>Repeat steps 3-12 and apply the moment of inertia equation to determine <span class="math inline">\(I_{z_b}\)</span> . Note that distances <span class="math inline">\(h\)</span> and <span class="math inline">\(d\)</span> are zero for a properly suspended aircraft.</p>
+<p><span class="math display">\[\begin{equation*}
+I_{\mathrm{cg}} = \frac{K_o a^2 - mgh}{\omega_n^2} - md^2 - \Delta I_{\mathrm{te}}
+\end{equation*}\]</span></p>
+<p>or, for an uninstrumented aircraft,</p>
+<p><span class="math display">\[\begin{equation*}
+I_{\mathrm{cg}} = \frac{K_o a^2 - mgh}{\omega_d^2} - md^2 - \left(\Delta I_{\mathrm{te}} + \Delta I_{\mathrm{am}} \right)
+\end{equation*}\]</span></p>
+</section>
+<section id="measuring-axis-of-inclination-and-i_xz" class="level3" data-number="7.4.6">
+<h3 data-number="7.4.6" class="anchored" data-anchor-id="measuring-axis-of-inclination-and-i_xz"><span class="header-section-number">7.4.6</span> Measuring Axis of Inclination and <span class="math inline">\(I_{xz}\)</span></h3>
+<!-- FIXME The inconsistency in unordered and ordered lists is disruptive -->
+<!-- FIXME The inconsistency in narrative and nonnarrative content is disruptive -->
+<ul>
+<li>Inclination of principle axis (<span class="math inline">\(\varepsilon\)</span> ) is positive if it lies in the <span class="math inline">\(+xz\)</span> plane as shown.</li>
+<li><span class="math inline">\(I_{xz}\)</span> positive if <span class="math inline">\(\varepsilon\)</span> is positive.</li>
+</ul>
+<p><img src="media/07/image41.png" style="width:4.5in;height:2.67708in"></p>
+<ul>
+<li>From equations of motion</li>
+</ul>
+<p><span class="math display">\[\begin{align}
+L &amp;= I_x \dot{p} - I_{xz} \left( \dot{r} + pq \right) + \left( I_z - I_y \right) qr \text{and} \\
+N &amp;= I_z \dot{r} - I_{xz} \left( \dot{p} - qr \right) + \left( I_y - I_x \right) pq \\
+\end{align}\]</span></p>
+<ul>
+<li>When forcing small motions about only the yaw axis, <span class="math inline">\(pq\)</span> and <span class="math inline">\(qr\)</span> are negligible, giving</li>
+</ul>
+<p><span class="math display">\[\begin{align}
+L &amp;= I_x \dot{p} - I_{xz} \dot{r} \text{and} \\
+N &amp;=  I_z \dot{r} - I_{xz} \dot{p} \\
+\end{align}\]</span></p>
+<ul>
+<li>If <span class="math inline">\(\varepsilon\)</span> (and therefore <span class="math inline">\(I_{xz}\)</span> ) is positive, then yawing to the right will generate a left rolling moment.</li>
+<li>If <span class="math inline">\(\varepsilon\)</span> and <span class="math inline">\(I_{xz}\)</span> are negative, a right yaw will generate a <em>right</em> moment.</li>
+</ul>
+<!-- FIXME "Use instrumentation to note for each delta" ??? -->
+<ol type="1">
+<li>Determine <span class="math inline">\(I_{xz}\)</span> and <span class="math inline">\(\varepsilon\)</span> by repeating yaw experiment for different spring angles (<span class="math inline">\(\delta\)</span> ). Use instrumentation to note for each <span class="math inline">\(\delta\)</span> .</li>
+<li>Graphically determine the angle <span class="math inline">\(\delta_0\)</span> at which the restoring vector produced by the springs completely counteracts the roll motion.</li>
+</ol>
+<p>Plot <span class="math inline">\(\tan{\delta}\)</span> vs <span class="math inline">\(\frac{\dot{p}}{\dot{r}}\)</span> as shown.</p>
+<p><img src="media/07/image47.png" style="width:4.5in;height:2.5in"></p>
+<ol start="3" type="1">
+<li>Determine the point where <span class="math inline">\(\frac{\dot{p}}{\dot{r}}\)</span> equals zero. This occurs at <span class="math inline">\(\tan{\delta_0}\)</span> .</li>
+<li>Calculate the product of inertia using</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+I_{xz} = I_z \tan{\delta_0}
+\end{equation*}\]</span></p>
+<ol start="5" type="1">
+<li>Calculate the inclination of the principle axis using</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+\tan{2\varepsilon} = \frac{2I_{xz}}{I_{z_b} - I_{x_b}}
+\end{equation*}\]</span></p>
+<p>Note: Since the <span class="math inline">\(I_{xz}\)</span> test objective is to interpolate to a condition where <span class="math inline">\(\frac{\dot{p}}{\dot{r}}\)</span> equals zero, only the ratio is necessary and the absolute magnitudes of the accelerations are not required. In other words, the roll acceleration sensitivity can be increased to allow for easier measurement of the ratio.</p>
+</section>
+<section id="guidelines-for-spring-oscillation-method" class="level3" data-number="7.4.7">
+<h3 data-number="7.4.7" class="anchored" data-anchor-id="guidelines-for-spring-oscillation-method"><span class="header-section-number">7.4.7</span> Guidelines for Spring Oscillation Method</h3>
+<ul>
+<li>Use only small magnitude oscillations.</li>
+<li>Keep size and radius of knife edges as small as practical.</li>
+<li>Springs are typically linear except around zero load. Best results occur if springs are pre-loaded.</li>
+<li>Choose spring stiffness so oscillation frequency will be within instrumentation limits.</li>
+<li>If using a hand recorded stopwatch, best spring stiffness gives about one cycle per second (<span class="math inline">\(f = 1\)</span> ).</li>
+<li>Estimate the desired spring rate using</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+k = \frac{ \left( I_{\mathrm{cg}} + md^2 \right) \left( 2 \pi f \right)^2 + hmg}{a^2}
+\end{equation*}\]</span></p>
+<ul>
+<li>The purpose of instrumentation is to provide a means for measuring frequency and magnitude. Any of several parameters will be sufficient, including angular displacement, rate or acceleration, or linear acceleration.</li>
+</ul>
+</section>
+<section id="swing-method" class="level3" data-number="7.4.8">
+<h3 data-number="7.4.8" class="anchored" data-anchor-id="swing-method"><span class="header-section-number">7.4.8</span> Swing Method</h3>
+<ol type="1">
+<li>Suspend component as shown.</li>
+</ol>
+<p><img src="media/07/image54.png" style="width:2.98264in;height:2.15625in">&nbsp;</p>
+<ol start="2" type="1">
+<li>Measure pendulum length (<span class="math inline">\(l\)</span> ), component mass (<span class="math inline">\(m\)</span> ), and the period of oscillation (<span class="math inline">\(T\)</span> ).</li>
+</ol>
+<ul>
+<li>The observed period is a function of the effective pendulum length.</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+\omega = \sqrt{\frac{g}{l_{\mathrm{eff}}}} \;\;\;\;\text{and}\;\;\;\; T = \frac{2 \pi}{\omega} = 2 \pi \sqrt{\frac{l_{\mathrm{eff}}}{g}} \;\;\;\;\text{or}\;\;\;\; l_{\mathrm{eff}} = \left( \frac{T}{2 \pi} \right)^2 g
+\end{equation*}\]</span></p>
+<ul>
+<li>This effective length is the total radius of gyration <span class="math inline">\(l_{\mathrm{eff}} = K_{\mathrm{tot}}\)</span></li>
+<li>The total moment of inertia about the pivot point is the product of mass and radius of gyration squared. The parallel axis theorem states that this also is the sum of the component’s moment of inertia about its <span class="math inline">\(\mathrm{cg}\)</span> plus its mass times the distance between the pivot and the component’s <span class="math inline">\(\mathrm{cg}\)</span> .</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+I_{\mathrm{eff}} = m K_{\mathrm{tot}}^2 = I_{\mathrm{cg}} + ml^2
+\end{equation*}\]</span></p>
+<ol start="3" type="1">
+<li>Solving for the component’s moment of inertia about its own <span class="math inline">\(\mathrm{cg}\)</span> gives</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+I_{\mathrm{cg}} = m K_{\mathrm{tot}}^2 - ml^2 = m \left( K_{\mathrm{tot}}^2 - l^2 \right) = m \left( \left[ \left( \frac{T}{2 \pi} \right)^2 g \right]^2 - l^2 \right)
+\end{equation*}\]</span></p>
+</section>
+</section>
+<section id="references" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="references"><span class="header-section-number">7.5</span> References</h2>
+<table class="table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 94%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>7.5.1</td>
+<td>Lawless, Alan R. et al, “Special Topics and Aircraft Subsystems Flight Testing,” <em>Chapter 1, Mass Properties</em>, National Test Pilot School, Mojave, CA, 1999.</td>
+</tr>
+<tr class="even">
+<td>7.5.2</td>
+<td>Bradfield, Edward N., “Experimental Determination of the Moments of Inertia, Product of Inertia, and Inclination of the Principle Axis of Conventional Aircraft by the Spring Oscillation Method” FTC-TIM-1001, AFFTC, Edwards AFB, CA, 1971.</td>
+</tr>
+<tr class="odd">
+<td>7.5.3</td>
+<td>Malvestuto, S. F., et al, “Formulas for Additional Mass Corrections to the Moments of Inertia of Airplanes” TN 1187, Langley Memorial Aeronautical Laboratory, Langley Field Virginia, 1947.</td>
+</tr>
+<tr class="even">
+<td>7.5.4</td>
+<td>Lawless, Alan R., “Fixed Wing Flying Qualities Flight Testing” <em>Chapter 7, Equations of Motion</em>, National Test Pilot School Mojave CA, 1998.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Additional Reading</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 94%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>7.5.5</td>
+<td>Tanner H.L., “Measurement of the Moments of Inertia of an Airplane by a Simplified Method” NACA2201, Ames Aeronautical Laboratory, Moffet Field, CA, 1950.</td>
+</tr>
+<tr class="even">
+<td>7.5.6</td>
+<td>Woodward, C.R., et al “Handbook of Instructions for Experimentally Determining the Moments of Inertia of Aircraft by the Spring Oscillation Method” TB-822-F-2, ASTIA AD97104, Cornell Aeronautical Laboratory, Buffalo, New York, 1955.</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-axis-systems.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08-motion-analysis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

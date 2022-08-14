@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 13&nbsp; Acoustics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./14-emc.html" rel="next">
+<link href="./12-standardization.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-axis-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-mass-properties.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-motion-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-material-strength.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-reciprocating-engines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-propellers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Propellers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-standardization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-acoustics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-emc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-handling-qualities.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-rotary-wings.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Rotary Wing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-gas-turbine-propulsion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-radio-communications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-communications-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-display-guidelines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#abbreviations-and-terminology" id="toc-abbreviations-and-terminology" class="nav-link active" data-scroll-target="#abbreviations-and-terminology"> <span class="header-section-number">13.1</span> Abbreviations and Terminology</a></li>
+  <li><a href="#acoustic-velocities-spectrum-and-reference-levels" id="toc-acoustic-velocities-spectrum-and-reference-levels" class="nav-link" data-scroll-target="#acoustic-velocities-spectrum-and-reference-levels"> <span class="header-section-number">13.2</span> Acoustic Velocities, Spectrum, and Reference Levels</a></li>
+  <li><a href="#acoustic-pressure-and-intensity" id="toc-acoustic-pressure-and-intensity" class="nav-link" data-scroll-target="#acoustic-pressure-and-intensity"> <span class="header-section-number">13.3</span> Acoustic Pressure and Intensity</a></li>
+  <li><a href="#acoustic-weighting-curves" id="toc-acoustic-weighting-curves" class="nav-link" data-scroll-target="#acoustic-weighting-curves"> <span class="header-section-number">13.4</span> Acoustic Weighting Curves</a></li>
+  <li><a href="#octave-center-frequencies" id="toc-octave-center-frequencies" class="nav-link" data-scroll-target="#octave-center-frequencies"> <span class="header-section-number">13.5</span> 1/3 Octave Center Frequencies</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">13.6</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="abbreviations-and-terminology" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="abbreviations-and-terminology"><span class="header-section-number">13.1</span> Abbreviations and Terminology</h2>
+<p><strong>Abbreviations</strong></p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ANSI</td>
+<td style="text-align: left;">American National Standards Institute</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\text{dB}\)</span></td>
+<td style="text-align: left;">decibels</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(f\)</span></td>
+<td style="text-align: left;">frequency, cycles/sec</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: left;">pressure</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\text{pW}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(10^{-12}\)</span> Watts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathrm{RMS}\)</span> value of quantity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(x_0\)</span></td>
+<td style="text-align: left;">reference value of quantity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\mu Pa\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(10^{-6}\)</span> Pascals</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\text{Hz}\)</span></td>
+<td style="text-align: left;">Hertz</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(nm\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(10^{-9}\)</span> meters</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P\)</span></td>
+<td style="text-align: left;">sound power</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Terminology</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">decade</td>
+<td style="text-align: left;">band with the upper frequency x10 that of the lower</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">decibels</td>
+<td style="text-align: left;">measure of a magnitude, <span class="math inline">\(\text{dB} = 10 \log_{10}\)</span> (mag)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">far field</td>
+<td style="text-align: left;">beyond the near field (region where sound level drops <span class="math inline">\(-6\,\text{dB}\)</span> as distance from the source doubles).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hertz</td>
+<td style="text-align: left;">frequency in cycles/second</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">narrow band</td>
+<td style="text-align: left;">band whose width is less than one-third octave but less than <span class="math inline">\(1\%\)</span> of the center frequency near field range within a distance equal to the wavelength of the lowest frequency emitted or twice the greatest dimension of the subject</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">octave</td>
+<td style="text-align: left;">a band with the upper frequency exactly twice the lower frequency<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pink noise</td>
+<td style="text-align: left;">has equal energy in each octave from <span class="math inline">\(20\)</span> to <span class="math inline">\(20\,000\)</span> Hz, or with an energy content inversely proportional to frequency</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">random noise</td>
+<td style="text-align: left;">does not have a uniform frequency spectrum and has an amplitude, as a function of time, consistent with a Gaussian distribution curve</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">third-octave</td>
+<td style="text-align: left;">highest frequency <span class="math inline">\(= 1.26\)</span> x lower frequency (ratio <span class="math inline">\(= 2^{\frac{1}{3}}\)</span> )</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">white noise</td>
+<td style="text-align: left;">has a constant spectrum level over the entire band of audible frequencies (need not be random)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="acoustic-velocities-spectrum-and-reference-levels" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="acoustic-velocities-spectrum-and-reference-levels"><span class="header-section-number">13.2</span> Acoustic Velocities, Spectrum, and Reference Levels</h2>
+<p><strong>Acoustic Velocity (speed of sound)</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Medium</th>
+<th style="text-align: right;">Approximate Velocity, <span class="math inline">\(\frac{\text{m}}{\text{s}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Air (<span class="math inline">\(20° \text{C}\)</span> )</td>
+<td style="text-align: right;"><span class="math inline">\(343\)</span></td>
+</tr>
+<tr class="even">
+<td>Fresh water</td>
+<td style="text-align: right;"><span class="math inline">\(1\,480\)</span></td>
+</tr>
+<tr class="odd">
+<td>Aluminum</td>
+<td style="text-align: right;"><span class="math inline">\(5\,150\)</span></td>
+</tr>
+<tr class="even">
+<td>Concrete</td>
+<td style="text-align: right;"><span class="math inline">\(3\,600\)</span></td>
+</tr>
+<tr class="odd">
+<td>Glass</td>
+<td style="text-align: right;"><span class="math inline">\(5\,300\)</span></td>
+</tr>
+<tr class="even">
+<td>Steel</td>
+<td style="text-align: right;"><span class="math inline">\(6\,000\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+
+\text{Wavelength, } \lambda = \frac{\text{acoustic velocity}}{\text{frequency}}
+
+\end{equation*}\]</span></p>
+<p>Human hearing range is approximately <span class="math inline">\(20\)</span> to <span class="math inline">\(20\,000 \text{ Hz}\)</span></p>
+<p><img src="media/13/image1.png" class="img-fluid"></p>
+<ul>
+<li>Ultrasound lies above <span class="math inline">\(20\,000 \text{ Hz}\)</span><br>
+</li>
+<li>Infrasound lies below <span class="math inline">\(20 \text{ Hz}\)</span></li>
+</ul>
+<p><strong>Acoustic Reference Levels</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: left;">Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Velocity <span class="math inline">\(\left( L_v \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(20 \log \left( \frac{v}{v_0} \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(v_0 = 10 \frac{\text{nm}}{\text{s}^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Intensity <span class="math inline">\(\left( L_I \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(10 \log \left( \frac{I}{I_0} \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(I_0 = 1 \frac{\text{pW}}{\text{m}^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sound Power Level <span class="math inline">\(\left( L_W \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(10 \log \left( \frac{P}{P_0} \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P_0 = 1 \text{ pW}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sound Pressure Level, <span class="math inline">\(\mathrm{SPL}\)</span> <span class="math inline">\(\left( L_p \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(20 \log \left( \frac{p}{p_0} \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P_0 = 1\,\mu\text{Pa (air)}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pressure Spectrum Level <span class="math inline">\(\left( \mathrm{PSL} \right)\)</span> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></td>
+<td style="text-align: left;"><span class="math inline">\(\mathrm{SPL} - 10 \log \Delta f\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{dB}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pressure Band Level <span class="math inline">\(\left( \mathrm{PBL} \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\mathrm{PSL} + 10 \log \Delta f\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{dB}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Overall SPL <span class="math inline">\(\left( \mathrm{OASPL} \right)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(10 \log_{10} \sum 10^{\frac{\mathrm{SPL}}{10}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(20\,\mu\text{Pa (air)}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="acoustic-pressure-and-intensity" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="acoustic-pressure-and-intensity"><span class="header-section-number">13.3</span> Acoustic Pressure and Intensity</h2>
+<p><strong>Sound Pressure from Sound Power</strong></p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>Transmission Environment</td>
+<td><span class="math inline">\(L_p\)</span></td>
+</tr>
+<tr class="even">
+<td>Free Field</td>
+<td><span class="math inline">\(L_W + \log Q - 20 \log r - 10.8 \text{ dB}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Reflecting Plane</td>
+<td><span class="math inline">\(L_W + \log Q - 20 \log r - 7.8 \text{ dB}\)</span></td>
+</tr>
+<tr class="even">
+<td>Reverberant Room</td>
+<td><span class="math inline">\(L_W + \log Q - 20 \log R - 6.2 \text{ dB}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>where</p>
+<p><span class="math display">\[\begin{align}
+r &amp;= \text{distance from source}\\
+Q &amp;= \text{directivity index of source}\\
+R &amp;= \text{room constant}\\
+\end{align}\]</span></p>
+<p><strong>Acoustic Intensity</strong></p>
+<p><span class="math display">\[\begin{equation*}
+
+I - \frac{\text{Imaginary} \left[ G_{yx} \left( f \right) \right]}{4 \pi \rho_0 \Delta r f} = \frac{\text{Im} \left[ G_{yx} \left( f \right) \right]}{16.25 \Delta r f} \left( \text{for air} \right)
+
+\end{equation*}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\begin{align}
+\rho_0 &amp;= \text{fluid density} = 1.293 \frac{\text{kg}}{\text{m}^3} \text{ for air}\\
+\Delta r &amp;= \text{microphone spacing (meters)}\\
+f &amp;= \text{frequency}
+\end{align}\]</span></p>
+<p><strong>Intensity Spectrum Level (ISL)</strong></p>
+<p>Intensity level of a sound contained within a band 1 <span class="math inline">\(\text{Hz}\)</span> wide</p>
+<p><span class="math display">\[\begin{equation*}
+
+\mathrm{ISL} = 10 \log \frac{I}{I_0 \Delta f} = \mathrm{IL} - 10 \log \Delta f \left( \text{dB} \right)
+
+\end{equation*}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\begin{align}
+f &amp;= \text{center frequency of band} \\
+I &amp;= \text{sound intensity} \left( \frac{\text{watts}}{\text{m}^2} \right) \\
+I_0 &amp;= 10^{-12} \frac{\text{watt}}{\text{m}^2} \text{reference intensity} \\
+\Delta f &amp;= \text{bandwidth} \left( \text{Hz} \right) \\
+\end{align}\]</span></p>
+</section>
+<section id="acoustic-weighting-curves" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="acoustic-weighting-curves"><span class="header-section-number">13.4</span> Acoustic Weighting Curves</h2>
+<p>(ANSI S1.4 1983)</p>
+<p>Weighting for SPL</p>
+<table class="table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Nominal Freq</th>
+<th style="text-align: right;">Exact Freq</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(\text{Hz}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\text{Hz}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\text{dB}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\text{dB}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\text{dB}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(10.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-70.4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-38.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-14.3\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(12.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(12.59\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-63.6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-33.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-11.3\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(16.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(15.85\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-56.4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-28.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-8.4\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(20.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(19.95\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-50.4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-24.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-6.2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(25.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(25.12\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-44.8\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-20.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-4.4\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(31.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(31.62\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-39.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-17.1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-3.0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(40.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(39.81\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-34.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-14.1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(50.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(50.12\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-30.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-11.6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.3\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(63.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(63.10\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-26.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-9.4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.8\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(80.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(79.43\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-22.4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-7.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.5\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(100.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(100.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-19.1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-5.6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.3\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(125.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(126.90\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-16.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-4.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(160.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(158.50\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-13.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.9\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(200.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(199.50\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-10.8\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(250.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(251.20\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-8.7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(315.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(316.20\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-6.6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.9\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(400.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(398.10\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-4.8\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(500.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(501.20\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-3.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(630.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(631.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.9\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(800.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(794.30\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.8\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(1\,000.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(1\,250.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,259.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(1\,600.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,585.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(2\,000.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,995.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(2\,500.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2\,512.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.3\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(3\,150.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3\,162.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.5\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(4\,000.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3\,981.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.8\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(5\,000.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5\,012.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.3\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(6\,300.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6\,310.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-0.1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.9\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(8\,000.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7\,943.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-1.1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.9\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-3.0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(10\,000.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-2.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-4.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-4.4\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(12\,500.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(12\,589.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-4.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-6.1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-6.2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(16\,000.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(15\,849.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-6.7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-8.5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-8.6\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(20\,000.0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(19\,953.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-9.3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-11.2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(-11.3\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</section>
+<section id="octave-center-frequencies" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="octave-center-frequencies"><span class="header-section-number">13.5</span> 1/3 Octave Center Frequencies</h2>
+<p>(ANSI S1.6 1984)</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">&nbsp;Band No.</th>
+<th style="text-align: right;">Nominal Center</th>
+<th style="text-align: right;">Exact Center</th>
+<th style="text-align: right;">Octave Center</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">#</td>
+<td style="text-align: right;"><span class="math inline">\(\text{Hz}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\text{Hz}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(\text{Hz}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.25\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.26\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.60\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.58\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(3\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.50\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.51\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(5\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.15\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.16\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(6\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(4.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.98\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(4\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(7\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5.01\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(8\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.30\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.31\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(9\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(8.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7.94\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(8\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(10\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10.00\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(11\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(12.50\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(12.59\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(12\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(16.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(15.58\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(16\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(13\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(20.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(19.95\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(14\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(25.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(25.12\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(15\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(31.50\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(31.62\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(32\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(16\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(40.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(39.81\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(17\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(50.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(50.12\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(18\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(63.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(63.10\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(63\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(19\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(80.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(79.43\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(100.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(100.00\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(21\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(125.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(125.89\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(125\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(22\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(160.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(158.49\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(23\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(200.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(199.53\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(24\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(250.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(251.19\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(250\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(25\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(315.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(316.23\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(26\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(400.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(398.11\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(27\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(500.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(501.19\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(500\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(28\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(630.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(630.96\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(29\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(800.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(794.33\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(30\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,000\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(31\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,250.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,258.90\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(32\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,600.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,584.90\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(33\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1\,995.30\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2\,000\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(34\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2\,500.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2\,511.90\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(35\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3\,150.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3\,162.30\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(36\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(4\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3\,981.10\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(4\,000\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(37\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(5\,011.90\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(38\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6\,300.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6\,309.60\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(39\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(8\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(7\,943.30\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(8\,000\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(40\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10\,000.00\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(41\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(12\,500.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(12\,589.30\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(42\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(16\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(15\,848.90\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(16\,000\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(43\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(20\,000.00\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(19\,952.60\)</span></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</section>
+<section id="references" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="references"><span class="header-section-number">13.6</span> References</h2>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>13.1</td>
+<td>Beranek, Leo L., “Acoustic Measurements,” John Wiley &amp; Sons, New York, New York, 1956.</td>
+</tr>
+<tr class="even">
+<td>13.2</td>
+<td>Peterson, Arnold P.G. and Gross, Ervin E., Jr., “Handbook of Noise Measurement,” GenRag Incorporated, Concord, Massachusetts, 1978.</td>
+</tr>
+<tr class="odd">
+<td>13.3</td>
+<td>“Measuring Sound,” (Pamphlet), Bruel &amp; Kjaer, Naerum, Denmark, September 1984.</td>
+</tr>
+<tr class="even">
+<td>13.4</td>
+<td>“Pocket Handbook, Noise, Vibration, Light, Thermal Comfort,” Bruel &amp; Kjaer, Naerum, Denmark, 1986.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Additional Reading</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Hunter, Joseph L., “Acoustics,” Prentice-Hall Incorporated, Englewood Cliffs, New Jersey, 1957.</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>Common octaves include, in <span class="math inline">\(\text{kHz}\)</span> <span class="math display">\[\begin{align} 0.0375&amp;-0.0750\\0.075&amp;-0.15\\0.15&amp;-0.30\\0.30&amp;-0.60\\0.6&amp;-1.2\\1.2&amp;-2.4\\2.4&amp;-4.8\\4.8&amp;-9.6\end{align}\]</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>The <span class="math inline">\(\mathrm{SPL}\)</span> contained within a band <span class="math inline">\(1 \text{ Hz}\)</span> wide<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./12-standardization.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./14-emc.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

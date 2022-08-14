@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 14&nbsp; Electromagnetic Compatibility</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./15-handling-qualities.html" rel="next">
+<link href="./13-acoustics.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-axis-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-mass-properties.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-motion-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-material-strength.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-reciprocating-engines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-propellers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Propellers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-standardization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-acoustics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-emc.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-handling-qualities.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-rotary-wings.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Rotary Wing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-gas-turbine-propulsion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-radio-communications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-communications-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-display-guidelines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#electromagnetic-compatibility-emc" id="toc-electromagnetic-compatibility-emc" class="nav-link active" data-scroll-target="#electromagnetic-compatibility-emc"> <span class="header-section-number">14.1</span> Electromagnetic Compatibility (EMC)</a></li>
+  <li><a href="#abbreviations" id="toc-abbreviations" class="nav-link" data-scroll-target="#abbreviations"> <span class="header-section-number">14.2</span> Abbreviations</a></li>
+  <li><a href="#terms" id="toc-terms" class="nav-link" data-scroll-target="#terms"> <span class="header-section-number">14.3</span> Terms</a></li>
+  <li><a href="#fundamentals" id="toc-fundamentals" class="nav-link" data-scroll-target="#fundamentals"> <span class="header-section-number">14.4</span> Fundamentals</a>
+  <ul class="collapse">
+  <li><a href="#electric-and-magnetic-fields" id="toc-electric-and-magnetic-fields" class="nav-link" data-scroll-target="#electric-and-magnetic-fields"> <span class="header-section-number">14.4.1</span> Electric and Magnetic Fields</a></li>
+  <li><a href="#antennas" id="toc-antennas" class="nav-link" data-scroll-target="#antennas"> <span class="header-section-number">14.4.2</span> Antennas</a></li>
+  </ul></li>
+  <li><a href="#electromagnetic-interference-emi" id="toc-electromagnetic-interference-emi" class="nav-link" data-scroll-target="#electromagnetic-interference-emi"> <span class="header-section-number">14.5</span> Electromagnetic Interference (EMI)</a>
+  <ul class="collapse">
+  <li><a href="#interference-model" id="toc-interference-model" class="nav-link" data-scroll-target="#interference-model"> <span class="header-section-number">14.5.1</span> Interference Model</a></li>
+  <li><a href="#conducted-emissions" id="toc-conducted-emissions" class="nav-link" data-scroll-target="#conducted-emissions"> <span class="header-section-number">14.5.2</span> Conducted Emissions</a></li>
+  <li><a href="#radiated-emissions" id="toc-radiated-emissions" class="nav-link" data-scroll-target="#radiated-emissions"> <span class="header-section-number">14.5.3</span> Radiated Emissions</a></li>
+  <li><a href="#aviation-frequency-spectrum" id="toc-aviation-frequency-spectrum" class="nav-link" data-scroll-target="#aviation-frequency-spectrum"> <span class="header-section-number">14.5.4</span> Aviation Frequency Spectrum</a></li>
+  </ul></li>
+  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing"> <span class="header-section-number">14.6</span> Testing</a>
+  <ul class="collapse">
+  <li><a href="#regulations-and-industry-guidance" id="toc-regulations-and-industry-guidance" class="nav-link" data-scroll-target="#regulations-and-industry-guidance"> <span class="header-section-number">14.6.1</span> Regulations and Industry Guidance</a></li>
+  <li><a href="#lab-testing" id="toc-lab-testing" class="nav-link" data-scroll-target="#lab-testing"> <span class="header-section-number">14.6.2</span> Lab Testing</a></li>
+  <li><a href="#aircraft-ground-testing" id="toc-aircraft-ground-testing" class="nav-link" data-scroll-target="#aircraft-ground-testing"> <span class="header-section-number">14.6.3</span> Aircraft Ground Testing</a></li>
+  <li><a href="#aircraft-flight-testing" id="toc-aircraft-flight-testing" class="nav-link" data-scroll-target="#aircraft-flight-testing"> <span class="header-section-number">14.6.4</span> Aircraft Flight Testing</a></li>
+  <li><a href="#avionics-changes-and-emi-testing" id="toc-avionics-changes-and-emi-testing" class="nav-link" data-scroll-target="#avionics-changes-and-emi-testing"> <span class="header-section-number">14.6.5</span> Avionics changes and EMI testing</a></li>
+  </ul></li>
+  <li><a href="#lightning" id="toc-lightning" class="nav-link" data-scroll-target="#lightning"> <span class="header-section-number">14.7</span> Lightning</a>
+  <ul class="collapse">
+  <li><a href="#aircraft-lightning-zones" id="toc-aircraft-lightning-zones" class="nav-link" data-scroll-target="#aircraft-lightning-zones"> <span class="header-section-number">14.7.1</span> Aircraft Lightning Zones</a></li>
+  <li><a href="#direct-effects" id="toc-direct-effects" class="nav-link" data-scroll-target="#direct-effects"> <span class="header-section-number">14.7.2</span> Direct Effects</a></li>
+  <li><a href="#indirect-effects" id="toc-indirect-effects" class="nav-link" data-scroll-target="#indirect-effects"> <span class="header-section-number">14.7.3</span> Indirect Effects</a></li>
+  <li><a href="#instrumentation-precaution" id="toc-instrumentation-precaution" class="nav-link" data-scroll-target="#instrumentation-precaution"> <span class="header-section-number">14.7.4</span> Instrumentation Precaution</a></li>
+  </ul></li>
+  <li><a href="#high-intensity-radiated-fields-hirf" id="toc-high-intensity-radiated-fields-hirf" class="nav-link" data-scroll-target="#high-intensity-radiated-fields-hirf"> <span class="header-section-number">14.8</span> High Intensity Radiated Fields (HIRF)</a></li>
+  <li><a href="#precipitation-static-p-static" id="toc-precipitation-static-p-static" class="nav-link" data-scroll-target="#precipitation-static-p-static"> <span class="header-section-number">14.9</span> Precipitation Static (P-static)</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">14.10</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="electromagnetic-compatibility-emc" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="electromagnetic-compatibility-emc"><span class="header-section-number">14.1</span> Electromagnetic Compatibility (EMC)</h2>
+<p>This section gives the Flight Test Engineer a basic introduction to terms and concepts used by EMC engineers and insight into good testing philosophy and appropriate practices thus improving the interaction between the EMC and Flight Test engineers.</p>
+</section>
+<section id="abbreviations" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="abbreviations"><span class="header-section-number">14.2</span> Abbreviations</h2>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(A\)</span></td>
+<td>Area</td>
+<td><span class="math inline">\(\text{m}^2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(c\)</span></td>
+<td>Speed of Light</td>
+<td><span class="math inline">\(3.0\times 10^8 \frac{\text{m}}{\text{s}}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(E\)</span></td>
+<td>Electric Field Intensity</td>
+<td>Volts/meter, <span class="math inline">\(\frac{\text{V}}{\text{m}}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(f\)</span></td>
+<td>Frequency</td>
+<td>Hertz, <span class="math inline">\(\text{Hz}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(H\)</span></td>
+<td>Magnetic Field Intensity</td>
+<td>Ampere/meter, <span class="math inline">\(\frac{\text{A}}{\text{m}}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(I\)</span></td>
+<td>Current</td>
+<td>Ampere, <span class="math inline">\(\text{A}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(L\)</span></td>
+<td>Inductance</td>
+<td>Henries, <span class="math inline">\(\text{H}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Q\)</span></td>
+<td>Charge</td>
+<td>Coulomb, <span class="math inline">\(\text{C}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(V\)</span></td>
+<td>Electric Potential</td>
+<td>Volt, <span class="math inline">\(\text{V}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(X_C\)</span></td>
+<td>Capacitive Impedance</td>
+<td>Ohms, <span class="math inline">\(\Omega\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(X_L\)</span></td>
+<td>Inductive Impedance</td>
+<td>Ohms, <span class="math inline">\(\Omega\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\lambda\)</span></td>
+<td>Wavelength</td>
+<td>meter, <span class="math inline">\(\text{m}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="terms" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="terms"><span class="header-section-number">14.3</span> Terms</h2>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>AC</td>
+<td>Alternating Current</td>
+</tr>
+<tr class="even">
+<td>DC</td>
+<td>Direct Current</td>
+</tr>
+<tr class="odd">
+<td>EMC</td>
+<td>Electromagnetic Compatibility</td>
+</tr>
+<tr class="even">
+<td>EMI</td>
+<td>Electromagnetic Interference</td>
+</tr>
+<tr class="odd">
+<td>Far Field</td>
+<td>Distance beyond <span class="math inline">\(10 \lambda\)</span></td>
+</tr>
+<tr class="even">
+<td>HIRF</td>
+<td>High Intensity Radiated Fields</td>
+</tr>
+<tr class="odd">
+<td>RF</td>
+<td>Radio Frequency</td>
+</tr>
+</tbody>
+</table>
+<p>Decibel Logarithmic (base 10) expression for amplitude ratios.</p>
+<p><span class="math display">\[\begin{align}
+\text{dB(power)} &amp;= 10 \log_10 \left( \frac{P_1}{P_2} \right) \\
+\text{dB(voltage)} &amp;= 20 \log_10 \left( \frac{V_1}{V_2} \right) \\
+\text{dB(current)} &amp;= 20 \log_10 \left( \frac{I_1}{I_2} \right) \\
+\end{align}\]</span></p>
+<p>Commonly used decibels for EMC:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\text{dBm}\)</span></td>
+<td>decibels relative to <span class="math inline">\(1 \text{ milliwatt}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\text{dBW}\)</span></td>
+<td>decibels relative to <span class="math inline">\(1 \text{ watt}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\text{dB}\mu\text{V}\)</span></td>
+<td>decibels relative to <span class="math inline">\(1 \text{ microvolt}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\text{dBi}\)</span></td>
+<td>antenna gain relative to an isotropic antenna</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 15%">
+<col style="width: 16%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>dB</strong></td>
+<td style="text-align: left;"><strong>Power<br>
+Ratio</strong></td>
+<td style="text-align: left;"><strong>V or I<br>
+Ratio</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">2.0</td>
+<td style="text-align: left;">1.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">3.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">32</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common Decibel Values</strong></p>
+<p>The sensitivity of a radio receiver can be on the order of <span class="math inline">\(1 \frac{\mu \text{V}}{\text{m}}\)</span> , while RF field strengths for HIRF can be <span class="math inline">\(1\,000 \frac{\text{V}}{\text{m}}\)</span> , a factor of a billion or <span class="math inline">\(180 \frac{\text{dB}\mu\text{V}}{\text{m}}\)</span> .</p>
+</section>
+<section id="fundamentals" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="fundamentals"><span class="header-section-number">14.4</span> Fundamentals</h2>
+<section id="electric-and-magnetic-fields" class="level3" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="electric-and-magnetic-fields"><span class="header-section-number">14.4.1</span> Electric and Magnetic Fields</h3>
+<p>A static charge <span class="math inline">\(Q\)</span> , creates a static electric&nbsp;field,&nbsp;<span class="math inline">\(E\)</span> .</p>
+<p><img src="media/14/charge-field.png" class="img-fluid" style="width:2in"></p>
+<p>A common magnet produces a static magnetic field,&nbsp;<span class="math inline">\(H\)</span> .</p>
+<p><img src="media/14/bar-magnet-field.png" class="img-fluid" style="width:4in"></p>
+<p>Transferring charge <span class="math inline">\(Q\)</span> , i.e.&nbsp;DC current on a wire creates both a constant magnitude electric and magnetic field.</p>
+<p><img src="media/14/varying-fields.png" class="img-fluid" style="width:5in"></p>
+<p>An amplitude varying charge, i.e.&nbsp;changing current (AC), will generate a time varying electric and magnetic Field in different planes.</p>
+<p><img src="media/14/em-wave.png" class="img-fluid" style="width:5in"></p>
+<p>Plane waves that are self sustaining electric and magnetic Fields and combine in the far field, are commonly called an electromagnetic wave.</p>
+<p><img src="media/14/em-wave-combined.png" class="img-fluid" style="width:3in"></p>
+</section>
+<section id="antennas" class="level3" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="antennas"><span class="header-section-number">14.4.2</span> Antennas</h3>
+<p>Antennas can transmit and/or Receive RF equally well. Electrical length determines effectiveness.</p>
+<p><span class="math inline">\(\frac{\lambda}{2}\)</span> is an efficient antenna element length</p>
+<p>where:</p>
+<p><span class="math display">\[\begin{equation*}
+
+\lambda = \frac{c}{f}
+
+\end{equation*}\]</span></p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><strong>Frequency, <span class="math inline">\(f\)</span> </strong></td>
+<td><strong>Wavelength, <span class="math inline">\(\lambda\)</span> </strong></td>
+</tr>
+<tr class="even">
+<td>3 MHz</td>
+<td>100m</td>
+</tr>
+<tr class="odd">
+<td>30 MHz</td>
+<td>10 m</td>
+</tr>
+<tr class="even">
+<td>150 MHz</td>
+<td>2 m</td>
+</tr>
+<tr class="odd">
+<td>300 MHz</td>
+<td>1 m</td>
+</tr>
+<tr class="even">
+<td>3 GHz</td>
+<td>0.10 m</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common Wavelengths</strong></p>
+<p><strong>Slots</strong> that have favorable electrical lengths are effective antenna elements also, i.e.&nbsp;hatches, doors, avionics metal enclosure seams and ventilation holes.</p>
+<p><strong>Loop Area</strong> is the area encapsulated between the signal line and its return path that can be an effective antenna. The larger the loop (capture) area, the better the antenna effectiveness is.</p>
+<section id="spectra" class="level4" data-number="14.4.2.1">
+<h4 data-number="14.4.2.1" class="anchored" data-anchor-id="spectra"><span class="header-section-number">14.4.2.1</span> Spectra</h4>
+<p>Spectra are the frequency content of the electronic signals and are an important consideration in understanding EMI issues. Periodic signals contain energy at various frequencies and as such, a frequency domain approach is needed. How much energy at what frequency depends largely on the type of periodic signal, (i.e.&nbsp; square wave or sine wave), initial frequency and rise/fall times of the signal. The faster the rise/fall times are, the more spectral content will be developed in the signal, most of which will be unintentional and unwanted. This is mathematically demonstrated by the use of a trigonometric Fourier series.</p>
+</section>
+<section id="non-ideal-behavior-of-components" class="level4" data-number="14.4.2.2">
+<h4 data-number="14.4.2.2" class="anchored" data-anchor-id="non-ideal-behavior-of-components"><span class="header-section-number">14.4.2.2</span> Non-Ideal behavior of components</h4>
+<p>Non-ideal behavior of components can exists in discrete components such as resistors, capacitors, inductors and even wire when operated at off nominal conditions, for example temperature. Another condition is frequency. For example, a short grounding wire from a DC perspective is a dead short, neglecting the extremely small inductance. But at some frequency, this inductance gets large enough to be a factor, for example on a bonding strap for lightning protection. A <span class="math inline">\(26 \text{ gauge}\)</span> wire, <span class="math inline">\(1 \text{ inch}\)</span> above a ground plane will have <span class="math inline">\(0.028 \mu\text{H}\)</span> per inch of inductance, <span class="math inline">\(L\)</span> .</p>
+<p>where:</p>
+<p><span class="math inline">\(X_L = 2\pi f L\)</span></p>
+<p>For <span class="math inline">\(f = 150 \text{ MHz}\)</span> , <span class="math inline">\(X_L = 26.4 \frac{\Omega}{\text{inch}}\)</span> of wire which can be significant. To reduce this, replace the ground wire with a wide strap.</p>
+</section>
+</section>
+</section>
+<section id="electromagnetic-interference-emi" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="electromagnetic-interference-emi"><span class="header-section-number">14.5</span> Electromagnetic Interference (EMI)</h2>
+<p><strong>Electromagnetic Compatibility (EMC)</strong> is defined as systems that:</p>
+<ol type="1">
+<li>don’t interfere with other systems;</li>
+<li>are tolerant of interference from other systems;</li>
+<li>don’t interfere with itself.</li>
+</ol>
+<p><strong>Broadband Interference</strong> is interfering signals over a large range of frequencies. These can be associated with spark producing equipment like motors that can create signals with lots of spectral content.</p>
+<p><strong>Narrowband Interference</strong> is interfering signals that have a limited range of frequencies, usually a single frequency along with it’s harmonics. These can be associated with digital devices that have periodic characteristics like clocks.</p>
+<section id="interference-model" class="level3" data-number="14.5.1">
+<h3 data-number="14.5.1" class="anchored" data-anchor-id="interference-model"><span class="header-section-number">14.5.1</span> Interference Model</h3>
+<p>The classic interference model is:</p>
+<p>Source -&gt; Path -&gt; Victim</p>
+<p>To reduce the interference you can:</p>
+<ul>
+<li>Reduce the emissions from the <strong><em>Source</em></strong></li>
+<li>Disrupt the <strong><em>Path</em></strong></li>
+<li>Harden the <strong><em>Victim</em></strong></li>
+</ul>
+<p><strong>Sources</strong> of interference can be clocks, switching power supplies, CPUs, data buses, network systems, relays, local oscillators, and transmitter harmonics.</p>
+<p><strong>Coupling Paths</strong> can be signal and power lines, radiating wires, apertures or slots on LRUs, windows, door and hatch openings or antennas themselves.</p>
+<p><strong>Front Door Coupling</strong> is meant to be interference coming in the normal path to the system, i.e.&nbsp;through the antenna ports to the radio, and can cause interference at extremely low power levels <span class="math inline">\(‑100 \text{ dBm}\)</span> .</p>
+<p><strong>Back Door Coupling</strong> is interference coming into the system with the wires leading to the system and is of relatively higher power.</p>
+<p><strong>Capacitive Coupling</strong> primarily involves electric waves in the near field and is due to voltages on wires.</p>
+<p><strong>Inductive Coupling</strong> primarily involves magnetic waves in the near field and is due to current on either wires or chassis.</p>
+<p>The aircraft fuselage is sometimes incorrectly thought of as a Faraday Cage encapsulating the RF energy inside or preventing it from entering because of its aluminum structure, but actually it is not. All of the windows, doors and hatches allow RF energy to travel through quite easily.</p>
+<p><strong>Victims</strong> of interference can be radio receivers, VHF, HF, VOR, ILS, ADF, Display systems, Audio and Passenger Address system, smoke and fire detection circuits, fuel quantity systems. Typically, low energy systems can be susceptible.</p>
+<p>The reduction or elimination of EMI can be done in three areas; the systems end; by modifying the emissions and/or susceptibility requirements; or at the aircraft end by modifying the aircraft’s wiring or structure.</p>
+</section>
+<section id="conducted-emissions" class="level3" data-number="14.5.2">
+<h3 data-number="14.5.2" class="anchored" data-anchor-id="conducted-emissions"><span class="header-section-number">14.5.2</span> Conducted Emissions</h3>
+<p>Current/signal on wires that are not the intended or primary signal is considered conducted emissions. This ‘extra’ current will be passed along to other systems and/or can radiate on those wires acting like antennas.</p>
+<p><strong>Differential Mode</strong> current is made up of the intended signal or information and/or noise that goes out on the signal wires and comes back on the return lines.</p>
+<p><strong>Common Mode</strong> current is usually just noise that goes out on two or more signal/return lines and returns via some other path. This is usually the most troublesome in terms of emissions and should be eliminated whenever possible.</p>
+</section>
+<section id="radiated-emissions" class="level3" data-number="14.5.3">
+<h3 data-number="14.5.3" class="anchored" data-anchor-id="radiated-emissions"><span class="header-section-number">14.5.3</span> Radiated Emissions</h3>
+<p>RF energy emanating from the unit/LRU itself through holes, slots and apertures or from the interconnecting wires is considered radiated emissions.</p>
+</section>
+<section id="aviation-frequency-spectrum" class="level3" data-number="14.5.4">
+<h3 data-number="14.5.4" class="anchored" data-anchor-id="aviation-frequency-spectrum"><span class="header-section-number">14.5.4</span> Aviation Frequency Spectrum</h3>
+<p>The table below lists the frequency spectrum of interest to the aviation community. The range is from <span class="math inline">\(100 \text{ kHz}\)</span> to <span class="math inline">\(10 \text{ GHz}\)</span> , a factor of <span class="math inline">\(10^8\)</span> , <span class="math inline">\(\left(90 \text{ dB}\right)\)</span> . The primary interest is with equipment that is sensitive to RF energy, i.e.&nbsp;radio receivers, which are primarily intended to detect small signals <span class="math inline">\(\left(-105 \text{ dBm}\right)\)</span> . Emission requirements are set at a low level that will still allow proper operation of the radio receivers. For EMI purposes, emissions from equipment should stay clear of these frequencies.</p>
+<p><strong>Aviation Frequencies of Interest</strong></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Band</strong></th>
+<th style="text-align: left;"><strong>Frequency</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ADF</td>
+<td style="text-align: left;"><span class="math inline">\(190-1750 \text{ kHz}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HF</td>
+<td style="text-align: left;"><span class="math inline">\(2-30 \text{ MHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marker Beacon</td>
+<td style="text-align: left;"><span class="math inline">\(75 \text{ MHz}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VHF Nav</td>
+<td style="text-align: left;"><span class="math inline">\(108-118 \text{ MHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VHF Comm</td>
+<td style="text-align: left;"><span class="math inline">\(118-138 \text{ MHz}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Glideslope</td>
+<td style="text-align: left;"><span class="math inline">\(328-335 \text{ MHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DME, ATC, TCAS</td>
+<td style="text-align: left;"><span class="math inline">\(960-1220 \text{ MHz}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GPS</td>
+<td style="text-align: left;"><span class="math inline">\(1227, 1558, 1575 \text{ MHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Glonass</td>
+<td style="text-align: left;"><span class="math inline">\(1609 \text{ MHz}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Radio Altitude</td>
+<td style="text-align: left;"><span class="math inline">\(4.2-4.4 \text{ GHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MLS</td>
+<td style="text-align: left;"><span class="math inline">\(5.0-5.25 \text{ GHz}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WXR</td>
+<td style="text-align: left;"><span class="math inline">\(5.4, 8.8, 9.0-9.3 \text{ GHz}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="testing" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="testing"><span class="header-section-number">14.6</span> Testing</h2>
+<section id="regulations-and-industry-guidance" class="level3" data-number="14.6.1">
+<h3 data-number="14.6.1" class="anchored" data-anchor-id="regulations-and-industry-guidance"><span class="header-section-number">14.6.1</span> Regulations and Industry Guidance</h3>
+<p>The following references are regulations and industry guidelines that address procedures and acceptable limits for interference testing.</p>
+<ul>
+<li>RTCA DO160D, Chapter 21</li>
+<li>FARs Part 25.1353 and 25.1431</li>
+<li>MIL STD 461</li>
+<li>CISPR</li>
+<li>FCC Part 15</li>
+<li>Aircraft manufacturers own standards</li>
+</ul>
+</section>
+<section id="lab-testing" class="level3" data-number="14.6.2">
+<h3 data-number="14.6.2" class="anchored" data-anchor-id="lab-testing"><span class="header-section-number">14.6.2</span> Lab Testing</h3>
+<p>Lab testing of the unit using established standards and practices is the first and best means of testing. Not only is this where you will find the trouble spots (i.e.&nbsp;frequencies) but also is a place where some troubleshooting could alleviate potential problem areas. Contracts with LRU vendors should be written to require the equipment pass these tests, identified above, before delivery. A list of frequencies that exceed an established limit is the result.</p>
+</section>
+<section id="aircraft-ground-testing" class="level3" data-number="14.6.3">
+<h3 data-number="14.6.3" class="anchored" data-anchor-id="aircraft-ground-testing"><span class="header-section-number">14.6.3</span> Aircraft Ground Testing</h3>
+<p>After lab testing, the unit should be installed in the airplane and be tested with the installed shops wiring. Testing will consist of measuring conducted emissions with current probes on wire bundles associated with the new equipment.</p>
+<p>Radiated emissions are tested by using the aircraft’s antennas hooked to test equipment to determine how much RF energy is getting into these sensitive systems. Again, a list of frequencies that exceed an established limit is the result.</p>
+</section>
+<section id="aircraft-flight-testing" class="level3" data-number="14.6.4">
+<h3 data-number="14.6.4" class="anchored" data-anchor-id="aircraft-flight-testing"><span class="header-section-number">14.6.4</span> Aircraft Flight Testing</h3>
+<p>Only after both lab and ground testing is accomplished can a meaningful flight test occur. The results of the ground test should produce a list of frequencies of some exceedance or observed interference. It is usually only these frequencies that need to be cleared in flight. The appropriate systems should be tuned to those frequencies and with the equipment to be tested in its’ operating mode, determine if there is objectionable interference, (usually a pilots subjective opinion). Pilots can evaluate systems only if adequate lab/ground testing has been done beforehand. EMI issues that are found in flight test are very difficult and expensive to fix at this stage, and can typically only reduce or mask the problem.</p>
+</section>
+<section id="avionics-changes-and-emi-testing" class="level3" data-number="14.6.5">
+<h3 data-number="14.6.5" class="anchored" data-anchor-id="avionics-changes-and-emi-testing"><span class="header-section-number">14.6.5</span> Avionics changes and EMI testing</h3>
+<p>Changes in the hardware/wiring of a piece of avionics that could affect EMI testing are:</p>
+<ul>
+<li>Processor speeds</li>
+<li>Power Supply changes</li>
+<li>Frequency sensitive components, capacitors and inductors</li>
+<li>Circuit card layout and repackaging changes</li>
+</ul>
+<p>Software changes typically don’t affect EMI unless software controls/switches hardware related functions, i.e.&nbsp;speeds, options, peripherals etc.</p>
+</section>
+</section>
+<section id="lightning" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="lightning"><span class="header-section-number">14.7</span> Lightning</h2>
+<p>Lightning is a very large electrical transient that can impart thousands of Amperes of current through an aircraft structure. The structure needs to present a low impedance path for the lightning current so that no damage causing arcing and/or over-heating occurs. Additionally nearby wiring needs to be shielded to protect against the induced current produced by the ever changing magnetic fields.</p>
+<section id="aircraft-lightning-zones" class="level3" data-number="14.7.1">
+<h3 data-number="14.7.1" class="anchored" data-anchor-id="aircraft-lightning-zones"><span class="header-section-number">14.7.1</span> Aircraft Lightning Zones</h3>
+<p>The aircraft is divided into different areas that relate to the probability of a lightning attachment. The nose, tail, wingtips and engine nacelles (extremities) are more likely areas.</p>
+</section>
+<section id="direct-effects" class="level3" data-number="14.7.2">
+<h3 data-number="14.7.2" class="anchored" data-anchor-id="direct-effects"><span class="header-section-number">14.7.2</span> Direct Effects</h3>
+<p>Direct effects of a lightning attachment can be in the form of heating, arcing and acoustic issues. Designing the structure to handle the current flow and providing a low impedance path for the lightning current will greatly minimize these effects.</p>
+</section>
+<section id="indirect-effects" class="level3" data-number="14.7.3">
+<h3 data-number="14.7.3" class="anchored" data-anchor-id="indirect-effects"><span class="header-section-number">14.7.3</span> Indirect Effects</h3>
+<p>Indirect effects considers the current that is induced by the transient and coupled onto aircraft wiring that is parallel to the main lightning current flow. The protection is two fold. Systems are designed and tested to handle these types of transients as well as the wiring is addressed to minimize the induced transient to these systems. Shielding and good grounding with short pigtails at both ends is a good method to reduce the induced current.</p>
+</section>
+<section id="instrumentation-precaution" class="level3" data-number="14.7.4">
+<h3 data-number="14.7.4" class="anchored" data-anchor-id="instrumentation-precaution"><span class="header-section-number">14.7.4</span> Instrumentation Precaution</h3>
+<p>Any flight test instrumentation wiring that lies outside the protective fuselage needs to be evaluated for both direct and indirect effects of a nearby lightning attachment. The sensor itself must be protected from the direct attachment and the wiring must be protected from induced current onto that wiring. This current may damage the data system equipment and/or, other aircraft systems that are also instrumented. Good shielding and grounding techniques will minimize these effects. For more information see the 14.6 Reference at the end of this handbook section.</p>
+</section>
+</section>
+<section id="high-intensity-radiated-fields-hirf" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="high-intensity-radiated-fields-hirf"><span class="header-section-number">14.8</span> High Intensity Radiated Fields (HIRF)</h2>
+<p>Aircraft can be exposed to large RF energy produced by high powered radio transmitters or military/airport surveillance radars. These RF fields can penetrate the aircraft fuselage through windows and doors/slots which could couple with aircraft wiring and/or systems and potentially interfere. This threat is addressed by both the aircraft and systems approach.</p>
+<p>The systems themselves are designed and tested to be immune to a particular level of RF. These levels are determined by the criticality of the systems and are specified in regulatory material. Testing is usually done in a laboratory environment.</p>
+<p>From the aircraft side, the internal wiring for critical systems is protected with appropriate shielding and grounding. Aircraft ground testing is done at special facilities that can radiate the vehicle with large RF fields with instrumentation inside to measure the penetration and to verify correct system operation.</p>
+</section>
+<section id="precipitation-static-p-static" class="level2" data-number="14.9">
+<h2 data-number="14.9" class="anchored" data-anchor-id="precipitation-static-p-static"><span class="header-section-number">14.9</span> Precipitation Static (P-static)</h2>
+<p>This occurs due to a buildup of static charges that discharge by noisy arcing from/to various parts of the aircraft. The static buildup is caused by tribo-electric charging from the aircraft impacting snow/rain/ash particles in the air while flying. This charge should gracefully exit the aircraft through static wicks installed on the wingtips and empennage tips. If it doesn’t the problem shows up as broad banded noise (white noise) heard on receivers such as ADF, HF and to some extent VHF as the aircraft flies through the precipitation.</p>
+<p>Typical causes are access panels (composite and metal), cowling and fairings that are not properly grounded. Ground straps do a good job of not isolating parts. (Note: these straps should not be used for lightning protection as they usually are not sized to handle the current).</p>
+</section>
+<section id="references" class="level2" data-number="14.10">
+<h2 data-number="14.10" class="anchored" data-anchor-id="references"><span class="header-section-number">14.10</span> References</h2>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>14.1</td>
+<td>Paul, C. R., “Introduction to Electromagnetic Compatibility”, John Wiley &amp; Sons Publishing, 1992</td>
+</tr>
+<tr class="even">
+<td>14.2</td>
+<td>Ott, H. W, “Noise Reduction Techniques in Electronic Systems”, John Wiley &amp; Sons Publishing, 1988</td>
+</tr>
+<tr class="odd">
+<td>14.3</td>
+<td>Hrehov, D. W. and Walen, D. B., “What Flight Test Crews Need to Know About EMI/EMC”, <em>34<sup>th</sup> Annual SFTE Symposium Workshop,</em> 2003</td>
+</tr>
+<tr class="even">
+<td>14.4</td>
+<td>Federal Aviation Regulations, Part 25</td>
+</tr>
+<tr class="odd">
+<td>14.5</td>
+<td>RTCA DO160D, “Environmental Conditions and Test Procedures for Airborne Equipment”, 1997</td>
+</tr>
+<tr class="even">
+<td>14.6</td>
+<td>Hrehov, D. W., “What Instrumentation Engineers Need to Know About Lightning”, <em>31<sup>st</sup> Annual SFTE Symposium,</em> 2000</td>
+</tr>
+<tr class="odd">
+<td>14.7</td>
+<td>Fisher, F. A., Perala, F. A., and Plumer, J A., “Lightning Protection for Aircraft”, Lightning Technologies Inc., 1990</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./13-acoustics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./15-handling-qualities.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

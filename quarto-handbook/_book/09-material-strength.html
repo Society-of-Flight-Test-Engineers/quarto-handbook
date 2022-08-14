@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 9&nbsp; Material Strength</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./10-reciprocating-engines.html" rel="next">
+<link href="./08-motion-analysis.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-axis-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-mass-properties.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-motion-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-material-strength.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-reciprocating-engines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-propellers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Propellers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-standardization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-acoustics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-emc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-handling-qualities.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-rotary-wings.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Rotary Wing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-gas-turbine-propulsion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-radio-communications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-communications-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-display-guidelines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#loads-terminology" id="toc-loads-terminology" class="nav-link active" data-scroll-target="#loads-terminology"> <span class="header-section-number">9.1</span> Loads Terminology</a></li>
+  <li><a href="#material-stress-strain" id="toc-material-stress-strain" class="nav-link" data-scroll-target="#material-stress-strain"> <span class="header-section-number">9.2</span> Material Stress &amp; Strain</a></li>
+  <li><a href="#v-n-diagram" id="toc-v-n-diagram" class="nav-link" data-scroll-target="#v-n-diagram"> <span class="header-section-number">9.3</span> V-n Diagram</a></li>
+  <li><a href="#strain-gages" id="toc-strain-gages" class="nav-link" data-scroll-target="#strain-gages"> <span class="header-section-number">9.4</span> Strain Gages</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">9.5</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>&nbsp;</p>
+<p><strong>Abbreviations</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(A\)</span></td>
+<td style="text-align: left;">cross-sectional area <span class="math inline">\(\left[\text{ft}^2\right]\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\mathrm{DLL}\)</span></td>
+<td style="text-align: left;">design load limit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(E\)</span></td>
+<td style="text-align: left;">modulus of elasticity or Young’s Modulus <span class="math inline">\(\left[\frac{\text{lb}}{\text{ft}^2}\right]\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(e\)</span></td>
+<td style="text-align: left;">strain (non-dimensional)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\mathrm{EK}\)</span></td>
+<td style="text-align: left;">gage factor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\mathrm{GW}\)</span></td>
+<td style="text-align: left;">gross weight</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\mathrm{KU}\)</span></td>
+<td style="text-align: left;">effective gust velocity <span class="math inline">\(\left[\frac{\text{ft}}{\text{sec}}\right]\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(L\)</span></td>
+<td style="text-align: left;">length <span class="math inline">\(\left[\text{ft}\right]\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(L\)</span></td>
+<td style="text-align: left;">lift force</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(N_{zb}\)</span></td>
+<td style="text-align: left;">normal load factor, along aircraft z-axis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P\)</span></td>
+<td style="text-align: left;">applied load <span class="math inline">\(\left[\text{lb}\right]\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(R\)</span></td>
+<td style="text-align: left;">unstrained resistance</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Delta R\)</span></td>
+<td style="text-align: left;">change in resistance due to load</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(S\)</span></td>
+<td style="text-align: left;">wing area <span class="math inline">\(\left[\text{ft}^2\right]\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(V\)</span></td>
+<td style="text-align: left;">flight speed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(V_e\)</span></td>
+<td style="text-align: left;">equivalent airspeed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(V_s\)</span></td>
+<td style="text-align: left;">stall speed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(W\)</span></td>
+<td style="text-align: left;">aircraft weight</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\frac{W}{S}\)</span></td>
+<td style="text-align: left;">wing loading</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\sigma\)</span></td>
+<td style="text-align: left;">air density <span class="math inline">\(\left[\frac{\text{slugs}}{\text{ft}^3}\right]\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\sigma\)</span></td>
+<td style="text-align: left;">stress <span class="math inline">\(\left[\frac{\text{lb}}{\text{ft}^2}\right]\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\nu\)</span></td>
+<td style="text-align: left;">Poisson’s ratio</td>
+</tr>
+</tbody>
+</table>
+<section id="loads-terminology" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="loads-terminology"><span class="header-section-number">9.1</span> Loads Terminology</h2>
+<table class="table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 84%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Annealing</td>
+<td style="text-align: left;">A heat treatment that eliminates the effects of cold working.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brittleness</td>
+<td style="text-align: left;">Measure of a material’s lack of ductility (by one definition breakage at five percent or less strain implies brittleness).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cold Working</td>
+<td style="text-align: left;">Deformation of a metal below its recrystallization temp., thereby strengthening and reshaping it.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Creep Rate</td>
+<td style="text-align: left;">The rate at which a material continues to stretch when stress is applied at high temperature.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Design Load Limit</td>
+<td style="text-align: left;">Maximum loads expected in normal service.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ductility</td>
+<td style="text-align: left;">Ability of a material to deform without breaking.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Durability</td>
+<td style="text-align: left;">Ability to resist cracking, corrosion, thermal degradation, delamination, wear, and the effects of foreign object damage over time.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Elastic Deformation</td>
+<td style="text-align: left;">Deformation of the material that is recovered when the applied load is removed.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Elasticity</td>
+<td style="text-align: left;">Ability of a material to return to its undeformed shape after all loads have been removed.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Endurance Limit</td>
+<td style="text-align: left;">The stress below which a material will not fail in a fatigue test.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Factor of Safety</td>
+<td style="text-align: left;">Ratio of the predicted failure stress to the maximum stress anticipated in normal operation (<span class="math inline">\(\mathrm{DLL}\)</span> ). For aircraft, the Factor of Safety is typically 1.5 <span class="math inline">\(\mathrm{DLL}\)</span> .</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fatigue</td>
+<td style="text-align: left;">The failure of a material when subjected to repeated loads less than the ultimate sustainable load. This effect is presented in an <span class="math inline">\(S-N\)</span> diagram such as <img src="media/09/image1.png" style="width:2.90556in;height:1.60417in"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fatigue Life</td>
+<td style="text-align: left;">The number of cycles at a particular stress before a material fails by fatigue.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hardness</td>
+<td style="text-align: left;">Resistance to plastic deformation resulting from impact loads.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Impact Energy</td>
+<td style="text-align: left;">The energy required to fracture a specimen when the load is suddenly applied.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Limit Stress</td>
+<td style="text-align: left;">The maximum stress where the Modulus of Elasticity remains constant (proportional limit).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Margin of Safety</td>
+<td style="text-align: left;">Any load-bearing capability greater that the ultimate load, calculated as <span class="math inline">\(\frac{\text{Failure load as a factor of } \mathrm{DLL}}{1.5 \mathrm{ DLL}} - 1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Notch Sensitivity</td>
+<td style="text-align: left;">Measure the effect of a notch on impact energy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Plastic Deformation</td>
+<td style="text-align: left;">Permanent deformation of a material applied load. Plasticity Material deformation characteristics beyond its elastic limit.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Resilience</td>
+<td style="text-align: left;">A measure of the amount of energy a material can absorb elastically in a unit volume of the material.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rupture Time</td>
+<td style="text-align: left;">The time required for a specimen to fail by creep at a particular temperature and stress.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stiffness</td>
+<td style="text-align: left;">A qualitative of the elastic deformation produced.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Strain (<span class="math inline">\(e\)</span> )</td>
+<td style="text-align: left;">The deformation of a material under an applied load.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strength</td>
+<td style="text-align: left;">Ability to withstand external loads without failure.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stress (<span class="math inline">\(\sigma\)</span> )</td>
+<td style="text-align: left;">The ability of a material to react a force distributed over some area.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tempering</td>
+<td style="text-align: left;">A low-temperature heat treatment which reduces hardness.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tensile Strength</td>
+<td style="text-align: left;">The stress that corresponds to the maximum load in a tensile test.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Thermal Stress</td>
+<td style="text-align: left;">Stress resulting from expansion (strain) of a material subjected to heating.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toughness</td>
+<td style="text-align: left;">Total energy absorbed before failure occurs (area under the stress-strain curve).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transition</td>
+<td style="text-align: left;">Temperature The temperature below which a material behaves in a brittle manner in an impact test.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">True Strain</td>
+<td style="text-align: left;">The actual strain produces when a load is applied.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ultimate Stress</td>
+<td style="text-align: left;">The stress point at which additional load cannot be reacted.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wing Loading</td>
+<td style="text-align: left;">Aircraft weight per wing area, <span class="math inline">\(\frac{W}{S}\)</span> , a ready measure of air loads for steady level flight.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yield Stress</td>
+<td style="text-align: left;">The stress applied to a material that just causes permanent plastic deformation.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="material-stress-strain" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="material-stress-strain"><span class="header-section-number">9.2</span> Material Stress &amp; Strain</h2>
+<p><strong>Stress</strong> (<span class="math inline">\(\sigma\)</span> ) is the ability of a material to react a force distributed over some area. In the simple axial load case this can be presented as</p>
+<p><span class="math display">\[\begin{equation*}
+
+  \sigma = \frac{P}{A}
+
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+\text{where } \sigma &amp;= \text{the applied axial load} \\
+A &amp;= \text{cross-sectional area over which the load is applied} \\
+\end{align}\]</span></p>
+<p><strong>Strain</strong> (<span class="math inline">\(e\)</span>) is the deformation of a material under an applied load. In the basic form this can be presented as</p>
+<p><span class="math display">\[\begin{equation*}
+
+  e = \frac{\Delta L}{L}
+
+\end{equation*}\]</span></p>
+<p>where <span class="math inline">\(\Delta L\)</span> is the change in dimension due to some load, and <span class="math inline">\(L\)</span> is the original dimension</p>
+<p>The <strong>stress-strain relationship</strong> is linear (proportional) for a large percentage of the applied load to the maximum, as expressed by the <strong>Modulus of Elasticity</strong> (<strong>Young’s Modulus</strong>)</p>
+<p><span class="math display">\[\begin{equation*}
+
+  E = \frac{\sigma}{e}
+
+\end{equation*}\]</span></p>
+<p>A typical stress &amp; strain relationship for a material is illustrated as</p>
+<p><img src="media/09/image2.png" style="width:4.39514in;height:2.57292in"></p>
+</section>
+<section id="v-n-diagram" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="v-n-diagram"><span class="header-section-number">9.3</span> V-n Diagram</h2>
+<p><strong>Flight Path Normal Load Factor</strong> <span class="math inline">\(\left(N_{zw} \right)\)</span> can be expressed during level flight, as</p>
+<p>\begin{equation*}</p>
+<p><span class="math display">\[\begin{align}
+  N_{zw} &amp;= \frac{1}{\cos \phi} = \frac{L}{W} \\
+  \text{where } C_L &amp;= \text{lift coefficient} \\
+  F_n &amp;= \text{net thrust} \\
+  L &amp;= \text{lift force} = \text{wing lift} + \text{thrust lift} = C_L qS + F_n \sin \alpha_F \\
+  q &amp;= \text{dynamic pressure} \\
+  S &amp;= \text{wing area} \\
+  W &amp;= \text{gross weight} \\
+  \alpha_F &amp;= \text{incidence angle between thrust line and relative wind} \\
+  \phi &amp;= \text{angle of bank}
+  \end{align}\]</span></p>
+<p><strong>Body Axis Normal Load Factor</strong> <span class="math inline">\(\left(N_{zb} \right)\)</span> is calculated as</p>
+<p>\begin{equation*}</p>
+<p><span class="math display">\[\begin{align}
+  N_{zb} &amp;= \frac{N_{zw} - N_{xb} \sin \alpha}{\cos \alpha} \\
+  \text{where } N_{xb} &amp;= \text{load factor along aircraft body x-axis} \\
+  \alpha &amp;= \text{angle of attack} \\
+  \end{align}\]</span></p>
+<p>For the simplified case of negligible thrust lift, the maximum achievable <span class="math inline">\(N_{zb}\)</span> at any flight speed can be calculated as</p>
+<p>\begin{equation*}</p>
+<p><span class="math display">\[\begin{align}
+  N_{zb} &amp;= \left( \frac{V}{V_s} \right)^2 \\
+  \text{where } &amp;\text{both speeds must be the same units} \\
+  &amp;\text{(i.e., true, equivalent, calibrated)} \\
+  V &amp;= \text{flight airspeed} \\
+  V_s &amp;= \text{stall airspeed} \\
+  \end{align}\]</span>&nbsp;</p>
+<p>A general normal load flight envelope (V-n diagram) would appear as</p>
+<ul>
+<li>The envelope typically varies with:
+<ul>
+<li>asymmetric loading</li>
+<li>aircraft configuration</li>
+<li>for air loads other than along the normal axis</li>
+<li>and other structural, system, and safety considerations.</li>
+</ul></li>
+</ul>
+<p><img src="media/09/image3.png" style="width:4.52014in;height:2.81181in"></p>
+<ul>
+<li>It is frequently desirable to correct measured (test) <span class="math inline">\(N_{zb}\)</span> data to a standard weight or design gross weight ( <span class="math inline">\(\mathrm{GW}\)</span> ) using the relationship</li>
+</ul>
+<p>\begin{equation*}</p>
+<p><span class="math display">\[\begin{align}
+  N_{zb} &amp;= N_{zw_{\text{test}}} \frac{W_t}{W_s} \\
+  \text{where } W_t &amp;= \text{test weight} \\
+  W_s &amp;= \text{standard weight} \\
+  \end{align}\]</span></p>
+<ul>
+<li>The increase in load factor due to a vertical gust <span class="math inline">\(\Delta n\)</span> is calculated as</li>
+</ul>
+<p>\begin{equation*}</p>
+<p><span class="math display">\[\begin{align}
+  \Delta n &amp;= \frac{0.155 m V_e \left( \mathrm{KU} \right) }{\frac{W}{S}} \\
+  \text{where } m &amp;= \text{slope of } C_{L_{\alpha}} \text{ curve} \\
+  V_e &amp;= \text{equivalent airspeed (knots)} \\
+  \mathrm{KU} &amp;= \text{effective gust velocity (fps)} \\
+  \frac{W}{S} &amp;= \text{wing loading (psf)} \\
+  \end{align}\]</span></p>
+</section>
+<section id="strain-gages" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="strain-gages"><span class="header-section-number">9.4</span> Strain Gages</h2>
+<p>The three strain gage configurations most commonly used are</p>
+<p><img src="media/09/image4.png" style="width:4.36389in;height:2.02083in"></p>
+<p>Strain <span class="math inline">\(\left( e \right)\)</span> is measured using the electrical resistance measured via the strain gage in a material subject to load. For the uniaxial gauge</p>
+<p>\begin{equation*}</p>
+<p><span class="math display">\[\begin{align}
+  K &amp;= \frac{ \left( \frac{\Delta R}{R} \right) }{e} \\
+  \text{where } K &amp;= \text{gage factor (provided by manufacturer)} \\
+  R &amp;= \text{unstrained resistance} \\
+  \Delta R &amp;= \text{change in resistance due to load} \\
+  &amp; + \Delta R \text{ for tension} \\
+  \end{align}\]</span></p>
+<ul>
+<li>For the bi-axial gage oriented coincident with the principal axes (maximum strain), each leg of the gage is analyzed as a uniaxial gage using the above equation for the principle strains. The associated stresses are</li>
+</ul>
+<p>\begin{equation*}</p>
+<p><span class="math display">\[\begin{align}
+  \sigma_{\text{max}} &amp;= E \frac{e_{\text{max}} + \nu e_{\text{min}}}{1 - \nu^2} \\
+  \sigma_{\text{min}} &amp;= E \frac{e_{\text{min}} + \nu e_{\text{max}}}{1 - \nu^2} \\
+  \text{where } &amp; e_{\text{max}} \text{ and } e_{\text{min}} \text{ are the measured principal strains in the appropriate legs of the bi-axial gage} \\
+  E &amp;= \text{Young's Modulus of the material} \\
+  \nu &amp;= \text{Poisson's ratio for the material (ratio of compression and tension strains)} \\
+  \end{align}\]</span></p>
+<ul>
+<li>For the Rosette gage, the principal strains and stresses are derived as</li>
+</ul>
+<p>\begin{equation*}</p>
+<p><span class="math display">\[\begin{align}
+  e_{\text{max,min}} &amp;= 0.5 \left(e_a + e_c \right) \pm 0.5 \sqrt{\left(e_a - e_c \right)^2 + \left(2e_b - e_a - e_c \right)^2  } \\
+  \sigma_{\text{max,min}} &amp;= 0.5 E \left[ \frac{e_a + e_c}{1 - \nu} \right] \pm 0.5 \frac{\sqrt{\left(e_a - e_c \right)^2 + \left(2e_b - e_a - e_c \right)^2  }}{1 - \nu} \\
+  \text{where } &amp; e \text{ denotes the strain in each of the three legs of the Rosette} \\
+  &amp;\text{(+ is used for the maximum and - for the minimum)} \\
+\end{align}\]</span></p>
+<p>To accurately measure the very small resistance changes in a strain gage, a <em>Wheatstone Bridge</em> is typically used</p>
+<p><img src="media/09/image7.png" style="width:4.49931in;height:2.3125in"></p>
+</section>
+<section id="references" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="references"><span class="header-section-number">9.5</span> References</h2>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>9.1</td>
+<td>Dole, Charles E., <em>Fundamentals of Aircraft Material Factors</em>, University of Southern California, Los Angeles, California, 1987.</td>
+</tr>
+<tr class="even">
+<td>9.2</td>
+<td>Norton, William J., <em>Structures Flight Test Handbook</em>, AFFTC-TIH-90-001, Air Force Flight Test Center, Edwards AFB, California, November 1990.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Additional Reading</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><em>Military Specification Airplane Strength and Rigidity - General Specification</em>, MIL-A-8860.</td>
+</tr>
+<tr class="even">
+<td><em>Military Specification Airplane Strength and Rigidity, Sonic Fatigue</em>, MIL-A-008893.</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./08-motion-analysis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./10-reciprocating-engines.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -7,7 +7,7 @@ book:
   date: 2013-01-01
   date-format: YYYY
   toc: true
-  toc-depth: 1
+  toc-depth: 3
   chapters:
     - index.qmd
     - 01-general.qmd
@@ -15,8 +15,22 @@ book:
     - 03-earth-atmosphere.qmd
     - 04-pitot-statics.qmd
     - 05-aero.qmd
-    - summary.qmd
-    - references.qmd
+    - 06-axis-systems.qmd
+    - 07-mass-properties.qmd
+    - 08-motion-analysis.qmd
+    - 09-material-strength.qmd
+    - 10-reciprocating-engines.qmd
+    - 11-propellers.qmd
+    - 12-standardization.qmd
+    - 13-acoustics.qmd
+    - 14-emc.qmd
+    - 15-handling-qualities.qmd
+    - 16-rotary-wings.qmd
+    - 17-gas-turbine-propulsion.qmd
+    - 18-radio-communications.qmd
+    - 19-electromagnetic-spectrum.qmd
+    - 20-communications-systems.qmd
+    - 21-display-guidelines.qmd
 
 bibliography: references.json
 link-citations: true

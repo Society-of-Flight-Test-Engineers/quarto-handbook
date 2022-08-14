@@ -8,26 +8,26 @@
 
 | | |
 |:-|:-|
-|Commutative| $$ a+b = b+a ,\, ab = ba $$ |
-|Associative| $$a+(b+c) = (a+b)+c$$|
-|Distributive| $$a(b+c) = ab+ac$$|
+|Commutative| \begin{equation*}  a+b = b+a ,\, ab = ba \end{equation*}  |
+|Associative| \begin{equation*}  a+(b+c) = (a+b)+c\end{equation*}  |
+|Distributive| \begin{equation*}  a(b+c) = ab+ac\end{equation*}  |
 
 ### Identities
 
 |Exponents|Logarithms^[If M, N,b are positive]|
 |:-:|:-:|
-|$$a^x a^y = a^{x+y}$$| $$\log_b{b} = 1$$|
-|$$\left( ab \right) ^x = a^x b^x $$|$$\log_b{1} = 0$$|
-|$$\left( a^x \right) y = a^xy $$|$$ \log_b \left( MN \right) = log_b{M} + log_b{N}$$|
-|$$a^{mn}  = \left( a^m \right) ^n $$|$$\log_b \left( \frac{M}{N} \right) = \log_b{M} - \log_b{N}$$|
-|$$a^0 = 1$$ If $a \neq 0$ |$$\log_b \left( M^p \right)   = p \log_b{M}$$|
-|$$a^{-x} = \frac{1}{a^x} $$|$$\log_b \left( \frac{1}{M} \right) = -\log_b{M} $$|
-|$$ \frac{a^x}{a^y} = a^{x-y} $$|$$ \log_b{\sqrt[q]{M}} = \frac{1}{q} \log_b{M} $$|
-|$$ \sqrt[x]{ab} = \left( \sqrt[x]{a} \right) \left( \sqrt[x]{b} \right) $$|$$ \log_b{M} = \left(\log_c{M} \right) \left(\log_b{c} \right)= \frac{\log_c{M}}{\log_c{b}} $$|
-|$$ a^{\frac{x}{y}} = \sqrt[y]{a^x} = \left( \sqrt[y]{a} \right)^x $$| |
-|$$ a^{\frac{1}{y}} = \sqrt[y]{a} $$||
-|$$ \left( \sqrt[x]{a} \right) \left( \sqrt[y]{a} \right) = a^{\left( \frac{1}{x} + \frac{1}{y} \right)} = \sqrt[xy]{a^{x+y}} $$||
-|$$ \sqrt{a} + \sqrt{b} = \sqrt{a + b + 2\sqrt{ab}}$$||
+\|\begin{equation*}a^x a^y = a^{x+y\}\end{equation*}| \begin{equation*}\log_b{b} = 1\end{equation*}  |
+\|\begin{equation*}\left( ab \right) ^x = a^x b^x \begin{equation*}\|\begin{equation*}\log_b{1} = 0\end{equation*}  |
+\|\begin{equation*}\left( a^x \right) y = a^xy \begin{equation*}\|\begin{equation*}\log_b \left( MN \right) = log_b{M} + log_b{N\}\end{equation*}|
+\|\begin{equation*}a^{mn}  = \left( a^m \right) ^n \begin{equation*}\|\begin{equation*}\log_b \left( \frac{M}{N} \right) = \log_b{M} - \log_b{N\}\end{equation*}|
+\|\begin{equation*}a^0 = 1\end{equation*}  If $a \neq 0$ \|\begin{equation*}\log_b \left( M^p \right)   = p \log_b{M\}\end{equation*}|
+\|\begin{equation*}a^{-x} = \frac{1}{a^x\}\end{equation*}\|\begin{equation*}\log_b \left( \frac{1}{M} \right) = -\log_b{M\}\end{equation*}|
+\|\begin{equation*}\frac{a^x}{a^y} = a^{x-y\}\end{equation*}\|\begin{equation*}\log_b{\sqrt[q]{M}} = \frac{1}{q} \log_b{M\}\end{equation*}|
+\|\begin{equation*}\sqrt[x]{ab} = \left( \sqrt[x]{a} \right) \left( \sqrt[x]{b} \right\)\end{equation*}\|\begin{equation*}\log_b{M} = \left(\log_c{M} \right) \left(\log_b{c} \right)= \frac{\log_c{M}}{\log_c{b}\}\end{equation*}|
+\|\begin{equation*} a^{\frac{x}{y}} = \sqrt[y]{a^x} = \left( \sqrt[y]{a} \right)^x \end{equation*}| |
+\|\begin{equation*} a^{\frac{1}{y}} = \sqrt[y]{a\}\end{equation*}||
+\|\begin{equation*}\left( \sqrt[x]{a} \right) \left( \sqrt[y]{a} \right) = a^{\left( \frac{1}{x} + \frac{1}{y} \right)} = \sqrt[xy]{a^{x+y}\}\end{equation*}||
+\|\begin{equation*}\sqrt{a} + \sqrt{b} = \sqrt{a + b + 2\sqrt{ab}\}\end{equation*}||
 
 Examples:
 
@@ -83,15 +83,15 @@ Examples:
 
 #### Quadratic Equation {-}
 
-$$ax^2 + bx + c =0$$
+\begin{equation*}ax^2 + bx + c =0\end{equation*}
 
 Two roots, both real or both complex
 
-$$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+\begin{equation*}x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\end{equation*}
 
 #### Cubic Equation {-}
 
-$$y^3 + py^2 + qy + r = 0$$
+\begin{equation*}y^3 + py^2 + qy + r = 0\end{equation*}
 
 Three roots, all real or one real & two complex
 
@@ -101,11 +101,11 @@ where $a = \frac{3q - p^2}{3}$ and $b = \frac{2p^3 - 9pq - 27r}{27}$
 
 let
 
-$$ A = \sqrt[3]{-\frac{b}{2} + \sqrt{\frac{b^2}{4} + \frac{a^3}{27}}}$$
+\begin{equation*} A = \sqrt[3]{-\frac{b}{2} + \sqrt{\frac{b^2}{4} + \frac{a^3}{27}}}\end{equation*}
 
 and
 
-$$B =\sqrt[3]{-\frac{b}{2} - \sqrt{\frac{b^2}{4} + \frac{a^3}{27}}} $$
+\begin{equation*}B =\sqrt[3]{-\frac{b}{2} - \sqrt{\frac{b^2}{4} + \frac{a^3}{27}}}\end{equation*}
 
 then
 
@@ -119,60 +119,60 @@ Special cases:
 
 If $\frac{b^2}{4} + \frac{a^3}{27} < 0$ , then the real roots are
 
-$$x_{1,2,3} = 2 \sqrt{\frac{-a}{3}} cos \left( \frac{\phi}{3} + 120° k \right)$$
+\begin{equation*}x_{1,2,3} = 2 \sqrt{\frac{-a}{3}} cos \left( \frac{\phi}{3} + 120° k \right)\end{equation*}
 
 where $k = 0,1,2$
 
 and
 
-$$cos\phi = + \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b < 0$$
+\begin{equation*}cos\phi = + \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b < 0\end{equation*}
 
 or
 
-$$cos\phi = - \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b > 0$$
+\begin{equation*}cos\phi = - \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b > 0\end{equation*}
 
 If $\frac{b^2}{4} + \frac{a^3}{27} > 0$ and $a > 0$ , the single real root is
 
-$$x = 2 \sqrt{\frac{a}{3}} cot \left( 2\phi \right)$$
+\begin{equation*}x = 2 \sqrt{\frac{a}{3}} cot \left( 2\phi \right)\end{equation*}
 
 where $tan\phi = \sqrt[3]{tan\psi}$
 
 and
 
-$$ cot \left( 2\psi \right) = + \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b < 0$$
+\begin{equation*} cot \left( 2\psi \right) = + \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b < 0\end{equation*}
 
 or
 
-$$ cot \left( 2\psi \right) = - \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b < 0$$
+\begin{equation*} cot \left( 2\psi \right) = - \sqrt{\frac{ \frac{b^2}{4} }{ \frac{-a^3}{27} }} \;\;\;\text{if}\; b < 0\end{equation*}
 
 If $\frac{b^2}{4} + \frac{a^3}{27} = 0$, the three real roots are
 
-$$ x_{1} = -2 \sqrt{\frac{-a}{3}}, \; x_{2,3} = +\sqrt{\frac{-a}{3}} \;\;\; \text{if} \; b > 0 $$
+\begin{equation*} x_{1} = -2 \sqrt{\frac{-a}{3}}, \; x_{2,3} = +\sqrt{\frac{-a}{3}} \;\;\; \text{if} \; b > 0 \end{equation*}
 
 or
 
-$$ x_{1} = +2 \sqrt{\frac{-a}{3}}, \; x_{2,3} = -\sqrt{\frac{-a}{3}} \;\;\; \text{if} \; b < 0 $$
+\begin{equation*} x_{1} = +2 \sqrt{\frac{-a}{3}}, \; x_{2,3} = -\sqrt{\frac{-a}{3}} \;\;\; \text{if} \; b < 0 \end{equation*}
 
 #### Quartic (biquadratic) Equation {-}
 
 For
 
-$$y^4 + py^3 + qy^2 + ry + s = 0$$
+\begin{equation*}y^4 + py^3 + qy^2 + ry + s = 0\end{equation*}
 
 let $y = x - \frac{p}{4}$ to rewrite equation as
 
-$$x^4 + ax^2 + bx + c = 0$$
+\begin{equation*}x^4 + ax^2 + bx + c = 0\end{equation*}
 
 let $l$, $m$, $n$ denote roots of the following resolvent cubic:
 
-$$ t^3 + \frac{1}{2} at^2 +  \frac{1}{16} \left( a^2 - 4c \right) t -  \frac{1}{64}b^2 = 0 $$
+\begin{equation*} t^3 + \frac{1}{2} at^2 +  \frac{1}{16} \left( a^2 - 4c \right) t -  \frac{1}{64}b^2 = 0 \end{equation*}
 
 The roots of the quartic are
 
-$$ x_{1} = + \sqrt{l} + \sqrt{m} + \sqrt{n} $$
-$$ x_{2} = + \sqrt{l} - \sqrt{m} - \sqrt{n} $$
-$$ x_{3} = - \sqrt{l} + \sqrt{m} - \sqrt{n} $$
-$$ x_{4} = - \sqrt{l} - \sqrt{m} + \sqrt{n} $$
+\begin{equation*} x_{1} = + \sqrt{l} + \sqrt{m} + \sqrt{n}\end{equation*}
+\begin{equation*} x_{2} = + \sqrt{l} - \sqrt{m} - \sqrt{n}\end{equation*}
+\begin{equation*} x_{3} = - \sqrt{l} + \sqrt{m} - \sqrt{n}\end{equation*}
+\begin{equation*} x_{4} = - \sqrt{l} - \sqrt{m} + \sqrt{n}\end{equation*}
 
 ### Interest And Annuities
 
@@ -184,15 +184,15 @@ $P$ principal at $i$ interest for $n$ time accumulates to amount $A_{n}$.
 
 Simple interest:
 
-$$A_{n} = P(1 + ni)$$
+\begin{equation*}A_{n} = P(1 + ni)\end{equation*}
 
 at interest compounded each $n$ interval:
 
-$$A_{n} = P(1 + i)^n $$
+\begin{equation*}A_{n} = P(1 + i)^n \end{equation*}
 
 at interest compounded $q$ times per $n$ interval:
 
-$$A_{n} = P(1 + \frac{r}{q})^{nq} $$
+\begin{equation*}A_{n} = P(1 + \frac{r}{q})^{nq}\end{equation*}
 
 where $r$ is the nominal (quoted) rate of interest
 
@@ -200,13 +200,13 @@ Effective Interest:
 
 The rate per time period at which interest is earned during each period is called the effective rate $i$.
 
-$$i = \left( 1 + \frac{r}{q} \right)^q -1$$
+\begin{equation*}i = \left( 1 + \frac{r}{q} \right)^q -1\end{equation*}
 
 Solve above equations for $P$ to determine investment required now to accumulate to amount $A_{n}$
 
 True discount,
 
-$$D = A_{n} - P$$
+\begin{equation*}D = A_{n} - P\end{equation*}
 
 Annuities:
 
@@ -214,29 +214,29 @@ rent $R$ is consistent payment at each period $n$
 
 let
 
-$$s_n \equiv \frac{\left( 1 + i \right)^n - 1}{i}$$
+\begin{equation*}s_n \equiv \frac{\left( 1 + i \right)^n - 1}{i}\end{equation*}
 
 and let
 
-$$r_n \equiv \frac{1 - \left( 1 + i \right)^{-n}}{i} $$
+\begin{equation*}r_n \equiv \frac{1 - \left( 1 + i \right)^{-n}}{i}\end{equation*}
 
 then $A_n = R\,s_{n}$
 
 or
 
-$$n = \frac{\log \left( A_n + R \right) - \log R }{\log \left(1 + i \right)} $$
+\begin{equation*}n = \frac{\log \left( A_n + R \right) - \log R }{\log \left(1 + i \right)}\end{equation*}
 
 Present value of an annuity, $A$ is the sum of the present values of all the future payments. $A = R\,r_{n}$
 
-Monthly interest rate = $\mathrm{MIR} = \frac{ \text{annual interest rate} }{12} $
+Monthly interest rate = $\mathrm{MIR} = \frac{ \text{annual interest rate} }{12}$
 
 Month Term = \# months in loan
 
-Monthly payment = $ \left[ \text{amount financed} \right] \left[ \frac{\mathrm{MIR}}{1 - \left( 1 + \mathrm{MIR} \right)^{-\#months}} \right] $
+Monthly payment = $\left[ \text{amount financed} \right] \left[ \frac{\mathrm{MIR}}{1 - \left( 1 + \mathrm{MIR} \right)^{-\#months}} \right]$
 
-Final value ($FV$) of an investment is a function of the initial principal invested (P), interest rate ($r$ expressed as $ 0.05$ for $5%$, $ 0.1$ for $10%$, etc.), time invested ($Y$ typically years), and compounding periods per year ($n$ typically $n = 1$ for yearly or $n = 12$ for monthly).
+Final value ($FV$) of an investment is a function of the initial principal invested (P), interest rate ($r$ expressed as $0.05$ for $5%$, $0.1$ for $10%$, etc.), time invested ($Y$ typically years), and compounding periods per year ($n$ typically $n = 1$ for yearly or $n = 12$ for monthly).
 
-$$FV   =   P (1  +  \frac{r}{n})^{Y_n}$$
+\begin{equation*}FV   =   P (1  +  \frac{r}{n})^{Y_n}\end{equation*}
 
 ## Geometry
 
@@ -274,11 +274,11 @@ A &= bh\\
 
 #### Parallelogram (opposite sides parallel) {-}
 
-$$ A = ah = ab \sin \beta $$
+\begin{equation*} A = ah = ab \sin \beta \end{equation*}
 
 #### Trapezoid (4 sides, 2 parallel) {-}
 
-$$ A = \frac{h \left(a + b \right)}{2} $$
+\begin{equation*} A = \frac{h \left(a + b \right)}{2}\end{equation*}
 
 #### Pentagon, Hexagon, and other $n$-sided Polygons {-}
 
@@ -479,7 +479,7 @@ also defined are the following...
 
 ##### Law of Sines:  {-}
 
-$$\frac{a}{\sin{A}} = \frac{b}{\sin{B}} = \frac{c}{\sin{C}}$$
+\begin{equation*}\frac{a}{\sin{A}} = \frac{b}{\sin{B}} = \frac{c}{\sin{C}}\end{equation*}
 
 ##### Law of Cosines: {-}
 
@@ -492,7 +492,7 @@ c^2  &= a^2  + b^2  - 2ab\cos{C}\\
 
 ##### Law of Tangents: {-}
 
-$$\frac{a-b}{a+b} = \frac{\tan\frac{a-b}{2}}{\tan\frac{a+b}{2}}$$
+\begin{equation*}\frac{a-b}{a+b} = \frac{\tan\frac{a-b}{2}}{\tan\frac{a+b}{2}}\end{equation*}
 
 ##### Projection Formulas: {-}
 
@@ -516,8 +516,8 @@ c &= a\cos{B} + b\cos{A}\\
 (reference 2.5)
 
 Given two matrices, $A, B$ where $A$ is an $i \times m$ matrix and $B$ is an $m \times j$ matrix, that is, the numbers of columns of the first matrix equals the number of rows of the second matrix, we define matrix multiplication as follows:
-$$A \times B = A B = C$$ where the entry in the *i*th row and *j*th column is given by $c_{ij}$ where:
-$$c_{ij} = \sum_{k=1}^m (a_{ik}b_{kj}).$$
+\begin{equation*}A \times B = A B = C\end{equation*}  where the entry in the *i*th row and *j*th column is given by $c_{ij}$ where:
+\begin{equation*}c_{ij} = \sum_{k=1}^m (a_{ik}b_{kj}).\end{equation*}
 In other words, we take the dot product of the *i*th row and the *j*th column.
 
 For example, the product of a pair of, $2 \times 2$ matrices is: 
@@ -552,7 +552,7 @@ I =
 For any matrix $A$, $A I = I A = A$.
 
 The *inverse* matrix $A^{-1}$, if it exists, is the multiplicative inverse under matrix multiplication. That is, 
-$$A A^{-1} = A^{-1}A = I.$$
+\begin{equation*}A A^{-1} = A^{-1}A = I.\end{equation*}
 
 ### Cofactors and Determinants
 
@@ -566,8 +566,8 @@ c & d
 \end{equation*}
 
 Formally, for any $n \times n$ matrix, the determinant is:
-$$|A| = \sum_{i=1}^{k}a_{ij} C_{ij} $$ where
-$$C_{ij} = (-1)^{i+j}M_{ij}$$ where
+\begin{equation*}|A| = \sum_{i=1}^{k}a_{ij} C_{ij\}\end{equation*} where
+\begin{equation*}C_{ij} = (-1)^{i+j}M_{ij\}\end{equation*} where
 the minor matrix $M_{ij}$ is in the $(n-1) \times (n-1)$ matrix resulting when the *i*th row and *j*th column are removed from $A$.  This holds when the sum above is taken over any row, $i$, or column $j$. The *cofactor* is $C_{ij}$ above.
 
 Arbitrarily expanding about the first row of a 3 x 3 matrix gives the determinant:
@@ -688,7 +688,7 @@ x_3 &= \frac{1}{70} \left( 1 + 169 + 40 \right) = \frac{210}{70} &= 3 \\
 ### Cramer's Rule
 
 Given a matrix, $A$ and vectors, $x, b$, we have a system of equations $A x = b$.  If the determinant of the matrix exists, then let $A_r$ be the matrix obtained from $A$ by replacing the $r$th column with the vector $b$.  Then the system of equations has a unique solution:
-$$x_r = \det(A)/ \det(A_r).$$
+\begin{equation*}x_r = \det(A)/ \det(A_r).\end{equation*}
 
 Example of Cramer's Rule
 
@@ -757,23 +757,23 @@ When $a+i$ are real numbers, we have the following properties that apply to *vec
 ### Dot Product
 
 Given vectors $\bar{A}$ and $\bar{B}$, where the $i$th component of $\bar{A}$ is given by $a_i$ and the vectors have the same dimension, $n$, we define the dot product $\bar{A} \cdot \bar{B}$ as follows:
-$$\bar{A} \cdot \bar{B} = \sum_{i=1}^{n}a_i b_i .$$
+\begin{equation*}\bar{A} \cdot \bar{B} = \sum_{i=1}^{n}a_i b_i .\end{equation*}
 For example, given three-dimensional vectors, we have:
-$$\bar{A} \cdot \bar{B} = a_1 b_1 + a_2 b_2 + a_3 b_3 .$$
+\begin{equation*}\bar{A} \cdot \bar{B} = a_1 b_1 + a_2 b_2 + a_3 b_3 .\end{equation*}
 The terms dot product, scalar product, and inner product usually mean the same thing.
 
 ### Norm
 
 The norm or vector norm, denoted
-$$ \left| \bar{A} \right|,$$
+\begin{equation*}\left| \bar{A} \right|,\end{equation*}
 is the magnitude of the vector. We compute it thus:
-$$ \left| \bar{A} \right| = \sqrt{\sum_{i=1}^{n} a_i^2} .$$.
+\begin{equation*}\left| \bar{A} \right| = \sqrt{\sum_{i=1}^{n} a_i^2} .\end{equation*}
 For example, given a three-dimensional vector in the $xyz$ plane, we have:
-$$ \left| \bar{A} \right| = \sqrt{a_x^2 + a_y^2 + a_z^2} .$$
+\begin{equation*}\left| \bar{A} \right| = \sqrt{a_x^2 + a_y^2 + a_z^2} .\end{equation*}
 The two types of notation, $| \bar{A} |$ and $|| \bar{A} ||$ are equivalent.
 
 With this additional notation, we can also define the **dot product** this way:
-$$\bar{A} \cdot \bar{B} = \left| \bar{A} \right| \left| \bar{B} \right| \cos{\theta} ,$$
+\begin{equation*}\bar{A} \cdot \bar{B} = \left| \bar{A} \right| \left| \bar{B} \right| \cos{\theta} ,\end{equation*}
 where $\theta$ is the angle between the vectors.
 
 ### Vector Cross Product
@@ -808,9 +808,9 @@ b_x & b_y
 
 ![Cross Product][02048]
 
-$$\hat{i} \times \hat{i} = \hat{j} \times \hat{j} = \hat{k} \times \hat{k} = 0 $$
-$$\hat{i} \times \hat{j} = \hat{k} \quad \hat{j} \times \hat{k} = \hat{i} \quad \hat{k} \times \hat{i} = \hat{j} $$
-$$\hat{j} \times \hat{i} = -\hat{k} \quad \hat{k} \times \hat{j} = -\hat{i} \quad \hat{i} \times \hat{k} = -\hat{j} $$
+\begin{equation*}\hat{i} \times \hat{i} = \hat{j} \times \hat{j} = \hat{k} \times \hat{k} = 0\end{equation*}
+\begin{equation*}\hat{i} \times \hat{j} = \hat{k} \quad \hat{j} \times \hat{k} = \hat{i} \quad \hat{k} \times \hat{i} = \hat{j}\end{equation*}
+\begin{equation*}\hat{j} \times \hat{i} = -\hat{k} \quad \hat{k} \times \hat{j} = -\hat{i} \quad \hat{i} \times \hat{k} = -\hat{j}\end{equation*}
 
 ### Vector Differentiation
 
@@ -823,17 +823,17 @@ The second derivative of $\vec{r}(t)$ with respect to time, $t$, is a vector-val
 With this notation, the normal differenation operations hold for vector-valued *functions* along with the following.
 
 **Derivative of a Sum**
-$$\frac{d}{dt}\left( \vec{r}(t) + \vec{s}(t) \right) = \frac{d}{dt}\vec{r}(t) + \frac{d}{dt}\vec{s}(t).$$
+\begin{equation*}\frac{d}{dt}\left( \vec{r}(t) + \vec{s}(t) \right) = \frac{d}{dt}\vec{r}(t) + \frac{d}{dt}\vec{s}(t).\end{equation*}
 
 **Derivative of a Dot Product**
-$$\frac{d}{dt}\left( \vec{r}(t) \cdot \vec{s}(t) \right) = \vec{r}(t) \cdot \frac{d}{dt}\vec{s}(t) + \frac{d}{dt}\vec{r}(t) \cdot \vec{s}(t).$$
+\begin{equation*}\frac{d}{dt}\left( \vec{r}(t) \cdot \vec{s}(t) \right) = \vec{r}(t) \cdot \frac{d}{dt}\vec{s}(t) + \frac{d}{dt}\vec{r}(t) \cdot \vec{s}(t).\end{equation*}
 
 **Derivative of a Cross Product**
-$$\frac{d}{dt}\left( \vec{r}(t) \times \vec{s}(t) \right) = \vec{r}(t) \times \frac{d}{dt}\vec{s}(t) +  \frac{d}{dt}\vec{r}(t) \times \vec{s}(t).$$
+\begin{equation*}\frac{d}{dt}\left( \vec{r}(t) \times \vec{s}(t) \right) = \vec{r}(t) \times \frac{d}{dt}\vec{s}(t) +  \frac{d}{dt}\vec{r}(t) \times \vec{s}(t).\end{equation*}
 
 **Derivative of a Scalar Product**
 If $f(t)$ is a scalar-valued function, then
-$$\frac{d}{dt}\left( f(t)\vec{r}(t) \right) = f(t)\frac{d}{dt}\vec{r}(t) + \left(\frac{d}{dt} f(t)\right) \vec{r}(t).$$
+\begin{equation*}\frac{d}{dt}\left( f(t)\vec{r}(t) \right) = f(t)\frac{d}{dt}\vec{r}(t) + \left(\frac{d}{dt} f(t)\right) \vec{r}(t).\end{equation*}
 
 ### Motion of a point using two reference systems
 
@@ -843,38 +843,38 @@ Reference A can be considered the inertial frame while Rotation of the B referen
 
 Note: Unit vectors are along the B system axes. Subscripts denote reference system. Reference B can be equivalent to a maneuvering aircraft.
 
-$$\bar{\rho} = x \hat{i} + y \hat{j} + z \hat{k}$$
+\begin{equation*}\bar{\rho} = x \hat{i} + y \hat{j} + z \hat{k}\end{equation*}
 
-$$\left( \frac{d \bar{\rho}}{dt} \right)_B = \dot{x} \hat{i} + \dot{y} \hat{j} + \dot{z} \hat{k}$$
+\begin{equation*}\left( \frac{d \bar{\rho}}{dt} \right)_B = \dot{x} \hat{i} + \dot{y} \hat{j} + \dot{z} \hat{k}\end{equation*}
 
-$$\left( \frac{d \bar{\rho}}{dt} \right)_A = \left( \dot{x}\hat{i} + \dot{y}\hat{j} + \dot{z}\hat{k} \right) + \left( x \dot{\hat{i}} + y \dot{\hat{j}} + z \dot{\hat{k}} \right)$$
+\begin{equation*}\left( \frac{d \bar{\rho}}{dt} \right)_A = \left( \dot{x}\hat{i} + \dot{y}\hat{j} + \dot{z}\hat{k} \right) + \left( x \dot{\hat{i}} + y \dot{\hat{j}} + z \dot{\hat{k}} \right)\end{equation*}
 
-$$\left( \frac{d \bar{\rho}}{dt} \right)_A = \left( \frac{d \bar{\rho}}{dt} \right)_B + \bar{\omega} \times \bar{\rho}$$
+\begin{equation*}\left( \frac{d \bar{\rho}}{dt} \right)_A = \left( \frac{d \bar{\rho}}{dt} \right)_B + \bar{\omega} \times \bar{\rho}\end{equation*}
 
 The velocities of the particle $P$ relative to the $A$ and to the $B$ references, respectively, are as follows:
 
-$$\bar{V}_A = \left( \frac{d\bar{r}}{dt} \right)_A$$
+\begin{equation*}\bar{V}_A = \left( \frac{d\bar{r}}{dt} \right)_A\end{equation*}
 
-$$\bar{V}_B = \left( \frac{d\bar{\rho}}{dt} \right)_B$$
+\begin{equation*}\bar{V}_B = \left( \frac{d\bar{\rho}}{dt} \right)_B\end{equation*}
 
 These velocities can be related by noting that $\bar{r} = \bar{R} + \bar{\rho}$.
 
 Taking the derivative with respect to time for the $A$ reference:
-$$\bar{V}_A = \left(\frac{d \bar{r}}{dt}  \right)_A = \left( \frac{d \bar{R}}{dt} \right)_A + \left( \frac{d \bar{\rho}}{dt} \right)_A$$
+\begin{equation*}\bar{V}_A = \left(\frac{d \bar{r}}{dt}  \right)_A = \left( \frac{d \bar{R}}{dt} \right)_A + \left( \frac{d \bar{\rho}}{dt} \right)_A\end{equation*}
 
-The term $\left(\frac{d \bar{r}}{dt}  \right)_A $ is the velocity of the origin of $B$ reference relative to the $A$ reference.  We denote
-$$\left(\frac{d \bar{r}}{dt}  \right)_A = \dot{\overline{R}}.$$
+The term $\left(\frac{d \bar{r}}{dt}  \right)_A$ is the velocity of the origin of $B$ reference relative to the $A$ reference.  We denote
+\begin{equation*}\left(\frac{d \bar{r}}{dt}  \right)_A = \dot{\overline{R}}.\end{equation*}
 
 Substituting for $\left( \frac{d \bar{\rho}}{dt} \right)_A$ gives the following:
-$$\bar{V}_A  = \dot{\overline{R}} + \bar{V}_B + \bar{\omega} \times \bar{\rho}.$$
+\begin{equation*}\bar{V}_A  = \dot{\overline{R}} + \bar{V}_B + \bar{\omega} \times \bar{\rho}.\end{equation*}
 
 The term is the "transport velocity" and is the only velocity if point P is rigidly attached to reference B.
 
 A similar derivation for acceleration gives the following:
-$$\bar{a}_A = \bar{a}_B + 2(\bar{\omega} \times \bar{V}_B) + \ddot{\overline{R}} + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).$$
+\begin{equation*}\bar{a}_A = \bar{a}_B + 2(\bar{\omega} \times \bar{V}_B) + \ddot{\overline{R}} + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).\end{equation*}
 
-Here $\bar{\omega} \times (\bar{\omega} \times \bar{\rho})$ is the centripetal acceleration,  $2(\bar{\omega} \times \bar{V}_B) $ is the Coriolis acceleration, and the transport acceleration, which is the only acceleration if point P is rigidly attached to reference B, is given by the following:
-$$\ddot{\overline{R}} + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).$$
+Here $\bar{\omega} \times (\bar{\omega} \times \bar{\rho})$ is the centripetal acceleration,  $2(\bar{\omega} \times \bar{V}_B)$ is the Coriolis acceleration, and the transport acceleration, which is the only acceleration if point P is rigidly attached to reference B, is given by the following:
+\begin{equation*}\ddot{\overline{R}} + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).\end{equation*}
 
 ### Motion of a point using one reference system
 
@@ -884,10 +884,10 @@ Reference A can be considered the inertial frame while the body can be equivalen
 
 A derivation similar to the previous gives us the following for
 velocity:
-$$\dot{\bar{\rho}} = \bar{\omega} \times \bar{\rho},$$
+\begin{equation*}\dot{\bar{\rho}} = \bar{\omega} \times \bar{\rho},\end{equation*}
 
 and acceleration:
-$$\bar{a}_b = \bar{a}_a + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).$$
+\begin{equation*}\bar{a}_b = \bar{a}_a + (\dot{\bar{\omega}} \times \bar{\rho}) + \bar{\omega} \times (\bar{\omega} \times \bar{\rho}).\end{equation*}
 
 ## Probability and Statistics
 
@@ -906,23 +906,23 @@ Random Sample: Equal probability of selecting any member of the population
 Independence (of events A and B): P(A and B) = P(A)\*P(B)
 
 Sample and Population Mean (Average value):
-$$\mu = \bar{x} = \frac{1}{N} \sum_{i=1}^N{x_i} $$
+\begin{equation*}\mu = \bar{x} = \frac{1}{N} \sum_{i=1}^N{x_i}\end{equation*}
 
 Mode (Most commonly occurring value in a sample)
 
 Median (middle value, 50th percentile. Half of the sample values are greater and half are smaller)
 
 Deviation:
-$$d_i = x_i - \bar{x} $$
+\begin{equation*}d_i = x_i - \bar{x}\end{equation*}
 
 Population Variance:
-$$\sigma^2 =  \frac{1}{N} \sum_{i=1}^N{(x_i - \bar{x}})^2 = \frac{1}{N} \sum_{i=1}^N{d_i^2}$$
+\begin{equation*}\sigma^2 =  \frac{1}{N} \sum_{i=1}^N{(x_i - \bar{x}})^2 = \frac{1}{N} \sum_{i=1}^N{d_i^2}\end{equation*}
 
 Population Standard Deviation (square root of variance):
-$$\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N{(x_i - \bar{x}})^2} $$
+\begin{equation*}\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N{(x_i - \bar{x}})^2}\end{equation*}
 
 Sample Standard Deviation:
-$$s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N{(x_i - \bar{x}})^2} $$
+\begin{equation*}s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N{(x_i - \bar{x}})^2}\end{equation*}
 
 ***Discrete Probability Distributions:***
 
@@ -931,8 +931,8 @@ The probability of any outcome in a given set is the same.  If there are $N$ pos
 
 ***Binomial***
 The probability that the random variable $X = x$ in $N$ independent events, each having probability $p$ of success, and $1-p$ of failure.
-$$P(X = k) = \binom{N}{k}p^x (1-p)^{N-x}$$ where
-$$\binom{N}{k} = \frac{N!}{k!(N-k)!}.$$
+\begin{equation*}P(X = k) = \binom{N}{k}p^x (1-p)^{N-x\}\end{equation*} where
+\begin{equation*}\binom{N}{k} = \frac{N!}{k!(N-k)!}.\end{equation*}
 
 For example, tossing a fair coin N times where $p = 1/2$ is the probability of getting a head on any toss.  If $X$ indicates the number of heads in $N$ tosses, then we have  $P(X = x) = (1/2)^x (1/2)^{N-x}$. For $N = 4$ we have the following table:
 
@@ -949,7 +949,7 @@ Continuous distributions are defined for all $x \in [a,b]$, where $a, b \in \mat
 
 **The Normal Distribution**
 The probability density function of the Normal Distribution is given by:
-$$f(x) = \frac{1}{\sqrt{2 \pi \sigma}}\mathrm{e}^{\frac{-(x-\mu)^2}{2\sigma^2}}$$
+\begin{equation*}f(x) = \frac{1}{\sqrt{2 \pi \sigma}}\mathrm{e}^{\frac{-(x-\mu)^2}{2\sigma^2}}\end{equation*}
 
 **The Standard Normal Distribution**
 The Standard Normal Distribution is simply the Normal Distribution with $\mu = 0$ and $\sigma=1$.
@@ -973,43 +973,43 @@ The sample mean of data sampled from a normally distributed population is itself
 (reference 2.4)
 
 A *Taylor Series* is the expansion of a function about a point, $a$, given only the value of the function and all of its derivatives at that point.  It is used to estimate functions when other analytical techniques will not work.
-$$f(x) = \sum_{i=0}^{\infty} \frac{{f(a)(x-a)^i}}{i!} = f(a) + f'(x-a) + \frac{f''(a)(x-a)^2}{2} + \dots + \frac{f^{(n)}(a)(x-a)^n}{n!} + \dots$$
+\begin{equation*}f(x) = \sum_{i=0}^{\infty} \frac{{f(a)(x-a)^i}}{i!} = f(a) + f'(x-a) + \frac{f''(a)(x-a)^2}{2} + \dots + \frac{f^{(n)}(a)(x-a)^n}{n!} + \dots\end{equation*}
 
 The *Maclaurin Series* is a Taylor Series with $a = 0$.
 
 The *Binomial Series* is a Taylor Series with $f(x)=(a + x)^n$. When n is a natural number, the result is a polynomial as follows:
-$$(a+x)^n = a^n + na^{n-1}x + \frac{n(n-1)a^{n-2}x^2}{2} + \frac{n(n-1)(n-2)a^{n-3}x^3}{3!} + \dots + x^n$$
+\begin{equation*}(a+x)^n = a^n + na^{n-1}x + \frac{n(n-1)a^{n-2}x^2}{2} + \frac{n(n-1)(n-2)a^{n-3}x^3}{3!} + \dots + x^n\end{equation*}
 
 The Taylor Series expansion of an *Exponential* function gives the following:
-$$a^x = 1 + x \ln a + \frac{(x \ln a)^2}{2} + \frac{(x \ln a)^3}{3!} + \dots$$
+\begin{equation*}a^x = 1 + x \ln a + \frac{(x \ln a)^2}{2} + \frac{(x \ln a)^3}{3!} + \dots\end{equation*}
 
 In the special case when $a = e$:
-$$\mathrm{e}^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{3!}+ \dots$$
+\begin{equation*}\mathrm{e}^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{3!}+ \dots\end{equation*}
 
 Hyperbolic $\sin$ and $\cos$ functions are another special case:
-$$\cosh x = \frac{(\mathrm{e}^x + \mathrm{e}^{-x})}{2} = 1 + \frac{x^2}{2} + \frac{x^4}{4!}+ \dots$$
-$$\sinh x = \frac{(\mathrm{e}^x - \mathrm{e}^{-x})}{2} = x + \frac{x^3}{3!} + \frac{x^5}{5!}+ \dots$$
+\begin{equation*}\cosh x = \frac{(\mathrm{e}^x + \mathrm{e}^{-x})}{2} = 1 + \frac{x^2}{2} + \frac{x^4}{4!}+ \dots\end{equation*}
+\begin{equation*}\sinh x = \frac{(\mathrm{e}^x - \mathrm{e}^{-x})}{2} = x + \frac{x^3}{3!} + \frac{x^5}{5!}+ \dots\end{equation*}
 
 The Taylor Series expansion of an *Logarithmic* function gives the following. When $0 < x < 2$:
-$$\ln x = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3} + \dots$$
+\begin{equation*}\ln x = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3} + \dots\end{equation*}
 When $x > 1/2$:
-$$\ln x = \frac{(x-1)}{x} - \frac{(x-1)^2}{2x^2} + \frac{(x-1)^3}{3x^3} + \dots$$
+\begin{equation*}\ln x = \frac{(x-1)}{x} - \frac{(x-1)^2}{2x^2} + \frac{(x-1)^3}{3x^3} + \dots\end{equation*}
 When $0 < x$:
-$$\ln x = 2 \left[ \frac{(x-1)}{x+1} - \frac{(x-1)^3}{3(x+1)^3} + \frac{(x-1)^5}{5(x-1)^5} + \dots \right]$$
+\begin{equation*}\ln x = 2 \left[ \frac{(x-1)}{x+1} - \frac{(x-1)^3}{3(x+1)^3} + \frac{(x-1)^5}{5(x-1)^5} + \dots \right]\end{equation*}
 
 The following are Taylor Series expansion of *Trigonometric* functions:
-$$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} -\frac{x^7}{7!}+ \dots$$
-$$\cos x = x - \frac{x^2}{2!} + \frac{x^4}{4!} -\frac{x^6}{6!}+ \dots$$
-$$\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315}+ \dots \text{ whenever } (x^2 < \pi^2/4)$$
-$$\sin^{-1} x = x + \frac{1}{2}\frac{x^3}{3} + \frac{1}{2}\frac{3}{4}\frac{x^5}{5} + \frac{1}{2}\frac{3}{4}\frac{5}{6}\frac{x^7}{7!} + \dots \text{for } |x|<1$$
-$$\cos^{-1} x = \frac{\pi}{2} - \sin^{-1}x \text{ for } |x|<1$$
-$$\tan^{-1} x = x - \frac{x^3}{3!} + \frac{x^5}{5!} -\frac{x^7}{7!} + \dots\text{ for } |x|<1$$
-$$\ln(\sin x) = \ln x - \frac{x^2}{6} - \frac{x^4}{180} - \frac{x^6}{2835}- \dots \text{for } x^2 < \pi^2$$
-$$\ln(\cos x) = - \frac{x^2}{s} - \frac{x^4}{12} - \frac{x^6}{45} - \frac{x^8}{2520} \dots \text{for } x^2 < \frac{\pi^2}{4}$$
-$$\ln(\tan x) = \ln x + \frac{x^2}{3} - \frac{7x^4}{90} - \frac{62x^6}{2835}+ \dots \text{for } x^2 < \frac{\pi^2}{4}$$
-$$\mathrm{e}^{\sin x} = 1 + x + \frac{x^2}{2!} - \frac{3x^4}{4!} -\frac{8x^5}{5!} + \frac{3x^2}{6!} + \dots$$
-$$\mathrm{e}^{\cos x} = e \left(1 - \frac{x^2}{2!} +\frac{4x^2}{4!} - \frac{31x^6}{6!} + \dots \right)$$
-$$\mathrm{e}^{\tan x} = 1 + x + \frac{x^2}{2!} + \frac{3x^3}{3!} + \frac{9x^4}{4!} + \frac{37x^5}{5!} + \dots \text{for } x^2 < \frac{\pi^2}{4}$$
+\begin{equation*}\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} -\frac{x^7}{7!}+ \dots\end{equation*}
+\begin{equation*}\cos x = x - \frac{x^2}{2!} + \frac{x^4}{4!} -\frac{x^6}{6!}+ \dots\end{equation*}
+\begin{equation*}\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315}+ \dots \text{ whenever } (x^2 < \pi^2/4)\end{equation*}
+\begin{equation*}\sin^{-1} x = x + \frac{1}{2}\frac{x^3}{3} + \frac{1}{2}\frac{3}{4}\frac{x^5}{5} + \frac{1}{2}\frac{3}{4}\frac{5}{6}\frac{x^7}{7!} + \dots \text{for } |x|<1\end{equation*}
+\begin{equation*}\cos^{-1} x = \frac{\pi}{2} - \sin^{-1}x \text{ for } |x|<1\end{equation*}
+\begin{equation*}\tan^{-1} x = x - \frac{x^3}{3!} + \frac{x^5}{5!} -\frac{x^7}{7!} + \dots\text{ for } |x|<1\end{equation*}
+\begin{equation*}\ln(\sin x) = \ln x - \frac{x^2}{6} - \frac{x^4}{180} - \frac{x^6}{2835}- \dots \text{for } x^2 < \pi^2\end{equation*}
+\begin{equation*}\ln(\cos x) = - \frac{x^2}{s} - \frac{x^4}{12} - \frac{x^6}{45} - \frac{x^8}{2520} \dots \text{for } x^2 < \frac{\pi^2}{4}\end{equation*}
+\begin{equation*}\ln(\tan x) = \ln x + \frac{x^2}{3} - \frac{7x^4}{90} - \frac{62x^6}{2835}+ \dots \text{for } x^2 < \frac{\pi^2}{4}\end{equation*}
+\begin{equation*}\mathrm{e}^{\sin x} = 1 + x + \frac{x^2}{2!} - \frac{3x^4}{4!} -\frac{8x^5}{5!} + \frac{3x^2}{6!} + \dots\end{equation*}
+\begin{equation*}\mathrm{e}^{\cos x} = e \left(1 - \frac{x^2}{2!} +\frac{4x^2}{4!} - \frac{31x^6}{6!} + \dots \right)\end{equation*}
+\begin{equation*}\mathrm{e}^{\tan x} = 1 + x + \frac{x^2}{2!} + \frac{3x^3}{3!} + \frac{9x^4}{4!} + \frac{37x^5}{5!} + \dots \text{for } x^2 < \frac{\pi^2}{4}\end{equation*}
 
 ## Derivative Table 
 
@@ -1024,32 +1024,32 @@ $$\mathrm{e}^{\tan x} = 1 + x + \frac{x^2}{2!} + \frac{3x^3}{3!} + \frac{9x^4}{4
 
 ------
 *Fundamental Derivatives*
-$$\frac{da}{dx} = 0$$
-$$\frac{d\left(ax\right)}{dx} = a$$
-$$\frac{dx^n}{dx} = nx^{n-1}$$
-$$\frac{d\left(u + v \right)}{dx} = \frac{du}{dx} + \frac{dv}{dx}$$
-$$\frac{d\left(uv \right)}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}$$
-$$\frac{d\left(\frac{u}{v} \right)}{dx} = \frac{1}{v^2} \left( v\frac{du}{dx} - u\frac{dv}{dx} \right)$$
-$$\frac{dw}{dx} = \frac{dw}{du}\frac{du}{dx}$$
-$$\frac{du^n}{dx} = nu^{n-1}\frac{du}{dx}$$
+\begin{equation*}\frac{da}{dx} = 0\end{equation*}
+\begin{equation*}\frac{d\left(ax\right)}{dx} = a\end{equation*}
+\begin{equation*}\frac{dx^n}{dx} = nx^{n-1}\end{equation*}
+\begin{equation*}\frac{d\left(u + v \right)}{dx} = \frac{du}{dx} + \frac{dv}{dx}\end{equation*}
+\begin{equation*}\frac{d\left(uv \right)}{dx} = u\frac{dv}{dx} + v\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d\left(\frac{u}{v} \right)}{dx} = \frac{1}{v^2} \left( v\frac{du}{dx} - u\frac{dv}{dx} \right)\end{equation*}
+\begin{equation*}\frac{dw}{dx} = \frac{dw}{du}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{du^n}{dx} = nu^{n-1}\frac{du}{dx}\end{equation*}
 *Expressions Containing Exponential and Logarithmic Functions*
-$$\frac{d \ln{x}}{dx} = \frac{1}{x}$$
-$$\frac{d \ln{u}}{dx} = \frac{1}{u}\frac{du}{dx}$$
-$$\frac{d \log{u}}{dx} = \frac{\log{e}}{u}\frac{du}{dx}$$
-$$\frac{d\mathrm{e}^x}{dx} = \mathrm{e}^x$$
-$$\frac{da^x}{dx} = a^x \ln{a}$$
-$$\frac{da^u}{dx} = a^u \ln{a}\frac{du}{dx}$$
-$$\frac{du^v}{dx} = vu^{v-1}\frac{du}{dx} + u^v \ln{u}\frac{dv}{dx}$$
+\begin{equation*}\frac{d \ln{x}}{dx} = \frac{1}{x}\end{equation*}
+\begin{equation*}\frac{d \ln{u}}{dx} = \frac{1}{u}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \log{u}}{dx} = \frac{\log{e}}{u}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d\mathrm{e}^x}{dx} = \mathrm{e}^x\end{equation*}
+\begin{equation*}\frac{da^x}{dx} = a^x \ln{a}\end{equation*}
+\begin{equation*}\frac{da^u}{dx} = a^u \ln{a}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{du^v}{dx} = vu^{v-1}\frac{du}{dx} + u^v \ln{u}\frac{dv}{dx}\end{equation*}
 *Expressions Containing Trigonometric Functions*
-$$\frac{d \sin{x}}{dx} = \cos{x} \text{ or } \frac{d \sin{u}}{dx} = \cos{u}\frac{du}{dx}$$
-$$\frac{d \cos{x}}{dx} = -\sin{x} \text{ or } \frac{d \cos{u}}{dx} = -\sin{u}\frac{du}{dx}$$
-$$\frac{d \tan{x}}{dx} = \sec^2{x} \text{ or } \frac{d \tan{u}}{dx} = \sec^2{u}\frac{du}{dx}$$
-$$\frac{d \sec{x}}{dx} = \sec{x}\tan{x} \text{ or } \frac{d \sec{u}}{dx} = \sec{u}\tan{u}\frac{du}{dx}$$
-$$\frac{d \cot{x}}{dx} = -\csc^2{x} \text{ or } \frac{d \cot{u}}{dx} = -\csc^2{u}\frac{du}{dx}$$
-$$\frac{d \sin^{-1}{x}}{dx} = \frac{1}{\sqrt{1-x^2}} \text{ or } \frac{d \sin^{-1}{u}}{dx} = \frac{1}{\sqrt{1-u^2}}\frac{du}{dx}$$
-$$\frac{d \cos^{-1}{x}}{dx} = -\frac{1}{\sqrt{1-x^2}} \text{ or } \frac{d \cos^{-1}{u}}{dx} = -\frac{1}{\sqrt{1-u^2}}\frac{du}{dx}$$
-$$\frac{d \tan^{-1}{x}}{dx} = \frac{1}{1+x^2} \text{ or } \frac{d \tan^{-1}{u}}{dx} = \frac{1}{1+u^2}\frac{du}{dx}$$
-$$\frac{d \cot^{-1}{x}}{dx} = -\frac{1}{1+x^2} \text{ or } \frac{d \cot^{-1}{u}}{dx} = -\frac{1}{1+u^2}\frac{du}{dx}$$
+\begin{equation*}\frac{d \sin{x}}{dx} = \cos{x} \text{ or } \frac{d \sin{u}}{dx} = \cos{u}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \cos{x}}{dx} = -\sin{x} \text{ or } \frac{d \cos{u}}{dx} = -\sin{u}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \tan{x}}{dx} = \sec^2{x} \text{ or } \frac{d \tan{u}}{dx} = \sec^2{u}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \sec{x}}{dx} = \sec{x}\tan{x} \text{ or } \frac{d \sec{u}}{dx} = \sec{u}\tan{u}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \cot{x}}{dx} = -\csc^2{x} \text{ or } \frac{d \cot{u}}{dx} = -\csc^2{u}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \sin^{-1}{x}}{dx} = \frac{1}{\sqrt{1-x^2}} \text{ or } \frac{d \sin^{-1}{u}}{dx} = \frac{1}{\sqrt{1-u^2}}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \cos^{-1}{x}}{dx} = -\frac{1}{\sqrt{1-x^2}} \text{ or } \frac{d \cos^{-1}{u}}{dx} = -\frac{1}{\sqrt{1-u^2}}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \tan^{-1}{x}}{dx} = \frac{1}{1+x^2} \text{ or } \frac{d \tan^{-1}{u}}{dx} = \frac{1}{1+u^2}\frac{du}{dx}\end{equation*}
+\begin{equation*}\frac{d \cot^{-1}{x}}{dx} = -\frac{1}{1+x^2} \text{ or } \frac{d \cot^{-1}{u}}{dx} = -\frac{1}{1+u^2}\frac{du}{dx}\end{equation*}
 -----
 
 ## Integral Table
@@ -1071,53 +1071,53 @@ should be added to the result of every integration
 
 ---------------------
 *Fundamental Integrals*
-$$ \int_{}{} a \, dx = ax $$
-$$ \int_{}{} a \, f\left(x\right) dx = a \int_{}{} f\left(x\right) dx $$
-$$ \int_{}{} \left(u+v\right) dx = \int_{}{} u\,dx + \int_{}{}v\,dx $$
-$$ \int_{}{} u\,dv = uv - \int_{}{}v\,du $$
-$$ \int_{}{} \frac{u\,dv}{dx} dx = uv - \int_{}{} v \frac{du}{dx} dx$$
-$$ \int_{}{} x^n dx = \frac{x^{n+1}}{n+1} \text{, } n \neq -1$$
-$$ \int_{}{} x^{-1} dx = \ln{x}  $$
-$$ \int_{}{} w \left( u \right) dx = \int_{}{} w\left( u \right) \frac{dx}{du} u $$
-$$ \int_{}{} \frac{dx}{a^2 + x^2} = \frac{1}{a} \tan^{-1} \frac{x}{a} $$
-$$ \int_{}{} \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1} \frac{x}{a} $$
-$$ \int_{}{} \frac{dx}{\sqrt{a^2 \pm x^2}} = \ln \left( x - \sqrt{a^2 \pm x^2} \right) $$
-$$ \int_{}{} \sqrt{a^2 - u^2} = \frac{1}{2} \left( u \sqrt{a^2 - x^2} + a^2 \sin^{-1} \frac{u}{a} \right) $$
-$$ \int_{}{} \frac{du}{a^2 + u^2} = \frac{1}{a} \tan^{-1} \frac{u}{a} \text{, } a  >  0 $$
+\begin{equation*}\int_{}{} a \, dx = ax\end{equation*}
+\begin{equation*}\int_{}{} a \, f\left(x\right) dx = a \int_{}{} f\left(x\right) dx \end{equation*}
+\begin{equation*}\int_{}{} \left(u+v\right) dx = \int_{}{} u\,dx + \int_{}{}v\,dx \end{equation*}
+\begin{equation*}\int_{}{} u\,dv = uv - \int_{}{}v\,du \end{equation*}
+\begin{equation*}\int_{}{} \frac{u\,dv}{dx} dx = uv - \int_{}{} v \frac{du}{dx} dx\end{equation*}
+\begin{equation*}\int_{}{} x^n dx = \frac{x^{n+1}}{n+1} \text{, } n \neq -1\end{equation*}
+\begin{equation*}\int_{}{} x^{-1} dx = \ln{x}  \end{equation*}
+\begin{equation*}\int_{}{} w \left( u \right) dx = \int_{}{} w\left( u \right) \frac{dx}{du} u \end{equation*}
+\begin{equation*}\int_{}{} \frac{dx}{a^2 + x^2} = \frac{1}{a} \tan^{-1} \frac{x}{a}\end{equation*}
+\begin{equation*}\int_{}{} \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1} \frac{x}{a}\end{equation*}
+\begin{equation*}\int_{}{} \frac{dx}{\sqrt{a^2 \pm x^2}} = \ln \left( x - \sqrt{a^2 \pm x^2} \right)\end{equation*}
+\begin{equation*}\int_{}{} \sqrt{a^2 - u^2} = \frac{1}{2} \left( u \sqrt{a^2 - x^2} + a^2 \sin^{-1} \frac{u}{a} \right)\end{equation*}
+\begin{equation*}\int_{}{} \frac{du}{a^2 + u^2} = \frac{1}{a} \tan^{-1} \frac{u}{a} \text{, } a  >  0 \end{equation*}
 *Expressions Containing Exponential and Logarithmic Functions*
-$$ \int_{}{} \frac{dx}{x} = \ln{x} $$
-$$ \int_{}{} \mathrm{e}^{x} dx = \mathrm{e}^{x} $$
-$$ \int_{}{} \mathrm{e}^{ax} dx = \frac{\mathrm{e}^{ax}}{a} $$
-$$ \int_{}{} b^{ax} dx = \frac{b^ax}{a \ln{b}} $$
-$$ \int_{}{} \ln{x} dx = x \ln{x} - x $$
-$$ \int_{}{} b^{u} du = \frac{b^u}{\ln{u}} $$
-$$ \int_{}{} x \mathrm{e}^{ax} dx = \frac{\mathrm{e}^ax}{a^2} \left( ax - 1 \right) $$
-$$ \int_{}{} x b^{ax} dx = \frac{x b^{ax}}{a \ln{b} } - \frac{b^{ax}}{a^2 \left( \ln{b} \right) } $$
-$$ \int_{}{} x^2 \mathrm{e}^{ax} dx = \frac{\mathrm{e}^{ax}}{a^3} \left(a^2 x^2 - 2ax + 2 \right) $$
-$$ \int_{}{} \ln{ax} dx = x \ln{ax} - x $$
-$$ \int_{}{} x \ln{ax} dx = \frac{x^2}{2} \ln{ax} - \frac{x^2}{4} $$
-$$ \int_{}{} x^2 \ln{ax} dx = \frac{x^3}{3} \ln{ax} - \frac{x^3}{9} $$
-$$ \int_{}{} \left( \ln{ax} \right)^2 dx = x \left( \ln{ax} \right)^2 - 2x \ln{ax} + 2x $$
-$$ \int_{}{} \frac{dx}{x \ln{ax}} = \ln{\left( \ln{ax} \right)} $$
-$$ \int_{}{} \frac{x^n}{\ln{ax}} dx = \frac{1}{a^{n+1}} \int_{}{} \frac{\mathrm{e}^{y} dy}{y} \text{, where } y = \left(n + 1\right) \ln{ax} $$
+\begin{equation*}\int_{}{} \frac{dx}{x} = \ln{x}\end{equation*}
+\begin{equation*}\int_{}{} \mathrm{e}^{x} dx = \mathrm{e}^{x}\end{equation*}
+\begin{equation*}\int_{}{} \mathrm{e}^{ax} dx = \frac{\mathrm{e}^{ax}}{a}\end{equation*}
+\begin{equation*}\int_{}{} b^{ax} dx = \frac{b^ax}{a \ln{b}}\end{equation*}
+\begin{equation*}\int_{}{} \ln{x} dx = x \ln{x} - x \end{equation*}
+\begin{equation*}\int_{}{} b^{u} du = \frac{b^u}{\ln{u}}\end{equation*}
+\begin{equation*}\int_{}{} x \mathrm{e}^{ax} dx = \frac{\mathrm{e}^ax}{a^2} \left( ax - 1 \right)\end{equation*}
+\begin{equation*}\int_{}{} x b^{ax} dx = \frac{x b^{ax}}{a \ln{b} } - \frac{b^{ax}}{a^2 \left( \ln{b} \right) }\end{equation*}
+\begin{equation*}\int_{}{} x^2 \mathrm{e}^{ax} dx = \frac{\mathrm{e}^{ax}}{a^3} \left(a^2 x^2 - 2ax + 2 \right)\end{equation*}
+\begin{equation*}\int_{}{} \ln{ax} dx = x \ln{ax} - x \end{equation*}
+\begin{equation*}\int_{}{} x \ln{ax} dx = \frac{x^2}{2} \ln{ax} - \frac{x^2}{4}\end{equation*}
+\begin{equation*}\int_{}{} x^2 \ln{ax} dx = \frac{x^3}{3} \ln{ax} - \frac{x^3}{9}\end{equation*}
+\begin{equation*}\int_{}{} \left( \ln{ax} \right)^2 dx = x \left( \ln{ax} \right)^2 - 2x \ln{ax} + 2x \end{equation*}
+\begin{equation*}\int_{}{} \frac{dx}{x \ln{ax}} = \ln{\left( \ln{ax} \right)}\end{equation*}
+\begin{equation*}\int_{}{} \frac{x^n}{\ln{ax}} dx = \frac{1}{a^{n+1}} \int_{}{} \frac{\mathrm{e}^{y} dy}{y} \text{, where } y = \left(n + 1\right) \ln{ax}\end{equation*}
 *Expressions Containing Trigonometric Functions*
-$$ \int_{}{} \sin{x} dx = -\cos{x} $$
-$$ \int_{}{} \cos{x} dx = \sin{x} $$
-$$ \int_{}{} \tan{x} dx = -\ln{ \left( \cos{x} \right)} $$
-$$ \int_{}{} \cot{x} dx = \ln{\left( \sin{x} \right)} $$
-$$ \int_{}{} \sec{x} dx = \ln{ \left( \sec{x} + \tan{x} \right)} $$
-$$ \int_{}{} \csc{x} dx = \ln{ \left( \csc{x} - \cot{x} \right)} $$
-$$ \int_{}{} \sin^2{u} du = \frac{1}{2} u - \frac{1}{2} \sin{u} \cos{u} $$
-$$ \int_{}{} \cos^2{u} du = \frac{1}{2} u + \frac{1}{2} \sin{u} \cos{u} $$
-$$ \int_{}{} \csc^2{u} du = -\cot{u} $$
-$$ \int_{}{} \tan^2{u} du = \tan{u} - u $$
-$$ \int_{}{} \cot^2{u} du = -\cot{u} - u $$
-$$ \int_{}{} \sin{ax} dx = -\frac{1}{a} \cos{ax} $$
-$$ \int_{}{} \sin^2{ax} dx = \frac{x}{2}-\frac{\sin{2ax}}{4a}  $$
-$$ \int_{}{} \frac{dx}{\sin{ax}} = \frac{1}{a} \ln{ \tan{\frac{ax}{2}}} $$
-$$ \int_{}{} \frac{dx}{\sin^2{ax}} = -\frac{1}{a} \cot{ax} $$
-$$ \int_{}{} \frac{dx}{1 \pm \sin{ax}} = \mp \frac{1}{a} \tan{\left( \frac{\pi}{4} \mp \frac{ax}{2} \right) } $$
-$$ \int_{}{} \sin{x} \cos{x} dx = \frac{1}{2} \sin^2{x} $$
+\begin{equation*}\int_{}{} \sin{x} dx = -\cos{x}\end{equation*}
+\begin{equation*}\int_{}{} \cos{x} dx = \sin{x}\end{equation*}
+\begin{equation*}\int_{}{} \tan{x} dx = -\ln{ \left( \cos{x} \right)}\end{equation*}
+\begin{equation*}\int_{}{} \cot{x} dx = \ln{\left( \sin{x} \right)}\end{equation*}
+\begin{equation*}\int_{}{} \sec{x} dx = \ln{ \left( \sec{x} + \tan{x} \right)}\end{equation*}
+\begin{equation*}\int_{}{} \csc{x} dx = \ln{ \left( \csc{x} - \cot{x} \right)}\end{equation*}
+\begin{equation*}\int_{}{} \sin^2{u} du = \frac{1}{2} u - \frac{1}{2} \sin{u} \cos{u}\end{equation*}
+\begin{equation*}\int_{}{} \cos^2{u} du = \frac{1}{2} u + \frac{1}{2} \sin{u} \cos{u}\end{equation*}
+\begin{equation*}\int_{}{} \csc^2{u} du = -\cot{u}\end{equation*}
+\begin{equation*}\int_{}{} \tan^2{u} du = \tan{u} - u \end{equation*}
+\begin{equation*}\int_{}{} \cot^2{u} du = -\cot{u} - u \end{equation*}
+\begin{equation*}\int_{}{} \sin{ax} dx = -\frac{1}{a} \cos{ax}\end{equation*}
+\begin{equation*}\int_{}{} \sin^2{ax} dx = \frac{x}{2}-\frac{\sin{2ax}}{4a}  \end{equation*}
+\begin{equation*}\int_{}{} \frac{dx}{\sin{ax}} = \frac{1}{a} \ln{ \tan{\frac{ax}{2}}}\end{equation*}
+\begin{equation*}\int_{}{} \frac{dx}{\sin^2{ax}} = -\frac{1}{a} \cot{ax}\end{equation*}
+\begin{equation*}\int_{}{} \frac{dx}{1 \pm \sin{ax}} = \mp \frac{1}{a} \tan{\left( \frac{\pi}{4} \mp \frac{ax}{2} \right) }\end{equation*}
+\begin{equation*}\int_{}{} \sin{x} \cos{x} dx = \frac{1}{2} \sin^2{x}\end{equation*}
 ---------------------
 
 ## Laplace Table
@@ -1126,35 +1126,35 @@ $$ \int_{}{} \sin{x} \cos{x} dx = \frac{1}{2} \sin^2{x} $$
 
 | Time Domain $f(t) = \mathcal{L}^{-1} \left\{ F \left( s \right) \right\}$      | Frequency Domain $F\left( s \right) = \mathcal{L} \left\{ f \left( t \right) \right\}$ |
 |---------------------------|---------------------------------|
-|$$1 \text{ (step function)}$$      | $$\frac{1}{s} \text{, where } \left(s >  0\right) $$|
-|$$t$$                         | $$\frac{1}{s^2} \text{, where } \left(s >  0\right) $$|
-|$$t^{n-1}$$                | $$\frac{\left( n-1 \right)!}{s^n} \text{, where } \left(s >  0\right) $$|
-|$$\sqrt{t}$$                  | $$\frac{{\sqrt \pi  }}{{2{s^{\frac{3}{2}}}}} \text{, where } \left(s >  0\right) $$|
-|$$\frac{1}{\sqrt{t}}$$         | $$\frac{{\sqrt \pi  }}{{{s^{\frac{1}{2}}}}} \text{, where } \left(s >  0\right) $$|
-|$${t^{n - \frac{1}{2}}},\,\,\,\,\,n = 1,2,3, \ldots$$     | $$\frac{{1 \cdot 3 \cdot 5 \cdots \left( {2n - 1} \right)\sqrt \pi  }}{{{2^n}{s^{n + \frac{1}{2}}}}} {, where } \left(s >  0\right) $$|
-|$$\mathrm{e}^{at}$$                     | $$ \frac{1}{s-a} \text{, where } \left(s >  a \right) $$|
-|$$t\mathrm{e}^{at}$$                    | $$\frac{1}{{\left( {s - a} \right)}^{2}} \text{, where } \left(s >  a \right) $$|
-|$${t^n}{{e}^{at}},\,\,\,\,\,n = 1,2,3, \ldots$$ | $$\frac{{n!}}{{{{\left( {s - a} \right)}^{n + 1}}}} \text{, where } \left(s >  a \right) $$|
-|$$\sin{at} $$                   | $$\frac{a}{s^2 + a^2} \text{, where } \left(s >  0 \right) $$|
-|$$\cos{at}$$                    | $$\frac{s}{s^2 + a^2} \text{, where } \left(s >  0 \right) $$|
-|$$\mathrm{e}^{bt} \sin{at}$$              | $$\frac{a}{\left(s - b \right)^2 + a^2} \text{, where } \left(s >  b \right) $$|
-|$$\mathrm{e}^{bt} \cos{at}$$              | $$\frac{s-b}{\left(s - b \right)^2 + a^2} \text{, where } \left(s >  b \right) $$|
-|$$t \sin{at}$$                  | $$\frac{2as}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  a \right) $$|
-|$$t \cos{at}$$                  | $$\frac{s^2  - a^2}{\left(s^2  + a^2\right)^2} \text{, where } \left(s >  0 \right) $$|
-|$$\sinh{at}$$                   | $$\frac{a}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  \lvert a \rvert \right) $$|
-|$$\cosh{at}$$                      |           $$\frac{s}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  \lvert a \rvert \right) $$|
-|$$\sin \left(at + b\right)$$                 |   $$\frac{s\sin{b} + a \cos{b}}{\left(s^2  + a^2\right)^2} $$|
-|$$\cos \left(at + b\right)$$                 |   $$\frac{s\cos{b} - a \sin{b}}{\left(s^2  + a^2\right)^2} $$|
-|$$\frac{\mathrm{e}^{at} - \mathrm{e}^{bt}}{a - b}$$ | $$\frac{1}{\left(s-a\right)\left(s-b\right)} $$|
-|$$\frac{a\mathrm{e}^{at} - b\mathrm{e}^{bt}}{a - b}$$ | $$\frac{s}{\left(s-a\right)\left(s-b\right)} $$|
-|$$\delta \text{ (impulse function)}$$         | $$1$$|
-|$$\text{square wave, period }=2c$$      | $$\frac{1}{s \left( 1 + \mathrm{e}^{-cs} \right)} $$|
-|$$\text{triangular wave, period }=2c$$      | $$\frac{1 - \mathrm{e}^{-cs}}{s^2 \left( 1 + \mathrm{e}^{-cs} \right)} $$|
-|\begin{align} at \text{ for } 0 \leq t  <  c \\ \text{sawtooth wave, period } = c \end{align}   | $$ \frac{a \left( 1 + cs - \mathrm{e}^{-cs} \right) }{s^2 \left( 1 - \mathrm{e}^{-cs} \right) }$$|
-|$$\sin{at} \sin{bt} $$           |      $$ \frac{2abs}{\left( s^2 + \left(a+b\right)^2\right) \left( s^2 + \left(a-b\right)^2\right)} $$|
-|$$\frac{1 - \cos{at}}{a^2}  $$                   | $$ \frac{1}{s \left( s^2 + a^2 \right) } $$|
-|$$\frac{at - \sin{at}}{a^3}  $$                   | $$ \frac{1}{s^2 \left( s^2 + a^2 \right) } $$|
-|$$\frac{\sin{at} - at\cos{at}}{2a^3}  $$                   | $$ \frac{1}{\left( s^2 + a^2 \right)^2 } $$|
+\|\begin{equation*}1 \text{ (step function)\}\end{equation*}      | \begin{equation*}\frac{1}{s} \text{, where } \left(s >  0\right\)\end{equation*}|
+\|\begin{equation*}t\end{equation*}  | \begin{equation*}\frac{1}{s^2} \text{, where } \left(s >  0\right\)\end{equation*}|
+\|\begin{equation*}t^{n-1\}\end{equation*}                | \begin{equation*}\frac{\left( n-1 \right)!}{s^n} \text{, where } \left(s >  0\right\)\end{equation*}|
+\|\begin{equation*}\sqrt{t\}\end{equation*}                  | \begin{equation*}\frac{{\sqrt \pi  }}{{2{s^{\frac{3}{2}}}}} \text{, where } \left(s >  0\right\)\end{equation*}|
+\|\begin{equation*}\frac{1}{\sqrt{t}\}\end{equation*}         | \begin{equation*}\frac{{\sqrt \pi  }}{{{s^{\frac{1}{2}}}}} \text{, where } \left(s >  0\right\)\end{equation*}|
+\|\begin{equation*}{t^{n - \frac{1}{2}}},\,\,\,\,\,n = 1,2,3, \ldots\end{equation*}  | \begin{equation*}\frac{{1 \cdot 3 \cdot 5 \cdots \left( {2n - 1} \right)\sqrt \pi  }}{{{2^n}{s^{n + \frac{1}{2}}}}} {, where } \left(s >  0\right\)\end{equation*}|
+\|\begin{equation*}\mathrm{e}^{at\}\end{equation*}                     | \begin{equation*}\frac{1}{s-a} \text{, where } \left(s >  a \right\)\end{equation*}|
+\|\begin{equation*}t\mathrm{e}^{at\}\end{equation*}                    | \begin{equation*}\frac{1}{{\left( {s - a} \right)}^{2}} \text{, where } \left(s >  a \right\)\end{equation*}|
+\|\begin{equation*}{t^n}{{e}^{at}},\,\,\,\,\,n = 1,2,3, \ldots\end{equation*}  | \begin{equation*}\frac{{n!}}{{{{\left( {s - a} \right)}^{n + 1}}}} \text{, where } \left(s >  a \right\)\end{equation*}|
+\|\begin{equation*}\sin{at\}\end{equation*}                   | \begin{equation*}\frac{a}{s^2 + a^2} \text{, where } \left(s >  0 \right\)\end{equation*}|
+\|\begin{equation*}\cos{at\}\end{equation*}                    | \begin{equation*}\frac{s}{s^2 + a^2} \text{, where } \left(s >  0 \right\)\end{equation*}|
+\|\begin{equation*}\mathrm{e}^{bt} \sin{at\}\end{equation*}              | \begin{equation*}\frac{a}{\left(s - b \right)^2 + a^2} \text{, where } \left(s >  b \right\)\end{equation*}|
+\|\begin{equation*}\mathrm{e}^{bt} \cos{at\}\end{equation*}              | \begin{equation*}\frac{s-b}{\left(s - b \right)^2 + a^2} \text{, where } \left(s >  b \right\)\end{equation*}|
+\|\begin{equation*}t \sin{at\}\end{equation*}                  | \begin{equation*}\frac{2as}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  a \right\)\end{equation*}|
+\|\begin{equation*}t \cos{at\}\end{equation*}                  | \begin{equation*}\frac{s^2  - a^2}{\left(s^2  + a^2\right)^2} \text{, where } \left(s >  0 \right\)\end{equation*}|
+\|\begin{equation*}\sinh{at\}\end{equation*}                   | \begin{equation*}\frac{a}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  \lvert a \rvert \right\)\end{equation*}|
+\|\begin{equation*}\cosh{at\}\end{equation*}                      |           \begin{equation*}\frac{s}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  \lvert a \rvert \right\)\end{equation*}|
+\|\begin{equation*}\sin \left(at + b\right\)\end{equation*}                 |   \begin{equation*}\frac{s\sin{b} + a \cos{b}}{\left(s^2  + a^2\right)^2\}\end{equation*}|
+\|\begin{equation*}\cos \left(at + b\right\)\end{equation*}                 |   \begin{equation*}\frac{s\cos{b} - a \sin{b}}{\left(s^2  + a^2\right)^2\}\end{equation*}|
+\|\begin{equation*}\frac{\mathrm{e}^{at} - \mathrm{e}^{bt}}{a - b\}\end{equation*} | \begin{equation*}\frac{1}{\left(s-a\right)\left(s-b\right)\}\end{equation*}|
+\|\begin{equation*}\frac{a\mathrm{e}^{at} - b\mathrm{e}^{bt}}{a - b\}\end{equation*} | \begin{equation*}\frac{s}{\left(s-a\right)\left(s-b\right)\}\end{equation*}|
+\|\begin{equation*}\delta \text{ (impulse function)\}\end{equation*}         | \begin{equation*}1\end{equation*}|
+\|\begin{equation*}\text{square wave, period }=2c\end{equation*}  | \begin{equation*}\frac{1}{s \left( 1 + \mathrm{e}^{-cs} \right)\}\end{equation*}|
+\|\begin{equation*}\text{triangular wave, period }=2c\end{equation*}  | \begin{equation*}\frac{1 - \mathrm{e}^{-cs}}{s^2 \left( 1 + \mathrm{e}^{-cs} \right)\}\end{equation*}|
+|\begin{align} at \text{ for } 0 \leq t  <  c \\ \text{sawtooth wave, period } = c \end{align}   | \begin{equation*}\frac{a \left( 1 + cs - \mathrm{e}^{-cs} \right) }{s^2 \left( 1 - \mathrm{e}^{-cs} \right) \}\end{equation*}|
+\|\begin{equation*}\sin{at} \sin{bt\}\end{equation*}           |      \begin{equation*}\frac{2abs}{\left( s^2 + \left(a+b\right)^2\right) \left( s^2 + \left(a-b\right)^2\right)\}\end{equation*}|
+\|\begin{equation*}\frac{1 - \cos{at}}{a^2}  \end{equation*}  | \begin{equation*}\frac{1}{s \left( s^2 + a^2 \right) \}\end{equation*}|
+\|\begin{equation*}\frac{at - \sin{at}}{a^3}  \end{equation*}  | \begin{equation*}\frac{1}{s^2 \left( s^2 + a^2 \right) \}\end{equation*}|
+\|\begin{equation*}\frac{\sin{at} - at\cos{at}}{2a^3}  \end{equation*}  | \begin{equation*}\frac{1}{\left( s^2 + a^2 \right)^2 \}\end{equation*}|
 
 ## References
 

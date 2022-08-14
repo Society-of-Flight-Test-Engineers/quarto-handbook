@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 8&nbsp; Motion &amp; Vibration Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09-material-strength.html" rel="next">
+<link href="./07-mass-properties.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-axis-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-mass-properties.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-motion-analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-material-strength.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-reciprocating-engines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-propellers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Propellers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-standardization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-acoustics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-emc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-handling-qualities.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-rotary-wings.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Rotary Wing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-gas-turbine-propulsion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-radio-communications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-communications-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-display-guidelines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#recurring-abbreviations" id="toc-recurring-abbreviations" class="nav-link active" data-scroll-target="#recurring-abbreviations"> <span class="header-section-number">8.1</span> Recurring Abbreviations</a></li>
+  <li><a href="#first-order-motion" id="toc-first-order-motion" class="nav-link" data-scroll-target="#first-order-motion"> <span class="header-section-number">8.2</span> First Order Motion</a>
+  <ul class="collapse">
+  <li><a href="#elements-of-first-order-motion" id="toc-elements-of-first-order-motion" class="nav-link" data-scroll-target="#elements-of-first-order-motion"> <span class="header-section-number">8.2.1</span> Elements of First Order Motion</a></li>
+  <li><a href="#first-order-motion-descriptive-parameters" id="toc-first-order-motion-descriptive-parameters" class="nav-link" data-scroll-target="#first-order-motion-descriptive-parameters"> <span class="header-section-number">8.2.2</span> First Order Motion Descriptive Parameters</a></li>
+  <li><a href="#determining-tau-from-step-input-time-history" id="toc-determining-tau-from-step-input-time-history" class="nav-link" data-scroll-target="#determining-tau-from-step-input-time-history"> <span class="header-section-number">8.2.3</span> Determining <span class="math inline">\(\tau\)</span> from Step Input Time History</a></li>
+  </ul></li>
+  <li><a href="#second-order-motion" id="toc-second-order-motion" class="nav-link" data-scroll-target="#second-order-motion"> <span class="header-section-number">8.3</span> Second Order Motion</a>
+  <ul class="collapse">
+  <li><a href="#elements-of-second-order-motion" id="toc-elements-of-second-order-motion" class="nav-link" data-scroll-target="#elements-of-second-order-motion"> <span class="header-section-number">8.3.1</span> Elements of Second Order Motion</a></li>
+  <li><a href="#second-order-motion-descriptive-parameters" id="toc-second-order-motion-descriptive-parameters" class="nav-link" data-scroll-target="#second-order-motion-descriptive-parameters"> <span class="header-section-number">8.3.2</span> Second Order Motion Descriptive Parameters</a></li>
+  <li><a href="#determining-descriptive-parameters" id="toc-determining-descriptive-parameters" class="nav-link" data-scroll-target="#determining-descriptive-parameters"> <span class="header-section-number">8.3.3</span> Determining Descriptive Parameters</a></li>
+  </ul></li>
+  <li><a href="#complex-plane" id="toc-complex-plane" class="nav-link" data-scroll-target="#complex-plane"> <span class="header-section-number">8.4</span> Complex Plane</a></li>
+  <li><a href="#parameter-conversions" id="toc-parameter-conversions" class="nav-link" data-scroll-target="#parameter-conversions"> <span class="header-section-number">8.5</span> Parameter Conversions</a></li>
+  <li><a href="#vibration-nomographs" id="toc-vibration-nomographs" class="nav-link" data-scroll-target="#vibration-nomographs"> <span class="header-section-number">8.6</span> Vibration Nomographs</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">8.7</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="recurring-abbreviations" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="recurring-abbreviations"><span class="header-section-number">8.1</span> Recurring Abbreviations</h2>
+<table class="table">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 98%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(C_{\frac{1}{x}}\)</span></td>
+<td>number of cycles to achieve <span class="math inline">\(\frac{1}{x}\)</span> amplitude</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(D\)</span></td>
+<td>damping</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(D_1,D_2\)</span></td>
+<td>peak-to-peak displacement (subsequent)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathrm{FV}\)</span></td>
+<td>final value</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(F(t)\)</span></td>
+<td>forcing function</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(f\)</span></td>
+<td>frequency, cycles/sec = <span class="math inline">\(\omega / \left( 2\pi \right)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathrm{HCAR}\)</span></td>
+<td>half cycle amplitude ratio (i.e., <span class="math inline">\(x_2/x_1\)</span> , <span class="math inline">\(x_3/x_2\)</span> , etc.)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathrm{Im}\)</span></td>
+<td>imaginary axis</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(M\)</span></td>
+<td>mass</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathrm{MP}\)</span></td>
+<td>peak overshoot</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathrm{Re}\)</span></td>
+<td>real axis</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathrm{rms}\)</span></td>
+<td>root mean square</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(s_1\)</span> , <span class="math inline">\(s_2\)</span></td>
+<td>equation roots of second order</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(T\)</span></td>
+<td>period = <span class="math inline">\(1/f\)</span> = <span class="math inline">\(2\pi/\omega_d\)</span> (seconds)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(T_d\)</span></td>
+<td>delay time (i.e., time to 50% of <span class="math inline">\(\mathrm{FV}\)</span> )</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(T_r\)</span></td>
+<td>rise time (i.e., time from 10% to 90% of <span class="math inline">\(\mathrm{FV}\)</span> )</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(T_p\)</span></td>
+<td>time to peak amplitude</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mathrm{TPR}\)</span></td>
+<td>transient peak ratio</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(T_s\)</span></td>
+<td>settling time (time to settle within <span class="math inline">\(x\%\)</span> of <span class="math inline">\(\mathrm{FV}\)</span> )</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(T_{\frac{1}{x}}\)</span></td>
+<td>time to achieve <span class="math inline">\(\frac{1}{x}\)</span> amplitude</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x\)</span></td>
+<td>displacement</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_1\)</span> , <span class="math inline">\(x_2\)</span></td>
+<td>peak displacements (subsequent)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(v\)</span></td>
+<td>velocity</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(v_0\)</span></td>
+<td>peak velocity</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\varepsilon\)</span></td>
+<td><span class="math inline">\(= \zeta \omega_n / \omega_d = \zeta / \sqrt{1 - \zeta^2}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\phi\)</span></td>
+<td>phase lag (radians)</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\zeta\)</span></td>
+<td>damping coefficient (non-dimensional)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sigma\)</span></td>
+<td>damping rate <span class="math inline">\(=\zeta \omega_n = 1/\tau\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\tau\)</span></td>
+<td>time constant <span class="math inline">\(=1/\zeta \omega_n\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\omega\)</span></td>
+<td>frequency, radians/sec</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\omega_d\)</span></td>
+<td>damped natural frequency (rad/sec)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\omega_n\)</span></td>
+<td>natural frequency (rad/sec)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="first-order-motion" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="first-order-motion"><span class="header-section-number">8.2</span> First Order Motion</h2>
+<p>Found in classical aircraft roll and spiral modes. Named first-order because the motions are described by mathematics using the first derivative of a parameter.</p>
+<section id="elements-of-first-order-motion" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="elements-of-first-order-motion"><span class="header-section-number">8.2.1</span> Elements of First Order Motion</h3>
+<p>Mechanical analogy contains elements of mass, damping and sometimes a forcing function.</p>
+<p><strong>Example 1:</strong> Determine the vertical velocity of a diver as she hits the water at <span class="math inline">\(10\)</span> ft/s (assume constant body position &amp; neutral buoyancy)</p>
+<p>Summing vertical forces gives</p>
+<p><span class="math display">\[\begin{align}
+\sum F_{\mathrm{vert}} : &amp;M \frac{dV}{dt} + DV = 0 \\
+&amp;\frac{dV}{V} + \frac{D}{M} dt = 0 \\
+&amp;\int{}{} \frac{dV}{V} = -\int{}{} \frac{D}{M} dt
+\end{align}\]</span></p>
+<p>Since <span class="math inline">\(D\)</span> &amp; <span class="math inline">\(M\)</span> are constant</p>
+<p><span class="math display">\[\begin{align}
+\ln V &amp;= -\frac{D}{M} t + C =  -\frac{D}{M} t + \ln c\\
+V_c &amp;= c e^{-\frac{D}{M} t} \;\;\text{complementary solution}\\
+\end{align}\]</span> &nbsp; Apply initial condition</p>
+<p><span class="math display">\[\begin{align}
+V(t=0) &amp;= 10 \mathrm{ft/s} \Rightarrow \\
+10 &amp;= C \\
+V_T &amp;= 10 e^{-\frac{D}{M} t}
+\end{align}\]</span></p>
+<p>Plot response over time</p>
+<p><img src="media/08/image5.png" class="img-fluid"></p>
+<p>Exponential rate of decay described by <span class="math inline">\(\frac{D}{M}\)</span> ratio</p>
+<p>&nbsp;</p>
+<p><strong>Example 2:</strong> Diver with <span class="math inline">\(20\)</span> lb submerged weight releases from zero velocity at top of pool (quiescent condition).</p>
+<p>Solve using Laplace analysis methods:</p>
+<p><span class="math display">\[\begin{align}
+M\dot{V} + DV &amp;= 20 \;\;\text{step input} \\
+M\left[ sV(s) - V(0) \right] + D V(s) &amp;= \frac{20}{s} \\
+sV(s) - V(0) + \frac{D}{M} V(s) &amp;= \frac{20}{M} \frac{1}{s} \\
+V(s) \left(s + \frac{D}{M} \right) &amp;= \frac{20}{M} \frac{1}{s} + V(0) \\
+V(s) &amp;= \frac{ \frac{20}{M} \frac{1}{s} + V(0) }{s + \frac{D}{M} } \\
+&amp;= \left\{
+          \frac{
+                \frac{20}{M}
+                }
+                {s \left(
+                          s + \frac{D}{M}
+                        \right)
+                }
+  \right\} + \frac{V(0)}{s + \frac{D}{M}} \\
+\end{align}\]</span></p>
+<p>Use partial fraction:</p>
+<p><span class="math display">\[\begin{align}
+\frac{ \frac{20}{M} }{s \left( s + \frac{D}{M} \right) } &amp;= \frac{A}{s} + \frac{B}{s + \frac{D}{M}}\\
+&amp;= \frac{A \left( s + \frac{D}{M} \right)}{s \left( s + \frac{D}{M} \right) } + \frac{B s}{s \left( s + \frac{D}{M} \right) }\\
+&amp;= \frac{A \left( s + \frac{D}{M} \right) + B s}{s \left( s + \frac{D}{M} \right) }\\
+\therefore \frac{20}{M} &amp;= A \left( s + \frac{D}{M} \right) + B s
+\end{align}\]</span></p>
+<p>\end{equation*}</p>
+<p>let <span class="math inline">\(s = -\frac{D}{M}\)</span> :</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{20}{M} = 0 + B \left(-\frac{D}{M}\right) \Rightarrow B = -\frac{20}{D}
+\end{equation*}\]</span></p>
+<p>let <span class="math inline">\(s = 0\)</span> :</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{20}{M} = A \left( 0 + \frac{D}{M} \right) + 0 \Rightarrow A = \frac{20}{D}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+V(s) &amp;= \left\{ \frac{A}{s} + \frac{B}{s + \frac{D}{M}} \right\} + \frac{V(0)}{s + \frac{D}{M}} \\
+&amp;= \left\{ \frac{\frac{20}{D}}{s} + \frac{-\frac{20}{D}}{s + \frac{D}{M}} \right\} + \frac{V(0)}{s + \frac{D}{M}} \\
+V(t) &amp;= \left\{ \frac{20}{D} -\frac{20}{D}e^{-\frac{D}{M}t} \right\} + V(0)e^{-\frac{D}{M}t} \\
+\end{align}\]</span></p>
+<p>since <span class="math inline">\(V(0) = 0\)</span> then</p>
+<p><span class="math display">\[\begin{equation*}
+V(t) = \frac{20}{D} \left[ 1  -e^{-\frac{D}{M}t} \right]
+\end{equation*}\]</span></p>
+<p>Note that the steady state value, <span class="math inline">\(V_{\mathrm{ss}} = \frac{20}{D}\)</span> , i.e.</p>
+<p><span class="math display">\[\begin{equation*}
+V(t) = V_{\mathrm{ss}} \left[1  -e^{-\frac{D}{M}t} \right]
+\end{equation*}\]</span></p>
+<p>This “force/damping” ratio is merely a scaling factor for the steady state.</p>
+<p><img src="media/08/image9.png" class="img-fluid"></p>
+<p>Several methods can be used to describe the quickness of convergence toward steady state (e.g., time to <span class="math inline">\(99.999\%\)</span> of <span class="math inline">\(V_{\mathrm{ss}}\)</span> , time to <span class="math inline">\(1/2\)</span> <span class="math inline">\(V_{\mathrm{ss}}\)</span> ).</p>
+<p>By convention, we use a <span class="math inline">\(\%\)</span> that directly reflects the exponent.</p>
+<p>Establish a time constant <span class="math inline">\(\tau\)</span> based on <span class="math inline">\(\frac{D}{M}\)</span> .</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{D}{M} \equiv \frac{1}{\tau}
+\end{equation*}\]</span></p>
+<p>so</p>
+<p><span class="math display">\[\begin{equation*}
+e^{-\frac{D}{M}t} = e^{-\frac{t}{\tau}}
+\end{equation*}\]</span></p>
+<p>when</p>
+<p><span class="math display">\[\begin{equation*}
+t = \tau
+\end{equation*}\]</span></p>
+<p>then</p>
+<p><span class="math display">\[\begin{equation*}
+e^{-\frac{t}{\tau}} = e^{-\frac{\tau}{\tau}} = e^{-1} = 0.36788
+\end{equation*}\]</span></p>
+<p>so, after <span class="math inline">\(\frac{M}{D}\)</span> seconds have elapsed, <span class="math inline">\(V = V_{\mathrm{ss}} \left[1 0.36788 \right] = 63.212\% V_{\mathrm{ss}}\)</span></p>
+<p><span class="math inline">\(\tau =\)</span> time constant (time for parameter to reach <span class="math inline">\(~63\%\)</span> of it’s steady state value)</p>
+</section>
+<section id="first-order-motion-descriptive-parameters" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="first-order-motion-descriptive-parameters"><span class="header-section-number">8.2.2</span> First Order Motion Descriptive Parameters</h3>
+<p><span class="math display">\[\begin{equation*}
+x(t) = e^{-\zeta \omega_n t} = e^{-\frac{t}{\tau}}
+\end{equation*}\]</span></p>
+<p><img src="media/08/image12.png" class="img-fluid"></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>when <span class="math inline">\(t = 0.6931\tau\)</span> :</td>
+<td><span class="math inline">\(x = e^{−0.6931}\)</span></td>
+<td><span class="math inline">\(= 0.5\)</span> (time to half amplitude)</td>
+</tr>
+<tr class="even">
+<td>when <span class="math inline">\(t = \tau\)</span> :</td>
+<td><span class="math inline">\(x = e^{−1}\)</span></td>
+<td><span class="math inline">\(= 0.37\)</span></td>
+</tr>
+<tr class="odd">
+<td>when <span class="math inline">\(t = 3\tau\)</span> :&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><span class="math inline">\(x = e^{−3}\)</span></td>
+<td><span class="math inline">\(= 0.05\)</span></td>
+</tr>
+<tr class="even">
+<td>when <span class="math inline">\(t = 4\tau\)</span> :</td>
+<td><span class="math inline">\(x = e^{−4}\)</span></td>
+<td><span class="math inline">\(= 0.02\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>If exponent <span class="math inline">\(&gt; 0\)</span> , then motion is divergent.</p>
+<p><span class="math display">\[\begin{equation*}
+x(t) = ce^{mt}
+\end{equation*}\]</span></p>
+<p>where <span class="math inline">\(m &gt; 0\)</span></p>
+<p><img src="media/08/image15.png" class="img-fluid"></p>
+<p><span class="math inline">\(\tau\)</span> again describes the exponential rate of divergence.</p>
+<p>By convention, the “time to double amplitude” (<span class="math inline">\(t_2\)</span> ) is usually applied as the evaluation metric.</p>
+<p><span class="math inline">\(x_{t_2} = 2x_0\)</span> where <span class="math inline">\(x_0 = ce^{m\cdot 0}\)</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[\begin{align}
+x_2 &amp;= 2c \\
+2c &amp;= ce^{mt_2} \\
+2 &amp;= e^{mt_2} \\
+\ln 2 &amp;= mt_2 \\
+\therefore \text{Time to double amplitude } \frac{0.6931}{m} = t_2 = 0.693\tau \\
+\end{align}\]</span></p>
+</section>
+<section id="determining-tau-from-step-input-time-history" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="determining-tau-from-step-input-time-history"><span class="header-section-number">8.2.3</span> Determining <span class="math inline">\(\tau\)</span> from Step Input Time History</h3>
+<p><strong>Method #1</strong></p>
+<p><span class="math inline">\(\tau\)</span> = time to reach <span class="math inline">\(0.632 x_{\mathrm{ss}}\)</span></p>
+<p><img src="media/08/image18.png" class="img-fluid"></p>
+<p><strong>Method #2</strong></p>
+<ol type="1">
+<li>Define <span class="math inline">\(x_{\mathrm{ss}}\)</span><br>
+</li>
+<li>Measure <span class="math inline">\(x_1\)</span> at some time <span class="math inline">\(t_1\)</span><br>
+</li>
+<li>Calculate <span class="math inline">\(x_2 = 0.632 \left( x_{\mathrm{ss}} + 0.58 x_1 \right)\)</span><br>
+</li>
+<li>Find <span class="math inline">\(t_2\)</span> corresponding to <span class="math inline">\(x_2\)</span><br>
+</li>
+<li><span class="math inline">\(t_2 - t_1 = \tau\)</span></li>
+</ol>
+<!-- x_2 is mislabeled in figure -->
+<p><img src="media/08/image21.png" class="img-fluid"></p>
+<p><strong>Method #3</strong></p>
+<ol type="1">
+<li>Pick any time <span class="math inline">\(t_1\)</span> .</li>
+<li>Draw tangent at <span class="math inline">\(t_1\)</span> .</li>
+<li>Note <span class="math inline">\(t_2\)</span> where tangent intercepts <span class="math inline">\(x_{\mathrm{ss}}\)</span> .</li>
+<li><span class="math inline">\(\tau = t_2 -t_1\)</span></li>
+</ol>
+<p><img src="media/08/image22.png" class="img-fluid"></p>
+<p><strong>Method #4</strong></p>
+<!-- Why do we suddenly switch to caps? -->
+<p>When <span class="math inline">\(X_{\mathrm{SS}}\)</span> is unknown use</p>
+<p><span class="math display">\[\begin{equation*}
+\tau = \frac{\Delta t}{\ln \left( \frac{A_1}{A_2} \right)}
+\end{equation*}\]</span></p>
+<p><img src="media/08/image24.png" class="img-fluid"></p>
+<p><strong>Method #5</strong></p>
+<p>When <span class="math inline">\(X_{\mathrm{SS}}\)</span> is known, use</p>
+<p><span class="math display">\[\begin{equation*}
+\tau = \frac{-\Delta t}{\ln \left[ \frac{X_{\mathrm{SS}} - X_1}{X_{\mathrm{SS}} - X_2} \right]}
+\end{equation*}\]</span></p>
+<p><strong>Linearity check:</strong></p>
+<p>Note parameter change between even time increments.</p>
+<p>Plot parameter changes vs elapsed time on semi-log scale</p>
+<p><img src="media/08/image26.png" class="img-fluid"></p>
+<p>Slope of line equals <span class="math inline">\(\tau\)</span></p>
+<p><img src="media/08/image27.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="second-order-motion" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="second-order-motion"><span class="header-section-number">8.3</span> Second Order Motion</h2>
+<p>Found in classical aircraft phugoid, Dutch roll and short period modes as well as noise filter and vibration testing. Named second-order because the motions are described by mathematics using the second derivative of a parameter.</p>
+<section id="elements-of-second-order-motion" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="elements-of-second-order-motion"><span class="header-section-number">8.3.1</span> Elements of Second Order Motion</h3>
+<p>Mechanical systems have elements of spring, mass, and usually damping. Forcing functions can be included (see illustration).</p>
+<p><img src="media/08/image28.png" class="img-fluid"></p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(K\)</span></td>
+<td>spring stiffness ( <span class="math inline">\(F/x\)</span> )</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x\)</span></td>
+<td>displacement from equilibrium</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(M\)</span></td>
+<td>mass</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(F\left(t\right)\)</span></td>
+<td>forcing function</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(D\)</span></td>
+<td>damping</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+\sum{}{} F_{\mathrm{vert}} : M\ddot{x} + D\dot{x} + Kx = F(t)
+\end{equation*}\]</span></p>
+<p>Natural character is observed when system is allowed to move with no external input [<span class="math inline">\(F(t) = 0\)</span> ]</p>
+<p><span class="math display">\[\begin{equation*}
+\sum{}{} F_{\mathrm{vert}} : M\ddot{x} + D\dot{x} + Kx = 0
+\end{equation*}\]</span></p>
+<p>Apply operator technique:</p>
+<p>Let</p>
+<p><span class="math display">\[\begin{equation*}
+
+x = e^{st} \text{, } \dot{x} = s e^{st} \text{, } \ddot{x} = s^2 e^{st} \\
+\Rightarrow e^{st} \left( M s^2 + D s + K \right) = 0 \\
+
+\end{equation*}\]</span></p>
+<p>Divide out <span class="math inline">\(e^{st}\)</span> , since it never equals zero, the characteristic equation remains:</p>
+<p><span class="math display">\[\begin{equation*}
+
+M s^2 + D s + K = 0 \text{ or } s^2 + \frac{D}{M} s + \frac{K}{M} = 0\\
+
+\end{equation*}\]</span></p>
+<p>The values of <span class="math inline">\(s\)</span> that satisfy this equation are called the roots</p>
+<p><span class="math display">\[\begin{equation*}
+x = c_1 e^{s_1 t} + c_2 e^{s_2 t}
+\end{equation*}\]</span></p>
+<p>Solve for the roots using the quadratic equation</p>
+</section>
+<section id="second-order-motion-descriptive-parameters" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="second-order-motion-descriptive-parameters"><span class="header-section-number">8.3.2</span> Second Order Motion Descriptive Parameters</h3>
+<p>Solution (<span class="math inline">\(x\)</span> ) calculated as</p>
+<p><span class="math display">\[\begin{equation*}
+
+x = c_1 e^{\tau_1 t} + c_2 e^{\tau_2 t} \text{ where } s_1\text{, } s_2 = -\frac{D}{2M} \pm j \sqrt{ \frac{K}{M} - \left( \frac{D}{2M} \right)^2 }  
+
+\end{equation*}\]</span></p>
+<p>Apply Euler’s identity for complex conjugate roots</p>
+<p><span class="math display">\[\begin{equation*}
+
+x = A e^{-\frac{D}{2M} t} \sin \left( \sqrt{\frac{K}{M} - \left(\frac{D}{2M} \right)^2} t + \phi  \right)
+
+\end{equation*}\]</span></p>
+<ul>
+<li><span class="math inline">\(\phi\)</span> defines the <strong>phase shift</strong>.</li>
+<li><span class="math inline">\(A\)</span> defines the <strong>initial amplitude</strong>.</li>
+<li>The real part of the root <span class="math inline">\(\frac{D}{2M}\)</span> defines the <strong>envelope</strong> of the motion.</li>
+<li>The imaginary part of the root identifies the <strong>damped frequency</strong> of the oscillations, <span class="math inline">\(\omega_d\)</span> [rad/sec].</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+
+\omega_d = \sqrt{\frac{K}{M} - \left(\frac{D}{2M} \right)^2}
+
+\end{equation*}\]</span></p>
+<ul>
+<li>If damping is reduced to <span class="math inline">\(D= 0\)</span> then only <span class="math inline">\(\sqrt{\frac{K}{M}}\)</span> remains.</li>
+<li>This is the undamped or <strong>“natural” frequency</strong> ( <span class="math inline">\(\omega_n\)</span> ).</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+
+\omega_n \equiv \sqrt{\frac{K}{M}}
+
+\end{equation*}\]</span></p>
+<ul>
+<li>If <span class="math inline">\(\left( \frac{D}{2M} \right)^2 = \frac{K}{M}\)</span> then <span class="math inline">\(D\)</span> is considered to be critical (just enough to prevent oscillations)</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+
+D_{\mathrm{crit}} = \sqrt{\frac{K}{M}} 2M = 2 \sqrt{KM}
+
+\end{equation*}\]</span></p>
+<ul>
+<li>For oscillatory motion, actual system damping is typically expressed as a fraction critical damping. Define <strong>damping ratio</strong> as</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+
+\zeta \equiv \frac{D}{ D_{ \mathrm{crit} } } = \frac{D}{ 2 \sqrt{KM} }
+
+\end{equation*}\]</span></p>
+<p>Combining</p>
+<p><span class="math display">\[\begin{equation*}
+
+\omega_d \equiv \sqrt{\frac{K}{M} - \left(\frac{D}{2M} \right)^2}
+
+\end{equation*}\]</span></p>
+<p>with</p>
+<p><span class="math display">\[\begin{equation*}
+
+\omega_n \equiv \sqrt{\frac{K}{M}}
+
+\end{equation*}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\begin{equation*}
+
+\zeta = \frac{D}{ 2 \sqrt{KM} }
+
+\end{equation*}\]</span></p>
+<p>gives</p>
+<p><span class="math display">\[\begin{equation*}
+
+\omega_d \equiv \omega_n \sqrt{1 - \zeta^2}
+
+\end{equation*}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\begin{equation*}
+
+\frac{D}{2M} = \zeta \omega_n
+
+\end{equation*}\]</span></p>
+<p>The values can be substituted to gives</p>
+<p><span class="math display">\[\begin{align}
+x &amp;= A e^{-\frac{D}{2M} t} \sin \left( \sqrt{\frac{K}{M} - \left(\frac{D}{2M} \right)^2} t + \phi  \right) \\
+&amp;= A e^{-\zeta \omega_n t} \sin \left( \omega_d t + \phi  \right) \\
+&amp;= A e^{-\zeta \omega_n t} \sin \left( \omega_n \sqrt{1 - \zeta^2} t + \phi  \right) \\
+\text{where } \phi &amp;= \tan^{-1} \frac{\omega_d}{\zeta \omega_n} =  \tan^{-1} \frac{\omega_n \sqrt{1 - \zeta^2}}{\zeta \omega_n} =  \tan^{-1} \frac{\sqrt{1 - \zeta^2}}{\zeta} \\
+\end{align}\]</span></p>
+<!-- Don't think we need this labeled equation...? -->
+<p><img src="media/08/image43.png" class="img-fluid"></p>
+<p><img src="media/08/image44.png" class="img-fluid"></p>
+<p><img src="media/08/image45.png" class="img-fluid"></p>
+<p><span class="math display">\[\begin{equation*}
+\text{Roots } s_{1,2} = -\frac{D}{2M} \pm j \sqrt{\frac{K}{M} - \left( \frac{D}{2M} \right)^2} = -\zeta \omega_n \pm j\omega_n\sqrt{1 - \zeta^2}
+\end{equation*}\]</span></p>
+<p>Possible Solutions:</p>
+
+<!-- Eventually convert to an actual table -->
+<p><img src="media/08/image47.png" class="img-fluid"></p>
+<p>•&nbsp;The various combination of <span class="math inline">\(K\)</span> , <span class="math inline">\(M\)</span> , and <span class="math inline">\(D\)</span> and their effects on system response can be related to damping ratio <span class="math inline">\(\zeta\)</span> as follows:</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 42%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(+1 &lt; \zeta\)</span></td>
+<td>Real &amp; unequal roots: exponential, convergent</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+x\left(t\right) = c_1 e^{-\omega_n \left( \zeta + \sqrt{\zeta^2 - 1} \right)t} + c_2 e^{-\omega_n \left( \zeta - \sqrt{\zeta^2 - 1} \right)t}
+\end{equation*}\]</span> | | <span class="math inline">\(\zeta = +1\)</span> | Real &amp; equal roots: exponential, convergent | <span class="math display">\[\begin{equation*}
+x\left(t\right) = c_1 e^{-\omega_n \zeta t} + c_2 t e^{-\omega_n \zeta t}
+\end{equation*}\]</span> | | <span class="math inline">\(0 &lt; \zeta &lt; +1\)</span> | Complex pair roots: sinusoidal, convergent | <span class="math display">\[\begin{equation*}
+x\left(t\right) =  A e^{-\zeta \omega_n t} \sin \left( \omega_d + \phi \right)
+\end{equation*}\]</span> | | <span class="math inline">\(\zeta = 0\)</span> | Imaginary pair roots: sinusoidal, neutral | <span class="math display">\[\begin{equation*}
+x\left(t\right) =  A \sin \left( \omega_n t + \phi \right) = A \cos \left( \omega_n t \right)
+\end{equation*}\]</span> | | <span class="math inline">\(-1 &lt; \zeta &lt; 0\)</span> | Complex pair roots: sinusoidal, divergent | <span class="math display">\[\begin{equation*}
+x\left(t\right) =  A e^{-\zeta \omega_n t} \sin \left( \omega_d + \phi \right)
+\end{equation*}\]</span> | | <span class="math inline">\(\zeta = -1\)</span> | Real &amp; equal roots: exponential, divergent | <span class="math display">\[\begin{equation*}
+x\left(t\right) = c_1 e^{-\omega_n \zeta t} + c_2 t e^{-\omega_n \zeta t}
+\end{equation*}\]</span> | | <span class="math inline">\(\zeta &lt; -1\)</span> | Real &amp; unequal roots: exponential, divergent | <span class="math display">\[\begin{equation*}
+x\left(t\right) = c_1 e^{-\omega_n \left( \zeta + \sqrt{\zeta^2 - 1} \right)t} + c_2 e^{-\omega_n \left( \zeta - \sqrt{\zeta^2 - 1} \right)t}
+\end{equation*}\]</span> |</p>
+<p><strong>Damping ratio effect on second order system</strong></p>
+<p>Response of various second order systems to an impulse input.</p>
+<p>Second-order systems are oscillatory if <span class="math inline">\(-1 &lt; \zeta &lt; +1\)</span> .</p>
+<p>Motion typically described by <span class="math inline">\(\omega_n\)</span> and <span class="math inline">\(\zeta\)</span></p>
+<p><span class="math inline">\(T\)</span> , <span class="math inline">\(\omega_d\)</span> , <span class="math inline">\(\omega_n\)</span> , and <span class="math inline">\(\zeta\)</span> are linked such that knowledge of any two will yield the other two.</p>
+<p><img src="media/08/image50.png" class="img-fluid"></p>
+<p><img src="media/08/image51.png" class="img-fluid"></p>
+<p><img src="media/08/image52.png" class="img-fluid"></p>
+<p>2nd order system response to <strong>unit step input</strong> for <strong>underdamped systems</strong> ( <span class="math inline">\(0 &lt; \zeta &lt; +1\)</span> )</p>
+<p><img src="media/08/image53.png" class="img-fluid"></p>
+<p><strong>Decay rates (for <span class="math inline">\(0 &lt; \zeta &lt; +1\)</span> ) and Useful Insights</strong></p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><strong>Time to decay</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+\zeta \omega_n = \frac{\ln \frac{x_1}{x_2} }{t_2 - t_1} \Rightarrow \Delta t = \frac{\ln \frac{x_1}{x_2}}{\zeta \omega_n}
+\end{equation*}\]</span> | |Time to <span class="math inline">\(\frac{1}{2}\)</span> amplitude | <span class="math display">\[\begin{equation*}
+\equiv \Delta t_{\frac{1}{2}} = \frac{\ln \frac{2}{1}}{\zeta \omega_n} = \frac{0.6931}{\zeta \omega_n}  
+\end{equation*}\]</span> | |Time to <span class="math inline">\(\frac{1}{10}\)</span> amplitude | <span class="math display">\[\begin{equation*}
+\equiv \Delta t_{\frac{1}{10}} = \frac{\ln \frac{10}{1}}{\zeta \omega_n} = \frac{2.3026}{\zeta \omega_n}  
+\end{equation*}\]</span> | |Time to <span class="math inline">\(\frac{1}{x}\)</span> amplitude | <span class="math display">\[\begin{equation*}
+\equiv \Delta t_{\frac{1}{x}} = \frac{\ln x }{\zeta \omega_n}  
+\end{equation*}\]</span> | |<strong># cycles to decay</strong> | <span class="math display">\[\begin{equation*}
+\text{\# cycles} = \frac{\Delta t }{T} = \frac{\Delta t \omega_d}{2 \pi}
+\end{equation*}\]</span> | |# cycles to <span class="math inline">\(\frac{1}{2}\)</span> amplitude | <span class="math display">\[\begin{equation*}
+\equiv C_{\frac{1}{2}} = \frac{0.6931}{\zeta \omega_n}\frac{\omega_d}{2 \pi} = \frac{0.6931}{2 \pi  }\frac{\omega_d}{\zeta \omega_n} = \frac{0.1103}{\varepsilon}
+\end{equation*}\]</span> | |# cycles to <span class="math inline">\(\frac{1}{10}\)</span> amplitude | <span class="math display">\[\begin{equation*}
+\equiv C_{\frac{1}{10}} = \frac{2.3026}{\zeta \omega_n}\frac{\omega_d}{2 \pi} = \frac{2.3026}{2 \pi  }\frac{\omega_d}{\zeta \omega_n} = \frac{0.3665}{\varepsilon}
+\end{equation*}\]</span> | |# cycles to <span class="math inline">\(\frac{1}{x}\)</span> amplitude | <span class="math display">\[\begin{equation*}
+\equiv C_{\frac{1}{x}} = \frac{\ln x }{2 \pi }\frac{\omega_d}{\zeta \omega_n}
+\end{equation*}\]</span> |</p>
+<p>Same analysis applies for exponential growth</p>
+<p>For same <span class="math inline">\(\Delta t\)</span></p>
+<p><span class="math display">\[\begin{equation*}
+\frac{x_1}{x_2} = \frac{x_2}{x_3} = \frac{x_3}{x_4} = \dots
+\end{equation*}\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[\begin{equation*}
+\frac{x_1}{x_3} = \frac{x_1}{x_2} \frac{x_2}{x_3} = \left( \frac{x_1}{x_2} \right)^2 \Rightarrow \mathrm{HCAR} = \sqrt{\text{full cycle amplitude ratio}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{align}
+\mathrm{HCAR} &amp;\equiv \frac{x_1}{x_2} =  e^{\zeta \omega_n \left( t_2 - t_1 \right)} =  e^{\zeta \omega_n \left( \Delta t \right)} =  e^{\zeta \omega_n \left( \frac{T}{2} \right)} =  e^{\zeta \omega_n \left( \frac{2\pi}{2\omega_d} \right)} \\
+&amp;=  e^{\zeta \omega_n \left( \frac{\pi}{\omega_n \sqrt{1 - \zeta^2}} \right)} =  e^{\zeta \omega_n \left( \frac{\pi \zeta}{ \sqrt{1 - \zeta^2}} \right)} \\
+&amp;\Rightarrow \ln \frac{x_1}{x_2} = \frac{\pi \zeta}{ \sqrt{1 - \zeta^2}} \Rightarrow \zeta = \sqrt{\frac{\left( \ln \frac{x_1}{x_2} \right)^2}{\pi^2 + \left( \ln \frac{x_1}{x_2} \right)^2}} \\
+\end{align}\]</span></p>
+<p>This can be applied in graphical form (transient peak ratio method)</p>
+</section>
+<section id="determining-descriptive-parameters" class="level3" data-number="8.3.3">
+<h3 data-number="8.3.3" class="anchored" data-anchor-id="determining-descriptive-parameters"><span class="header-section-number">8.3.3</span> Determining Descriptive Parameters</h3>
+<p>Time domain metrics</p>
+<p><img src="media/08/image55.png" class="img-fluid"></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Peak Value</td>
+<td><span class="math inline">\(\mathrm{MP}\)</span></td>
+<td>largest value</td>
+</tr>
+<tr class="even">
+<td>Final Value</td>
+<td><span class="math inline">\(\mathrm{FV}\)</span></td>
+<td>steady state value</td>
+</tr>
+<tr class="odd">
+<td>Delay Time</td>
+<td><span class="math inline">\(T_d\)</span></td>
+<td><span class="math inline">\(50%\)</span> of final value</td>
+</tr>
+<tr class="even">
+<td>Rise Time</td>
+<td><span class="math inline">\(T_r\)</span></td>
+<td><span class="math inline">\(10% - 90%\)</span> of FV</td>
+</tr>
+<tr class="odd">
+<td>Peak Time</td>
+<td><span class="math inline">\(T_p\)</span></td>
+<td>time to MP</td>
+</tr>
+<tr class="even">
+<td>% Overshoot</td>
+<td><span class="math inline">\(\mathrm{PO}\)</span></td>
+<td><span class="math inline">\(\frac{\mathrm{MP} - 1}{1} \times 100% \text{target value} = \text{unity}\)</span> <em>target value = unity</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Method #1</strong> Basic Analysis</p>
+<p>Note</p>
+<p><span class="math display">\[\begin{equation*}
+x\left(t\right) = A e^{-\zeta \omega_n t} \sin \left( \omega_d t + 0 \right)
+\end{equation*}\]</span></p>
+<p><span class="math inline">\(\zeta \omega_n\)</span> and <span class="math inline">\(\omega_d\)</span> describe a time history</p>
+<p><img src="media/08/image58.png" class="img-fluid"></p>
+<p><span class="math display">\[\begin{equation*}
+f_d = \frac{1}{T}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\omega_d = \frac{2\pi}{T}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\zeta \omega_n = \frac{\ln \frac{x_1}{x_2}}{\left(t_2 - t_1 \right)}
+\end{equation*}\]</span></p>
+<p>Easily measured values: can use any points on envelope</p>
+<p>Define</p>
+<p><span class="math display">\[\begin{equation*}
+\varepsilon \equiv \frac{\zeta \omega_n}{\omega_d} = \frac{\frac{\ln \frac{x_1}{x_2}}{\left(t_2 - t_1 \right)} }{\frac{2\pi}{T}} = \frac{T\ln \frac{x_1}{x_2}}{2\pi \left(t_2 - t_1 \right)}
+\end{equation*}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\begin{equation*}
+\left(t_2 - t_1 \right) = \frac{T}{2} \Rightarrow \frac{\zeta \omega_n}{\omega_d} = \frac{\ln \frac{x_1}{x_2}}{\pi} = \varepsilon = \ln \left[ x_1 / x_2 \right] / \pi
+\end{equation*}\]</span></p>
+<p>recall</p>
+<p><span class="math display">\[\begin{equation*}
+\omega_d = \omega_n \sqrt{1 - \zeta^2}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\varepsilon = \frac{\zeta \omega_n}{\omega_n \sqrt{1 - \zeta^2}} =  \frac{\zeta}{ \sqrt{1 - \zeta^2}} \Rightarrow \varepsilon^2 = \frac{\zeta^2}{ 1 - \zeta^2} \Rightarrow \varepsilon^2 \left( 1 - \zeta^2 \right) = \zeta^2 \Rightarrow \varepsilon^2 = \zeta^2 \left[ 1 + \varepsilon^2 \right]
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\zeta = \sqrt{\frac{\varepsilon^2}{1 + \varepsilon^2}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\omega_n = \frac{\zeta \omega_n}{\zeta} = \frac{\omega_d}{\sqrt{1 - \zeta^2}}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\left| \frac{x_1}{x_2} \right| = \text{Half-Cycle Amplitude Ratio } \left( \mathrm{HCAR} \right) = e^{\zeta \omega_n \left(t_2 - t_1\right)}
+\end{equation*}\]</span></p>
+<p><strong>Method #2</strong> Transient Peak Ratio Analysis</p>
+<ol type="1">
+<li>Measure either *<span class="math inline">\(D\)</span> or <span class="math inline">\(x\)</span> distances as shown.</li>
+</ol>
+<p><img src="media/08/image67.png" class="img-fluid"></p>
+<p>Example Calculation</p>
+<p><img src="media/08/image68.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Note ratio of adjacent peak values (transient peak ratios).</li>
+</ol>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">First <span class="math inline">\(\mathrm{TPR}\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[\begin{equation*}
+\frac{D_2}{D_1} = \frac{117-86}{117-80}=\frac{31}{37}=0.8378
+\end{equation*}\]</span> | | Second <span class="math inline">\(\mathrm{TPR}\)</span> | <span class="math display">\[\begin{equation*}
+\frac{D_3}{D_2} = \frac{112-86}{117-86}=\frac{26}{31}=0.8387
+\end{equation*}\]</span> | | Third <span class="math inline">\(\mathrm{TPR}\)</span> | <span class="math display">\[\begin{equation*}
+\frac{D_4}{D_3} = \frac{112-90}{112-86}=\frac{22}{26}=0.8462
+\end{equation*}\]</span> |</p>
+<ol start="3" type="1">
+<li>Average several TPRs.</li>
+</ol>
+<p>Average <span class="math inline">\(\mathrm{TPR} = 0.8409\)</span></p>
+<ol start="4" type="1">
+<li>Use equation to find <span class="math inline">\(\zeta\)</span> :</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+\zeta = \sqrt{\frac{\left( \ln \frac{x_1}{x_2} \right)^2}{\pi^2 + \left( \ln \frac{x_1}{x_2} \right)^2}}
+\end{equation*}\]</span> &nbsp;</p>
+<ol type="a">
+<li><p>Can use <span class="math inline">\(D_1/D_2\)</span> or <span class="math inline">\(x_1/x_2\)</span> ratios in above equation.</p></li>
+<li><p>In lieu of equation, use adjacent look-up curve to find <span class="math inline">\(\zeta\)</span> .</p></li>
+<li><p>Time ratio method works better with heavy damping.</p></li>
+</ol>
+<p><img src="media/08/image71.png" class="img-fluid"></p>
+<p><strong>Method #3</strong> Multiple <em>TPR</em> Analysis</p>
+<p><img src="media/08/image72.png" class="img-fluid"></p>
+<p>To determine damping ratio</p>
+<ul>
+<li>Use the <span class="math inline">\(m = 1\)</span> line when comparing the next ratio.</li>
+</ul>
+<p><span class="math display">\[\begin{align}
+\frac{\Delta x_1}{\Delta x_0} &amp;= \frac{2.5}{4.5} = 0.56 &amp; \zeta = 0.16 \\
+\frac{\Delta x_2}{\Delta x_1} &amp;= \frac{1.5}{2.5} = 0.60 &amp; \zeta = 0.14 \\
+\end{align}\]</span></p>
+<ul>
+<li>Use the <span class="math inline">\(m = 2\)</span> line for comparing every other peak ratio.</li>
+</ul>
+<p><span class="math display">\[\begin{align}
+\frac{\Delta x_2}{\Delta x_0} &amp;= \frac{1.5}{4.5} = 0.33 &amp; \zeta = 0.16 \\
+\frac{\Delta x_3}{\Delta x_1} &amp;= \frac{1.0}{2.5} = 0.40 &amp; \zeta = 0.14 \\
+\end{align}\]</span></p>
+<p><strong>Method #4</strong> Time Ratio Analysis</p>
+<ul>
+<li>If the damping ratio is between <span class="math inline">\(0.5\)</span> and <span class="math inline">\(1.0\)</span> (two or less overshoots), then the time ratio method can be used to determine frequency and damping ratio. Select a peak where the response if free.</li>
+<li>Note times for amplitude to reduce to <span class="math inline">\(73.6%\)</span> , <span class="math inline">\(40.9%\)</span> , and <span class="math inline">\(19.9%\)</span> of the peak value.</li>
+</ul>
+<p><img src="media/08/image75.png" class="img-fluid"></p>
+<ul>
+<li>Form the time ratios <span class="math inline">\(\frac{t_2}{t_1}\)</span> , <span class="math inline">\(\frac{t_3}{t_1}\)</span> , and <span class="math inline">\(\frac{t_3 - t_2}{t_2 - t_1}\)</span></li>
+<li>Enter the next figure at the time ratio side to find <span class="math inline">\(\zeta\)</span> for each time ratio.</li>
+<li>This technique is valid if the system transfer function has no zeros.</li>
+<li>If recorded measurements are not available and if the number of overshoots is between <span class="math inline">\(2\)</span> and <span class="math inline">\(6\)</span> , then</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+
+\zeta \approx \frac{7 - \mathrm{\# overshoots}}{10}
+
+\end{equation*}\]</span></p>
+<p>&nbsp; Time Ratio</p>
+<p><img src="media/08/image78.png" class="img-fluid"> <strong>Frequency Time Products (<span class="math inline">\(\omega_n \Delta t_3\)</span> ), (<span class="math inline">\(\omega_n \Delta t_2\)</span> ), (<span class="math inline">\(\omega_n \Delta t_1\)</span> )</strong></p>
+<p><strong>Method #5</strong> Maximum Slope Analysis</p>
+<p><img src="media/08/image79.png" class="img-fluid"></p>
+<p><img src="media/08/image80.png" class="img-fluid"></p>
+<ul>
+<li>Calculation of <span class="math inline">\(\zeta\)</span> somewhat sensitive to <span class="math inline">\(\Delta x_1\)</span> measurement</li>
+<li><span class="math inline">\(\omega_n = \frac{\omega_n \Delta t}{\Delta t}\)</span> not too sensitive to <span class="math inline">\(\Delta x_1\)</span><br>
+</li>
+<li>Best if <span class="math inline">\(0.5 \leq \zeta \leq 1.4\)</span><br>
+</li>
+<li>Initial overshoot approximation: let (step inputs only) <span class="math inline">\(\mathcal{K} \equiv \frac{x_{\mathrm{peak}}}{x_{\mathrm{ss}}} - 1\)</span></li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+
+\zeta = \sqrt{\frac{\left( - \frac{\ln \mathcal{K}}{\pi} \right)^2}{1 + \left( - \frac{\ln \mathcal{K}}{\pi} \right)^2}}
+
+\end{equation*}\]</span></p>
+<p><strong>Method #6</strong> Separated Real Root Analysis (when <span class="math inline">\(\zeta &gt; 1\)</span> )</p>
+<ol type="1">
+<li>Determine several steady state <span class="math inline">\(\Delta X \left(t\right)\)</span> values from time history</li>
+</ol>
+<p><img src="media/08/image84.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Plot <span class="math inline">\(\Delta X\)</span> vs <span class="math inline">\(t\)</span> on semi-log scale</li>
+</ol>
+<p><img src="media/08/image85.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>After the faster root has decayed, the semi-log plot will be a straight line whose slope determines the slower root <span class="math inline">\(\left( \frac{1}{\tau_1} \right)\)</span></li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+
+\tau_1 = \frac{t_1 - t_2}{\ln \left(\frac{\Delta X_1}{\Delta X_2} \right)}
+
+\end{equation*}\]</span></p>
+<ol start="4" type="1">
+<li>Determine by extrapolating the straight line portion of the response to establish the values <span class="math inline">\(\left( \frac{1}{\tau_1} \right)\)</span> , <span class="math inline">\(\Delta\overline{X}_0\)</span> , &amp; <span class="math inline">\(\Delta X_0^{\prime}\)</span></li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+
+\tau_2 = \tau_1 \left( \frac{\Delta\overline{X}_0}{\Delta X_0^{\prime}} \right)
+
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+
+\omega_n = \sqrt{\frac{1}{\tau_1}\frac{1}{\tau_2}} \text{ and } \zeta = - \frac{\left(\frac{1}{\tau_1} + \frac{1}{\tau_2} \right)}{2 \omega_n} = - \frac{\left( \frac{1}{\tau_1} + \frac{1}{\tau_2} \right)}{2 \sqrt{\frac{1}{\tau_1}\frac{1}{\tau_2}}}
+
+\end{equation*}\]</span></p>
+<p><strong>Method #7</strong> Modified Separated Real Root Analysis</p>
+<ul>
+<li>Method #6 is sensitive to errors in determining steady state values</li>
+<li>Alternate method is to avoid need for steady state value</li>
+<li>Define <span class="math inline">\(\Delta X \left(t \right) \equiv \left[ x \left(t + \Delta T \right) - x \left(t \right) \right]\)</span> where <span class="math inline">\(\Delta T\)</span> is a time increment</li>
+</ul>
+<ol type="1">
+<li>From time history, measure <span class="math inline">\(\Delta X\)</span> values according to definition</li>
+</ol>
+<p><img src="media/08/image91.png" class="img-fluid"></p>
+<p><span class="math display">\[\begin{equation*}
+
+\Delta T = \left( t_1 - t_0 \right) = \left( t_2 - t_1 \right) \text{ , etc.}
+
+\end{equation*}\]</span></p>
+<ol start="2" type="1">
+<li>Plot<span class="math inline">\(\Delta X \left(t \right)\)</span> vs time on semi-log scale</li>
+</ol>
+<p><img src="media/08/image92.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Use previous method to determine roots and characteristics</li>
+</ol>
+<ul>
+<li>Gross error will result if <span class="math inline">\(\zeta\)</span> is actually <span class="math inline">\(&lt; 1\)</span><br>
+</li>
+<li>If <span class="math inline">\(\zeta\)</span> is near <span class="math inline">\(1\)</span> , check results using time ratio or slope method</li>
+</ul>
+<p><strong>Method #8</strong> Frequency Sweep Analysis</p>
+<p>Determine <span class="math inline">\(\omega_n\)</span> and <span class="math inline">\(\zeta\)</span> using sinusoidal inputs.</p>
+<ul>
+<li>This “forced response” method is most useful when damping is heavy.</li>
+<li>For a second order system, output/input amplitude ratio and phase shift are a function of input frequency.</li>
+</ul>
+<p><img src="media/08/image93.png" class="img-fluid"></p>
+<ul>
+<li>Amplitude ratio peaks at “resonant” frequency, <span class="math inline">\(\omega_r\)</span> .</li>
+<li>Resonant peaks increase as <span class="math inline">\(\zeta\)</span> decreases below <span class="math inline">\(0.707\)</span> .</li>
+<li>Peak amplitude ratio “rolls off” as <span class="math inline">\(\zeta\)</span> increases above <span class="math inline">\(0.707\)</span> .</li>
+<li>Resonant frequency approaches natural frequency as damping decreases:</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+
+  \omega_r = \omega_n \sqrt{ 1 - 2 \zeta^2 }
+
+\end{equation*}\]</span></p>
+<ul>
+<li>Phase shift = <span class="math inline">\(90°\)</span> if excited at <span class="math inline">\(\omega_n\)</span> , regardless of damping ratio.</li>
+</ul>
+<p><span class="math display">\[\begin{equation*}
+
+  \zeta = \frac{1}{2} \frac{ \left( \omega_2 - \omega_1 \right) }{\omega_n}
+
+\end{equation*}\]</span></p>
+<p><img src="media/08/image94.png" class="img-fluid"></p>
+<ol type="1">
+<li>Using sinusoidal inputs excite system at <span class="math inline">\(\omega\)</span> near <span class="math inline">\(\omega_n\)</span><br>
+</li>
+<li>Measure phase lag <span class="math inline">\(\left( \phi \right)\)</span> of <span class="math inline">\(\frac{\text{output}}{\text{input}}\)</span></li>
+</ol>
+<p><img src="media/08/image96.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Excite system at another <span class="math inline">\(\omega\)</span> near <span class="math inline">\(\omega_n\)</span><br>
+</li>
+<li>Again measure phase lag <span class="math inline">\(\left( \phi \right)\)</span></li>
+</ol>
+<p><img src="media/08/image97.png" class="img-fluid"></p>
+<ol start="5" type="1">
+<li>Plot <span class="math inline">\(\phi\)</span> vs input frequency</li>
+</ol>
+<p><img src="media/08/image98.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li><span class="math inline">\(\omega_n\)</span> occurs at <span class="math inline">\(\phi = 90°\)</span></li>
+</ol>
+<p><strong>Linearity Check /Accuracy Improvement</strong></p>
+<ol type="1">
+<li>On semi-log scale, plot ratio of initial amplitude to subsequent peak amplitudes at each half cycle <span class="math inline">\(\left( \text{points } a-e \right)\)</span> .</li>
+<li>Fair straight line <span class="math inline">\(\left( f \right)\)</span> through these points.</li>
+</ol>
+<p><img src="media/08/image99.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Draw line <span class="math inline">\(\left( g \right)\)</span> parallel <span class="math inline">\(\left( f \right)\)</span> intercepting the ordinate at <span class="math inline">\(\mathrm{TPR} = 1\)</span><br>
+</li>
+<li>Average <span class="math inline">\(\mathrm{TPR}\)</span> occurs at <span class="math inline">\(\frac{T}{2}\)</span> on line <span class="math inline">\(\left( g \right)\)</span></li>
+</ol>
+</section>
+</section>
+<section id="complex-plane" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="complex-plane"><span class="header-section-number">8.4</span> Complex Plane</h2>
+<p>Begin with sum of forces in spring-mass-damper example</p>
+<p><span class="math display">\[\begin{align}
+  M \ddot{x} + D \dot{x} + K x &amp;= f \left( t \right) \\
+  \text{let } x &amp;= e^{st}, \;\; \text{find transient solution} \\
+  \left( Ms^2 + Ds + K \right) e^{st} &amp;= 0  \\
+\end{align}\]</span></p>
+<p>Apply quadratic equation to solve for roots</p>
+<p><span class="math display">\[\begin{equation*}
+
+  s_{1,2} = -\frac{D}{2M} \pm \sqrt{ \left( \frac{D}{2M} \right)^2 - \frac{K}{M} }
+
+\end{equation*}\]</span></p>
+<p>Recall previous analogy</p>
+<p><span class="math display">\[\begin{equation*}
+
+  s_{1,2} = -\zeta \omega_n \pm j \omega_n \sqrt{ 1 - \zeta^2 }
+
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+
+  \tau = \frac{1}{\zeta \omega_n}
+
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+
+  - \frac{1}{\tau} \pm j \omega_d
+
+\end{equation*}\]</span></p>
+<p><img src="media/08/image104.png" class="img-fluid"></p>
+<p>Location of Roots on Complex Plane</p>
+<ol type="1">
+<li>Line of constant damping ratio <span class="math inline">\(\zeta\)</span> , varying <span class="math inline">\(C_{\frac{1}{n}}\)</span> and <span class="math inline">\(\omega_n\)</span><br>
+</li>
+<li>Line of constant <span class="math inline">\(\omega_n\)</span> ,&nbsp;varying <span class="math inline">\(\zeta\)</span><br>
+</li>
+<li>Line of constant <span class="math inline">\(\omega_d\)</span> and period <span class="math inline">\(\left( T \right)\)</span><br>
+</li>
+<li>Line of constant real part <span class="math inline">\(\left( \zeta\omega_n \right)\)</span> and time to damp <span class="math inline">\(\left( T_{\frac{1}{n}} \right)\)</span></li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+
+  \sigma = \zeta \omega_n = \frac{1}{\tau} = \text{ damping rate}
+
+\end{equation*}\]</span></p>
+<p><img src="media/08/image106.png" class="img-fluid"></p>
+<p><strong>Sample second order root plots and corresponding time histories</strong> (time histories represent trends only)</p>
+<p>Examples of “two real roots”</p>
+<p><img src="media/08/image107.png" class="img-fluid"></p>
+<p><strong>More sample second order root plots and corresponding time histories</strong></p>
+<p>Examples of “imaginary roots”</p>
+<p><img src="media/08/image108.png" class="img-fluid"></p>
+</section>
+<section id="parameter-conversions" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="parameter-conversions"><span class="header-section-number">8.5</span> Parameter Conversions</h2>
+<p>For conversion of accelerometer measurements.</p>
+<ul>
+<li>For magnitude conversion substitute <span class="math inline">\(2 \pi f\)</span> for <span class="math inline">\(j \omega\)</span>.</li>
+<li>Assumes linear spectra.</li>
+<li>Conversion factor should be squared for power spectra.</li>
+</ul>
+<p><em>Acceleration to velocity</em></p>
+<table class="table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 12%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">to convert from</th>
+<th style="text-align: left;">to</th>
+<th style="text-align: left;">multiply by</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{ft}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{ft}}{\text{s}} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{1}{j\omega}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{ft}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{in}}{\text{s}} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{12}{j\omega}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{ft}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{in}}{\text{s}} \text{peak}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{16.97}{j\omega}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\text{g rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{in}}{\text{s}} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{386}{j\omega}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\text{g rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{in}}{\text{s}} \text{peak}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{545.8}{j\omega}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{m}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{mm}}{\text{s}} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{1000}{j\omega}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{m}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{mm}}{\text{s}} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{1414}{j\omega}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\text{g rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{mm}}{\text{s}} \text{peak}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{13865.7}{j\omega}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><em>Acceleration to Displacement</em></p>
+<table class="table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 12%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">to convert from</th>
+<th style="text-align: left;">to</th>
+<th style="text-align: left;">multiply by</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{ft}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{in rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{12}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{ft}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{in p-p}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{33.9}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{ft}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{mil p-p}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{33.9\mathrm{E}03}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\text{g rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{in rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{386}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\text{g rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{in p-p}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{1091.6\mathrm{E}03}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\text{g rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{mil p-p}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{1091.6\mathrm{E}06}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{m}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{mm rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{1000}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{m}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{mm p-p}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{2828}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\frac{\text{m}}{\text{s}^2} \text{rms}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{micron p-p}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{2828\mathrm{E}03}{ \left( j\omega \right)^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\mathrm{E} = \text{engineering exponent} \left(\times 10 \_\_ \right)\)</span></p>
+<p><span class="math inline">\(\text{g} = 32.174 \frac{\text{ft}}{\text{s}^2}\)</span></p>
+<p><span class="math inline">\(\text{in} = \text{inches}\)</span></p>
+<p><span class="math inline">\(\text{mil} = \text{thousandths of an inch}\)</span></p>
+<p><span class="math inline">\(\text{mm} = \text{millimeters}\)</span></p>
+<p><span class="math inline">\(\text{p-p} = \text{peak-to-peak}\)</span></p>
+<p><span class="math inline">\(\text{rms} = \text{root mean square}\)</span></p>
+</section>
+<section id="vibration-nomographs" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="vibration-nomographs"><span class="header-section-number">8.6</span> Vibration Nomographs</h2>
+<p><strong>Vibration Nomograph equations</strong></p>
+<p><strong>For British</strong> [<span class="math inline">\(V\)</span> in <span class="math inline">\(\frac{\text{inches}}{\text{sec}}\)</span> ], [<span class="math inline">\(d\)</span> in <span class="math inline">\(\text{inches}\)</span> ]</p>
+<p><span class="math display">\[\begin{align}
+V &amp;= \frac{386 g}{2 \pi f} \\
+d &amp;= \frac{386 g}{\left( 2 \pi f \right)^2} \\
+&amp;\text{where } 386 = \text{earth's gravitational pull} \left[ \frac{\text{in}}{\text{sec}^2}  \right] \\
+\end{align}\]</span></p>
+<p><strong>For metric</strong> [<span class="math inline">\(V\)</span> in <span class="math inline">\(\frac{\text{mm}}{\text{sec}}\)</span> ], [<span class="math inline">\(d\)</span> in <span class="math inline">\(\text{mm}\)</span> ]</p>
+<p><span class="math display">\[\begin{align}
+V &amp;= \frac{9800 g}{2 \pi f} \\
+d &amp;= \frac{9800 g}{\left( 2 \pi f \right)^2} \\
+&amp;\text{where } 9800 = \text{earth's gravitational pull} \left[ \frac{\text{mm}}{\text{sec}^2}  \right] \\
+\end{align}\]</span></p>
+<p><strong>Nomograph - British Units</strong></p>
+<p><img src="media/08/image109.png" class="img-fluid"></p>
+<p><strong>Nomograph - Metric Units</strong></p>
+<p><img src="media/08/image110.png" class="img-fluid"></p>
+</section>
+<section id="references" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="references"><span class="header-section-number">8.7</span> References</h2>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>8.7.1</td>
+<td>Lawless, Alan R., <em>Math and Physics for Flight Testers</em>, “Chapter 9, Motion Analysis,” National Test Pilot School, Mojave CA, 1999.</td>
+</tr>
+<tr class="even">
+<td>8.7.2</td>
+<td>Ward, Don, <em>Introduction to Flight Testing</em>, Texas A&amp;M, Elsevier, 1993.</td>
+</tr>
+<tr class="odd">
+<td>8.7.3</td>
+<td>Lang, George F., <em>Understanding Vibration Measurements</em>, Application Note 9, Rockland Scientific Corporation, Rockleigh, New Jersey, December 1978.</td>
+</tr>
+<tr class="even">
+<td>8.7.4</td>
+<td><em>The Fundamentals of Modal Testing</em>, Application Note 243-3, Hewlett-Packard Company,</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Additional Reading</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Hartog, J.P. Den, <em>Mechanical Vibrations</em>, Dover Publications, New York, New York, 1984.</td>
+</tr>
+<tr class="even">
+<td>Jacobsen, Ludik S. and Ayre, Robert S., <em>Engineering Vibrations</em>, McGraw-Hill Book Company, New York, New York, 1958.</td>
+</tr>
+<tr class="odd">
+<td>Meirovitch, Leonard, <em>Elements of Vibration Analysis</em>, McGraw-Hill Book Company, New York, New York, 1986.</td>
+</tr>
+<tr class="even">
+<td>Meirovitch, Leonard, <em>Analytical Methods in Vibrations</em>, Macmillan Publishing Company, New York, New York, 1967.</td>
+</tr>
+<tr class="odd">
+<td>Myklestad, N.O., <em>Vibration Analysis</em>, McGraw-Hill Book Company, New York, New York, 1944.</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07-mass-properties.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./09-material-strength.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 18&nbsp; Telemetry Control Room and Radio Communications</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./19-electromagnetic-spectrum.html" rel="next">
+<link href="./17-gas-turbine-propulsion.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-axis-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-mass-properties.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-motion-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-material-strength.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-reciprocating-engines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-propellers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Propellers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-standardization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-acoustics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-emc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-handling-qualities.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-rotary-wings.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Rotary Wing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-gas-turbine-propulsion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-radio-communications.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-communications-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-display-guidelines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p><strong>SFTE Tech Council Best Practice Guidelines</strong></p>
+<p>In accordance with experienced FTE feedback from across industry, below are suggested best practices for communications between flight and ground crews.&nbsp; This guideline uses the following terminology</p>
+<ul>
+<li><p>“Ground station” is a generic term for any station providing radio support, whether it is a simple radio, fixed-base TM control room, mobile TM station, or other.</p></li>
+<li><p>“R/O” is a generic term for the ground station radio operator. Different organizations may use different job titles for the person commanding the ground station (i.e., TM Chief, Test Director, Test Conductor). The radio call sign for this role is typically “TM” or “Control”</p></li>
+<li><p>“Flight crew” to refer to whichever test aircraft crew member (pilot-in-command, copilot, or other) is designated to communicate with the test ground station.</p></li>
+</ul>
+<p><strong><u>Overall Guidance</u></strong></p>
+<p>Unless otherwise established during the preflight briefing, radio operations between the test aircraft and ground station should use some standard phraseology established by the testing organization. The following are presented as radio transmission terminology between designated participants. The same phrases equally apply to communications within the telemetry (TM) room during a test. This phraseology is not necessarily applied to any communication with air traffic control (ATC).</p>
+<p>“<strong>Stand by</strong>” - Instruction issued by any participant to direct others to stay on established flight conditions and remain prepared for continuing, but to not execute the next action. Used when everything is OK, but the caller requires more time for some reason (e.g.&nbsp;ATC conversations, data analysis, airspace maneuvering).</p>
+<p>“<strong>Cleared for ___”</strong> - Transmitted by the R/O to authorize proceeding to the specified condition, typically the next planned test point, but sometimes a out-of-sequence test point, airspeed, or flight condition. The flight crew will typically”parrot back” the same phrase to acknowledge clearance. When in doubt, the flight crew requests “Confirm clear for ___.” Routine operations generally do not require clearance; these transmissions are typically used only when the flight crew requires clearance for saefty of flight (SOF) or technical reasons – as established during the preflight briefing.</p>
+<p>“<strong>On Condition</strong>” – Normally transmitted by test pilot to announce the aircraft is properly trimmed or otherwise set up to beginf the test.</p>
+<p>“<strong>Hold</strong>” – Instruction by R/O to maintain current flight condition to either extend data collection period or emphasize critical parameter (e.g “Hold condition” or “Hold altitude”).</p>
+<p>"<strong>3,2,1, HACK</strong>" – countdown to event.</p>
+<p>Silent countdown ” <strong>Five, four, three ___ ___“</strong> - an intentional silence at the end of a countdown to allow other participants a chance to call for an abort. Most common with ordinance employment.</p>
+<p>"<strong>Condition Complete</strong>" or “Test Complete” – Call from test conductor or pilot to announce a normal completion.</p>
+<p>"<strong>Continue</strong>" – transmitted by R/O when there is a series of steps in the maneuver and flight crew is cleared to continue to the next one.&nbsp;&nbsp;</p>
+<p>"<strong>Recover</strong>" called by either participant at test point completion or non-urgent cessation of a test point. Instructs the flight crew to smoothly return to a normal flying condition.</p>
+<p>“<strong>Copy</strong>” – Routine shorthand reply meaning “I understood your previous transmission.” This single statement is generally preferred. This can be replaced by a non-verbal radio double-click (zipper) to acknowledge simple statements. Some organizations may also aknowledge a transmission using “<strong>Roger</strong>.” Flight testers do not use CB radio slang such as “10-4”</p>
+<p>“<strong>Stop Test</strong>” or “<strong>Knock it Off</strong>”- Instruction transmitted by flight crew or R/O to stop test underway using normal means. There is no implied requirement to change flight conditions. Used when testing does not present SOF concerns but continuing will not provide useful data. The R/O would typically make this call if witnessing incorrect execution or experiencing critical data dropouts or other technical difficulties. The R/O would also make this call on behalf of a participating engineer who does not have radio access. The flight crew would make this call if testing is invalidated by ATC or weather interference or in the case of an improperly executed procedure. The caller should state the reason for stopping the test (e.g.&nbsp;reaching __ limit).</p>
+<p>“<strong>ABORT, ABORT, ABORT</strong>” - Emergency instruction transmitted by flight crew, chase aircraft, or R/O to stop test immediately and recover to safe flight conditions as soon as possible. Used when continued testing presents SOF concerns. The R/O may make this call if witnessing a dangerous situation or if unable to confirm SOF because of critical data dropouts or other technical difficulties. The flight crew would make this call to advise the R/O of actions they are taking. In certain cases pre-arranged at the prebriefing, a ground station participant other than the R/O may be authorized and physically positioned to make radio abort calls. The caller should state the reason for stopping the test (e.g.&nbsp;reaching __ limit).</p>
+<p>“<strong>BAIL OUT, BAIL OUT, BAIL OUT</strong>” - Emergency instruction to or between the flight crew to leave the aircraft. Nominally used when out-of-control aircraft descends through a pre-set minimum or other briefed altitude. In circumstance leading up to any potential bail out call, the R/O will transmit “__ altitude” callouts every thousand feet during attempted recovery of an out-of-control aircraft.</p>
+<p>“<strong>Terminate</strong>” is the instruction to destroy or otherwise incapacitate a flight vehicle. Applies to vehicles with a flight termination system designed to quickly end its flight and limit possible damage to the surroundings.</p>
+<p><strong><u>Call sign designation</u></strong>. Depending on prior agreements, ATC may communicate to an aircraft by referencing its registration (a.k.a. tail) number or by an accepted call sign such as “Zoom 86.” Call signs potentially have the advantage of being easier to say &amp; understand and bringing familiarity between operators. The R/O may use this same call sign if so arranged prior to the flight, but will otherwise refer to the test aircraft as “<strong>Test</strong>” and a chase aircraft as “<strong>Chase</strong>.” The call sign for the ground station is “<strong>Ground</strong>” and is “[Company] <strong>Weather</strong>” for the mobile ground weather station. The call sign for any other mobile radio-equipped ground crew is “[Company] <strong>Mobile</strong>” unless otherwise specified during the pre-flight briefing. The dispatcher’s radio station, is “[Company] <strong>Dispatch</strong>.” Security personnel employed who control the gate at the taxiway and are called “[Company] <strong>Security</strong>.”</p>
+<p><u><strong>Call sign use</strong>.</u> When initiating radio communications at the beginning of a flight or after a period of silence, the caller will first state the receiver’s call sign then his own (e.g.&nbsp;R/O transmits “Test – Ground”). This is an abbreviated version of the formal “Calling Zoom 86, this is Ground, Over” which is not useful unless radio transmission quality is poor. After two-way communication has been initiated, each transmission need only to begin with the recipient’s call sign.</p>
+<p><strong><u>Thumbs Up</u></strong>. A convenient non-verbal communication between control room participants is the “thumbs-up” hand signal. During active testing, this signal is preferred for routinely acknowledging a message or for indicating readiness. Not only does this signal eliminate unnecessary discussion, but allows all ground station participants to signal simultaneously and continuously if needed.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./17-gas-turbine-propulsion.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./19-electromagnetic-spectrum.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

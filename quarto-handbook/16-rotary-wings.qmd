@@ -1,0 +1,161 @@
+# Rotary Wing
+
+## Principal Aeroderivatives
+
+### Control Power
+
++----------------------------+-----------------------+------------------------------+------------------+
+| **Derivative**             | **Common Name**       | **Principal Contributors**   | **Typical Sign** |
++:==========================:+:======================+:=============================+:================:+
+| $M_{B_1}$                  | Pitch control power   | * MR thrust vector           | \-               |
+|                            |                       | * Mast bending moment        |                  |
+|                            |                       | * Control gearing            |                  |
+|                            |                       | * Rotor type                 |                  |
+|                            |                       | * Effective hinge offset     |                  |
++----------------------------+-----------------------+------------------------------+------------------+
+| $L_{A_1}$                  | Roll control power    | * MR thrust vector           | \-               |
+|                            |                       | * Mast bending moment        |                  |
+|                            |                       | * Control gearing            |                  |
+|                            |                       | * Rotor type                 |                  |
+|                            |                       | * Effective hinge offset     |                  |
++----------------------------+-----------------------+------------------------------+------------------+
+| $N_{\theta_{\text{TR}}}$   | Yaw control power     | * TR thrust                  | \-               |
+|                            |                       | * TR moment arm              |                  |
+|                            |                       | * Control gearing            |                  |
++----------------------------+-----------------------+------------------------------+------------------+
+| $Z_{\theta_C}$             | Heave control power   | * MR thrust                  | \-               |
+|                            |                       | * Control gearing            |                  |
++----------------------------+-----------------------+------------------------------+------------------+
+
+### Static Stability
+
++----------------+------------------------------+----------------------------+------------------+
+| **Derivative** | **Common Name**              | **Principal Contributors** | **Typical Sign** |
++:==============:+:=============================+:===========================+:================:+
+| $M_u$          | Speed stability              | * MR flap back             | \+               |
+|                |                              | * Mast bending moment      |                  |
+|                |                              | * Horizontal tailplane     |                  |
++----------------+------------------------------+----------------------------+------------------+
+| $M_w$          | Static / Incidence /         | * MR flap back             |                  |
+|                | Angle of Attack stability    | * Mast bending moment      |                  |
+|                |                              | * Horizontal tailplane     |                  |
+|                |                              | * Fuselage                 |                  |
++----------------+------------------------------+----------------------------+------------------+
+| $L_v$          | Lateral static stability     | * MR 'flap back'           | \-               |
+|                | (dihedral effect)            | * TR vertical moment arm   |                  |
+|                |                              | * Fuselage                 |                  |
++----------------+------------------------------+----------------------------+------------------+
+| $N_v$          | Directional static stability | * TR thrust                | \+               |
+|                | (weathercock effect)         | * Vertical tailplane       |                  |
+|                |                              | * Fuselage                 |                  |
++----------------+------------------------------+----------------------------+------------------+
+
+### Damping
+
++----------------+-----------------+----------------------------+------------------+
+| **Derivative** | **Common Name** | **Principal Contributors** | **Typical Sign** |
++:==============:+:================+:===========================+:================:+
+| $X_u$          | Drag damping    | * Rotor drag               | \-               |
+|                |                 | * Fuselage drag            |                  |
++----------------+-----------------+----------------------------+------------------+
+| $Y_v$          | Side force      | * Rotor drag               | \-               |
+|                |                 | * Fuselage drag            |                  |
++----------------+-----------------+----------------------------+------------------+
+| $Z_w$          | Heave damping   | * MR characteristics       | \-               |
++----------------+-----------------+----------------------------+------------------+
+| $L_p$          | Roll damping    | * Main rotor               | \-               |
+|                |                 | * Effective hinge offset   |                  |
++----------------+-----------------+----------------------------+------------------+
+| $M_q$          | Pitch damping   | * Main rotor               | \-               |
+|                |                 | * Effective hinge offset   |                  |
+|                |                 | * Horizontal tailplane     |                  |
++----------------+-----------------+----------------------------+------------------+
+| $N_r$          | Yaw damping     | * Tail rotor               | \-               |
+|                |                 | * Vertical tailplane       |                  |
+|                |                 | * Fuselage                 |                  |
++----------------+-----------------+----------------------------+------------------+
+
+### Cross Coupling
+
++----------------------------+-----------------+--------------------------------+------------------+
+| **Derivative**             | **Common Name** | **Principal Contributors**     | **Typical Sign** |
++:==========================:+:================+:===============================+:================:+
+| $L_{\theta_{\text{TR}}}$   | Tail rotor roll | * Tail rotor vertical position | \+               |
++----------------------------+-------------------------+------------------------+------------------+
+| $M_{\theta_C}$             | Pitch change    | * Forward speed                | \+               |
+|                            | with power      | * Main rotor                   |                  |
++----------------------------+-----------------+--------------------------------+------------------+
+| $N_{\theta_C}$             | Torque reaction | * Torque                       |                  |
++----------------------------+-----------------+--------------------------------+------------------+
+| $Y_{\theta_{\text{TR}}}$   | Tail rotor drift| * Tail rotor                   |                  |
++----------------------------+-----------------+--------------------------------+------------------+
+
+## Forward Flight Static And Dynamic Stability 
+
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+| **Stability Characteristic** | **Principal Influences** | **Typical Test**                                   | **Role Relation**                                               |
++:=============================+:=========================+:===================================================+:================================================================+
+| **Longitudinal**             | * $M_w$                  | * Trimmed flight control positions                 | - Control margins                                               |
+| Static Stability             | * $M_u$                  | * Trimmed flight control positions - collective    | - Control inputs progressive, predictable, and in correct sense |
+|                              | * $M_{\theta_C}$         | * Apparent static stability                        | - Speed selection                                               |
+|                              | * $M_{\theta_{TR}}$      | * Collective fixed static stability                | - Speed maintenance                                             |
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+| **Manoeuvre**                | * $M_w$                  | * Apparent manoeuvre stability                     | - Aggressive turning and manoeuvring flight                     |
+| Stability                    | * $M_q$                  | * Collective fixed manoeuvre stability             |                                                                 |
+|                              | * $M_{\theta_C}$         | * Pull-ups/push-overs                              |                                                                 |
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+| **Longitudinal**             | * $M_w$                  | * Excitation of dynamic long term mode             | - IMC flight                                                    |
+| Dynamic Stability            | * $M_u$                  | * Natural turbulence, release to trim, pulse input | - Transit                                                       |
+|                              | * $M_q$                  |                                                    | - Nuisance mode                                                 |
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+| **Lateral-Directional**      | * $L_v$                  | * Trimmed flight control positions                 | - Control margins                                               |
+| Static Stability             | * $N_v$                  | * Steady heading sideslip (SHSS)                   | - Control inputs progressive, predictable, and in correct sense |
+|                              | * $Y_v$                  |                                                    | - Sideforce cues                                                |
+|                              |                          |                                                    | - Maintaining balanced flight                                   |
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+| **Lateral**                  | * $L_v$                  | * SHSS                                             | - Transit                                                       |
+| Static Stability             |                          | * Turns on one control -- pedal                    | - Lateral and out-of-wind transitions                           |
+| (Dihedral)                   |                          |                                                    | - Instrument approaches                                         |
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+| **Directional**              | * $N_v$                  | * SHSS                                             | - Transit                                                       |
+| Static Stability             |                          | * Turns on one control - cyclic                    | - Instrument approaches                                         |
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+| **Lateral-Directional**      | * $L_v$                  | * Excitation of LDO via doublet, pulse,            | - IMC flight                                                    |
+| Dynamic Stability            | * $N_v$                  |   or SHSS release to trim                          | - Transit                                                       |
+| Oscillations                 |                          |                                                    | - Nuisance mode                                                 |
+| (Dutch Roll Mode)            |                          |                                                    |                                                                 |
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+| **Lateral-Directional**      | * $L_v$                  | * Turns on one control -- cyclic                   | - IMC flight                                                    |
+| Dynamic Stability            | * $N_r$                  | * Time to half/double bank angle                   | - Turns                                                         |
+| Spiral Stability             | * $N_v$                  |                                                    | - Lateral gust response                                         |
+|                              | * $L_r$                  |                                                    |                                                                 |
++------------------------------+--------------------------+----------------------------------------------------+-----------------------------------------------------------------+
+
+## References
+
+||
+|-|
+|Cooke, A., Fitzpatrick, E., (2002), *Helicopter Test and Evaluation*, Wiley Blackwell, UK.|
+|Leishman, J.G., (2006), *Principles of Helicopter Aerodynamics*, 2^nd^ Edition, Cambridge University Press, UK.|
+|Padfield, G.D., (2007), *Helicopter Flight Dynamics*, 2^nd^ Edition, Blackwell Publishing, UK.|
+
+ 
+
+  [16001]: media/16/image1.svg {width="0.325in" height="0.25833333333333336in"}
+  [16002]: media/16/image2.svg {width="0.25in" height="0.25833333333333336in"}
+  [16003]: media/16/image3.svg {width="0.3333333333333333in" height="0.25833333333333336in"}
+  [16004]: media/16/image4.svg {width="0.2833333333333333in" height="0.25833333333333336in"}
+  [16005]: media/16/image5.svg {width="0.2833333333333333in" height="0.25in"}
+  [16006]: media/16/image6.svg {width="0.2916666666666667in" height="0.25in"}
+  [16007]: media/16/image7.svg {width="0.2in" height="0.25in"}
+  [16008]: media/16/image8.svg {width="0.24166666666666667in" height="0.25in"}
+  [16009]: media/16/image9.svg {width="0.25in" height="0.25in"}
+  [16010]: media/16/image10.svg {width="0.175in" height="0.25in"}
+  [16011]: media/16/image11.svg {width="0.24166666666666667in" height="0.25in"}
+  [16012]: media/16/image12.svg {width="0.21666666666666667in" height="0.25833333333333336in"}
+  [16013]: media/16/image13.svg {width="0.2833333333333333in" height="0.25833333333333336in"}
+  [16014]: media/16/image14.svg {width="0.24166666666666667in" height="0.24166666666666667in"}
+  [16015]: media/16/image15.svg {width="0.2916666666666667in" height="0.25833333333333336in"}
+  [16016]: media/16/image16.svg {width="0.3333333333333333in" height="0.25833333333333336in"}
+  [16017]: media/16/image17.svg {width="0.3in" height="0.25833333333333336in"}
+  [16018]: media/16/image18.svg {width="0.2833333333333333in" height="0.25833333333333336in"}

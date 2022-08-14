@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 19&nbsp; The Electromagnetic Spectrum</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./20-communications-systems.html" rel="next">
+<link href="./18-radio-communications.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-axis-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-mass-properties.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-motion-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-material-strength.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-reciprocating-engines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-propellers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Propellers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-standardization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-acoustics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-emc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-handling-qualities.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-rotary-wings.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Rotary Wing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-gas-turbine-propulsion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-radio-communications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-communications-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-display-guidelines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#electromagnetic-waves" id="toc-electromagnetic-waves" class="nav-link active" data-scroll-target="#electromagnetic-waves"> <span class="header-section-number">19.1</span> Electromagnetic Waves</a></li>
+  <li><a href="#the-electromagnetic-spectrum" id="toc-the-electromagnetic-spectrum" class="nav-link" data-scroll-target="#the-electromagnetic-spectrum"> <span class="header-section-number">19.2</span> The Electromagnetic Spectrum</a></li>
+  <li><a href="#radio-frequency-electromagnetic-radiation" id="toc-radio-frequency-electromagnetic-radiation" class="nav-link" data-scroll-target="#radio-frequency-electromagnetic-radiation"> <span class="header-section-number">19.3</span> Radio Frequency Electromagnetic Radiation</a></li>
+  <li><a href="#optical-frequency-electromagnetic-radiation" id="toc-optical-frequency-electromagnetic-radiation" class="nav-link" data-scroll-target="#optical-frequency-electromagnetic-radiation"> <span class="header-section-number">19.4</span> Optical Frequency Electromagnetic Radiation</a></li>
+  <li><a href="#atmospheric-transmission-windows" id="toc-atmospheric-transmission-windows" class="nav-link" data-scroll-target="#atmospheric-transmission-windows"> <span class="header-section-number">19.5</span> Atmospheric Transmission Windows</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">19.6</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="electromagnetic-waves" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="electromagnetic-waves"><span class="header-section-number">19.1</span> Electromagnetic Waves</h2>
+<p>All energy in the universe radiates in waves. Figure 1 depicts an electromagnetic wave, characterized by an electric field vector <span class="math inline">\(\left( E \right)\)</span> and a magnetic field vector <span class="math inline">\(\left( H \right)\)</span> oscillating orthogonal to each other. The electromagnetic wave propagation direction is determined by the right-hand rule and crossing the electric field into the magnetic field as illustrated. The electromagnetic wavelength <span class="math inline">\(\left( \lambda \right)\)</span> is the distance between two consecutive electric field peaks. The electromagnetic wave frequency <span class="math inline">\(\left( f \text{ or } \nu \right)\)</span> is inversely proportional to its wavelength. The product of any electromagnetic radiation’s frequency and wavelength equals the speed of light <span class="math inline">\(\left( c = \lambda \nu \right)\)</span> .</p>
+<p><img src="media/19/image1.jpeg" style="width:4.84043in;height:2.40625in"></p>
+<p><strong>Figure 1 - The Electromagnetic Spectrum</strong></p>
+</section>
+<section id="the-electromagnetic-spectrum" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="the-electromagnetic-spectrum"><span class="header-section-number">19.2</span> The Electromagnetic Spectrum</h2>
+<p>Figure 2 illustrates several concepts related to the electromagnetic spectrum</p>
+<ul>
+<li>Size reference for various wavelengths.</li>
+<li>Numerical relation between wavelength (meters between peaks), wave number (peaks per cm), energy (electron volts), and frequency (Hz).</li>
+<li>Separate frequency bands identified within the overall spectrum.</li>
+<li>Common sources &amp; uses within frequency bands.</li>
+</ul>
+<p>Many aircraft and spacecraft systems operate within limited regions of the electromagnetic spectrum. Common examples include radar, electro-optical sensors, radios, data links, electronic warfare, and navigation systems.</p>
+<p><img src="media/19/image2.jpeg" style="width:9.27749in;height:6.9492in"></p>
+</section>
+<section id="radio-frequency-electromagnetic-radiation" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="radio-frequency-electromagnetic-radiation"><span class="header-section-number">19.3</span> Radio Frequency Electromagnetic Radiation</h2>
+<p>One of the most heavily used regions of the electromagnetic spectrum is the radio frequency or RF spectrum, from <span class="math inline">\(\sim 3 \text{ kilohertz}\)</span> to <span class="math inline">\(\sim 300 \text{ gigahertz}\)</span> . The RF Spectrum encompasses an array of telecommunications devices including radios, television, satellite communications, data links, radio-navigation aids, and radar. Table 1 shows how the RF Spectrum is subdivided into frequency bands.</p>
+<table class="table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 14%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Band Designation</strong></th>
+<th style="text-align: center;"><strong>Label</strong></th>
+<th style="text-align: center;"><strong>Frequency Spread</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Extremely Low Frequency</td>
+<td style="text-align: center;">ELF</td>
+<td style="text-align: center;"><span class="math inline">\(3 - 30 \text{ Hz}\)</span></td>
+</tr>
+<tr class="even">
+<td>Super Low Frequency</td>
+<td style="text-align: center;">SLF</td>
+<td style="text-align: center;"><span class="math inline">\(30 - 300 \text{ Hz}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Ultra Low (Voice) Frequency</td>
+<td style="text-align: center;">ULF or VF</td>
+<td style="text-align: center;"><span class="math inline">\(300 \text{ Hz} - 3 \text{ KHz}\)</span></td>
+</tr>
+<tr class="even">
+<td>Very Low Frequency</td>
+<td style="text-align: center;">VLF</td>
+<td style="text-align: center;"><span class="math inline">\(3 - 30 \text{ KHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Low Frequency</td>
+<td style="text-align: center;">LF</td>
+<td style="text-align: center;"><span class="math inline">\(30 - 300 \text{ KHz}\)</span></td>
+</tr>
+<tr class="even">
+<td>Medium Frequency</td>
+<td style="text-align: center;">MF</td>
+<td style="text-align: center;"><span class="math inline">\(300 \text{ KHz} - 3 \text{ MHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td>High Frequency</td>
+<td style="text-align: center;">HF</td>
+<td style="text-align: center;"><span class="math inline">\(3 - 30 \text{ MHz}\)</span></td>
+</tr>
+<tr class="even">
+<td>Very High Frequency</td>
+<td style="text-align: center;">VHF</td>
+<td style="text-align: center;"><span class="math inline">\(30 - 300 \text{ MHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Ultra High Frequency</td>
+<td style="text-align: center;">UHF</td>
+<td style="text-align: center;"><span class="math inline">\(300 \text{ MHz} - 3 \text{ GHz}\)</span></td>
+</tr>
+<tr class="even">
+<td>Super High Frequency</td>
+<td style="text-align: center;">SHF</td>
+<td style="text-align: center;"><span class="math inline">\(3 - 30 \text{ GHz}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Extremely High Frequency</td>
+<td style="text-align: center;">EHF</td>
+<td style="text-align: center;"><span class="math inline">\(30 - 300 \text{ GHz}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 1 - Radio Frequency Band Designations</strong></p>
+<p>Depending on the type of RF system, additional subdivisions of the bands also exist. Table 2 applies to radar systems.</p>
+<table class="table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 29%">
+<col style="width: 18%">
+<col style="width: 10%">
+<col style="width: 16%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><p><strong>IEEE US</strong></p>
+(Old RADAR Designation)</th>
+<th><strong>Origin</strong></th>
+<th style="text-align: center;"><p><strong>Frequency Range</strong>, <span class="math inline">\(f\)</span></p>
+(GHz)</th>
+<th style="text-align: center;"><p><strong>Wavelength</strong></p>
+(cm)</th>
+<th style="text-align: center;"><p><strong>NATO, US ECM</strong></p>
+(New RADAR Designation)</th>
+<th style="text-align: center;"><p><span class="math inline">\(f\)</span></p>
+(GHz)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">W</td>
+<td>W follows V in alphabet</td>
+<td style="text-align: center;"><span class="math inline">\(75-111\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.40 - 0.27\)</span></td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;"><span class="math inline">\(60-100\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">V</td>
+<td>Very Short</td>
+<td style="text-align: center;"><span class="math inline">\(40-75\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.75 - 0.40\)</span></td>
+<td style="text-align: center;">L</td>
+<td style="text-align: center;"><span class="math inline">\(40-60\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">K<sub>A</sub></td>
+<td>Kurtz, German for Short (above)</td>
+<td style="text-align: center;"><span class="math inline">\(26-40\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.15 - 0.75\)</span></td>
+<td style="text-align: center;">K</td>
+<td style="text-align: center;"><span class="math inline">\(20-40\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">K</td>
+<td>Kurtz</td>
+<td style="text-align: center;"><span class="math inline">\(18-26\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.67 - 1.15\)</span></td>
+<td style="text-align: center;">J</td>
+<td style="text-align: center;"><span class="math inline">\(10-20\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">K<sub>U</sub></td>
+<td>Kurtz (under)</td>
+<td style="text-align: center;"><span class="math inline">\(12.4-18.0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.42 - 1.67\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">X</td>
+<td>WWII fire control - as an “X” for crosshairs</td>
+<td style="text-align: center;"><span class="math inline">\(8.0-12.4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3.75 - 2.42\)</span></td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;"><span class="math inline">\(8.0-10\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td>Compromise between S and X</td>
+<td style="text-align: center;"><span class="math inline">\(4-8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(7.49 - 3.75\)</span></td>
+<td style="text-align: center;"><p>H</p>
+<p>G</p></td>
+<td style="text-align: center;"><p><span class="math inline">\(6-8\)</span></p>
+<p><span class="math inline">\(4-6\)</span></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">S</td>
+<td>Short Wave</td>
+<td style="text-align: center;"><span class="math inline">\(2-4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15.0 - 7.49\)</span></td>
+<td style="text-align: center;"><p>F</p>
+<p>E</p></td>
+<td style="text-align: center;"><p><span class="math inline">\(3-4\)</span></p>
+<p><span class="math inline">\(2-3\)</span></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">L</td>
+<td>Long Wave</td>
+<td style="text-align: center;"><span class="math inline">\(1-2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(30 - 15\)</span></td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;"><span class="math inline">\(1-2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">UHF</td>
+<td></td>
+<td style="text-align: center;"><span class="math inline">\(0.3-1.0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(100 - 30.0\)</span></td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;"><span class="math inline">\(0.5-1.0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 2 - Radar Frequency Band Designations</strong></p>
+<p>Electromagnetic wave propagation does not stop at national boundaries. Most governments regulate radio frequency band use via <strong>frequency</strong> or <strong>spectrum allocation</strong>. For technical and economic reasons, governments try to harmonize and standardize RF band allocation. A number of forums and standards bodies address frequency allocation. The International Telecommunication Union (ITU) is the United Nations agency for information and communication technologies. The ITU allocates global radio spectrum and satellite orbits and develops technical standards that ensure networks and technologies seamlessly interconnect. There are numerous users and spectrum allocation is complicated to implement and regulate. Figure 3 illustrates the United States frequency allocations.</p>
+<p>[Editor’s Note: Figure 3 is highly detailed and not legible in either 8.5 x 11” or 11 x 17” format. Posters may be purchased via <a href="https://bookstore.gpo.gov/products/united-states-frequency-allocations-radio-spectrum-poster" class="uri">https://bookstore.gpo.gov/products/united-states-frequency-allocations-radio-spectrum-poster</a>. A high resolution online version is available at <a href="http://www.ntia.doc.gov/files/ntia/publications/spectrum_wall_chart_aug2011.pdf" class="uri">http://www.ntia.doc.gov/files/ntia/publications/spectrum_wall_chart_aug2011.pdf</a>]</p>
+<p><img src="media/19/image3.jpeg" style="width:9.25068in;height:5.90597in"></p>
+</section>
+<section id="optical-frequency-electromagnetic-radiation" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="optical-frequency-electromagnetic-radiation"><span class="header-section-number">19.4</span> Optical Frequency Electromagnetic Radiation</h2>
+<p>Optical frequency electromagnetic radiation includes ultraviolet (UV), visible, and infrared (IR) light ranging from about <span class="math inline">\(0.01 \text{ microns} \left(\mu\text{m}\right)\)</span> out to about <span class="math inline">\(1000 \mu\text{m}\)</span> wavelength. These comprise the optical spectrum as shown in Figure 4.</p>
+<p>Optical Spectrum</p>
+<p><img src="media/19/image4.png" style="width:6.5in;height:3.47778in"></p>
+<p><strong>Figure 4 - The Optical Spectrum and the Visible Spectrum</strong></p>
+<p>Just as the RF spectrum can be subdivided into various special bands, Table 3 shows bands in the optical spectrum. The visible, near infrared (NIR), mid wave IR (MWIR), and long wave IR (LWIR) bands are most commonly used for airborne electro-optical sensor systems. All bands can be useful, depending on the specific mission and operational requirements.</p>
+<p>[Editor’s Note: Some band nomenclature and boundaries depend on author and text. SFTE has not established standards on this subject]</p>
+<p>The most familiar example of electromagnetic radiation is the light spectrum humans see. Different colors of visible light have different wavelengths, ranging from violet at the shorter wavelengths <span class="math inline">\(\left(0.4 \mu\text{m}\right)\)</span><br>
+to red at the longer wavelengths <span class="math inline">\(\left(0.7 \mu\text{m}\right)\)</span> . Aerospace vehicles employ many visible light sensor systems. Visible light sensors provide useful and highly recognizable images, but logically enough, do not work well in poor visibility or at night without some sort of artificial illumination or image intensification.</p>
+<p><img src="media/19/image5.png" style="width:6.33303in;height:4.26563in"></p>
+<p><strong>Table 3 - Optical Spectrum Bands</strong></p>
+<p>Infrared radiation refers to the optical spectrum between <span class="math inline">\(\sim 0.7 \mu\text{m}\)</span> and <span class="math inline">\(\sim 1000 \mu\text{m}\)</span> . Infrared radiation is popularly known as "heat or thermal radiation", but light and electromagnetic waves of any frequency will heat surfaces that absorb them. Infrared light from the sun accounts for <span class="math inline">\(\sim 49\%\)</span> of earth heating, the rest is by visible light that is absorbed then re-radiated at longer wavelengths. Objects at room temperature emit radiation mostly concentrated in the <span class="math inline">\(8\)</span> to <span class="math inline">\(25 \mu\text{m}\)</span> region.</p>
+<p>Infrared sensors are useful in numerous civil and military remote sensing applications. At wavelengths beyond about <span class="math inline">\(14 \text{ microns}\)</span> , infrared radiation is not useful for most airborne remote sensing applications due to the earth’s atmosphere attenuation. This is especially true in hot and humid atmospheric conditions with extreme infrared radiation attenuation.</p>
+</section>
+<section id="atmospheric-transmission-windows" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="atmospheric-transmission-windows"><span class="header-section-number">19.5</span> Atmospheric Transmission Windows</h2>
+<p>The sun is the earth’s major source of natural energy across the electromagnetic spectrum and its radiation bombards the atmosphere constantly. The earth’s atmosphere protects its life from excessive exposure to a range of higher energy waves such as Gamma rays, x-rays, and some ultraviolet waves. These are "ionizing" radiation because they have sufficiently high energy to knock electrons out of atoms, alter atoms and molecules, and damage organic cells. Figure 5 shows atmospheric opacity (blocking) across a wide wavelength spectrum.</p>
+<p>[http://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Atmospheric_electromagnetic_opacity.svg/2000px-Atmospheric_electromagnetic_opacity.svg.png]</p>
+<p><strong>Figure 5 - Atmospheric Opacity vs.&nbsp;Wavelength</strong></p>
+<p>The opposite of opacity is transmission. The earth’s atmosphere absorbs, reflects, refracts, or allows electromagnetic radiation transmission. Suspended particles such as dust and raindrops can reflect and refract radiation. Figure 6 shows electromagnetic radiation transmission through the atmosphere across the visible and infrared wavelength spectrum (subset of the Figure 5 spectrum). Some radiation bands, including visible light and some infrared pass through the earth’s atmosphere with little to no attenuation. Such “atmospheric windows” or “transmission windows” allow infrared remote sensing from standoff distances. The bottom scale of Figure 6 shows which molecules are primary absorbers at various infrared radiation wavelengths. The most important absorbers are water vapor (H<sub>2</sub>O), carbon dioxide (CO<sub>2</sub>), and ozone (O<sub>3</sub>). Flight testers should understand wavelengths, absorption, refraction and atmospheric windows when designing tests to evaluate sensors.</p>
+<p><img src="media/19/image7.png" style="width:5.86458in;height:3.2563in"></p>
+<p><strong>Figure 6 - Infrared Atmospheric Transmission Windows</strong></p>
+</section>
+<section id="references" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="references"><span class="header-section-number">19.6</span> References</h2>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>19.1</td>
+<td>Thermal Imaging Systems by J.M. Lloyd, C 1975, Plenum Press, New York &amp; London, 451 pages.</td>
+</tr>
+<tr class="even">
+<td>19.2</td>
+<td>Infrared Systems Engineering by Richard D. Hudson Jr., C&nbsp; 1969, John Wiley &amp; Sons Inc.&nbsp;642 Pages.</td>
+</tr>
+<tr class="odd">
+<td>19.3</td>
+<td>Electro-Optical Systems Analysis 3rd edition, C 1985, Electro-Optical Research Company, Los Angeles, 356 pages.</td>
+</tr>
+<tr class="even">
+<td>19.4</td>
+<td>Light, The Mystery of the Universe by Khalil Seyrafi C 1986 by Electro-Optical Research Company, Los Angeles, 240 Pages.</td>
+</tr>
+<tr class="odd">
+<td>19.5</td>
+<td>Test and Evaluation of Infrared Imaging Systems 2nd edition by Gerald Holst, C 1998, JCD Publishing, Winter Park, Fl., 422 pages.</td>
+</tr>
+<tr class="even">
+<td>19.6</td>
+<td>Electro-Optical Imaging Systems Performance by Gerald Holst, C 1995, JCD Publishing, Winter Park, Fl., 468 pages.</td>
+</tr>
+<tr class="odd">
+<td>19.7</td>
+<td>Infrared Technology and Fundamentals by Spiro &amp; Schlessinger, C 1989, Marcel Dekker Inc.</td>
+</tr>
+<tr class="even">
+<td>19.8</td>
+<td>The Infrared and Electro-Optical Systems Handbook, C 1993, The Infrared Information and Analysis Center and the Society of Photo-Optical Instrumentation Engineers (SPIE), 8 Volumes.</td>
+</tr>
+<tr class="odd">
+<td>19.9</td>
+<td>Electro-Optical Surveillance by Gene Adcock, C 1999, CCS Security Publishing Ltd.</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./18-radio-communications.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./20-communications-systems.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

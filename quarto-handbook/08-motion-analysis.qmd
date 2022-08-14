@@ -1,0 +1,1267 @@
+# Motion & Vibration Analysis
+
+## Recurring Abbreviations
+
+|                     |                                                                   |
+|-|-------------------------------------------------------------------|
+| $C_{\frac{1}{x}}$   | number of cycles to achieve $\frac{1}{x}$   amplitude             |
+| $D$                 | damping                                                           |
+| $D_1,D_2$           | peak-to-peak displacement (subsequent)                            |
+| $\mathrm{FV}$       | final value                                                       |
+| $F(t)$              | forcing function                                                  |
+| $f$                 | frequency, cycles/sec = $\omega / \left( 2\pi \right)$           |
+| $\mathrm{HCAR}$     | half cycle amplitude ratio (i.e., $x_2/x_1$  , $x_3/x_2$  , etc.) |
+| $\mathrm{Im}$       | imaginary axis                                                    |
+| $M$                 | mass                                                              |
+| $\mathrm{MP}$       | peak overshoot                                                    |
+| $\mathrm{Re}$       | real axis                                                         |
+| $\mathrm{rms}$      | root mean square                                                  |
+| $s_1$  , $s_2$      | equation roots of second order                                    |
+| $T$                 | period = $1/f$   = $2\pi/\omega_d$   (seconds)                    |
+| $T_d$               | delay time (i.e., time to 50% of $\mathrm{FV}$   )                |
+| $T_r$               | rise time (i.e., time from 10% to 90% of $\mathrm{FV}$   )        |
+| $T_p$               | time to peak amplitude                                            |
+| $\mathrm{TPR}$      | transient peak ratio                                              |
+| $T_s$               | settling time (time to settle within $x\%$   of $\mathrm{FV}$   )  |
+| $T_{\frac{1}{x}}$           | time to achieve $\frac{1}{x}$   amplitude                                 |
+| $x$                 | displacement                                                      |
+| $x_1$  , $x_2$      | peak displacements (subsequent)                                   |
+| $v$                 | velocity                                                          |
+| $v_0$               | peak velocity                                                     |
+| $\varepsilon$       | $= \zeta \omega_n / \omega_d = \zeta / \sqrt{1 - \zeta^2}$      |
+| $\phi$              | phase lag (radians)                                               |
+| $\zeta$             | damping coefficient (non-dimensional)                             |
+| $\sigma$            | damping rate $=\zeta \omega_n = 1/\tau$                           |
+| $\tau$              | time constant $=1/\zeta \omega_n$                                 |
+| $\omega$            | frequency, radians/sec                                            |
+| $\omega_d$          | damped natural frequency (rad/sec)                                |
+| $\omega_n$          | natural frequency (rad/sec)                                       |
+
+## First Order Motion
+
+Found in classical aircraft roll and spiral modes. Named first-order because the motions are described by mathematics using the first derivative of a parameter.
+
+### Elements of First Order Motion
+
+Mechanical analogy contains elements of mass, damping and sometimes a forcing function.
+
+**Example 1:** Determine the vertical velocity of a diver as she hits the water at $10$   ft/s (assume constant body position & neutral buoyancy)
+
+Summing vertical forces gives
+
+
+\begin{align}
+\sum F_{\mathrm{vert}} : &M \frac{dV}{dt} + DV = 0 \\
+&\frac{dV}{V} + \frac{D}{M} dt = 0 \\
+&\int{}{} \frac{dV}{V} = -\int{}{} \frac{D}{M} dt
+\end{align}
+
+Since $D$   & $M$   are constant
+
+
+\begin{align}
+\ln V &= -\frac{D}{M} t + C =  -\frac{D}{M} t + \ln c\\
+V_c &= c e^{-\frac{D}{M} t} \;\;\text{complementary solution}\\
+\end{align}
+ 
+Apply initial condition
+
+
+\begin{align}
+V(t=0) &= 10 \mathrm{ft/s} \Rightarrow \\
+10 &= C \\
+V_T &= 10 e^{-\frac{D}{M} t}
+\end{align}
+
+Plot response over time
+
+![][08005]
+
+Exponential rate of decay described by $\frac{D}{M}$   ratio
+
+ 
+
+**Example 2:** Diver with $20$   lb submerged weight releases from zero velocity at top of pool (quiescent condition).
+
+Solve using Laplace analysis methods:
+
+\begin{align}
+M\dot{V} + DV &= 20 \;\;\text{step input} \\
+M\left[ sV(s) - V(0) \right] + D V(s) &= \frac{20}{s} \\
+sV(s) - V(0) + \frac{D}{M} V(s) &= \frac{20}{M} \frac{1}{s} \\
+V(s) \left(s + \frac{D}{M} \right) &= \frac{20}{M} \frac{1}{s} + V(0) \\
+V(s) &= \frac{ \frac{20}{M} \frac{1}{s} + V(0) }{s + \frac{D}{M} } \\
+&= \left\{
+          \frac{
+                \frac{20}{M}
+                }
+                {s \left(
+                          s + \frac{D}{M}
+                        \right)
+                } 
+  \right\} + \frac{V(0)}{s + \frac{D}{M}} \\
+\end{align}
+
+Use partial fraction:
+
+\begin{align}
+\frac{ \frac{20}{M} }{s \left( s + \frac{D}{M} \right) } &= \frac{A}{s} + \frac{B}{s + \frac{D}{M}}\\
+&= \frac{A \left( s + \frac{D}{M} \right)}{s \left( s + \frac{D}{M} \right) } + \frac{B s}{s \left( s + \frac{D}{M} \right) }\\
+&= \frac{A \left( s + \frac{D}{M} \right) + B s}{s \left( s + \frac{D}{M} \right) }\\
+\therefore \frac{20}{M} &= A \left( s + \frac{D}{M} \right) + B s
+\end{align}  
+
+\end{equation*}
+
+
+let $s = -\frac{D}{M}$  :
+
+
+\begin{equation*}
+\frac{20}{M} = 0 + B \left(-\frac{D}{M}\right) \Rightarrow B = -\frac{20}{D} 
+\end{equation*}
+
+
+let $s = 0$  :
+
+
+\begin{equation*}
+\frac{20}{M} = A \left( 0 + \frac{D}{M} \right) + 0 \Rightarrow A = \frac{20}{D} 
+\end{equation*}
+
+
+\begin{align}
+V(s) &= \left\{ \frac{A}{s} + \frac{B}{s + \frac{D}{M}} \right\} + \frac{V(0)}{s + \frac{D}{M}} \\
+&= \left\{ \frac{\frac{20}{D}}{s} + \frac{-\frac{20}{D}}{s + \frac{D}{M}} \right\} + \frac{V(0)}{s + \frac{D}{M}} \\
+V(t) &= \left\{ \frac{20}{D} -\frac{20}{D}e^{-\frac{D}{M}t} \right\} + V(0)e^{-\frac{D}{M}t} \\
+\end{align}
+
+since $V(0) = 0$   then
+
+
+\begin{equation*}
+ V(t) = \frac{20}{D} \left[ 1  -e^{-\frac{D}{M}t} \right] 
+\end{equation*}
+
+
+Note that the steady state value, $V_{\mathrm{ss}} = \frac{20}{D}$  , i.e.
+
+
+\begin{equation*}
+ V(t) = V_{\mathrm{ss}} \left[1  -e^{-\frac{D}{M}t} \right] 
+\end{equation*}
+
+
+This "force/damping" ratio is merely a scaling factor for the steady state.
+
+![][08009]
+
+Several methods can be used to describe the quickness of convergence toward steady state (e.g., time to $99.999\%$   of $V_{\mathrm{ss}}$  , time to $1/2$   $V_{\mathrm{ss}}$  ).
+
+By convention, we use a $\%$   that directly reflects the exponent.
+
+Establish a time constant $\tau$   based on $\frac{D}{M}$  .
+
+
+\begin{equation*}
+\frac{D}{M} \equiv \frac{1}{\tau} 
+\end{equation*}
+
+
+so 
+
+
+\begin{equation*}
+e^{-\frac{D}{M}t} = e^{-\frac{t}{\tau}}
+\end{equation*}
+
+
+when 
+
+
+\begin{equation*}
+t = \tau
+\end{equation*}
+
+
+then
+
+
+\begin{equation*}
+e^{-\frac{t}{\tau}} = e^{-\frac{\tau}{\tau}} = e^{-1} = 0.36788
+\end{equation*}
+
+
+so, after $\frac{M}{D}$   seconds have elapsed, $V =  V_{\mathrm{ss}} \left[1  0.36788 \right] = 63.212\% V_{\mathrm{ss}}$ 
+
+$\tau =$   time constant (time for parameter to reach $~63\%$   of it's steady state value)
+
+
+### First Order Motion Descriptive Parameters
+
+
+\begin{equation*}
+ x(t) = e^{-\zeta \omega_n t} = e^{-\frac{t}{\tau}} 
+\end{equation*}
+
+
+![][08012]
+
+||||
+|-|-|-|
+|when $t = 0.6931\tau$  : |$x = e^{−0.6931}$   |$= 0.5$    (time to half amplitude)|
+|when $t = \tau$  :       |$x = e^{−1}$   |$= 0.37$  |
+|when $t = 3\tau$  :      |$x = e^{−3}$   |$= 0.05$  |
+|when $t = 4\tau$  :      |$x = e^{−4}$   |$= 0.02$  |
+
+If exponent $>  0$  , then motion is divergent.
+
+
+\begin{equation*}
+x(t) = ce^{mt}
+\end{equation*}
+
+
+where $m  >  0$  
+
+![][08015]
+
+$\tau$   again describes the exponential rate of divergence.
+
+By convention, the "time to double amplitude" ($t_2$  ) is usually applied as the evaluation metric.
+
+$x_{t_2} = 2x_0$   where $x_0 = ce^{m\cdot 0}$  
+
+Therefore
+
+\begin{align}
+x_2 &= 2c \\
+2c &= ce^{mt_2} \\
+2 &= e^{mt_2} \\
+\ln 2 &= mt_2 \\
+\therefore \text{Time to double amplitude } \frac{0.6931}{m} = t_2 = 0.693\tau \\
+\end{align}
+
+### Determining $\tau$   from Step Input Time History
+
+**Method \#1**
+
+$\tau$   = time to reach $0.632 x_{\mathrm{ss}}$  
+
+![][08018]
+
+**Method \#2**
+
+1. Define $x_{\mathrm{ss}}$  
+1. Measure $x_1$   at some time $t_1$  
+1. Calculate $x_2 = 0.632 \left( x_{\mathrm{ss}} + 0.58 x_1 \right)$   
+1. Find $t_2$   corresponding to $x_2$  
+1. $t_2 - t_1 = \tau$  
+
+<!-- x_2 is mislabeled in figure -->
+![][08021]
+
+**Method \#3**
+
+1. Pick any time $t_1$  .
+1. Draw tangent at $t_1$  .
+1. Note $t_2$   where tangent intercepts $x_{\mathrm{ss}}$  .
+1. $\tau = t_2 -t_1$  
+
+![][08022]
+
+**Method \#4** 
+
+<!-- Why do we suddenly switch to caps? -->
+When $X_{\mathrm{SS}}$   is unknown use
+
+
+\begin{equation*}
+\tau = \frac{\Delta t}{\ln \left( \frac{A_1}{A_2} \right)} 
+\end{equation*}
+
+
+![][08024]
+
+**Method \#5** 
+
+When $X_{\mathrm{SS}}$   is known, use
+
+
+\begin{equation*}
+\tau = \frac{-\Delta t}{\ln \left[ \frac{X_{\mathrm{SS}} - X_1}{X_{\mathrm{SS}} - X_2} \right]} 
+\end{equation*}
+
+
+**Linearity check:**
+
+Note parameter change between even time increments.
+
+Plot parameter changes vs elapsed time on semi-log scale
+
+![][08026]
+
+Slope of line equals $\tau$  
+
+![][08027]
+
+## Second Order Motion
+
+Found in classical aircraft phugoid, Dutch roll and short period modes as well as noise filter and vibration testing. Named second-order because the motions are described by mathematics using the second derivative of a parameter.
+
+### Elements of Second Order Motion
+
+Mechanical systems have elements of spring, mass, and usually damping. Forcing functions can be included (see illustration).
+
+![][08028]
+
+| | |
+|-|----------------------------------------|
+|$K$   | spring stiffness ( $F/x$   ) |
+|$x$   | displacement from equilibrium |
+|$M$   | mass|
+|$F\left(t\right)$  | forcing function|
+|$D$  | damping|
+
+
+\begin{equation*}
+\sum{}{} F_{\mathrm{vert}} : M\ddot{x} + D\dot{x} + Kx = F(t) 
+\end{equation*}
+
+
+Natural character is observed when system is allowed to move with no external input [$F(t) = 0$  ] 
+
+
+\begin{equation*}
+\sum{}{} F_{\mathrm{vert}} : M\ddot{x} + D\dot{x} + Kx = 0 
+\end{equation*}
+
+
+Apply operator technique:
+
+Let 
+
+
+\begin{equation*}
+
+x = e^{st} \text{, } \dot{x} = s e^{st} \text{, } \ddot{x} = s^2 e^{st} \\
+\Rightarrow e^{st} \left( M s^2 + D s + K \right) = 0 \\
+
+\end{equation*}
+
+
+Divide out $e^{st}$  , since it never equals zero, the characteristic equation remains:
+
+
+\begin{equation*}
+
+M s^2 + D s + K = 0 \text{ or } s^2 + \frac{D}{M} s + \frac{K}{M} = 0\\
+
+\end{equation*}
+
+
+The values of $s$   that satisfy this equation are called the roots
+
+
+\begin{equation*}
+ x = c_1 e^{s_1 t} + c_2 e^{s_2 t} 
+\end{equation*}
+
+
+Solve for the roots using the quadratic equation
+
+### Second Order Motion Descriptive Parameters
+
+Solution ($x$  ) calculated as
+
+
+\begin{equation*}
+
+x = c_1 e^{\tau_1 t} + c_2 e^{\tau_2 t} \text{ where } s_1\text{, } s_2 = -\frac{D}{2M} \pm j \sqrt{ \frac{K}{M} - \left( \frac{D}{2M} \right)^2 }  
+
+\end{equation*}
+
+
+Apply Euler's identity for complex conjugate roots
+
+
+\begin{equation*}
+
+x = A e^{-\frac{D}{2M} t} \sin \left( \sqrt{\frac{K}{M} - \left(\frac{D}{2M} \right)^2} t + \phi  \right)
+
+\end{equation*}
+
+
+* $\phi$   defines the **phase shift**.
+* $A$   defines the **initial amplitude**.
+* The real part of the root $\frac{D}{2M}$  defines the **envelope** of the motion.
+* The imaginary part of the root identifies the **damped frequency** of the oscillations, $\omega_d$   [rad/sec].
+
+
+\begin{equation*}
+
+\omega_d = \sqrt{\frac{K}{M} - \left(\frac{D}{2M} \right)^2}
+
+\end{equation*}
+
+
+* If damping is reduced to $D= 0$   then only $\sqrt{\frac{K}{M}}$  remains.
+* This is the undamped or **"natural" frequency** ( $\omega_n$   ).
+
+
+\begin{equation*}
+
+\omega_n \equiv \sqrt{\frac{K}{M}}
+
+\end{equation*}
+
+
+* If $\left( \frac{D}{2M} \right)^2 = \frac{K}{M}$  then $D$   is considered to be critical (just enough to prevent oscillations)
+
+
+\begin{equation*}
+
+D_{\mathrm{crit}} = \sqrt{\frac{K}{M}} 2M = 2 \sqrt{KM}
+
+\end{equation*}
+
+
+* For oscillatory motion, actual system damping is typically expressed as a fraction critical damping. Define **damping ratio** as
+
+
+\begin{equation*}
+
+\zeta \equiv \frac{D}{ D_{ \mathrm{crit} } } = \frac{D}{ 2 \sqrt{KM} }
+
+\end{equation*}
+
+
+Combining 
+
+
+\begin{equation*}
+
+\omega_d \equiv \sqrt{\frac{K}{M} - \left(\frac{D}{2M} \right)^2}
+
+\end{equation*}
+
+
+with 
+
+
+\begin{equation*}
+
+\omega_n \equiv \sqrt{\frac{K}{M}}
+
+\end{equation*}
+
+
+and
+
+
+\begin{equation*}
+
+\zeta = \frac{D}{ 2 \sqrt{KM} }
+
+\end{equation*}
+
+
+gives
+
+
+\begin{equation*}
+
+\omega_d \equiv \omega_n \sqrt{1 - \zeta^2}
+
+\end{equation*}
+
+
+and
+
+
+\begin{equation*}
+
+\frac{D}{2M} = \zeta \omega_n
+
+\end{equation*}
+
+
+The values can be substituted to gives
+
+\begin{align}
+x &= A e^{-\frac{D}{2M} t} \sin \left( \sqrt{\frac{K}{M} - \left(\frac{D}{2M} \right)^2} t + \phi  \right) \\
+&= A e^{-\zeta \omega_n t} \sin \left( \omega_d t + \phi  \right) \\
+&= A e^{-\zeta \omega_n t} \sin \left( \omega_n \sqrt{1 - \zeta^2} t + \phi  \right) \\
+\text{where } \phi &= \tan^{-1} \frac{\omega_d}{\zeta \omega_n} =  \tan^{-1} \frac{\omega_n \sqrt{1 - \zeta^2}}{\zeta \omega_n} =  \tan^{-1} \frac{\sqrt{1 - \zeta^2}}{\zeta} \\
+\end{align}
+
+<!-- Don't think we need this labeled equation...? -->
+![][08043]
+
+![][08044]
+
+![][08045]
+
+
+\begin{equation*}
+\text{Roots } s_{1,2} = -\frac{D}{2M} \pm j \sqrt{\frac{K}{M} - \left( \frac{D}{2M} \right)^2} = -\zeta \omega_n \pm j\omega_n\sqrt{1 - \zeta^2} 
+\end{equation*}
+
+
+Possible Solutions:
+
+<!-- Eventually convert to an actual table -->
+![][08047]
+
+• The various combination of $K$  , $M$  , and $D$   and their effects on system response can be related to damping ratio $\zeta$   as follows:
+
+| | | |
+|-|---|---|
+| $+1  <  \zeta$          | Real & unequal roots: exponential, convergent | 
+\begin{equation*}
+ x\left(t\right) = c_1 e^{-\omega_n \left( \zeta + \sqrt{\zeta^2 - 1} \right)t} + c_2 e^{-\omega_n \left( \zeta - \sqrt{\zeta^2 - 1} \right)t} 
+\end{equation*}
+ |
+| $\zeta = +1$            | Real & equal roots: exponential, convergent   | 
+\begin{equation*}
+ x\left(t\right) = c_1 e^{-\omega_n \zeta t} + c_2 t e^{-\omega_n \zeta t} 
+\end{equation*}
+ |
+| $0  <  \zeta  <  +1$   | Complex pair roots: sinusoidal, convergent    | 
+\begin{equation*}
+ x\left(t\right) =  A e^{-\zeta \omega_n t} \sin \left( \omega_d + \phi \right) 
+\end{equation*}
+ |
+| $\zeta = 0$            | Imaginary pair roots: sinusoidal, neutral     | 
+\begin{equation*}
+ x\left(t\right) =  A \sin \left( \omega_n t + \phi \right) = A \cos \left( \omega_n t \right) 
+\end{equation*}
+  |
+| $-1  <  \zeta  <  0$   | Complex pair roots: sinusoidal, divergent     | 
+\begin{equation*}
+ x\left(t\right) =  A e^{-\zeta \omega_n t} \sin \left( \omega_d + \phi \right) 
+\end{equation*}
+ |
+| $\zeta = -1$           | Real & equal roots: exponential, divergent    | 
+\begin{equation*}
+ x\left(t\right) = c_1 e^{-\omega_n \zeta t} + c_2 t e^{-\omega_n \zeta t} 
+\end{equation*}
+ |
+| $\zeta  <  -1$         | Real & unequal roots: exponential, divergent  | 
+\begin{equation*}
+ x\left(t\right) = c_1 e^{-\omega_n \left( \zeta + \sqrt{\zeta^2 - 1} \right)t} + c_2 e^{-\omega_n \left( \zeta - \sqrt{\zeta^2 - 1} \right)t} 
+\end{equation*}
+ |
+
+**Damping ratio effect on second order system**
+
+Response of various second order systems to an impulse input.
+
+Second-order systems are oscillatory if $-1  <  \zeta  <  +1$  .
+
+Motion typically described by $\omega_n$   and $\zeta$  
+
+$T$  , $\omega_d$  , $\omega_n$  , and $\zeta$   are linked such that knowledge of any two will yield the other two.
+
+![][08050]
+
+![][08051]
+
+![][08052]
+
+2nd order system response to **unit step input** for **underdamped systems** ( $0  <  \zeta  <  +1$   )
+
+![][08053]
+
+**Decay rates (for $0  <  \zeta  <  +1$   ) and Useful Insights**
+
+| | |
+|-|:--|
+|**Time to decay** | 
+\begin{equation*}
+\zeta \omega_n = \frac{\ln \frac{x_1}{x_2} }{t_2 - t_1} \Rightarrow \Delta t = \frac{\ln \frac{x_1}{x_2}}{\zeta \omega_n} 
+\end{equation*}
+ |
+|Time to $\frac{1}{2}$   amplitude | 
+\begin{equation*}
+ \equiv \Delta t_{\frac{1}{2}} = \frac{\ln \frac{2}{1}}{\zeta \omega_n} = \frac{0.6931}{\zeta \omega_n}  
+\end{equation*}
+ |
+|Time to $\frac{1}{10}$   amplitude | 
+\begin{equation*}
+ \equiv \Delta t_{\frac{1}{10}} = \frac{\ln \frac{10}{1}}{\zeta \omega_n} = \frac{2.3026}{\zeta \omega_n}  
+\end{equation*}
+ |
+|Time to $\frac{1}{x}$   amplitude | 
+\begin{equation*}
+ \equiv \Delta t_{\frac{1}{x}} = \frac{\ln x }{\zeta \omega_n}  
+\end{equation*}
+ |
+|**\# cycles to decay** | 
+\begin{equation*}
+\text{\# cycles} = \frac{\Delta t }{T} = \frac{\Delta t \omega_d}{2 \pi} 
+\end{equation*}
+ |
+|\# cycles to $\frac{1}{2}$   amplitude  | 
+\begin{equation*}
+\equiv C_{\frac{1}{2}} = \frac{0.6931}{\zeta \omega_n}\frac{\omega_d}{2 \pi} = \frac{0.6931}{2 \pi  }\frac{\omega_d}{\zeta \omega_n} = \frac{0.1103}{\varepsilon} 
+\end{equation*}
+ |
+|\# cycles to $\frac{1}{10}$   amplitude  | 
+\begin{equation*}
+\equiv C_{\frac{1}{10}} = \frac{2.3026}{\zeta \omega_n}\frac{\omega_d}{2 \pi} = \frac{2.3026}{2 \pi  }\frac{\omega_d}{\zeta \omega_n} = \frac{0.3665}{\varepsilon} 
+\end{equation*}
+ |
+|\# cycles to $\frac{1}{x}$   amplitude  | 
+\begin{equation*}
+\equiv C_{\frac{1}{x}} = \frac{\ln x }{2 \pi }\frac{\omega_d}{\zeta \omega_n} 
+\end{equation*}
+ |
+
+Same analysis applies for exponential growth
+
+For same $\Delta t$  
+
+
+\begin{equation*}
+ \frac{x_1}{x_2} = \frac{x_2}{x_3} = \frac{x_3}{x_4} = \dots 
+\end{equation*}
+
+
+Therefore
+
+
+\begin{equation*}
+ \frac{x_1}{x_3} = \frac{x_1}{x_2} \frac{x_2}{x_3} = \left( \frac{x_1}{x_2} \right)^2 \Rightarrow \mathrm{HCAR} = \sqrt{\text{full cycle amplitude ratio}}
+\end{equation*}
+
+
+\begin{align}
+\mathrm{HCAR} &\equiv \frac{x_1}{x_2} =  e^{\zeta \omega_n \left( t_2 - t_1 \right)} =  e^{\zeta \omega_n \left( \Delta t \right)} =  e^{\zeta \omega_n \left( \frac{T}{2} \right)} =  e^{\zeta \omega_n \left( \frac{2\pi}{2\omega_d} \right)} \\
+&=  e^{\zeta \omega_n \left( \frac{\pi}{\omega_n \sqrt{1 - \zeta^2}} \right)} =  e^{\zeta \omega_n \left( \frac{\pi \zeta}{ \sqrt{1 - \zeta^2}} \right)} \\
+&\Rightarrow \ln \frac{x_1}{x_2} = \frac{\pi \zeta}{ \sqrt{1 - \zeta^2}} \Rightarrow \zeta = \sqrt{\frac{\left( \ln \frac{x_1}{x_2} \right)^2}{\pi^2 + \left( \ln \frac{x_1}{x_2} \right)^2}} \\
+\end{align}
+
+This can be applied in graphical form (transient peak ratio method)
+
+### Determining Descriptive Parameters
+
+Time domain metrics
+
+![][08055]
+
+||||
+|-|-|-|
+|Peak Value   | $\mathrm{MP}$    | largest value |
+|Final Value  | $\mathrm{FV}$    | steady state value|
+|Delay Time   | $T_d$   | $50%$   of final value|
+|Rise Time    | $T_r$   | $10% - 90%$   of FV|
+|Peak Time    | $T_p$   | time to MP|
+|\% Overshoot | $\mathrm{PO}$    | $\frac{\mathrm{MP} - 1}{1} \times 100% \text{target value} = \text{unity}$  *target value = unity*|
+
+**Method \#1** Basic Analysis
+
+Note
+
+
+\begin{equation*}
+ x\left(t\right) = A e^{-\zeta \omega_n t} \sin \left( \omega_d t + 0 \right) 
+\end{equation*}
+
+
+$\zeta \omega_n$   and $\omega_d$   describe a time history
+
+![][08058]
+
+
+\begin{equation*}
+f_d = \frac{1}{T}
+\end{equation*}
+
+
+
+\begin{equation*}
+\omega_d = \frac{2\pi}{T} 
+\end{equation*}
+
+
+
+\begin{equation*}
+\zeta \omega_n = \frac{\ln \frac{x_1}{x_2}}{\left(t_2 - t_1 \right)} 
+\end{equation*}
+
+
+Easily measured values: can use any points on envelope
+
+Define
+
+
+\begin{equation*}
+\varepsilon \equiv \frac{\zeta \omega_n}{\omega_d} = \frac{\frac{\ln \frac{x_1}{x_2}}{\left(t_2 - t_1 \right)} }{\frac{2\pi}{T}} = \frac{T\ln \frac{x_1}{x_2}}{2\pi \left(t_2 - t_1 \right)} 
+\end{equation*}
+
+
+where
+
+
+\begin{equation*}
+ \left(t_2 - t_1 \right) = \frac{T}{2} \Rightarrow \frac{\zeta \omega_n}{\omega_d} = \frac{\ln \frac{x_1}{x_2}}{\pi} = \varepsilon = \ln \left[ x_1 / x_2 \right] / \pi 
+\end{equation*}
+
+
+recall
+
+
+\begin{equation*}
+\omega_d = \omega_n \sqrt{1 - \zeta^2} 
+\end{equation*}
+
+
+
+\begin{equation*}
+\varepsilon = \frac{\zeta \omega_n}{\omega_n \sqrt{1 - \zeta^2}} =  \frac{\zeta}{ \sqrt{1 - \zeta^2}} \Rightarrow \varepsilon^2 = \frac{\zeta^2}{ 1 - \zeta^2} \Rightarrow \varepsilon^2 \left( 1 - \zeta^2 \right) = \zeta^2 \Rightarrow \varepsilon^2 = \zeta^2 \left[ 1 + \varepsilon^2 \right] 
+\end{equation*}
+
+
+
+\begin{equation*}
+ \zeta = \sqrt{\frac{\varepsilon^2}{1 + \varepsilon^2}} 
+\end{equation*}
+
+
+
+\begin{equation*}
+\omega_n = \frac{\zeta \omega_n}{\zeta} = \frac{\omega_d}{\sqrt{1 - \zeta^2}} 
+\end{equation*}
+
+
+
+\begin{equation*}
+ \left| \frac{x_1}{x_2} \right| = \text{Half-Cycle Amplitude Ratio } \left( \mathrm{HCAR} \right) = e^{\zeta \omega_n \left(t_2 - t_1\right)}
+\end{equation*}
+
+
+**Method \#2** Transient Peak Ratio Analysis
+
+1. Measure either *$D$   or $x$   distances as shown.
+
+![][08067]
+
+Example Calculation
+
+![][08068]
+
+2. Note ratio of adjacent peak values (transient peak ratios).
+
+|||
+|-:|:---|
+| First $\mathrm{TPR}$   | 
+\begin{equation*}
+\frac{D_2}{D_1} = \frac{117-86}{117-80}=\frac{31}{37}=0.8378
+\end{equation*}
+ |
+| Second $\mathrm{TPR}$   | 
+\begin{equation*}
+\frac{D_3}{D_2} = \frac{112-86}{117-86}=\frac{26}{31}=0.8387
+\end{equation*}
+ |
+| Third $\mathrm{TPR}$   | 
+\begin{equation*}
+\frac{D_4}{D_3} = \frac{112-90}{112-86}=\frac{22}{26}=0.8462
+\end{equation*}
+ |
+
+3. Average several TPRs.
+
+Average $\mathrm{TPR} = 0.8409$  
+
+4. Use equation to find $\zeta$  :
+
+
+\begin{equation*}
+ \zeta = \sqrt{\frac{\left( \ln \frac{x_1}{x_2} \right)^2}{\pi^2 + \left( \ln \frac{x_1}{x_2} \right)^2}} 
+\end{equation*}
+ 
+
+   a. Can use $D_1/D_2$   or $x_1/x_2$   ratios in above equation.
+
+   b. In lieu of equation, use adjacent look-up curve to find $\zeta$  .
+
+   c. Time ratio method works better with heavy damping.
+
+![][08071]
+
+**Method \#3** Multiple *TPR* Analysis
+
+![][08072]
+
+To determine damping ratio
+
+* Use the $m = 1$   line when comparing the next ratio.
+
+\begin{align}
+\frac{\Delta x_1}{\Delta x_0} &= \frac{2.5}{4.5} = 0.56 & \zeta = 0.16 \\
+\frac{\Delta x_2}{\Delta x_1} &= \frac{1.5}{2.5} = 0.60 & \zeta = 0.14 \\
+\end{align}
+
+* Use the $m = 2$   line for comparing every other peak ratio.
+
+\begin{align}
+\frac{\Delta x_2}{\Delta x_0} &= \frac{1.5}{4.5} = 0.33 & \zeta = 0.16 \\
+\frac{\Delta x_3}{\Delta x_1} &= \frac{1.0}{2.5} = 0.40 & \zeta = 0.14 \\
+\end{align}
+
+**Method #4** Time Ratio Analysis
+
+* If the damping ratio is between $0.5$   and $1.0$   (two or less overshoots), then the time ratio method can be used to determine frequency and damping ratio. Select a peak where the response if free.
+* Note times for amplitude to reduce to $73.6%$  , $40.9%$  , and $19.9%$   of the peak value.
+
+![][08075]
+
+* Form the time ratios $\frac{t_2}{t_1}$ , $\frac{t_3}{t_1}$ , and $\frac{t_3 - t_2}{t_2 - t_1}$ 
+* Enter the next figure at the time ratio side to find $\zeta$   for each time ratio.
+* This technique is valid if the system transfer function has no zeros.
+* If recorded measurements are not available and if the number of overshoots is between $2$   and $6$  , then
+
+
+\begin{equation*}
+
+\zeta \approx \frac{7 - \mathrm{\# overshoots}}{10}
+
+\end{equation*}
+
+ 
+Time Ratio
+
+![][08078]
+**Frequency Time Products ($\omega_n \Delta t_3$  ), ($\omega_n \Delta t_2$  ), ($\omega_n \Delta t_1$  )**
+
+**Method #5** Maximum Slope Analysis
+
+![][08079]
+
+![][08080]
+
+* Calculation of $\zeta$   somewhat sensitive to $\Delta x_1$   measurement
+* $\omega_n = \frac{\omega_n \Delta t}{\Delta t}$   not too sensitive to $\Delta x_1$  
+* Best if $0.5 \leq \zeta \leq 1.4$  
+* Initial overshoot approximation: let (step inputs only) $\mathcal{K} \equiv \frac{x_{\mathrm{peak}}}{x_{\mathrm{ss}}} - 1$  
+
+
+\begin{equation*}
+
+\zeta = \sqrt{\frac{\left( - \frac{\ln \mathcal{K}}{\pi} \right)^2}{1 + \left( - \frac{\ln \mathcal{K}}{\pi} \right)^2}}
+
+\end{equation*}
+
+
+**Method #6** Separated Real Root Analysis (when $\zeta  >  1$  )
+
+1. Determine several steady state $\Delta X \left(t\right)$   values from time history
+
+![][08084]
+
+2. Plot $\Delta X$   vs $t$   on semi-log scale
+
+![][08085]
+
+3. After the faster root has decayed, the semi-log plot will be a straight line whose slope determines the slower root $\left( \frac{1}{\tau_1} \right)$  
+
+
+\begin{equation*}
+
+\tau_1 = \frac{t_1 - t_2}{\ln \left(\frac{\Delta X_1}{\Delta X_2} \right)}
+
+\end{equation*}
+
+
+4. Determine by extrapolating the straight line portion of the response to establish the values $\left( \frac{1}{\tau_1} \right)$  , $\Delta\overline{X}_0$  , & $\Delta X_0^{\prime}$  
+
+
+\begin{equation*}
+
+\tau_2 = \tau_1 \left( \frac{\Delta\overline{X}_0}{\Delta X_0^{\prime}} \right)
+
+\end{equation*}
+
+
+
+\begin{equation*}
+
+\omega_n = \sqrt{\frac{1}{\tau_1}\frac{1}{\tau_2}} \text{ and } \zeta = - \frac{\left(\frac{1}{\tau_1} + \frac{1}{\tau_2} \right)}{2 \omega_n} = - \frac{\left( \frac{1}{\tau_1} + \frac{1}{\tau_2} \right)}{2 \sqrt{\frac{1}{\tau_1}\frac{1}{\tau_2}}}
+
+\end{equation*}
+
+
+**Method #7** Modified Separated Real Root Analysis
+
+* Method #6 is sensitive to errors in determining steady state values
+* Alternate method is to avoid need for steady state value
+* Define $\Delta X \left(t \right) \equiv \left[ x \left(t + \Delta T \right) - x \left(t \right) \right]$   where $\Delta T$   is a time increment
+
+1. From time history, measure $\Delta X$   values according to definition
+
+![][08091]
+
+
+\begin{equation*}
+
+\Delta T = \left( t_1 - t_0 \right) = \left( t_2 - t_1 \right) \text{ , etc.}
+
+\end{equation*}
+
+
+2. Plot$\Delta X \left(t \right)$   vs time on semi-log scale
+
+![][08092]
+
+3. Use previous method to determine roots and characteristics
+
+* Gross error will result if $\zeta$   is actually $<  1$  
+* If $\zeta$   is near $1$  , check results using time ratio or slope method
+
+**Method \#8** Frequency Sweep Analysis
+
+Determine $\omega_n$   and $\zeta$   using sinusoidal inputs.
+
+* This "forced response" method is most useful when damping is heavy.
+* For a second order system, output/input amplitude ratio and phase shift are a function of input frequency.
+
+![][08093]
+
+* Amplitude ratio peaks at "resonant" frequency, $\omega_r$  .
+* Resonant peaks increase as $\zeta$   decreases below $0.707$  .
+* Peak amplitude ratio "rolls off" as $\zeta$   increases above $0.707$  .
+* Resonant frequency approaches natural frequency as damping decreases:
+
+
+\begin{equation*}
+
+  \omega_r = \omega_n \sqrt{ 1 - 2 \zeta^2 }
+
+\end{equation*}
+
+
+* Phase shift = $90°$   if excited at $\omega_n$  , regardless of damping ratio.
+
+
+\begin{equation*}
+
+  \zeta = \frac{1}{2} \frac{ \left( \omega_2 - \omega_1 \right) }{\omega_n}
+
+\end{equation*}
+
+
+![][08094]
+
+1. Using sinusoidal inputs excite system at $\omega$   near $\omega_n$  
+2. Measure phase lag $\left( \phi \right)$   of $\frac{\text{output}}{\text{input}}$ 
+
+![][08096]
+
+3. Excite system at another $\omega$   near $\omega_n$  
+4. Again measure phase lag $\left( \phi \right)$  
+
+![][08097]
+
+5. Plot $\phi$   vs input frequency
+
+![][08098]
+
+6. $\omega_n$   occurs at $\phi = 90°$  
+
+**Linearity Check /Accuracy Improvement**
+
+1. On semi-log scale, plot ratio of initial amplitude to subsequent peak amplitudes at each half cycle $\left( \text{points } a-e \right)$  .
+2. Fair straight line $\left( f \right)$   through these points.
+
+![][08099]
+
+3. Draw line $\left( g \right)$   parallel $\left( f \right)$   intercepting the ordinate at $\mathrm{TPR} = 1$  
+4. Average $\mathrm{TPR}$   occurs at $\frac{T}{2}$  on line $\left( g \right)$  
+
+## Complex Plane
+
+Begin with sum of forces in spring-mass-damper example
+
+\begin{align}
+  M \ddot{x} + D \dot{x} + K x &= f \left( t \right) \\
+  \text{let } x &= e^{st}, \;\; \text{find transient solution} \\
+  \left( Ms^2 + Ds + K \right) e^{st} &= 0  \\
+\end{align}
+
+Apply quadratic equation to solve for roots
+
+
+\begin{equation*}
+
+  s_{1,2} = -\frac{D}{2M} \pm \sqrt{ \left( \frac{D}{2M} \right)^2 - \frac{K}{M} }
+
+\end{equation*}
+
+
+Recall previous analogy
+
+
+\begin{equation*}
+
+  s_{1,2} = -\zeta \omega_n \pm j \omega_n \sqrt{ 1 - \zeta^2 }
+
+\end{equation*}
+
+
+
+\begin{equation*}
+
+  \tau = \frac{1}{\zeta \omega_n}
+
+\end{equation*}
+
+
+
+\begin{equation*}
+
+  - \frac{1}{\tau} \pm j \omega_d
+
+\end{equation*}
+
+
+![][08104]
+
+Location of Roots on Complex Plane
+
+1. Line of constant damping ratio $\zeta$  , varying $C_{\frac{1}{n}}$  and $\omega_n$  
+2. Line of constant $\omega_n$  , varying $\zeta$  
+3. Line of constant $\omega_d$   and period $\left( T \right)$  
+4. Line of constant real part $\left( \zeta\omega_n \right)$   and time to damp $\left( T_{\frac{1}{n}} \right)$  
+
+
+\begin{equation*}
+
+  \sigma = \zeta \omega_n = \frac{1}{\tau} = \text{ damping rate}
+
+\end{equation*}
+
+
+![][08106]
+
+**Sample second order root plots and corresponding time histories**
+(time histories represent trends only)
+
+Examples of "two real roots"
+
+![][08107]
+
+**More sample second order root plots and corresponding time histories**
+
+Examples of "imaginary roots"
+
+![][08108]
+
+## Parameter Conversions
+
+For conversion of accelerometer measurements.
+
+* For magnitude conversion substitute $2 \pi f$   for $j \omega$.
+* Assumes linear spectra.
+* Conversion factor should be squared for power spectra.
+
+*Acceleration to velocity*
+
+|to convert from | to | multiply by |
+|:---------------|:---|:------------|
+|$\frac{\text{ft}}{\text{s}^2} \text{rms}$  | $\frac{\text{ft}}{\text{s}} \text{rms}$  | $\frac{1}{j\omega}$  |
+|$\frac{\text{ft}}{\text{s}^2} \text{rms}$  | $\frac{\text{in}}{\text{s}} \text{rms}$  | $\frac{12}{j\omega}$  |
+|$\frac{\text{ft}}{\text{s}^2} \text{rms}$  | $\frac{\text{in}}{\text{s}} \text{peak}$  | $\frac{16.97}{j\omega}$  |
+|$\text{g rms}$  | $\frac{\text{in}}{\text{s}} \text{rms}$  | $\frac{386}{j\omega}$  |
+|$\text{g rms}$  | $\frac{\text{in}}{\text{s}} \text{peak}$  | $\frac{545.8}{j\omega}$  |
+|$\frac{\text{m}}{\text{s}^2} \text{rms}$  | $\frac{\text{mm}}{\text{s}} \text{rms}$  | $\frac{1000}{j\omega}$  |
+|$\frac{\text{m}}{\text{s}^2} \text{rms}$  | $\frac{\text{mm}}{\text{s}} \text{rms}$  | $\frac{1414}{j\omega}$  |
+|$\text{g rms}$  | $\frac{\text{mm}}{\text{s}} \text{peak}$  | $\frac{13865.7}{j\omega}$  |
+
+
+*Acceleration to Displacement*
+
+|to convert from | to | multiply by |
+|:---------------|:---|:------------|
+|$\frac{\text{ft}}{\text{s}^2} \text{rms}$  | $\text{in rms}$  | $\frac{12}{ \left( j\omega \right)^2}$  |
+|$\frac{\text{ft}}{\text{s}^2} \text{rms}$  | $\text{in p-p}$  | $\frac{33.9}{ \left( j\omega \right)^2}$  |
+|$\frac{\text{ft}}{\text{s}^2} \text{rms}$  | $\text{mil p-p}$  | $\frac{33.9\mathrm{E}03}{ \left( j\omega \right)^2}$  |
+|$\text{g rms}$  | $\text{in rms}$  | $\frac{386}{ \left( j\omega \right)^2}$  |
+|$\text{g rms}$  | $\text{in p-p}$  | $\frac{1091.6\mathrm{E}03}{ \left( j\omega \right)^2}$  |
+|$\text{g rms}$  | $\text{mil p-p}$  | $\frac{1091.6\mathrm{E}06}{ \left( j\omega \right)^2}$  |
+|$\frac{\text{m}}{\text{s}^2} \text{rms}$  | $\text{mm rms}$  | $\frac{1000}{ \left( j\omega \right)^2}$  |
+|$\frac{\text{m}}{\text{s}^2} \text{rms}$  | $\text{mm p-p}$  | $\frac{2828}{ \left( j\omega \right)^2}$  |
+|$\frac{\text{m}}{\text{s}^2} \text{rms}$  | $\text{micron p-p}$  | $\frac{2828\mathrm{E}03}{ \left( j\omega \right)^2}$  |
+
+$\mathrm{E} = \text{engineering exponent} \left(\times 10 \_\_ \right)$  
+
+$\text{g} = 32.174 \frac{\text{ft}}{\text{s}^2}$ 
+
+$\text{in} = \text{inches}$ 
+
+$\text{mil} = \text{thousandths of an inch}$ 
+
+$\text{mm} = \text{millimeters}$ 
+
+$\text{p-p} = \text{peak-to-peak}$ 
+
+$\text{rms} = \text{root mean square}$ 
+
+## Vibration Nomographs
+
+**Vibration Nomograph equations**
+
+**For British** [$V$   in $\frac{\text{inches}}{\text{sec}}$  ], [$d$   in $\text{inches}$ ]
+
+\begin{align}
+V &= \frac{386 g}{2 \pi f} \\
+d &= \frac{386 g}{\left( 2 \pi f \right)^2} \\
+&\text{where } 386 = \text{earth's gravitational pull} \left[ \frac{\text{in}}{\text{sec}^2}  \right] \\
+\end{align}
+
+**For metric** [$V$   in $\frac{\text{mm}}{\text{sec}}$  ], [$d$   in $\text{mm}$ ] 
+
+\begin{align}
+V &= \frac{9800 g}{2 \pi f} \\
+d &= \frac{9800 g}{\left( 2 \pi f \right)^2} \\
+&\text{where } 9800 = \text{earth's gravitational pull} \left[ \frac{\text{mm}}{\text{sec}^2}  \right] \\
+\end{align}
+
+**Nomograph - British Units**
+
+![][08109]
+
+**Nomograph - Metric Units**
+
+![][08110]
+
+## References
+
+|||
+|-|---------------|
+|8.7.1 |Lawless, Alan R., *Math and Physics for Flight Testers*, "Chapter 9, Motion Analysis," National Test Pilot School, Mojave CA, 1999.|
+|8.7.2 |Ward, Don, *Introduction to Flight Testing*, Texas A&M, Elsevier, 1993.|
+|8.7.3 |Lang, George F., *Understanding Vibration Measurements*, Application Note 9, Rockland Scientific Corporation, Rockleigh, New Jersey, December 1978.|
+|8.7.4 |*The Fundamentals of Modal Testing*, Application Note 243-3, Hewlett-Packard Company,|
+
+**Additional Reading**
+
+||
+|-|
+|Hartog, J.P. Den, *Mechanical Vibrations*, Dover Publications, New York, New York, 1984.|
+|Jacobsen, Ludik S. and Ayre, Robert S., *Engineering Vibrations*, McGraw-Hill Book Company, New York, New York, 1958.|
+|Meirovitch, Leonard, *Elements of Vibration Analysis*, McGraw-Hill Book Company, New York, New York, 1986.|
+|Meirovitch, Leonard, *Analytical Methods in Vibrations*, Macmillan Publishing Company, New York, New York, 1967.|
+|Myklestad, N.O., *Vibration Analysis*, McGraw-Hill Book Company, New York, New York, 1944.|
+
+  [08001]: media/08/image1.svg
+  [08002]: media/08/image2.svg
+  [08003]: media/08/image3.png
+  [08004]: media/08/image4.png
+  [08005]: media/08/image5.png
+  [08006]: media/08/image6.png
+  [08007]: media/08/image7.png
+  [08008]: media/08/image8.png
+  [08009]: media/08/image9.png
+  [08010]: media/08/image10.png
+  [08011]: media/08/image11.png
+  [08012]: media/08/image12.png
+  [08013]: media/08/image13.svg
+  [08014]: media/08/image14.png
+  [08015]: media/08/image15.png
+  [08016]: media/08/image16.png
+  [08017]: media/08/image17.png
+  [08018]: media/08/image18.png
+  [08019]: media/08/image19.png
+  [08020]: media/08/image20.png
+  [08021]: media/08/image21.png
+  [08022]: media/08/image22.png
+  [08023]: media/08/image23.png
+  [08024]: media/08/image24.png
+  [08025]: media/08/image25.png
+  [08026]: media/08/image26.png
+  [08027]: media/08/image27.png
+  [08028]: media/08/image28.png
+  [08029]: media/08/image29.png
+  [08030]: media/08/image30.png
+  [08031]: media/08/image31.png
+  [08032]: media/08/image32.png
+  [08033]: media/08/image33.png
+  [08034]: media/08/image34.png
+  [08035]: media/08/image35.png
+  [08036]: media/08/image36.png
+  [08037]: media/08/image37.png
+  [08038]: media/08/image38.png
+  [08039]: media/08/image39.png
+  [08040]: media/08/image40.png
+  [08041]: media/08/image41.png
+  [08042]: media/08/image42.png
+  [08043]: media/08/image43.png
+  [08044]: media/08/image44.png
+  [08045]: media/08/image45.png
+  [08046]: media/08/image46.png
+  [08047]: media/08/image47.png
+  [08048]: media/08/image48.svg
+  [08049]: media/08/image49.png
+  [08050]: media/08/image50.png
+  [08051]: media/08/image51.png
+  [08052]: media/08/image52.png
+  [08053]: media/08/image53.png
+  [08054]: media/08/image54.png
+  [08055]: media/08/image55.png
+  [08056]: media/08/image56.png
+  [08057]: media/08/image57.png
+  [08058]: media/08/image58.png
+  [08059]: media/08/image59.png
+  [08060]: media/08/image60.png
+  [08061]: media/08/image61.png
+  [08062]: media/08/image62.png
+  [08063]: media/08/image63.png
+  [08064]: media/08/image64.png
+  [08065]: media/08/image65.png
+  [08066]: media/08/image66.png
+  [08067]: media/08/image67.png
+  [08068]: media/08/image68.png
+  [08069]: media/08/image69.png
+  [08070]: media/08/image70.png
+  [08071]: media/08/image71.png
+  [08072]: media/08/image72.png
+  [08073]: media/08/image73.png
+  [08074]: media/08/image74.png
+  [08075]: media/08/image75.png
+  [08076]: media/08/image76.png
+  [08077]: media/08/image77.png
+  [08078]: media/08/image78.png
+  [08079]: media/08/image79.png
+  [08080]: media/08/image80.png
+  [08081]: media/08/image81.png
+  [08082]: media/08/image82.png
+  [08083]: media/08/image83.png
+  [08084]: media/08/image84.png
+  [08085]: media/08/image85.png
+  [08086]: media/08/image86.png
+  [08087]: media/08/image87.png
+  [08088]: media/08/image88.png
+  [08089]: media/08/image89.png
+  [08090]: media/08/image90.png
+  [08091]: media/08/image91.png
+  [08092]: media/08/image92.png
+  [08093]: media/08/image93.png
+  [08094]: media/08/image94.png
+  [08095]: media/08/image95.png
+  [08096]: media/08/image96.png
+  [08097]: media/08/image97.png
+  [08098]: media/08/image98.png
+  [08099]: media/08/image99.png
+  [08100]: media/08/image100.png
+  [08101]: media/08/image101.png
+  [08102]: media/08/image102.png
+  [08103]: media/08/image103.png
+  [08104]: media/08/image104.png
+  [08105]: media/08/image105.png
+  [08106]: media/08/image106.png
+  [08107]: media/08/image107.png
+  [08108]: media/08/image108.png
+  [08109]: media/08/image109.png
+  [08110]: media/08/image110.png

@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Flight Test Engineering Reference Handbook - 21&nbsp; Real-Time Data Display Guidelines</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./20-communications-systems.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Flight Test Engineering Reference Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-general.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">General Information</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-math.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mathematics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-earth-atmosphere.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Universe Earth Atmospheric</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-pitot-statics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Pitot Statics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-aero.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Aerodynamics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-axis-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Axis Systems and Transformations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-mass-properties.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mass Properties</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-motion-analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Motion &amp; Vibration Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-material-strength.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Material Strength</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-reciprocating-engines.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reciprocating Engines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-propellers.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Propellers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-standardization.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Fixed-Wing Performance Standardization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-acoustics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Acoustics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-emc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Electromagnetic Compatibility</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-handling-qualities.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Handling Qualities</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-rotary-wings.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Rotary Wing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-gas-turbine-propulsion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Gas Turbine Propulsion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-radio-communications.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Telemetry Control Room and Radio Communications</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-electromagnetic-spectrum.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Electromagnetic Spectrum</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20-communications-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21-display-guidelines.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#display-guidelines" id="toc-display-guidelines" class="nav-link active" data-scroll-target="#display-guidelines"> <span class="header-section-number">21.1</span> Display Guidelines</a>
+  <ul class="collapse">
+  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general"> <span class="header-section-number">21.1.1</span> General</a></li>
+  <li><a href="#visual-elements" id="toc-visual-elements" class="nav-link" data-scroll-target="#visual-elements"> <span class="header-section-number">21.1.2</span> Visual Elements</a></li>
+  <li><a href="#parameter-selection" id="toc-parameter-selection" class="nav-link" data-scroll-target="#parameter-selection"> <span class="header-section-number">21.1.3</span> Parameter Selection</a></li>
+  <li><a href="#configuration-management" id="toc-configuration-management" class="nav-link" data-scroll-target="#configuration-management"> <span class="header-section-number">21.1.4</span> Configuration Management</a></li>
+  <li><a href="#documentation-and-training" id="toc-documentation-and-training" class="nav-link" data-scroll-target="#documentation-and-training"> <span class="header-section-number">21.1.5</span> Documentation and Training</a></li>
+  <li><a href="#further-readingreferences" id="toc-further-readingreferences" class="nav-link" data-scroll-target="#further-readingreferences"> <span class="header-section-number">21.1.6</span> Further Reading/References</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"> <span class="header-section-number">21.1.7</span> Examples</a></li>
+  </ul></li>
+  <li><a href="#sec-cvd" id="toc-sec-cvd" class="nav-link" data-scroll-target="#sec-cvd"> <span class="header-section-number">21.2</span> Design Considerations for Color Vision Deficient Users</a>
+  <ul class="collapse">
+  <li><a href="#design-considerations" id="toc-design-considerations" class="nav-link" data-scroll-target="#design-considerations"> <span class="header-section-number">21.2.1</span> Design Considerations:</a></li>
+  <li><a href="#organizational-considerations" id="toc-organizational-considerations" class="nav-link" data-scroll-target="#organizational-considerations"> <span class="header-section-number">21.2.2</span> Organizational Considerations</a></li>
+  <li><a href="#cvd-references" id="toc-cvd-references" class="nav-link" data-scroll-target="#cvd-references"> <span class="header-section-number">21.2.3</span> CVD References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Real-Time Data Display Guidelines</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<p><strong><em><u>Author</u>:</em></strong></p>
+<p><strong><em>Mark Updegrove</em></strong></p>
+<p><strong><em>(email: <a href="mailto:mark.updegrove@outlook.com" class="email">mark.updegrove@outlook.com</a>)</em></strong></p>
+<p><strong><em><u>Contributing Editors</u>:</em></strong></p>
+<p><strong><em>Mark Mondt, Steve Carothers, Brian Maisler, Bill Kuhlemeier, Nathan Cook,</em></strong></p>
+<p><strong><em>Amit Alex, Libin Daniel, Ben Povall, Hunter Bloch, Andre Celere</em></strong></p>
+<p>This section provides “best practice guidelines” for building real-time flight test monitoring displays. The goal of a well-designed display is to present information, not merely data, to the user. These guidelines are applicable for both on-aircraft and telemetry-based control room displays. While the guidelines are aimed primarily at the FTE/Test Conductor/Test Director role, the principles are applicable to any engineering displays that support the real-time flight test mission.</p>
+<section id="display-guidelines" class="level2 underline" data-number="21.1">
+<h2 class="underline anchored" data-number="21.1" data-anchor-id="display-guidelines"><span class="header-section-number">21.1</span> Display Guidelines</h2>
+<section id="general" class="level3" data-number="21.1.1">
+<h3 data-number="21.1.1" class="anchored" data-anchor-id="general"><span class="header-section-number">21.1.1</span> General</h3>
+<p>No set of guidelines can cover all potential situations. In cases where a conflict between specific items arises, judgment is required as to how to honor the overall intent of the guidelines while still accomplishing the intended mission.</p>
+<section id="criticality-and-application" class="level4" data-number="21.1.1.1">
+<h4 data-number="21.1.1.1" class="anchored" data-anchor-id="criticality-and-application"><span class="header-section-number">21.1.1.1</span> Criticality and Application</h4>
+<ol type="1">
+<li>The level of diligence put into building the display should be commensurate with the criticality of the display.</li>
+<li>The intended users of these guidelines are those FTEs who, either on the aircraft or in the control room, make real-time decisions that affect the safety of the crew and the integrity of the aircraft.</li>
+<li>Displays which are safety critical should be identified as such, versus displays which provide situational awareness information only.</li>
+<li>As the criticality of a display increases, more care should be taken to ensure the display conveys critical information, without being cluttered by non-critical data.</li>
+<li>To the greatest extent practical, displays should tightly follow a common design philosophy across the individual test assets within a program, as well as across various platform types within an organization.</li>
+</ol>
+</section>
+<section id="organization-roles-and-responsibilities-of-users" class="level4" data-number="21.1.1.2">
+<h4 data-number="21.1.1.2" class="anchored" data-anchor-id="organization-roles-and-responsibilities-of-users"><span class="header-section-number">21.1.1.2</span> Organization – Roles and Responsibilities of Users</h4>
+<ol type="1">
+<li>The primary responsibility of the overall display layout and functional design should be placed on an experienced FTE.</li>
+<li>The cognizant FTE should have a robust knowledge of the aircraft/systems under test, the types of testing to be performed, and the manner in which the FTEs will conduct the test and make decisions.</li>
+<li>The cognizant FTE should ensure that displays are designed in order to allow data quality and basic pass/fail criteria to be easily assessed during test conduct.</li>
+<li>In no circumstance should the creation of data displays be blindly delegated to the least experienced person on the team, without direct guidance and oversight from a more senior FTE.</li>
+</ol>
+</section>
+</section>
+<section id="visual-elements" class="level3" data-number="21.1.2">
+<h3 data-number="21.1.2" class="anchored" data-anchor-id="visual-elements"><span class="header-section-number">21.1.2</span> Visual Elements</h3>
+<p>Visual elements are the interface layer at which the FTE integrates operationally with the aircraft. This is perhaps the area that has the largest immediate impact on any FTE’s ability to act efficiently and safely during a test. Consequently, careful thought should be given to visual element design when building displays.</p>
+<section id="human-factors2347" class="level4" data-number="21.1.2.1">
+<h4 data-number="21.1.2.1" class="anchored" data-anchor-id="human-factors2347"><span class="header-section-number">21.1.2.1</span> Human Factors<sup>2,3,4,7</sup></h4>
+<ol type="1">
+<li>Design displays to deliver data in a manner that accommodates the basic human factors strengths/weaknesses of the users.</li>
+<li>Follow the basic human factors design philosophies of cockpit displays, adding information as required to enable the FTE to perform their function.</li>
+<li>Avoid cluttered displays by utilizing negative (empty space) to allow spatial differentiation of data.</li>
+<li>Data displays should not have more than ~60% of the overall display space occupied with visual elements (1.e., at least 40% empty space).</li>
+<li>The display should utilize color, contrast, and a thoughtful layout to maximize legibility and reduce clutter.</li>
+</ol>
+</section>
+<section id="sec-contrast" class="level4" data-number="21.1.2.2">
+<h4 data-number="21.1.2.2" class="anchored" data-anchor-id="sec-contrast"><span class="header-section-number">21.1.2.2</span> Contrast</h4>
+<ol type="1">
+<li>Contrast is the primary visual cue for users to efficiently locate information on a display<sup>7</sup>. Use contrast appropriately.</li>
+<li>Contrast is used primarily to manage the user’s attention, and increase legibility of elements on a display<sup>7</sup>.</li>
+<li>Contrast can also be a useful tool to provide non-distracting contextual cues to data (1.e., background lines, grouping boxes, etc).</li>
+<li>In general, the most critical and useful elements on a display should have the highest contrast against the background (color usage as status information is addressed separately, below).</li>
+<li>Less important or less useful elements should have less contrast, allowing them to be easily ignored when the FTE’s brain is highly saturated with critical tasks. See <a href="#fig-heirarchy">Figure&nbsp;<span>21.1</span></a> below.</li>
+</ol>
+<div id="fig-heirarchy" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/21/image1.png" style="width:4.37014in;height:2.79097in" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 21.1: Example of a perceptual hierarchy<sup>7</sup> using contrast, with IADS<sup>©</sup> compatible hex codes listed. Note that in this example, stark white is avoided, to reduce the potential for retinal image “ghosting”.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sec-color" class="level4" data-number="21.1.2.3">
+<h4 data-number="21.1.2.3" class="anchored" data-anchor-id="sec-color"><span class="header-section-number">21.1.2.3</span> Color</h4>
+<ol type="1">
+<li>Color is a secondary visual cue which allows users to more efficiently sort and interpret information on a display<sup>6</sup>.</li>
+<li>Color should not be the only discriminator used, especially for critical data.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>See <a href="#sec-cvd"><span>Section&nbsp;21.2</span></a>, or MIL-STD-1472<sup>3</sup> for specific guidance on color usage for color vision deficient users.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Color can provide information that can quickly give the FTE insight as to the purpose of the data, as well as its health, status, proximity to a limit, etc.</li>
+<li>Each screen element should have a meaningful color that represents the type of information it is displaying. The following is suggested<sup>8</sup>:</li>
+</ol>
+<div id="tbl-informationcolors" class="anchored">
+<table class="table">
+<caption>Table 21.1: Suggested Colors for Information Types</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th style="text-align: center;">IADS</th>
+<th style="text-align: center;">Hex</th>
+<th style="text-align: center;">RGB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Display Background</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FFFFFF; 
+                      color: #000000;">0x000000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FFFFFF; 
+                      color: #000000;">#000000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FFFFFF; 
+                      color: #000000;">000, 000, 000</span></strong></td>
+</tr>
+<tr class="even">
+<td>Data Label/Text</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #34B6F7;">0xF7B634</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #34B6F7;">#34B6F7</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #34B6F7;">052, 182, 247</span></strong></td>
+</tr>
+<tr class="odd">
+<td>Data w/no Limits</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #E0E0E0;">0xE0E0E0</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #E0E0E0;">#E0E0E0</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #E0E0E0;">224, 224, 224</span></strong></td>
+</tr>
+<tr class="even">
+<td>Data with Limits:<sup>†</sup></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Nominal</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #00C000;">0x00C000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #00C000;">#00C000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #00C000;">000, 192, 000</span></strong></td>
+</tr>
+<tr class="even">
+<td>Caution</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFF000;">0x00F0FF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFF000;">#FFF000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFF000;">255, 240, 000</span></strong></td>
+</tr>
+<tr class="odd">
+<td>Warning</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF0000;">0x0000FF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF0000;">#FF0000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF0000;">255, 000, 000</span></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>† <em>Limits should not be assigned arbitrarily. If no engineering guidance and/or substantiation exists for assigning a meaningful limit, the data should be displayed as Data w/no Limit.</em></p>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Each representative color should be specifically defined for easy reproduction and consistency.</li>
+<li>In general, avoid superfluous or excessive use of color on a display.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Random and/or excessive use of a color reduces the perception of the color as a “novelty”, which dilutes its utility as a visual cue. This is especially important for colors that are used for alerting in emergency situations (i.e., red).</p>
+</div>
+</div>
+</div>
+<ol start="7" type="1">
+<li>A typical display should not contain more than 4 or 5 distinct colors<sup>1</sup>.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>“Distinct colors” are those colors which are used for the purpose of information discrimination, aside from the base background and data colors (i.e., black and white).</p>
+</div>
+</div>
+</div>
+<ol start="8" type="1">
+<li>Caution and Warning – An automated alerting/messaging system can greatly aid the FTE in passive monitoring tasks during testing. Depending on software capabilities, the user may implement a variable color status on either the message text itself, or the message background. The following colors are suggested for the associated status levels:</li>
+</ol>
+<div id="tbl-alerting" class="anchored">
+<table class="table">
+<caption>Table 21.2: Suggested Colors for Alerting Status</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th style="text-align: center;">IADS</th>
+<th style="text-align: center;">Hex</th>
+<th style="text-align: center;">RGB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Advisory<sup>††</sup></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #00FFFF;">0xFFFF00</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #00FFFF;">#00FFFF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #00FFFF;">000, 255, 255</span></strong></td>
+</tr>
+<tr class="even">
+<td>Caution</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFF000;">0x00F0FF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFF000;">#FFF000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFF000;">255, 240, 000</span></strong></td>
+</tr>
+<tr class="odd">
+<td>Warning</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF0000;">0x0000FF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF0000;">#FF0000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF0000;">255, 000, 000</span></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>†† <em>See <a href="#sec-alerting"><span>Section&nbsp;21.1.2.7</span></a> for suggested definitions for Advisory/Caution/Warning</em></p>
+</div>
+</div>
+</div>
+<ol start="9" type="1">
+<li>Color fidelity, contrast, and luminance will all be impacted by the type of monitor hardware used (LED vs LCD), hardware settings, ambient lighting conditions, screen reflectivity, etc. Make sure to evaluate the suitability of the color schemes and general display design on ALL monitors which will be used during real-time flight tests. Make changes as required to accommodate insufficiencies.</li>
+<li>If software limitations only allow the use of a single font color against a variable color background, the following is suggested as a compromise to attempt to optimize text legibility against all the various status background colors:</li>
+</ol>
+<div id="tbl-singlecolor" class="anchored">
+<table class="table">
+<caption>Table 21.3: Suggested “Single Color” Text Color for A Variety of Background Colors</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th style="text-align: center;">IADS</th>
+<th style="text-align: center;">Hex</th>
+<th style="text-align: center;">RGB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Message Text</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #808080;">0x808080</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #808080;">#808080</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #808080;">128, 128, 128</span></strong></td>
+</tr>
+<tr class="even">
+<td>Advisory</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #00FFFF; 
+                      color: #808080;">0xFFFF00</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #00FFFF; 
+                      color: #808080;">#00FFFF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #00FFFF; 
+                      color: #808080;">000, 255, 255</span></strong></td>
+</tr>
+<tr class="odd">
+<td>Caution</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FFF000; 
+                      color: #808080;">0x00F0FF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FFF000; 
+                      color: #808080;">#FFF000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FFF000; 
+                      color: #808080;">255, 240, 000</span></strong></td>
+</tr>
+<tr class="even">
+<td>Warning</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FF0000; 
+                      color: #808080;">0x0000FF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FF0000; 
+                      color: #808080;">#FF0000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #FF0000; 
+                      color: #808080;">255, 000, 000</span></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="text" class="level4" data-number="21.1.2.4">
+<h4 data-number="21.1.2.4" class="anchored" data-anchor-id="text"><span class="header-section-number">21.1.2.4</span> Text</h4>
+<ol type="1">
+<li>Where it is selectable by the user, font should be a sans-serif font. Trebuchet MS regular (not bold), is a suitable choice if available.</li>
+<li>Standard font size should generally be 12pt, with a minimum of 10pt (may vary depending on size and resolution of monitor).</li>
+<li>Modifications such as bold, underline, etc., should generally be avoided. May be used sparingly when necessary to support legibility, convey separation of purpose (group of data versus individual labels), etc.</li>
+<li>Acronyms, abbreviations, button labels, annunciators, etc. should always be set in ALL CAPS.</li>
+<li>Regular type case should be used for dialog, “lengthy” text, descriptive text, etc.</li>
+</ol>
+</section>
+<section id="graphics" class="level4" data-number="21.1.2.5">
+<h4 data-number="21.1.2.5" class="anchored" data-anchor-id="graphics"><span class="header-section-number">21.1.2.5</span> Graphics</h4>
+<p>It may be helpful to display some data graphically in order to give the user at-a-glance spatial reference for the current value of the parameter, along with trend information.</p>
+<ol type="1">
+<li>Consider graphics (analog indicators - gauges, tapes, needles, etc) for use in identifying trends and relative status within a range.</li>
+<li>Consider numerical values for use in hard data, targeting a specific value, etc.</li>
+<li>Graphics should always include a numerical value that is adjacent to the tape, preferably in a box and located at the origin, as practical<sup>2</sup>.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Thoughtful combination of numerals and graphics can make for a very scan-friendly layout, which can be “flown to”, and used for both low resolution and high resolution monitoring simultaneously.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>The variety of different styles of graphics used on a display should be kept to a minimum, with each different application of a specific style (bar, slider, dial, etc) kept consistent for its purpose, and presenting the information in a manner that is visually compelling in the most appropriate sense for the data that is being presented.</li>
+<li>Numerical values and their respective boxes should generally be stationary.</li>
+<li>For graphics that display basic quantities or relatively steady values, bar graphs/tapes should be the default as reasonable and appropriate. See <a href="#fig-bargraphs">Figure&nbsp;<span>21.2</span></a> below.</li>
+</ol>
+<div id="fig-bargraphs" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/21/bar-graphs.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 21.2: Example of bar graphs used to represent hydraulic system temperatures and quantities</figcaption><p></p>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>For graphical displays of physical positions of components (i.e., flight control surfaces), sliders with pointers may be preferred.</li>
+<li>In some cases, such as N1 and EGT, dials may be preferred, especially if this reflects similar implementation to the cockpit displays.</li>
+<li>Time history charts (strip charts) can be very useful for monitoring behavior over time, spotting trends or oscillations, and monitoring proximity to limits.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>One very useful benefit of a time history chart is the ready ability for the FTE to visually identify an increasing trend toward a safety limit, thus allowing for proactive abort calls.</p>
+</div>
+</div>
+</div>
+<ol start="10" type="1">
+<li>Time history charts (strip charts) may also provide the ability for real time basic analysis functions (slope calculations, fast fourier transforms, etc). The availability of these features will be software dependent.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Excessive use of strip charts on a display may impact computer processing performance.</p>
+</div>
+</div>
+</div>
+<ol start="11" type="1">
+<li>Minimize the use of tickmarks and gridlines to avoid overpowering the data (also reference <a href="#sec-color"><span>Section&nbsp;21.1.2.3</span></a> Color and <a href="#sec-contrast"><span>Section&nbsp;21.1.2.2</span></a> Contrast).</li>
+<li>Create graphics that are only as complex as necessary, and are as simple as practical.</li>
+<li>For any graphics that change to show a component status or state (1.e., open/closed), ensure that the transition or invalid signal state is also clearly conveyed.</li>
+<li>Consider the use of a “synoptic” style display for intuitive display of a system, versus a graphical reproduction of the actual physical layout. (Placement of components relative to system operation, versus actual installation – Ref <a href="#fig-synoptic">Figure&nbsp;<span>21.3</span></a>).</li>
+</ol>
+<div id="fig-synoptic" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/21/image3.png" style="width:4.74167in;height:3.45595in" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 21.3: Example flight control synoptic using a combination of basic IADS<sup>©</sup> graphical tools. Note that the control surface graphics are laid out in a manner relative to their placement on the aircraft (a typical business jet configuration as seen from roughly above/behind) without attempting to graphically reproduce the actual aircraft in its entirety.</figcaption><p></p>
+</figure>
+</div>
+<ol start="15" type="1">
+<li>Take care to create graphics which do not falsely lead the user to assume things about the system state which are not true, or are not actually being measured. For graphics where verification of a response to a command is critical, consider showing the command value with a hollow or shadowed indicator, and the actual value with a solid or filled indicator. See <a href="#fig-hollowfill">Figure&nbsp;<span>21.4</span></a> below.</li>
+</ol>
+<div id="fig-hollowfill" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/21/hollow-pointers.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 21.4: Example of hollow pointers used to show N1 command, with filled pointers to show actual N1.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="sense-and-direction" class="level4" data-number="21.1.2.6">
+<h4 data-number="21.1.2.6" class="anchored" data-anchor-id="sense-and-direction"><span class="header-section-number">21.1.2.6</span> Sense and Direction</h4>
+<p>When utilizing graphics, care should be taken to ensure that the indications on the display are intuitive and non-distracting.</p>
+<ol type="1">
+<li>Tapes or bar graphs utilized on the periphery of an attitude indicator should be evaluated to ensure there is no situation where the movement of the tapes could induce a false perception of attitude changes.</li>
+<li>Moving graphics should be carefully constructed to convey a correct intuitive sense of movement that correlates with the reality it is representing.</li>
+<li>Increasing values should typically move: clockwise (dial), up (tape/bar graph), or right (slider/gauge)<sup>2</sup>.</li>
+<li>When using moveable graphics, consider which elements remain fixed, and which will move. Consider the impact on the users’ ability to scan the display, and quickly read and understand the data.</li>
+<li>In general, look for any susceptibility to misinterpretation or confusion due to the presentation method.</li>
+</ol>
+</section>
+<section id="sec-alerting" class="level4" data-number="21.1.2.7">
+<h4 data-number="21.1.2.7" class="anchored" data-anchor-id="sec-alerting"><span class="header-section-number">21.1.2.7</span> Alerting Features</h4>
+<p>Consider the implementation of any available alerting features in order to increase the test team’s ability to perform safely and efficiently. IADS<sup>©</sup>, in particular, has multiple alerting tools which can greatly increase the user’s situational awareness, while allowing their attention to remain focused on more real-time critical functions.</p>
+<ol type="1">
+<li>The following terminology for criticality levels is suggested (<em>See <a href="#tbl-alerting">Table&nbsp;<span>21.2</span></a> for associated color guidelines</em>):
+<ul>
+<li><u>Advisory</u> – Condition which represents a non-critical degradation of functionality, loss of redundancy, etc. No immediate action is required, but some minor actions may be required to continue nominal operations. No damage to aircraft or injury to personnel is expected.</li>
+<li><u>Caution</u> – Condition which represents a potentially critical degradation of functionality, failure of systems, unsustainable modes of operation, etc. Immediate action may not be required, but if no action is taken, damage to aircraft or injury to personnel may be possible. -<u>Warning</u> – Condition which represents a critical degradation of critical functionality, total system failure, etc. Immediate action is required in order to avoid damage to aircraft and/or injury to personnel.</li>
+</ul></li>
+<li>Ensure that alerting functions are robust, reliable, easily recognizable, and allow the user to quickly diagnose any emerging situation.</li>
+<li>Carefully consider what items will be subject to automated alerting, and why.</li>
+<li>Alerting functions should enhance the FTE’s ability to focus on the important elements of a test, without being distracted by more mundane monitoring tasks.</li>
+<li>Safety of a test can also be enhanced, particularly if the limiting criteria for a complex or dynamic test are multi-dimensional or difficult to interpret in real time.</li>
+<li>Ensure that any alerting features are readily understood by any and all users of the system, and that each user can verify the status of the system prior to use.</li>
+<li>Any alerting system should have configuration control and version monitoring which can be verified by the user prior to use.</li>
+<li>Each user should understand the automated alerting logic used in the display.</li>
+<li>Ensure that alerting functions do not produce nuisance or spurious alerts (e.g., persistent flashing, blinking, etc.).</li>
+</ol>
+</section>
+<section id="limits-on-ability-to-absorb-info" class="level4" data-number="21.1.2.8">
+<h4 data-number="21.1.2.8" class="anchored" data-anchor-id="limits-on-ability-to-absorb-info"><span class="header-section-number">21.1.2.8</span> Limits on ability to absorb info</h4>
+<ol type="1">
+<li>Update rates for data displays should generally be no higher than 8-10hz.</li>
+<li>For general numerical data, consider filtering the data down to 2-4hz to minimize flickering or dithering.</li>
+<li>Graphical elements (gauges, tapes, etc.), should be filtered to the lowest usable level to minimize flickering or dithering.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>When filtering data to avoid flickering, ensure that the data can be still be verified as “alive” at a glance, and is not slowed to the point of being misleading or lagging.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>The level of significant digits shown should be the lowest that adequately displays the data for the intended purpose<sup>5</sup>.</li>
+<li>A single FTE should not have more than 4 critical parameters to monitor at a given point in time.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The above statement is in reference to parameters where the FTE must dedicate cognitive function to actively monitoring critical data. This does not include automated monitoring and alerting functions performed by the computer, in cases where an alert will be automatically posted in clear view of the FTE.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="use-of-control-elements" class="level4" data-number="21.1.2.9">
+<h4 data-number="21.1.2.9" class="anchored" data-anchor-id="use-of-control-elements"><span class="header-section-number">21.1.2.9</span> Use of control elements</h4>
+<p>As the computing packages grow in complexity, they introduce the ability to create control elements on the displays. This gives the users the ability to interact with the displays to give numerical inputs to the system, make various selections on the screen, enable functions, etc.</p>
+<ol type="1">
+<li>Care should be taken when implementing control functions to ensure that the type of control is appropriate for the use.</li>
+<li>Users should be able to assess the position/status of any control element by simple visual inspection.</li>
+<li>Consider any nuances that can affect interactions with the controls (e.g., system lag when selecting a virtual button, switch, etc.).</li>
+<li>When placing control elements on a display, carefully consider if the implementation is appropriate for how the user expects to interact with the computer, given the available equipment and operating environment.</li>
+<li>The user must be capable of effectively managing any inputs to the displays under any expected flight conditions, if used on board the aircraft.</li>
+<li>For control room only displays, ensure that the users are not given so many inputs or required interactions as to be easily saturated or distracted.</li>
+<li>Utilize visual cues to give the user feedback as to the pressed status of a button (eg; text on the button changes content or color while “pressed”).</li>
+<li>Standardize the appearance of control elements across various displays. Square buttons are easily recognizable as buttons. They also allow for efficient placement and organization on a display.</li>
+<li>Button/annunciator labels should either be verbs (commanded action), or status (commanded or present status).</li>
+<li>Standardize the philosophy used for button/annunciator labels (e.g., normally dark, constant status indication, etc.). If the aircraft platform or the experimental equipment under test has a standard philosophy established, attempt to follow it.</li>
+<li>For controls that are turning a function “on” or “off”, toggle switches of some manner are preferable to buttons, as the spatial element of the switch position is more compelling than the status cues of a button.</li>
+<li>Standardize the philosophy used for switch positions (e.g., up for ON, down for OFF, normal position at 12 o’clock, etc.). If the aircraft platform or the experimental equipment under test has a standard philosophy established, attempt to follow it.</li>
+<li>For controls that have more than two selections available (where only one item is selectable at a time) consider a virtual dial, radio buttons, or a drop-down menu in order to give the user visibility on both the current selection, and all available selections.</li>
+<li>Drop-down menus and lists should be sorted alphanumerically.</li>
+<li>For user-input fields, the tab key should shift the focus from left to right and then top to bottom. Using shift-tab should move the focus in the reverse order.</li>
+</ol>
+</section>
+</section>
+<section id="parameter-selection" class="level3" data-number="21.1.3">
+<h3 data-number="21.1.3" class="anchored" data-anchor-id="parameter-selection"><span class="header-section-number">21.1.3</span> Parameter Selection</h3>
+<p>Many parameters are repeated across an aircraft platform for the purposes of redundancy or multiple sample points, especially in the case of fly-by-wire or highly integrated aircraft, with information being reproduced multiple times across redundant buses and passing data between consumers. Unless specific system operation or data view needs preclude it, the following basic standards should be considered when choosing which parameters to utilize in data displays:</p>
+<section id="selection-for-technical-purposes" class="level4" data-number="21.1.3.1">
+<h4 data-number="21.1.3.1" class="anchored" data-anchor-id="selection-for-technical-purposes"><span class="header-section-number">21.1.3.1</span> Selection for Technical Purposes</h4>
+<ol type="1">
+<li>Select the most representative parameter that gives the most appropriate and trustworthy information available, given the nature of the data monitoring requirement (basic situational awareness vs system integrity monitoring, etc.).</li>
+<li>Multi-Channel – When line replaceable units (LRUs) utilize multiple redundant channels, and only one value is required to be displayed to represent the data, select the parameter from the primary channel, or the channel with the highest integrity.</li>
+<li>If multiple channels from a given LRU are simply redundant and no hierarchy or difference in integrity exists, select parameter from the first (1, or A) channel.</li>
+<li>Source Proximity – Selection of a parameter for display should be as close to its source as practical, relative to the data stream, and not from downstream consumers of the data.</li>
+<li>Multiple Sample Points – In cases where there are multiple independent and redundant sample points available where only one value is required to represent the overall data, as in multiple slat/flap sensors across the physical surface, select the inboard sensor in cases where there exist only two sensors, and select the mid-most sensor in cases where more than two are installed on the surface.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Be aware of any requirements to monitor disagreements between the multiple sensors in such cases, and be aware of the increasing complexity of logic in order to implement comparators across sensors, etc.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="selection-for-safetycritical-monitoring-purposes" class="level4" data-number="21.1.3.2">
+<h4 data-number="21.1.3.2" class="anchored" data-anchor-id="selection-for-safetycritical-monitoring-purposes"><span class="header-section-number">21.1.3.2</span> Selection for Safety/Critical Monitoring Purposes</h4>
+<ol type="1">
+<li>For any monitoring which may have a safety implication, the specific parameters selected for display must be deemed robust and reliable. Consideration must also be given to the accuracy and “honesty” of the data source. Consider any filtering, interpolation, calculations, etc., that are involved in the data source.</li>
+<li>Consider assigning parameters to criticality categories, based on the flight scenarios which they are deemed required to support. For example:
+<ul>
+<li>Safety Critical</li>
+<li>Test Critical</li>
+<li>Required for Analysis</li>
+</ul></li>
+<li>Any parameters which are required for safety monitoring should be clearly labeled as such.</li>
+<li>Ensure a process or mechanism is in place to ensure the health and availability of any parameters which are utilized in safety/critical monitoring functions.</li>
+</ol>
+</section>
+</section>
+<section id="configuration-management" class="level3" data-number="21.1.4">
+<h3 data-number="21.1.4" class="anchored" data-anchor-id="configuration-management"><span class="header-section-number">21.1.4</span> Configuration Management</h3>
+<section id="sec-versioning" class="level4" data-number="21.1.4.1">
+<h4 data-number="21.1.4.1" class="anchored" data-anchor-id="sec-versioning"><span class="header-section-number">21.1.4.1</span> Versioning:</h4>
+<ol type="1">
+<li>Displays should have some mechanism to allow for version tracking.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Version tracking and configuration control methods may be highly influenced by an individual flight test organization’s IT and data management methods. Seek out cooperation from these groups to ensure successful processes are created.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Each user should have immediate access to verify current version of the display(s) at the start of each test session.</li>
+<li>Consider incorporating display/configuration revision information into the test card for each day.</li>
+<li>Especially for safety or test critical displays, a version history of each display should be easily accessible.</li>
+</ol>
+</section>
+<section id="validation-checkout-process" class="level4" data-number="21.1.4.2">
+<h4 data-number="21.1.4.2" class="anchored" data-anchor-id="validation-checkout-process"><span class="header-section-number">21.1.4.2</span> Validation / checkout process</h4>
+<ol type="1">
+<li>Ensure multiple FTEs provide input and feedback during the display design, build, and validation process.</li>
+<li>Once built, each display should be validated using previously existing data, if available.</li>
+<li>Displays which are used for safety or test critical monitoring should be validated thoroughly prior to use.</li>
+<li>Consider off-nominal usage cases, and/or display behavior when aircraft is far off the conditions for which the display is intended.</li>
+<li>Test results of critical displays should be documented for later reference.</li>
+</ol>
+</section>
+</section>
+<section id="documentation-and-training" class="level3" data-number="21.1.5">
+<h3 data-number="21.1.5" class="anchored" data-anchor-id="documentation-and-training"><span class="header-section-number">21.1.5</span> Documentation and Training</h3>
+<section id="documentation" class="level4" data-number="21.1.5.1">
+<h4 data-number="21.1.5.1" class="anchored" data-anchor-id="documentation"><span class="header-section-number">21.1.5.1</span> Documentation</h4>
+<ol type="1">
+<li>Each flight test organization should implement its own set of display standards, based on the above, but containing more specifics where required.</li>
+<li>Each flight test organization should implement its own set of documents and reference material to outline processes for handling safety critical parameter creation, display creation, display validation, etc.</li>
+</ol>
+</section>
+<section id="training" class="level4" data-number="21.1.5.2">
+<h4 data-number="21.1.5.2" class="anchored" data-anchor-id="training"><span class="header-section-number">21.1.5.2</span> Training</h4>
+<ol type="1">
+<li>Displays which contain “complicated” calculations or particular interface actions should have some form of user’s guide to describe the functionality and data sources.</li>
+<li>Each user should be well versed on the data displays prior to their use during actual testing.</li>
+<li>When possible, displays should be exercised during simulations prior to use in actual testing.</li>
+<li>Each flight test organization should ensure that any FTE building data displays is provided adequate training on the appropriate software/hardware.</li>
+</ol>
+</section>
+</section>
+<section id="further-readingreferences" class="level3" data-number="21.1.6">
+<h3 data-number="21.1.6" class="anchored" data-anchor-id="further-readingreferences"><span class="header-section-number">21.1.6</span> Further Reading/References</h3>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>1.</td>
+<td>Neil, Douglas E; Application of Color Coding in Tactical Display S-3A, NPS-55-80-113, Naval Postgraduate School, 1980</td>
+</tr>
+<tr class="even">
+<td>2.</td>
+<td>M. Yeh, J. Young, C. Donovan, S. Gabree; Human Factors Considerations in the Design and Evaluation of Flight Deck Displays and Controls, DOT-VNTSC-FAA-13-09, Volpe National Transportation Systems Ctr/Federal Aviation Administration, 2013</td>
+</tr>
+<tr class="odd">
+<td>3.</td>
+<td>Dept of Defense Design Criteria Standard – Human Engineering, MIL-STD-1472G, Dept of Defense, 2012</td>
+</tr>
+<tr class="even">
+<td>4.</td>
+<td>Dept of Defense Joint Service Specification Guide – Air Vehicle, JSSG-2001A, Dept of Defense, 2002</td>
+</tr>
+<tr class="odd">
+<td>5.</td>
+<td>T. Holden, J. Adolf, Human Research Facility (HRF) Human-Computer Interface (HCI) Design Guide, LS-71130, NASA JSC, 1997</td>
+</tr>
+<tr class="even">
+<td>6.</td>
+<td>Bemis, Winer, Leeds, The Efficacy of Color-Coded Symbols to Enhance Air-Traffic Control Displays, TR-1244, Naval Ocean Systems Center, 1988</td>
+</tr>
+<tr class="odd">
+<td>7.</td>
+<td>“Using Color in Information Display Graphics”, Color Usage Lab, NASA Ames Research Center, <a href="https://colorusage.arc.nasa.gov" class="uri">https://colorusage.arc.nasa.gov</a></td>
+</tr>
+<tr class="even">
+<td>8.</td>
+<td>M. Updegrove, J. Maxwell, The Evolution of Real-Time Data Monitoring Requirements, Society of Flight Test Engineers, 2017</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples" class="level3" data-number="21.1.7">
+<h3 data-number="21.1.7" class="anchored" data-anchor-id="examples"><span class="header-section-number">21.1.7</span> Examples</h3>
+<table class="table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><u>Example 1</u>: Basic FTE Situational Awareness display.</p>
+<p>Display includes basic flight information, engine stack, flight control synoptic, fuel and water ballast quantities. The majority of the data on this display is for FTE awareness only, and is available to the pilots as a primary source in the cockpit. As such, most of the data is displayed as unlimited (Data w/no Limits), and is “white” per the color standards of Section 2.</p></td>
+<td><img src="media/21/basic-fte-sa.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><u>Example 2</u>: FTE Pre-Flight setup screen.</p>
+<p>This is an example of a display created to make the FTE’s job of entering pre-flight aircraft weight/balance constants more efficient. Additionally, many other user configurable items can be set from this central location. Note the use of buttons and toggle switches.</p></td>
+<td><img src="media/21/basic-fte-sa.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><u>Example 3</u>: FTE Safety Monitoring display.</p>
+<p>This display is intended for more passive monitoring, including automated alerting of safety critical parameters (windows in top half of display).</p>
+<p>Automated functions will alert the FTE if certain parameters exceed their given limits, and further information regarding the issue is available in tabs on the lower portion of the display. During normal operations, the Wt/CG envelope is available for display in the tabbed area.</p>
+<p>Note the banners on the top and bottom of the display, denoting it as “SOF CONTROLLED”.</p></td>
+<td><img src="media/21/fte-safety-monitoring.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<p><u>Example 4</u>: Displays from examples 1-3 combined into a modular display package, where each screen is interchangeable, and located on the monitor in a 1/3 slot according to its overall intended function.</p>
+<p><img src="media/21/image8.png" style="width:6.47083in;height:3.64792in"></p>
+<p><u>Example 5</u>: Automated alerting window (bottom) with associated verification information from the day’s test card (top). Any automated alerting scheme should be verifiable by the user at the beginning of each test operation (see <a href="#sec-alerting"><span>Section&nbsp;21.1.2.7</span></a> and <a href="#sec-versioning"><span>Section&nbsp;21.1.4.1</span></a>).</p>
+<p><img src="media/21/icaw.png" class="img-fluid"></p>
+<p><u>Example 6</u>: Cockpit Flight Test display. Note the relative lack of status colors. The majority of the information here is provided to the pilot for quick reference, verification of maneuvering limits, and flight data which is not standard in production cockpit displays. Tapes are provided for Nz and dV/dT, and a dial is provided for Angle of Attack (the AOA). For the program in question, AOA was generally the critical parameter to monitor, thus having the most prominence in the center of the display, providing excellent visual trend data.</p>
+<p>Also note that the numerical read-outs for the basic flight data are arranged in a relatively straight line across the display, above the tapes and gauges, in order to allow for an efficient scan of the values if desired.</p>
+<p><img src="media/21/image13.png" style="width:4.00486in;height:5.34236in"></p>
+</section>
+</section>
+<section id="sec-cvd" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="sec-cvd"><span class="header-section-number">21.2</span> Design Considerations for Color Vision Deficient Users</h2>
+<p>While pilots have requirements for normal color vision, no such requirement exists for the engineering personnel which typically make up the FTE population. As such, some flight test organizations may have FTEs that have some level of color vision deficiency (CVD). Per 14 CFR Part 67.303, the color vision requirement for airmen is “the ability to perceive those colors necessary for the safe performance of airman duties”. While FTEs do not technically fall under this definition, many FTEs perform “airman duties”, where their data monitoring tasks are critical to the safe execution of a particular test in flight, or to the safe operation of the test aircraft itself. This is true whether the FTE is on board the aircraft or in a ground-based station.</p>
+<p>Since engineers have control over the construct of their own data displays, total reliance on color as a safety discriminator is easily avoided, thus allowing the safe execution of airman duties, without normal color vision. It is important to understand the design considerations which may impact the interpretation of visual information when CVD is a factor. This section highlights some design considerations, along with other organizational considerations which are available to mitigate inadvertent safety impacts due to misinterpretation of color coded safety-critical data.</p>
+<p>The most common CVD condition makes it difficult to discern red and green<sup>1</sup>. This is particularly problematic for aerospace applications, since these colors are almost universally used for representing opposing statuses: green=good, red=bad. This is perhaps the most important area where CVD accommodations should be considered.</p>
+<p>From the Display Guidelines, <a href="#sec-color"><span>Section&nbsp;21.1.2.3</span></a>:</p>
+<ol type="1">
+<li>Color is a secondary visual cue…</li>
+<li>Color should not be the only discriminator used, <u>especially for critical data</u>.</li>
+</ol>
+<p>An especially problematic situation for CVD FTEs is when the standard green/yellow/red color scheme is used to color text or numerals against a black background. This should be avoided.</p>
+<p>Per the guidelines above, this colored data would always be accompanied by some other discriminator. However, the benefit of this secondary cue may be effectively nullified for the CVD FTE if not implemented correctly.</p>
+<p>See below for an example of how this coloring might appear to a red-green CVD user<sup>2</sup>:</p>
+<table class="table">
+<caption>Appearance of Colors for Red-Green Colorblindness</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Normal</th>
+<th style="text-align: center;">CVD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #00C000;">NOMINAL</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #908221;">NOMINAL</span></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFF000;">CAUTION</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFF7D1;">CAUTION</span></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF0000;">WARNING</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #908221;">WARNING</span></strong></td>
+</tr>
+</tbody>
+</table>
+<p>This method of presentation is clearly not acceptable for the CVD user, as the NOMINAL and WARNING statuses are not discernable relative to each other, and CAUTION would not be easily discernable from standard “unlimited” data (i.e.; white).</p>
+<p>Consider other methods to provide status discrimination. Whatever other methods are used, ensure they do not compromise other standards used in the display(s) to the most practical extent, and do not provide distracting indications. The following pages provide several options.</p>
+<section id="design-considerations" class="level3" data-number="21.2.1">
+<h3 data-number="21.2.1" class="anchored" data-anchor-id="design-considerations"><span class="header-section-number">21.2.1</span> Design Considerations:</h3>
+<ol type="1">
+<li>Utilize other/additional coloring methods to distinguish parameter status, such as background fill, a colored surrounding box, etc.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>If using background fill, ensure fill is not distracting, and that contrast of the text/numerals remains sufficient against the fill in all cases.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Provide some manner of icon adjoining the text to indicate status.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This option should be utilized only for data which is being actively monitored during a test, and/or in conjunction with an automated alerting scheme.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Do not color the text/digits at all:
+<ol type="a">
+<li>Color the data as “unlimited” (See Guidelines, Section 2.c.iv), and handle status annunciation separately.</li>
+<li>Leverage automated alerting for limit exceedances. Alert the user to the exceedance with the associated status word (e.g., “WARNING” – with appropriate color as well), and indicate by other means which parameter has tripped the limit. This could be descriptive text, a shorthand parameter name with the annunciation, an icon adjacent to the numerical data, etc.</li>
+</ol></li>
+<li>Provide visual indication of proximity to the limit:
+<ol type="a">
+<li>Limit line(s) on strip chart or tape.</li>
+<li>Needle(s) or shape(s) on dial.</li>
+<li>Also, provide an additional visual cue when past the limit (see sub-bullets above).</li>
+</ol></li>
+<li>Consider different methods of communicating “nominal”:</li>
+<li>Excessive use of color to denote nominal dilutes the meaning and in the extreme can “clutter” a display.
+<ol type="a">
+<li>Consider the “normally dark” philosophy. Only give status alerts when parameters are off-nominal (see sub-bullets above).</li>
+</ol></li>
+<li>If none of the above options are sufficient or practical, consider shifting the color definitions slightly per MIL-STD-1472, in order to aid in the differentiation between red and green<sup>3</sup>:</li>
+</ol>
+<div id="tbl-redgreen" class="anchored">
+<table class="table">
+<caption>Table 21.4: Basic Colors Modified for Red-Green Differentiation</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 27%">
+<col style="width: 25%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Color</th>
+<th style="text-align: center;">IADS</th>
+<th style="text-align: center;">Hex</th>
+<th style="text-align: center;">RGB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Blue</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #1040FF;">0xFF4010</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #1040FF;">#FF0000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #1040FF;">016, 064, 255</span></strong></td>
+</tr>
+<tr class="even">
+<td>Green</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #11C082;">0x82C011</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #11C082;">#FF0000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #11C082;">017, 192, 130</span></strong></td>
+</tr>
+<tr class="odd">
+<td>Yellow</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFFF00;">0x00FFFF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFFF00;">#FF0000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FFFF00;">255, 255, 000</span></strong></td>
+</tr>
+<tr class="even">
+<td>Red</td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF411E;">0x1E41FF</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF411E;">#FF0000</span></strong></td>
+<td style="text-align: center;"><strong><span style="padding-top: 10px; 
+                      padding-right: 10px; 
+                      padding-left: 10px; 
+                      padding-bottom: 10px; 
+                      background-color: #000000; 
+                      color: #FF411E;">255, 065, 030</span></strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="organizational-considerations" class="level3" data-number="21.2.2">
+<h3 data-number="21.2.2" class="anchored" data-anchor-id="organizational-considerations"><span class="header-section-number">21.2.2</span> Organizational Considerations</h3>
+<ol type="1">
+<li>While it is obviously important to respect the rights and privacy of all personnel in any organization, it is important to be aware of any CVD users that are present in an organization, so that data displays are not inadvertently designed in such a manner that would preclude their safe use by the CVD FTE.</li>
+<li>If CVD users are a known part of the organization’s FTE population, proactively design the display to incorporate CVD accommodations, while soliciting input from the affected individual(s) during the design process in order to ensure suitability prior to fielding the display.</li>
+<li>If experimental data displays are being heavily relied upon for safety critical monitoring, and the use of color to ensure safety is presenting obstacles, take the opportunity to reconsider the test team’s approach to carrying out the test. Is the monitoring scheme appropriate? Is the system under test overly immature? Is the THA written appropriately? Consider automation, CRM aspects, and other mitigations to reduce monitoring requirements in an effort to reduce the reliance on critical display monitoring.</li>
+<li>Consider individual FTE qualifications. If, after taking all of the above considerations into account, the ability to normally discriminate color remains an integral part of safely executing certain tests, then those tests may require normal color vision as part of the qualification for FTEs executing the test.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Given the myriad of available options for FTEs to design their own displays in any appropriate manner, this option should be considered in extremis.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="cvd-references" class="level3" data-number="21.2.3">
+<h3 data-number="21.2.3" class="anchored" data-anchor-id="cvd-references"><span class="header-section-number">21.2.3</span> CVD References</h3>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>1.</td>
+<td>“Color Vision Deficiency”, Glossary of Common Eye &amp; Vision Conditions, American Optometric Association, <a href="https://www.aoa.org/patients-and-public/eye-and-vision-problems/glossary-of-eye-and-vision-conditions/color-deficiency" class="uri">https://www.aoa.org/patients-and-public/eye-and-vision-problems/glossary-of-eye-and-vision-conditions/color-deficiency</a></td>
+</tr>
+<tr class="even">
+<td>2.</td>
+<td>C. Ludwig, Display Design for Critical Monitoring, Society of Flight Test Engineers</td>
+</tr>
+<tr class="odd">
+<td>3.</td>
+<td>Dept of Defense Design Criteria Standard – Human Engineering, MIL-STD-1472G, Dept of Defense, 2012</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./20-communications-systems.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Communication Systems Testing</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
