@@ -60,3 +60,5 @@
 5. Add notes callouts and cross-references to `21-displayguidelines.qmd` to better match intent of original Word document
 
 Wrote `rmd2qmd.py` to speed up the process
+
+## Setup new github.io static page with GitHub actions
