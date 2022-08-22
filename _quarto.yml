@@ -33,8 +33,8 @@ book:
     - 20-communications-systems.qmd
     - 21-display-guidelines.qmd
 
-# bibliography: references.json
-# link-citations: true
+bibliography: SFTE.json
+link-citations: true
 
 format:
   html:

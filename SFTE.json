@@ -1,0 +1,422 @@
+[
+	{
+		"id": "http://zotero.org/groups/4757224/items/45RAUJ23",
+		"type": "book",
+		"language": "en",
+		"note": "Google-Books-ID: irhjewAACAAJ",
+		"number-of-pages": "book",
+		"publisher": "Society of Allied Weight Engineers, Incorporated",
+		"source": "Google Books",
+		"title": "SAWE Weight Engineers Handbook",
+		"issued": {
+			"date-parts": [
+				[
+					"1976"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/HGVVXDB7",
+		"type": "book",
+		"abstract": "Engineering Reference Handbook",
+		"edition": "22d",
+		"event-place": "1000 Marie Victorin Blvd. E. P.O.B. 10 Longueuil, Quebec Canada J4K 4X9",
+		"language": "en",
+		"publisher": "United Technologies Pratt & Whitney Canada",
+		"publisher-place": "1000 Marie Victorin Blvd. E. P.O.B. 10 Longueuil, Quebec Canada J4K 4X9",
+		"title": "Aeronautical Vestpocket Handbook",
+		"URL": "https://www.scribd.com/document/279045636/Aeronautical-Vestpocket-Handbook-Pratt-Whitney-22nd-Edition-Sep-1991",
+		"accessed": {
+			"date-parts": [
+				[
+					"2022",
+					8,
+					21
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"1991"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/XJES3XWA",
+		"type": "book",
+		"publisher": "John Wiley & Sons",
+		"title": "Engineering Thermodynamics",
+		"author": [
+			{
+				"family": "Jones",
+				"given": "J.P."
+			},
+			{
+				"family": "Hawkings",
+				"given": "G.A."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1960"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/MAKALU78",
+		"type": "book",
+		"collection-number": "[1098] p.",
+		"collection-title": "Wiley engineering handbook series",
+		"event-place": "New York : London",
+		"number-of-pages": "[1098] p.",
+		"publisher": "Wiley ; Chapmann & Hall",
+		"publisher-place": "New York : London",
+		"title": "Handbook of Engineering Fundamentals",
+		"URL": "//catalog.hathitrust.org/Record/001511835",
+		"author": [
+			{
+				"family": "Eshbach",
+				"given": "Ovid W."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1936"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/JD6S9GBU",
+		"type": "book",
+		"abstract": "Fundamentals of Physics, 12th Edition will guide students through the process of learning how to effectively read scientific material, identify fundamental concepts, reason through scientific questions, and solve quantitative problems. The 12th Edition includes a renewed focus on several contemporary areas of research to help challenge students to recognize how scientific and engineering applications are fundamental to the worlds clockwork. A wide array of tools will support students active learning as they work through and engage in this course. Fundamentals of Physics, 12th Editionis built to be a learning center with practice opportunities, interactive challenges, activities, simulations, and videos. Practice and assessment questions are available with immediate feedback and detailed solutions, to ensure that students understand the problem-solving process behind key concepts and understand your mistakes while working through problems.",
+		"edition": "12",
+		"ISBN": "978-1-119-77347-4",
+		"language": "en",
+		"number-of-pages": "1586",
+		"publisher": "Wiley",
+		"title": "Fundamentals of Physics",
+		"URL": "https://www.wiley.com/en-ie/Fundamentals+of+Physics%2C+Extended%2C+12th+Edition-p-9781119773474",
+		"author": [
+			{
+				"family": "Halliday",
+				"given": "David"
+			},
+			{
+				"family": "Resnick",
+				"given": "Robert"
+			},
+			{
+				"family": "Walker",
+				"given": "Jearl"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2022",
+					8,
+					21
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/C47S3TUX",
+		"type": "book",
+		"event-place": "P.O. Box 658, Mojave, CA, 93501",
+		"publisher": "National Test Pilot School",
+		"publisher-place": "P.O. Box 658, Mojave, CA, 93501",
+		"title": "Aircraft Flying Qualities Testing",
+		"author": [
+			{
+				"family": "Roberts",
+				"given": "S.C."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1997"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/I5S9E287",
+		"type": "webpage",
+		"title": "1976 Standard Atmosphere Calculator",
+		"URL": "https://www.digitaldutch.com/atmoscalc/",
+		"accessed": {
+			"date-parts": [
+				[
+					"2022",
+					8,
+					21
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/KFH2SM3J",
+		"type": "webpage",
+		"title": "Online Conversion - Convert just about anything to anything else",
+		"URL": "https://www.onlineconversion.com/",
+		"accessed": {
+			"date-parts": [
+				[
+					"2022",
+					8,
+					21
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/RZ8LP92C",
+		"type": "book",
+		"abstract": "\"618 fully solved problems. 20 problem-solving videos online\"--Cover",
+		"call-number": "QA531 .A97 2013",
+		"collection-title": "Schaum's outline series",
+		"edition": "5th ed",
+		"event-place": "New York",
+		"ISBN": "978-0-07-179535-7",
+		"note": "OCLC: ocn821610299",
+		"number-of-pages": "201",
+		"publisher": "McGraw-Hill",
+		"publisher-place": "New York",
+		"source": "Library of Congress ISBN",
+		"title": "Trigonometry: with calculator-based solutions",
+		"title-short": "Trigonometry",
+		"author": [
+			{
+				"family": "Moyer",
+				"given": "Robert E."
+			},
+			{
+				"family": "Ayres",
+				"given": "Frank"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2013"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/4CR5TSL4",
+		"type": "book",
+		"call-number": "QA47 .B8 1973",
+		"edition": "5th ed",
+		"event-place": "New York",
+		"ISBN": "978-0-07-009015-6",
+		"number-of-pages": "500",
+		"publisher": "McGraw-Hill",
+		"publisher-place": "New York",
+		"source": "Library of Congress ISBN",
+		"title": "Handbook of mathematical tables and formulas",
+		"author": [
+			{
+				"family": "Burington",
+				"given": "Richard Stevens"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1973"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/3M8MUA5S",
+		"type": "book",
+		"collection-number": "iv, 340 p.",
+		"event-place": "New York",
+		"ISBN": "0-471-41844-7",
+		"number-of-pages": "iv, 340 p.",
+		"publisher": "John Wiley & Sons",
+		"publisher-place": "New York",
+		"title": "The engineers' manual",
+		"URL": "//catalog.hathitrust.org/Record/005092194",
+		"author": [
+			{
+				"family": "Hudson",
+				"given": "Ralph G."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1944"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/WCMMMHMN",
+		"type": "book",
+		"event-place": "P.O. Box 658, Mojave CA, 93501",
+		"publisher": "National Test Pilot School",
+		"publisher-place": "P.O. Box 658, Mojave CA, 93501",
+		"title": "Flying Qualities Testing",
+		"volume": "II",
+		"author": [
+			{
+				"family": "Jones",
+				"given": "G."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1997"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/44BE2IE4",
+		"type": "book",
+		"event-place": "P.O. Box 658, Mojave CA, 93501",
+		"publisher": "National Test Pilot School",
+		"publisher-place": "P.O. Box 658, Mojave CA, 93501",
+		"title": "Crew station Evaluation and Data Analysis",
+		"volume": "IV",
+		"author": [
+			{
+				"family": "Lewis",
+				"given": "G."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1997"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/SIHCFR45",
+		"type": "article-journal",
+		"container-title": "NIST",
+		"language": "en",
+		"note": "Last Modified: 2020-08-28T15:58-04:00",
+		"source": "www.nist.gov",
+		"title": "U.S. Survey Foot",
+		"URL": "https://www.nist.gov/pml/us-surveyfoot",
+		"accessed": {
+			"date-parts": [
+				[
+					"2022",
+					8,
+					21
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2019",
+					7,
+					26
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/LQBKKEVB",
+		"type": "webpage",
+		"title": "SI Brochure - BIPM",
+		"URL": "https://www.bipm.org/en/publications/si-brochure/",
+		"accessed": {
+			"date-parts": [
+				[
+					"2022",
+					8,
+					21
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/C5S64IN8",
+		"type": "book",
+		"call-number": "TJ265 .P68 1993",
+		"collection-title": "Schaum's outline series",
+		"event-place": "New York",
+		"ISBN": "978-0-585-30609-4",
+		"number-of-pages": "355",
+		"publisher": "McGraw-Hill",
+		"publisher-place": "New York",
+		"source": "Library of Congress ISBN",
+		"title": "Schaum's outline of theory and problems of engineering thermodynamics",
+		"author": [
+			{
+				"family": "Potter",
+				"given": "Merle C."
+			},
+			{
+				"family": "Somerton",
+				"given": "Craig W."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1993"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/groups/4757224/items/MH7CMTT6",
+		"type": "book",
+		"call-number": "TJ265 .A19 1989",
+		"collection-title": "Schaum's outline series",
+		"edition": "2d ed",
+		"event-place": "New York",
+		"ISBN": "978-0-07-000042-1",
+		"number-of-pages": "362",
+		"publisher": "McGraw-Hill",
+		"publisher-place": "New York",
+		"source": "Library of Congress ISBN",
+		"title": "Schaum's outline of theory and problems of thermodynamics",
+		"author": [
+			{
+				"family": "Abbott",
+				"given": "Michael M."
+			},
+			{
+				"family": "Van Ness",
+				"given": "H. C."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1989"
+				]
+			]
+		}
+	}
+]

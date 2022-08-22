@@ -2,7 +2,7 @@
 
 ## Unit Conversions^[Common FTE conversions in boldface]
 
-(references 1.1, 1.2)
+[@http://zotero.org/groups/4757224/items/45RAUJ23; @http://zotero.org/groups/4757224/items/HGVVXDB7; @http://zotero.org/groups/4757224/items/KFH2SM3J; @http://zotero.org/groups/4757224/items/I5S9E287]
 
 <!-- For more on tables: <https://github.com/Society-of-Flight-Test-Engineers/handbook-2013/wiki/Bookdown-Tips-and-Tricks#tables> -->
 
@@ -1026,7 +1026,7 @@ Exponent  Prefix  Abbreviation
 
 ## Sign Conventions
 
-(reference 1.8)
+[@http://zotero.org/groups/4757224/items/C47S3TUX]
 
 **Editor's note** There is near unanimous agreement on most sign conventions except for pilot inputs and control surface deflections. Although individual organizations generally are consistent in-house, confusion often arises when trying to mathematically translate inputs & deflections from one organization to another. This section documents the generally accepted "body axes" sign conventions then discusses the rationale for several viewpoints addressing the "inputs & deflections" debate. Below is the SFTE sign convention.
 
@@ -1302,7 +1302,7 @@ Based on the above background, the SFTE technical council proposes the following
 
 ## Thermodynamics Relations
 
-(references 1.3, 1.4, 1.5, 1.6)
+[@http://zotero.org/groups/4757224/items/XJES3XWA; @http://zotero.org/groups/4757224/items/MAKALU78; @http://zotero.org/groups/4757224/items/C5S64IN8; @http://zotero.org/groups/4757224/items/MH7CMTT6]
 
 ### Thermodynamic Definitions
 
@@ -1682,20 +1682,9 @@ while $I_{\mathrm{cg}} < I_z$ yields retrograde precession
 
 ## References
 
-<http://www.onlineconversion.com/>
+::: {#refs}
+:::
 
-| | |
-|-|--------------|
-|1.1 |Anon., "Weight Engineers Handbook", Society of Weight Engineers, P.O.Box 60024 Los Angeles, CA 90060,1976.|
-|1.2 |Anon., "Aeronautical Vestpocket Handbook", United Technologies Pratt & Whitney Canada, 1000 Marie Victorin Blvd. E. P.O.B. 10 Longueuil, Quebec Canada J4K 4X9.|
-|1.3 |Jones, J. P., Hawkins, G.A., "Engineering Thermodynamics" John Wiley & Sons, 1960.|
-|1.4 |Esbach, Ovid W., "Handbook of Engineering Fundamentals", John Wiley and Sons Inc., 1963.|
-|1.5 |Potter, M.C., Somerton, C.W., "Engineering Thermodynamics" Shaum's Outline Series, McGraw-Hill, Inc.,1993.|
-|1.6 |Abbott, M. M., Van Ness, H. C., "Thermodynamics", Shaum's Outline Series, McGraw-Hill, Inc., 1989.|
-|1.7 |Halliday, D., Resnick, R., "Fundamentals of Physics", John Wiley & Sons, New York, 1981.|
-|1.8 |Roberts, S.C., *Chapter 3 Aircraft Control Sytems* , "Aircraft Flying Qualities Testing", National Test Pilot School, 1997. P.O.B. 658, Mojave, CA, 93501.|
-|1.9 |Unit Conversion Website Link <http://www.digitaldutch.com/atmoscalc/>.|
-
-  [01002]:  media/01/image2.png {width="6.5in" height="3.4063156167979in"}
-  [01003]:  media/01/image3.png {width="6.5in" height="4.874305555555556in"}
-  [01004]:  media/01/image24.jpeg {width="6.08125in" height="8.9375in"}
+[01002]:  media/01/image2.png {width="6.5in" height="3.4063156167979in"}
+[01003]:  media/01/image3.png {width="6.5in" height="4.874305555555556in"}
+[01004]:  media/01/image24.jpeg {width="6.08125in" height="8.9375in"}
