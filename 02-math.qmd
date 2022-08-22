@@ -2,7 +2,7 @@
 
 ## Algebra
 
-(reference 2.1)
+[@http://zotero.org/groups/4757224/items/4CR5TSL4]
 
 ### Laws
 
@@ -16,18 +16,18 @@
 
 |Exponents|Logarithms^[If M, N,b are positive]|
 |:-:|:-:|
-\|\begin{equation*}a^x a^y = a^{x+y\}\end{equation*}| \begin{equation*}\log_b{b} = 1\end{equation*}  |
-\|\begin{equation*}\left( ab \right) ^x = a^x b^x \begin{equation*}\|\begin{equation*}\log_b{1} = 0\end{equation*}  |
-\|\begin{equation*}\left( a^x \right) y = a^xy \begin{equation*}\|\begin{equation*}\log_b \left( MN \right) = log_b{M} + log_b{N\}\end{equation*}|
-\|\begin{equation*}a^{mn}  = \left( a^m \right) ^n \begin{equation*}\|\begin{equation*}\log_b \left( \frac{M}{N} \right) = \log_b{M} - \log_b{N\}\end{equation*}|
-\|\begin{equation*}a^0 = 1\end{equation*}  If $a \neq 0$ \|\begin{equation*}\log_b \left( M^p \right)   = p \log_b{M\}\end{equation*}|
-\|\begin{equation*}a^{-x} = \frac{1}{a^x\}\end{equation*}\|\begin{equation*}\log_b \left( \frac{1}{M} \right) = -\log_b{M\}\end{equation*}|
-\|\begin{equation*}\frac{a^x}{a^y} = a^{x-y\}\end{equation*}\|\begin{equation*}\log_b{\sqrt[q]{M}} = \frac{1}{q} \log_b{M\}\end{equation*}|
-\|\begin{equation*}\sqrt[x]{ab} = \left( \sqrt[x]{a} \right) \left( \sqrt[x]{b} \right\)\end{equation*}\|\begin{equation*}\log_b{M} = \left(\log_c{M} \right) \left(\log_b{c} \right)= \frac{\log_c{M}}{\log_c{b}\}\end{equation*}|
-\|\begin{equation*} a^{\frac{x}{y}} = \sqrt[y]{a^x} = \left( \sqrt[y]{a} \right)^x \end{equation*}| |
-\|\begin{equation*} a^{\frac{1}{y}} = \sqrt[y]{a\}\end{equation*}||
-\|\begin{equation*}\left( \sqrt[x]{a} \right) \left( \sqrt[y]{a} \right) = a^{\left( \frac{1}{x} + \frac{1}{y} \right)} = \sqrt[xy]{a^{x+y}\}\end{equation*}||
-\|\begin{equation*}\sqrt{a} + \sqrt{b} = \sqrt{a + b + 2\sqrt{ab}\}\end{equation*}||
+|\begin{equation*}a^x a^y = a^{x+y}\end{equation*}| \begin{equation*}\log_b{b} = 1\end{equation*}  |
+|\begin{equation*}\left( ab \right) ^x = a^x b^x \end{equation*}|\begin{equation*}\log_b{1} = 0\end{equation*}  |
+|\begin{equation*}\left( a^x \right) y = a^xy \end{equation*}|\begin{equation*}\log_b \left( MN \right) = log_b{M} + log_b{N}\end{equation*}|
+|\begin{equation*}a^{mn}  = \left( a^m \right) ^n \end{equation*}|\begin{equation*}\log_b \left( \frac{M}{N} \right) = \log_b{M} - \log_b{N}\end{equation*}|
+|\begin{equation*}a^0 = 1\end{equation*}  If $a \neq 0$ |\begin{equation*}\log_b \left( M^p \right)   = p \log_b{M}\end{equation*}|
+|\begin{equation*}a^{-x} = \frac{1}{a^x}\end{equation*}|\begin{equation*}\log_b \left( \frac{1}{M} \right) = -\log_b{M}\end{equation*}|
+|\begin{equation*}\frac{a^x}{a^y} = a^{x-y}\end{equation*}|\begin{equation*}\log_b{\sqrt[q]{M}} = \frac{1}{q} \log_b{M}\end{equation*}|
+|\begin{equation*}\sqrt[x]{ab} = \left( \sqrt[x]{a} \right) \left( \sqrt[x]{b} \right)\end{equation*}|\begin{equation*}\log_b{M} = \left(\log_c{M} \right) \left(\log_b{c} \right)= \frac{\log_c{M}}{\log_c{b}}\end{equation*}|
+|\begin{equation*} a^{\frac{x}{y}} = \sqrt[y]{a^x} = \left( \sqrt[y]{a} \right)^x \end{equation*}| |
+|\begin{equation*} a^{\frac{1}{y}} = \sqrt[y]{a}\end{equation*}||
+|\begin{equation*}\left( \sqrt[x]{a} \right) \left( \sqrt[y]{a} \right) = a^{\left( \frac{1}{x} + \frac{1}{y} \right)} = \sqrt[xy]{a^{x+y}}\end{equation*}||
+|\begin{equation*}\sqrt{a} + \sqrt{b} = \sqrt{a + b + 2\sqrt{ab}}\end{equation*}||
 
 Examples:
 
@@ -176,7 +176,7 @@ The roots of the quartic are
 
 ### Interest And Annuities
 
-(reference 2.3)
+[@http://zotero.org/groups/4757224/items/MAKALU78]
 
 Amount:
 
@@ -240,7 +240,7 @@ Final value ($FV$) of an investment is a function of the initial principal inves
 
 ## Geometry
 
-(references 2.1, 2.2)
+[@http://zotero.org/groups/4757224/items/4CR5TSL4; @http://zotero.org/groups/4757224/items/RZ8LP92C ]
 
 ### General definitions {-}
 
@@ -361,7 +361,7 @@ V &= 2 \pi ^2 R \rho^2 \\
 
 ## Trigonometery
 
-(references 2.1, 2.2)
+[@http://zotero.org/groups/4757224/items/4CR5TSL4; @http://zotero.org/groups/4757224/items/RZ8LP92C ]
 
 ![Right Triangle][02023]
 
@@ -513,7 +513,7 @@ c &= a\cos{B} + b\cos{A}\\
 
 ### Fundamentals
 
-(reference 2.5)
+[@http://zotero.org/groups/4757224/items/WCMMMHMN]
 
 Given two matrices, $A, B$ where $A$ is an $i \times m$ matrix and $B$ is an $m \times j$ matrix, that is, the numbers of columns of the first matrix equals the number of rows of the second matrix, we define matrix multiplication as follows:
 \begin{equation*}A \times B = A B = C\end{equation*}  where the entry in the *i*th row and *j*th column is given by $c_{ij}$ where:
@@ -566,8 +566,8 @@ c & d
 \end{equation*}
 
 Formally, for any $n \times n$ matrix, the determinant is:
-\begin{equation*}|A| = \sum_{i=1}^{k}a_{ij} C_{ij\}\end{equation*} where
-\begin{equation*}C_{ij} = (-1)^{i+j}M_{ij\}\end{equation*} where
+\begin{equation*}|A| = \sum_{i=1}^{k}a_{ij} C_{ij}\end{equation*} where
+\begin{equation*}C_{ij} = (-1)^{i+j}M_{ij}\end{equation*} where
 the minor matrix $M_{ij}$ is in the $(n-1) \times (n-1)$ matrix resulting when the *i*th row and *j*th column are removed from $A$.  This holds when the sum above is taken over any row, $i$, or column $j$. The *cofactor* is $C_{ij}$ above.
 
 Arbitrarily expanding about the first row of a 3 x 3 matrix gives the determinant:
@@ -720,7 +720,7 @@ x_3 &= \frac{\det\left( A_3 \right)}{\det\left( A \right)} = \frac{152}{44} = \f
 
 ## Vector Algebra
 
-(reference 2.5)
+[@http://zotero.org/groups/4757224/items/WCMMMHMN]
 
 ### Addition
 
@@ -891,7 +891,7 @@ and acceleration:
 
 ## Probability and Statistics
 
-(reference 2.6)
+[@http://zotero.org/groups/4757224/items/WCMMMHMN]
 
 ***Definitions:***
 
@@ -931,7 +931,7 @@ The probability of any outcome in a given set is the same.  If there are $N$ pos
 
 ***Binomial***
 The probability that the random variable $X = x$ in $N$ independent events, each having probability $p$ of success, and $1-p$ of failure.
-\begin{equation*}P(X = k) = \binom{N}{k}p^x (1-p)^{N-x\}\end{equation*} where
+\begin{equation*}P(X = k) = \binom{N}{k}p^x (1-p)^{N-x}\end{equation*} where
 \begin{equation*}\binom{N}{k} = \frac{N!}{k!(N-k)!}.\end{equation*}
 
 For example, tossing a fair coin N times where $p = 1/2$ is the probability of getting a head on any toss.  If $X$ indicates the number of heads in $N$ tosses, then we have  $P(X = x) = (1/2)^x (1/2)^{N-x}$. For $N = 4$ we have the following table:
@@ -970,7 +970,7 @@ The sample mean of data sampled from a normally distributed population is itself
 
 ## Standard Series
 
-(reference 2.4)
+[@http://zotero.org/groups/4757224/items/3M8MUA5S]
 
 A *Taylor Series* is the expansion of a function about a point, $a$, given only the value of the function and all of its derivatives at that point.  It is used to estimate functions when other analytical techniques will not work.
 \begin{equation*}f(x) = \sum_{i=0}^{\infty} \frac{{f(a)(x-a)^i}}{i!} = f(a) + f'(x-a) + \frac{f''(a)(x-a)^2}{2} + \dots + \frac{f^{(n)}(a)(x-a)^n}{n!} + \dots\end{equation*}
@@ -1013,7 +1013,7 @@ The following are Taylor Series expansion of *Trigonometric* functions:
 
 ## Derivative Table 
 
-(references 2.2, 2.3)
+[@http://zotero.org/groups/4757224/items/RZ8LP92C; @http://zotero.org/groups/4757224/items/MAKALU78]
 
 * $x$ is the independent variable
 * $u$ and $v$ are dependent on $x$
@@ -1054,7 +1054,7 @@ The following are Taylor Series expansion of *Trigonometric* functions:
 
 ## Integral Table
 
-(references 2.2, 2.3)
+[@http://zotero.org/groups/4757224/items/RZ8LP92C; @http://zotero.org/groups/4757224/items/MAKALU78]
 
 <!--
 The section of variable definitions should match the Derivative Table section 
@@ -1122,51 +1122,39 @@ should be added to the result of every integration
 
 ## Laplace Table
 
-(references 2.2, 2.3)
+[@http://zotero.org/groups/4757224/items/RZ8LP92C; @http://zotero.org/groups/4757224/items/MAKALU78]
 
-| Time Domain $f(t) = \mathcal{L}^{-1} \left\{ F \left( s \right) \right\}$      | Frequency Domain $F\left( s \right) = \mathcal{L} \left\{ f \left( t \right) \right\}$ |
-|---------------------------|---------------------------------|
-\|\begin{equation*}1 \text{ (step function)\}\end{equation*}      | \begin{equation*}\frac{1}{s} \text{, where } \left(s >  0\right\)\end{equation*}|
-\|\begin{equation*}t\end{equation*}  | \begin{equation*}\frac{1}{s^2} \text{, where } \left(s >  0\right\)\end{equation*}|
-\|\begin{equation*}t^{n-1\}\end{equation*}                | \begin{equation*}\frac{\left( n-1 \right)!}{s^n} \text{, where } \left(s >  0\right\)\end{equation*}|
-\|\begin{equation*}\sqrt{t\}\end{equation*}                  | \begin{equation*}\frac{{\sqrt \pi  }}{{2{s^{\frac{3}{2}}}}} \text{, where } \left(s >  0\right\)\end{equation*}|
-\|\begin{equation*}\frac{1}{\sqrt{t}\}\end{equation*}         | \begin{equation*}\frac{{\sqrt \pi  }}{{{s^{\frac{1}{2}}}}} \text{, where } \left(s >  0\right\)\end{equation*}|
-\|\begin{equation*}{t^{n - \frac{1}{2}}},\,\,\,\,\,n = 1,2,3, \ldots\end{equation*}  | \begin{equation*}\frac{{1 \cdot 3 \cdot 5 \cdots \left( {2n - 1} \right)\sqrt \pi  }}{{{2^n}{s^{n + \frac{1}{2}}}}} {, where } \left(s >  0\right\)\end{equation*}|
-\|\begin{equation*}\mathrm{e}^{at\}\end{equation*}                     | \begin{equation*}\frac{1}{s-a} \text{, where } \left(s >  a \right\)\end{equation*}|
-\|\begin{equation*}t\mathrm{e}^{at\}\end{equation*}                    | \begin{equation*}\frac{1}{{\left( {s - a} \right)}^{2}} \text{, where } \left(s >  a \right\)\end{equation*}|
-\|\begin{equation*}{t^n}{{e}^{at}},\,\,\,\,\,n = 1,2,3, \ldots\end{equation*}  | \begin{equation*}\frac{{n!}}{{{{\left( {s - a} \right)}^{n + 1}}}} \text{, where } \left(s >  a \right\)\end{equation*}|
-\|\begin{equation*}\sin{at\}\end{equation*}                   | \begin{equation*}\frac{a}{s^2 + a^2} \text{, where } \left(s >  0 \right\)\end{equation*}|
-\|\begin{equation*}\cos{at\}\end{equation*}                    | \begin{equation*}\frac{s}{s^2 + a^2} \text{, where } \left(s >  0 \right\)\end{equation*}|
-\|\begin{equation*}\mathrm{e}^{bt} \sin{at\}\end{equation*}              | \begin{equation*}\frac{a}{\left(s - b \right)^2 + a^2} \text{, where } \left(s >  b \right\)\end{equation*}|
-\|\begin{equation*}\mathrm{e}^{bt} \cos{at\}\end{equation*}              | \begin{equation*}\frac{s-b}{\left(s - b \right)^2 + a^2} \text{, where } \left(s >  b \right\)\end{equation*}|
-\|\begin{equation*}t \sin{at\}\end{equation*}                  | \begin{equation*}\frac{2as}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  a \right\)\end{equation*}|
-\|\begin{equation*}t \cos{at\}\end{equation*}                  | \begin{equation*}\frac{s^2  - a^2}{\left(s^2  + a^2\right)^2} \text{, where } \left(s >  0 \right\)\end{equation*}|
-\|\begin{equation*}\sinh{at\}\end{equation*}                   | \begin{equation*}\frac{a}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  \lvert a \rvert \right\)\end{equation*}|
-\|\begin{equation*}\cosh{at\}\end{equation*}                      |           \begin{equation*}\frac{s}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  \lvert a \rvert \right\)\end{equation*}|
-\|\begin{equation*}\sin \left(at + b\right\)\end{equation*}                 |   \begin{equation*}\frac{s\sin{b} + a \cos{b}}{\left(s^2  + a^2\right)^2\}\end{equation*}|
-\|\begin{equation*}\cos \left(at + b\right\)\end{equation*}                 |   \begin{equation*}\frac{s\cos{b} - a \sin{b}}{\left(s^2  + a^2\right)^2\}\end{equation*}|
-\|\begin{equation*}\frac{\mathrm{e}^{at} - \mathrm{e}^{bt}}{a - b\}\end{equation*} | \begin{equation*}\frac{1}{\left(s-a\right)\left(s-b\right)\}\end{equation*}|
-\|\begin{equation*}\frac{a\mathrm{e}^{at} - b\mathrm{e}^{bt}}{a - b\}\end{equation*} | \begin{equation*}\frac{s}{\left(s-a\right)\left(s-b\right)\}\end{equation*}|
-\|\begin{equation*}\delta \text{ (impulse function)\}\end{equation*}         | \begin{equation*}1\end{equation*}|
-\|\begin{equation*}\text{square wave, period }=2c\end{equation*}  | \begin{equation*}\frac{1}{s \left( 1 + \mathrm{e}^{-cs} \right)\}\end{equation*}|
-\|\begin{equation*}\text{triangular wave, period }=2c\end{equation*}  | \begin{equation*}\frac{1 - \mathrm{e}^{-cs}}{s^2 \left( 1 + \mathrm{e}^{-cs} \right)\}\end{equation*}|
-|\begin{align} at \text{ for } 0 \leq t  <  c \\ \text{sawtooth wave, period } = c \end{align}   | \begin{equation*}\frac{a \left( 1 + cs - \mathrm{e}^{-cs} \right) }{s^2 \left( 1 - \mathrm{e}^{-cs} \right) \}\end{equation*}|
-\|\begin{equation*}\sin{at} \sin{bt\}\end{equation*}           |      \begin{equation*}\frac{2abs}{\left( s^2 + \left(a+b\right)^2\right) \left( s^2 + \left(a-b\right)^2\right)\}\end{equation*}|
-\|\begin{equation*}\frac{1 - \cos{at}}{a^2}  \end{equation*}  | \begin{equation*}\frac{1}{s \left( s^2 + a^2 \right) \}\end{equation*}|
-\|\begin{equation*}\frac{at - \sin{at}}{a^3}  \end{equation*}  | \begin{equation*}\frac{1}{s^2 \left( s^2 + a^2 \right) \}\end{equation*}|
-\|\begin{equation*}\frac{\sin{at} - at\cos{at}}{2a^3}  \end{equation*}  | \begin{equation*}\frac{1}{\left( s^2 + a^2 \right)^2 \}\end{equation*}|
-
-## References
-
-|||
-|-|---------------|
-|2.1 |Burington, Richard S., "Handbook of Mathematical Tables and Formulas", McGraw-Hill Inc., 1973.|
-|2.2 |Ayers, F., Moyer, R., "Trigonometry", Schaum's Outline series, McGraw-Hill Inc., 1990.|
-|2.3 |Esbach, Ovid W., "Handbook of Engineering Fundamentals", John Wiley and Sons Inc., 1963.|
-|2.4 |Hudson, Ralph G., "The Engineers' Manual", John Wiley and Sons Inc., 1944.|
-|2.5 |Jones, G., *Chapter 14, Vectors and Matrices*, from "Flying Qualities Testing, Vol II" , National Test Pilot School, P.O. Box 658, Mojave CA, 93501.|
-|2.6 |"Flying Qualities Testing, Vol II", 1997, National Test Pilot School, P.O. Box 658, Mojave CA, 93501.|
-|2.7 |Lewis, G., *Chapter 2, Data Analysis*, from "Crew station Evaluation and Data Analysis, Vol IV", 1997, National Test Pilot School, P.O. Box 658, Mojave CA, 93501.|
+| Time Domain $f(t) = \mathcal{L}^{-1} \left\{ F \left( s \right) \right\}$     | Frequency Domain $F\left( s \right) = \mathcal{L} \left\{ f \left( t \right) \right\}$ |
+|-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+|\begin{equation*}1 \text{ (step function)}\end{equation*}                     | \begin{equation*}\frac{1}{s} \text{, where } \left(s >  0\right)\end{equation*}|
+|\begin{equation*}t\end{equation*}                                              | \begin{equation*}\frac{1}{s^2} \text{, where } \left(s >  0\right)\end{equation*}|
+|\begin{equation*}t^{n-1}\end{equation*}                                       | \begin{equation*}\frac{\left( n-1 \right)!}{s^n} \text{, where } \left(s >  0\right)\end{equation*}|
+|\begin{equation*}\sqrt{t}\end{equation*}                                      | \begin{equation*}\frac{{\sqrt \pi  }}{{2{s^{\frac{3}{2}}}}} \text{, where } \left(s >  0\right)\end{equation*}|
+|\begin{equation*}\frac{1}{\sqrt{t}}\end{equation*}                            | \begin{equation*}\frac{{\sqrt \pi  }}{{{s^{\frac{1}{2}}}}} \text{, where } \left(s >  0\right)\end{equation*}|
+|\begin{equation*}{t^{n - \frac{1}{2}}},\,\,\,\,\,n = 1,2,3, \ldots\end{equation*}  | \begin{equation*}\frac{{1 \cdot 3 \cdot 5 \cdots \left( {2n - 1} \right)\sqrt \pi  }}{{{2^n}{s^{n + \frac{1}{2}}}}} {, where } \left(s >  0\right)\end{equation*}|
+|\begin{equation*}\mathrm{e}^{at}\end{equation*}                     | \begin{equation*}\frac{1}{s-a} \text{, where } \left(s >  a \right)\end{equation*}|
+|\begin{equation*}t\mathrm{e}^{at}\end{equation*}                    | \begin{equation*}\frac{1}{{\left( {s - a} \right)}^{2}} \text{, where } \left(s >  a \right)\end{equation*}|
+|\begin{equation*}{t^n}{{e}^{at}},\,\,\,\,\,n = 1,2,3, \ldots\end{equation*}  | \begin{equation*}\frac{{n!}}{{{{\left( {s - a} \right)}^{n + 1}}}} \text{, where } \left(s >  a \right)\end{equation*}|
+|\begin{equation*}\sin{at}\end{equation*}                   | \begin{equation*}\frac{a}{s^2 + a^2} \text{, where } \left(s >  0 \right)\end{equation*}|
+|\begin{equation*}\cos{at}\end{equation*}                    | \begin{equation*}\frac{s}{s^2 + a^2} \text{, where } \left(s >  0 \right)\end{equation*}|
+|\begin{equation*}\mathrm{e}^{bt} \sin{at}\end{equation*}              | \begin{equation*}\frac{a}{\left(s - b \right)^2 + a^2} \text{, where } \left(s >  b \right)\end{equation*}|
+|\begin{equation*}\mathrm{e}^{bt} \cos{at}\end{equation*}              | \begin{equation*}\frac{s-b}{\left(s - b \right)^2 + a^2} \text{, where } \left(s >  b \right)\end{equation*}|
+|\begin{equation*}t \sin{at}\end{equation*}                  | \begin{equation*}\frac{2as}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  a \right)\end{equation*}|
+|\begin{equation*}t \cos{at}\end{equation*}                  | \begin{equation*}\frac{s^2  - a^2}{\left(s^2  + a^2\right)^2} \text{, where } \left(s >  0 \right)\end{equation*}|
+|\begin{equation*}\sinh{at}\end{equation*}                   | \begin{equation*}\frac{a}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  \lvert a \rvert \right)\end{equation*}|
+|\begin{equation*}\cosh{at}\end{equation*}                      |           \begin{equation*}\frac{s}{\left(s^2  - a^2\right)^2} \text{, where } \left(s >  \lvert a \rvert \right)\end{equation*}|
+|\begin{equation*}\sin \left(at + b\right)\end{equation*}                 |   \begin{equation*}\frac{s\sin{b} + a \cos{b}}{\left(s^2  + a^2\right)^2}\end{equation*}|
+|\begin{equation*}\cos \left(at + b\right)\end{equation*}                 |   \begin{equation*}\frac{s\cos{b} - a \sin{b}}{\left(s^2  + a^2\right)^2}\end{equation*}|
+|\begin{equation*}\frac{\mathrm{e}^{at} - \mathrm{e}^{bt}}{a - b}\end{equation*} | \begin{equation*}\frac{1}{\left(s-a\right)\left(s-b\right)}\end{equation*}|
+|\begin{equation*}\frac{a\mathrm{e}^{at} - b\mathrm{e}^{bt}}{a - b}\end{equation*} | \begin{equation*}\frac{s}{\left(s-a\right)\left(s-b\right)}\end{equation*}|
+|\begin{equation*}\delta \text{ (impulse function)}\end{equation*}         | \begin{equation*}1\end{equation*}|
+|\begin{equation*}\text{square wave, period }=2c\end{equation*}  | \begin{equation*}\frac{1}{s \left( 1 + \mathrm{e}^{-cs} \right)}\end{equation*}|
+|\begin{equation*}\text{triangular wave, period }=2c\end{equation*}  | \begin{equation*}\frac{1 - \mathrm{e}^{-cs}}{s^2 \left( 1 + \mathrm{e}^{-cs} \right)}\end{equation*}|
+|\begin{align} at \text{ for } 0 \leq t  <  c \\ \text{sawtooth wave, period } = c \end{align}   | \begin{equation*}\frac{a \left( 1 + cs - \mathrm{e}^{-cs} \right) }{s^2 \left( 1 - \mathrm{e}^{-cs} \right) }\end{equation*}|
+|\begin{equation*}\sin{at} \sin{bt}\end{equation*}           |      \begin{equation*}\frac{2abs}{\left( s^2 + \left(a+b\right)^2\right) \left( s^2 + \left(a-b\right)^2\right)}\end{equation*}|
+|\begin{equation*}\frac{1 - \cos{at}}{a^2}  \end{equation*}  | \begin{equation*}\frac{1}{s \left( s^2 + a^2 \right) }\end{equation*}|
+|\begin{equation*}\frac{at - \sin{at}}{a^3}  \end{equation*}  | \begin{equation*}\frac{1}{s^2 \left( s^2 + a^2 \right) }\end{equation*}|
+|\begin{equation*}\frac{\sin{at} - at\cos{at}}{2a^3}  \end{equation*}  | \begin{equation*}\frac{1}{\left( s^2 + a^2 \right)^2 }\end{equation*}|
 
   [02021]: media/02/image22.png
   [02022]: media/02/image23.png

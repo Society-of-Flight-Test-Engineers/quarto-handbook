@@ -171,7 +171,7 @@ Exponent  Prefix  Abbreviation
 |                                                                                                                 | fermi              | 10^-15^          | meters             |
 |                                                                                                                 | fathoms            | 6                | feet               |
 |                                                                                                                 | feet               | 12               | inches             |
-| ^[The foot is defined as exactly 0.3048 meters <https://www.nist.gov/pml/us-surveyfoot>]                        | **feet**           | **0.3048**       | **meters**         |
+| ^[The foot is defined as exactly 0.3048 meters [@http://zotero.org/groups/4757224/items/SIHCFR45]]                        | **feet**           | **0.3048**       | **meters**         |
 |                                                                                                                 | furlongs           | 40               | rods               |
 |                                                                                                                 | hands              | 4                | inches             |
 |                                                                                                                 | **inches**         | **2.54**         | **cm**             |
@@ -186,7 +186,7 @@ Exponent  Prefix  Abbreviation
 |                                                                                                                 | microns            | 10^-6^           | meters             |
 |                                                                                                                 | mils               | 10^-3^           | inches             |
 |                                                                                                                 | **nautical miles** | **1.150 78**      | **statute miles**  |
-| ^[The SI defines the nautical mile as exactly 1852 meters. <https://www.bipm.org/en/publications/si-brochure/>] | **nautical miles** | **1,852**        | **meters**         |
+| ^[The SI defines the nautical mile as exactly 1852 meters. [@http://zotero.org/groups/4757224/items/LQBKKEVB]] | **nautical miles** | **1,852**        | **meters**         |
 |                                                                                                                 | **nautical miles** | **6,076.115 486** | **feet**           |
 |                                                                                                                 | paces              | 0.762            | meters             |
 |                                                                                                                 | parsec             | 1.9163x10^13^    | statute miles      |
@@ -1679,11 +1679,6 @@ while $I_{\mathrm{cg}} < I_z$ yields retrograde precession
 |  8|   Eight      |— — — • •|
 |  9|   Niner      |— — — — •|
 |  0|   Zee-ro     |— — — — —|
-
-## References
-
-::: {#refs}
-:::
 
 [01002]:  media/01/image2.png {width="6.5in" height="3.4063156167979in"}
 [01003]:  media/01/image3.png {width="6.5in" height="4.874305555555556in"}

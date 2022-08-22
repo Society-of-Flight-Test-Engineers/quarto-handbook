@@ -32,6 +32,7 @@ book:
     - 19-electromagnetic-spectrum.qmd
     - 20-communications-systems.qmd
     - 21-display-guidelines.qmd
+    - references.qmd
 
 bibliography: SFTE.json
 link-citations: true
