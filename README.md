@@ -5,7 +5,8 @@ A port of the 2013 SFTE Reference Handbook from [bookdown](https://github.com/So
 ## Project progress
 
 - 2025-11-13
-  - Made repo public and re-deployed site
+  - Made repo public
+  - Re-deployed site
 
 - 2025-10-12
   - Made repo private
