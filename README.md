@@ -4,6 +4,12 @@ A port of the 2013 SFTE Reference Handbook from [bookdown](https://github.com/So
 
 ## Project progress
 
+- 2025-11-13
+  - Made repo public and re-deployed site
+
+- 2025-10-12
+  - Made repo private
+
 - 2022-08-14
   - Complete
   - Hosted at <https://society-of-flight-test-engineers.github.io/quarto-handbook/>
